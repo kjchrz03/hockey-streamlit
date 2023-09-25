@@ -35,7 +35,7 @@ st.title("Check This Data")
 st.markdown('''##### <span style="color:gray">Explore Player Data</span>
             ''', unsafe_allow_html=True)
                 
-tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Report Cards", "Shots Heatmap", "Explore", "FAQ"])
+tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Home","Player Report Cards", "Shots Heatmap", "FAQ"])
 
 col1, col2, col3 = st.sidebar.columns([1,8,1])
 with col1:
