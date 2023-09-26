@@ -13,10 +13,12 @@
 # limitations under the License.
 
 import streamlit as st
-from streamlit.logger import get_logger
+#from streamlit.logger import get_logger
+import numpy as np
 
-LOGGER = get_logger(__name__)
+#LOGGER = get_logger(__name__)
 
+st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
 def run():
     st.set_page_config(
@@ -24,27 +26,28 @@ def run():
         page_icon="👋",
     )
 
-    st.write("# Welcome to Streamlit! 👋")
 
-    st.sidebar.success("Select a demo above.")
+##########################################
+##  Title, Tabs, and Sidebar            ##
+##########################################
 
-    st.markdown(
-        """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-    """
-    )
+st.title("Check This Data")
+st.markdown('''##### <span style="color:gray">Explore Player Data</span>
+            ''', unsafe_allow_html=True)
+                
+tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Home","Player Report Cards", "Shots Heatmap", "FAQ"])
+
+col1, col2, col3 = st.sidebar.columns([1,8,1])
+with col1:
+    st.write("")
+with col2:
+    st.image('figures/heroguy.png',  use_column_width=True)
+with col3:
+    st.write("")
+
+st.sidebar.markdown(" ## About Check This Data")
+st.sidebar.markdown("I love hockey and I love data, so I built this app to visualize some of my favorite advanced metrics to help users visualize them."  )              
+st.sidebar.info("Read more about my process on Github [Github](https://github.com/kjchrz03/hockey-streamlit).", icon="ℹ️")
 
 
 if __name__ == "__main__":
