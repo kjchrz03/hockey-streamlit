@@ -1,7 +1,5 @@
-# Welcome to streamlit
+# Welcome to my streamlit app
 
-This is the app you get when you run `streamlit hello`, extracted as its own app.
+This is my first crack at extracting data via an api and developing an app to track goals scored on an ice hockey heat map.
 
-Edit [Hello.py](./Hello.py) to customize this app to your heart's desire. ❤️
 
-Check it out on [Streamlit Community Cloud](https://st-hello-app.streamlit.app/)
