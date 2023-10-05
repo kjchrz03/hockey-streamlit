@@ -4,7 +4,7 @@ import numpy as np
 
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
-@st.cache
+#@st.cache
 def load_players():
     github_csv_url = 'data/final_df.csv'
     players_df = pd.read_csv(github_csv_url)
