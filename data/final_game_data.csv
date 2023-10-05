@@ -22,7 +22,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 11,8471685,Anze Kopitar,Los Angeles Kings,0
 11,8471699,Andrew Cogliano,Colorado Avalanche,0
 11,8473533,Jordan Staal,Carolina Hurricanes,0
-11,8474150,Mikael Backlund,Calgary Flames,1
+11,8474150,Mikael Backlund,Calgary Flames,2
 11,8475848,Brendan Gallagher,Montréal Canadiens,0
 11,8476822,Luke Glendening,Tampa Bay Lightning,1
 11,8477503,Max Domi,Toronto Maple Leafs,2
@@ -31,7 +31,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 11,8479365,Trent Frederic,Boston Bruins,0
 11,8479390,Taylor Raddysh,Chicago Blackhawks,0
 11,8479423,Alex Nylander,Pittsburgh Penguins,2
-11,8480384,Alexander True,Florida Panthers,0
 11,8481239,Samuel Fagemo,Nashville Predators,2
 11,8481533,Trevor Zegras,Anaheim Ducks,0
 11,8482699,Dylan Guenther,Arizona Coyotes,1
@@ -53,7 +52,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 13,8475745,Charlie Coyle,Boston Bruins,0
 13,8476346,Johnny Gaudreau,Columbus Blue Jackets,1
 13,8476994,Vinnie Hinostroza,Pittsburgh Penguins,0
-13,8477406,Mattias Janmark,Edmonton Oilers,0
+13,8477406,Mattias Janmark,Edmonton Oilers,1
 13,8477501,Valeri Nichushkin,Colorado Avalanche,0
 13,8477933,Sam Reinhart,Florida Panthers,0
 13,8478445,Mathew Barzal,New York Islanders,2
@@ -82,13 +81,13 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 14,8480018,Nick Suzuki,Montréal Canadiens,1
 14,8480070,Ian Mitchell,Boston Bruins,0
 14,8480844,Grigori Denisenko,Florida Panthers,0
-14,8481572,Ville Heinola,Winnipeg Jets,0
+14,8481572,Ville Heinola,Winnipeg Jets,1
 15,8473504,Cal Clutterbuck,New York Islanders,1
 15,8475225,Craig Smith,Dallas Stars,0
 15,8477021,Alex Kerfoot,Arizona Coyotes,0
 15,8477401,John Hayden,Seattle Kraken,0
 15,8477944,Jakub Vrana,St. Louis Blues,3
-15,8477947,Sonny Milano,Washington Capitals,2
+15,8477947,Sonny Milano,Washington Capitals,3
 15,8478146,Matthew Highmore,Ottawa Senators,0
 15,8478495,Denis Gurianov,Nashville Predators,0
 15,8479315,Joey Anderson,Chicago Blackhawks,0
@@ -99,6 +98,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 15,8480845,Rasmus Kupari,Winnipeg Jets,0
 15,8480862,Jared McIsaac,Detroit Red Wings,0
 15,8481618,Alex Newhook,Montréal Canadiens,0
+15,8482061,Brandon Biro,Buffalo Sabres,2
 15,8482113,Anton Lundell,Florida Panthers,2
 16,8470794,Joe Pavelski,Dallas Stars,1
 16,8475722,Jason Zucker,Arizona Coyotes,0
@@ -115,7 +115,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 16,8481604,Pavel Dorofeyev,Vegas Golden Knights,0
 17,8471218,Blake Wheeler,New York Rangers,1
 17,8473422,Nick Foligno,Chicago Blackhawks,0
-17,8473473,Milan Lucic,Boston Bruins,0
+17,8473473,Milan Lucic,Boston Bruins,1
 17,8473986,Alex Killorn,Anaheim Ducks,0
 17,8474709,Matt Martin,New York Islanders,0
 17,8475220,Marcus Foligno,Minnesota Wild,0
@@ -135,7 +135,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 17,8479772,Zack MacEwen,Ottawa Senators,0
 17,8479941,Justin Danforth,Columbus Blue Jackets,2
 17,8481068,Yegor Sharangovich,Calgary Flames,1
-17,8482061,Brandon Biro,Buffalo Sabres,2
 17,8482133,Thomas Bordeleau,San Jose Sharks,0
 18,8471686,Marc Staal,Philadelphia Flyers,0
 18,8475786,Zach Hyman,Edmonton Oilers,1
@@ -161,7 +160,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 19,8479314,Matthew Tkachuk,Florida Panthers,0
 19,8480208,Drake Batherson,Ottawa Senators,1
 19,8480853,Liam Foudy,Columbus Blue Jackets,0
-19,8481019,David Gustafsson,Winnipeg Jets,1
+19,8481019,David Gustafsson,Winnipeg Jets,3
 19,8481522,Peyton Krebs,Buffalo Sabres,1
 19,8481556,John Beecher,Boston Bruins,1
 2,8474090,Brendan Smith,New Jersey Devils,0
@@ -187,23 +186,23 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 20,8476905,Chandler Stephenson,Vegas Golden Knights,0
 20,8477126,Jayson Megna,Boston Bruins,0
 20,8477392,Hudson Fasching,New York Islanders,0
-20,8477426,Nicholas Paul,Tampa Bay Lightning,0
+20,8477426,Nicholas Paul,Tampa Bay Lightning,1
 20,8478211,Dryden Hunt,Calgary Flames,2
 20,8478427,Sebastian Aho,Carolina Hurricanes,0
 20,8479415,Michael McLeod,New Jersey Devils,2
 20,8479525,Ross Colton,Colorado Avalanche,0
 20,8480009,Eeli Tolvanen,Seattle Kraken,2
 20,8480188,Fabian Zetterlund,San Jose Sharks,0
+20,8480384,Alexander True,Florida Panthers,0
 20,8481517,Brett Leason,Anaheim Ducks,2
 20,8481607,Albert Johansson,Detroit Red Wings,0
 20,8483515,Juraj Slafkovsky,Montréal Canadiens,1
 21,8473449,Kyle Okposo,Buffalo Sabres,0
-21,8474037,James van Riemsdyk,Boston Bruins,0
+21,8474037,James van Riemsdyk,Boston Bruins,1
 21,8475151,Kyle Palmieri,New York Islanders,0
 21,8476393,Nick Cousins,Florida Panthers,0
 21,8476624,Barclay Goodrow,New York Rangers,1
 21,8476872,Scott Laughton,Philadelphia Flyers,0
-21,8476952,Dominic Toninato,Winnipeg Jets,1
 21,8477505,Alex Wennberg,Seattle Kraken,0
 21,8478010,Brayden Point,Tampa Bay Lightning,0
 21,8478472,Mathieu Joseph,Ottawa Senators,2
@@ -255,7 +254,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 23,8482078,Lucas Raymond,Detroit Red Wings,0
 23,8482079,Marco Rossi,Minnesota Wild,0
 23,8482720,Matthew Knies,Toronto Maple Leafs,2
-23,8482763,Fabian Lysell,Boston Bruins,0
+23,8482745,Mason McTavish,Anaheim Ducks,0
 24,8474089,Brad Malone,Edmonton Oilers,1
 24,8474567,Zach Bogosian,Tampa Bay Lightning,0
 24,8476372,Nick Seeler,Philadelphia Flyers,0
@@ -272,7 +271,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 24,8480883,Ty Smith,Pittsburgh Penguins,0
 24,8481528,Dylan Cozens,Buffalo Sabres,0
 24,8481554,Kaapo Kakko,New York Rangers,1
-24,8481580,Connor McMichael,Washington Capitals,0
+24,8481580,Connor McMichael,Washington Capitals,1
 24,8481587,Antti Tuomisto,Detroit Red Wings,1
 24,8482088,Justin Sourdif,Florida Panthers,0
 24,8482093,Seth Jarvis,Carolina Hurricanes,0
@@ -306,6 +305,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 26,8480980,Connor Dewar,Minnesota Wild,1
 26,8481577,Philip Tomasino,Nashville Predators,1
 26,8483397,Marc McLaughlin,Boston Bruins,0
+26,8484304,Uvis Balinskis,Florida Panthers,0
 27,8474151,Ryan McDonagh,Nashville Predators,0
 27,8475314,Anders Lee,New York Islanders,2
 27,8476854,Hampus Lindholm,Boston Bruins,0
@@ -315,6 +315,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 27,8477494,Jonathan Drouin,Colorado Avalanche,0
 27,8477940,Nikolaj Ehlers,Winnipeg Jets,0
 27,8478975,Mason Marchment,Dallas Stars,1
+27,8479985,Cale Fleury,Seattle Kraken,1
 27,8479992,Michael Rasmussen,Detroit Red Wings,3
 27,8480184,Gustav Lindström,Montréal Canadiens,0
 27,8480185,Eetu Luostarinen,Florida Panthers,2
@@ -324,7 +325,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 27,8480871,Adam Boqvist,Columbus Blue Jackets,0
 27,8482117,Lukas Reichel,Chicago Blackhawks,0
 27,8482221,Devon Levi,Buffalo Sabres,0
-27,8483468,Jiri Kulich,Buffalo Sabres,0
 28,8473512,Claude Giroux,Ottawa Senators,1
 28,8475461,Andrew Agozzino,Anaheim Ducks,2
 28,8475755,Alexander Petrovic,Dallas Stars,0
@@ -334,7 +334,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 28,8477015,Connor Brown,Edmonton Oilers,0
 28,8477425,Miles Wood,Colorado Avalanche,0
 28,8477478,William Carrier,Vegas Golden Knights,0
-28,8477496,Elias Lindholm,Calgary Flames,1
+28,8477496,Elias Lindholm,Calgary Flames,2
 28,8477962,Brendan Lemieux,Carolina Hurricanes,0
 28,8477969,Marcus Pettersson,Pittsburgh Penguins,0
 28,8478043,Sam Lafferty,Toronto Maple Leafs,1
@@ -352,10 +352,11 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 29,8478407,Vince Dunn,Seattle Kraken,0
 29,8478450,Parker Wotherspoon,Boston Bruins,0
 29,8479339,Patrik Laine,Columbus Blue Jackets,2
-29,8479346,Dillon Dube,Calgary Flames,1
+29,8479346,Dillon Dube,Calgary Flames,2
 29,8479979,Jake Oettinger,Dallas Stars,0
 29,8480849,Barrett Hayton,Arizona Coyotes,2
 29,8480995,Pontus Holmberg,Toronto Maple Leafs,0
+29,8481575,Lassi Thomson,Anaheim Ducks,0
 29,8482148,Hendrix Lapierre,Washington Capitals,0
 3,8471677,Jack Johnson,Colorado Avalanche,0
 3,8475188,Brayden McNabb,Vegas Golden Knights,0
@@ -377,6 +378,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 30,8480051,Cayden Primeau,Montréal Canadiens,0
 30,8480238,Jiri Patera,Vegas Golden Knights,0
 30,8480981,Joel Hofer,St. Louis Blues,0
+30,8481519,Spencer Knight,Florida Panthers,0
 30,8482661,Jesper Wallstedt,Minnesota Wild,0
 30,8483530,Jaxson Stauber,Chicago Blackhawks,0
 31,8474889,Martin Jones,Toronto Maple Leafs,0
@@ -432,6 +434,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 36,8475692,Mats Zuccarello,Minnesota Wild,0
 36,8475789,Jack Campbell,Edmonton Oilers,0
 36,8476434,John Gibson,Anaheim Ducks,0
+36,8476941,Connor Carrick,Seattle Kraken,0
 36,8478039,Kaapo Kahkonen,San Jose Sharks,0
 36,8478432,Christian Fischer,Detroit Red Wings,0
 36,8479526,Otto Koivula,New York Islanders,0
@@ -463,7 +466,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 38,8480873,Rasmus Sandin,Washington Capitals,1
 38,8482080,Noel Gunler,Carolina Hurricanes,1
 38,8482861,Vincent Iorio,Washington Capitals,0
-38,8483503,Owen Pickering,Pittsburgh Penguins,0
 39,8474053,Logan Couture,San Jose Sharks,0
 39,8475842,Sam Carrick,Anaheim Ducks,2
 39,8476316,Laurent Brossoit,Winnipeg Jets,0
@@ -478,8 +480,8 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 39,8481532,Alex Turcotte,Los Angeles Kings,0
 39,8481666,Reece Newkirk,New York Islanders,0
 39,8482051,Jerad Rosburg,Dallas Stars,0
-39,8482408,Jeff Malott,Winnipeg Jets,0
-39,8482679,Matt Coronato,Calgary Flames,3
+39,8482679,Matt Coronato,Calgary Flames,4
+39,8482858,Ryker Evans,Seattle Kraken,0
 39,8483489,Fraser Minten,Toronto Maple Leafs,1
 39,8484325,Waltteri Merela,Tampa Bay Lightning,2
 4,8474602,Justin Schultz,Seattle Kraken,0
@@ -508,15 +510,14 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 40,8481544,Mads Sogaard,Ottawa Senators,0
 40,8482821,Arvid Soderblom,Chicago Blackhawks,0
 40,8483630,Pavol Regenda,Anaheim Ducks,0
+40,8483799,Kyle McDonald,Dallas Stars,1
 41,8474145,Robert Bortuzzo,St. Louis Blues,0
 41,8475809,Scott Wedgewood,Dallas Stars,0
 41,8476906,Shayne Gostisbehere,Detroit Red Wings,0
 41,8476932,Anthony Stolarz,Florida Panthers,0
 41,8477930,Pierre-Edouard Bellemare,Seattle Kraken,0
 41,8477970,Vitek Vanecek,New Jersey Devils,0
-41,8479304,Kyle Criscuolo,New Jersey Devils,0
 41,8482192,Isaak Phillips,Chicago Blackhawks,0
-41,8482858,Ryker Evans,Seattle Kraken,0
 41,8484125,Hunter McKown,Columbus Blue Jackets,0
 42,8476312,Josh Manson,Colorado Avalanche,0
 42,8477508,Curtis Lazar,New Jersey Devils,1
@@ -531,7 +532,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 42,8484146,Tristan Bertucci,Dallas Stars,0
 43,8475160,Kyle Clifford,Toronto Maple Leafs,1
 43,8476278,Colin Blackwell,Chicago Blackhawks,0
-43,8476880,Tom Wilson,Washington Capitals,1
+43,8476880,Tom Wilson,Washington Capitals,2
 43,8478178,Darren Raddysh,Tampa Bay Lightning,0
 43,8480157,Calle Rosen,St. Louis Blues,0
 43,8480226,Marián Studenic,Seattle Kraken,0
@@ -556,7 +557,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 45,8476433,Magnus Hellberg,Pittsburgh Penguins,0
 45,8478841,Colton White,Anaheim Ducks,0
 45,8478851,Alexandre Carrier,Nashville Predators,0
-45,8479547,Matthew Phillips,Washington Capitals,1
+45,8479547,Matthew Phillips,Washington Capitals,2
 45,8480990,Declan Chisholm,Winnipeg Jets,0
 45,8483560,Griffin Mendel,Carolina Hurricanes,0
 45,8484172,Brad Gardiner,Dallas Stars,0
@@ -567,7 +568,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 46,8480950,Ilya Lyubushkin,Anaheim Ducks,0
 46,8481481,Blake Lizotte,Los Angeles Kings,0
 46,8481553,Bobby Brink,Philadelphia Flyers,2
-46,8482066,Colton Poolman,Calgary Flames,0
 46,8482785,Justin Robidas,Carolina Hurricanes,0
 46,8484468,Angus MacDonell,Dallas Stars,0
 47,8473503,James Reimer,Detroit Red Wings,0
@@ -578,7 +578,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 47,8481732,Andre Lee,Los Angeles Kings,0
 47,8482074,Connor Zary,Calgary Flames,2
 47,8482860,Aleksi Heimosalmi,Carolina Hurricanes,0
-47,8483471,Brad Lambert,Winnipeg Jets,0
 47,8483521,Noah Warren,Anaheim Ducks,0
 47,8483620,Marcus Bjork,Columbus Blue Jackets,0
 48,8476881,Tomas Hertl,San Jose Sharks,2
@@ -633,7 +632,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 51,8482476,Emil Heineman,Montréal Canadiens,0
 51,8482516,Matthew Kessel,St. Louis Blues,0
 51,8482803,Olen Zellweger,Anaheim Ducks,1
-51,8483505,Matthew Poitras,Boston Bruins,1
+51,8483505,Matthew Poitras,Boston Bruins,2
 51,8483524,Shane Wright,Seattle Kraken,0
 52,8477346,MacKenzie Weegar,Calgary Flames,0
 52,8478017,Mark Friedman,Pittsburgh Penguins,0
@@ -683,7 +682,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 56,8475287,Erik Haula,New Jersey Devils,2
 56,8476979,Erik Gustafsson,New York Rangers,1
 56,8477073,Kurtis MacDermid,Colorado Avalanche,1
-56,8479977,Kailer Yamamoto,Seattle Kraken,2
+56,8479977,Kailer Yamamoto,Seattle Kraken,3
 56,8481058,Jesse Ylönen,Montréal Canadiens,0
 56,8482207,William Dufour,New York Islanders,1
 57,8474102,David Perron,Detroit Red Wings,0
@@ -695,7 +694,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 57,8482882,Eetu Liukas,New York Islanders,0
 58,8471724,Kris Letang,Pittsburgh Penguins,0
 58,8475233,David Savard,Montréal Canadiens,0
-58,8476941,Connor Carrick,Seattle Kraken,0
 58,8478047,Michael Bunting,Carolina Hurricanes,2
 58,8478430,Oliver Kylington,Calgary Flames,0
 58,8479550,Tanner Laczynski,Philadelphia Flyers,0
@@ -716,7 +714,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 6,8476441,Joel Edmundson,Washington Capitals,0
 6,8476457,Adam Larsson,Seattle Kraken,0
 6,8476525,Colin Miller,New Jersey Devils,0
-6,8477085,Ashton Sautner,Winnipeg Jets,0
 6,8477506,Ryan Pulock,New York Islanders,0
 6,8477541,Dakota Mermis,Minnesota Wild,0
 6,8477948,Travis Sanheim,Philadelphia Flyers,0
@@ -728,13 +725,12 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 6,8481527,Kaedan Korczak,Vegas Golden Knights,0
 6,8481708,Zac Jones,New York Rangers,0
 6,8482399,Billy Sweezey,Columbus Blue Jackets,0
-6,8482511,Mason Lohrei,Boston Bruins,0
+6,8482511,Mason Lohrei,Boston Bruins,1
 6,8483425,Lian Bichsel,Dallas Stars,0
 60,8476904,Chris Driedger,Seattle Kraken,0
 60,8479361,Joseph Woll,Toronto Maple Leafs,0
 60,8480420,Collin Delia,Winnipeg Jets,0
 60,8481020,Justus Annunen,Colorado Avalanche,0
-60,8481575,Lassi Thomson,Anaheim Ducks,0
 60,8481605,Jackson LaCombe,Anaheim Ducks,2
 60,8484293,Yaniv Perets,Carolina Hurricanes,0
 61,8475913,Mark Stone,Vegas Golden Knights,0
@@ -743,7 +739,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 61,8480869,Luke Henman,Seattle Kraken,0
 61,8481576,Ryan Suzuki,Carolina Hurricanes,1
 61,8481701,Santeri Hatakka,New Jersey Devils,0
-61,8482714,Chase Stillman,New Jersey Devils,0
 62,8475799,Nino Niederreiter,Winnipeg Jets,0
 62,8477476,Artturi Lehkonen,Colorado Avalanche,0
 62,8477986,Brandon Montour,Florida Panthers,0
@@ -756,11 +751,10 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 63,8473419,Brad Marchand,Boston Bruins,0
 63,8474149,Evgenii Dadonov,Dallas Stars,2
 63,8479407,Jesper Bratt,New Jersey Devils,4
-63,8480008,Adam Ruzicka,Calgary Flames,0
+63,8480008,Adam Ruzicka,Calgary Flames,1
 63,8481711,Matias Maccelli,Arizona Coyotes,1
 63,8482089,Jake Neighbours,St. Louis Blues,0
 63,8482241,Radim Zohorna,Pittsburgh Penguins,1
-63,8482765,Isak Rosen,Buffalo Sabres,0
 63,8483491,Ivan Miroshnichenko,Washington Capitals,0
 64,8475798,Mikael Granlund,San Jose Sharks,0
 64,8477353,Tyler Motte,Tampa Bay Lightning,1
@@ -775,6 +769,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 67,8476919,Chris Tierney,New Jersey Devils,0
 67,8478415,Jakub Zboril,Boston Bruins,0
 67,8478474,Lawson Crouse,Arizona Coyotes,1
+67,8479367,William Lockwood,Florida Panthers,1
 67,8482744,James Malatesta,Columbus Blue Jackets,0
 67,8483482,Tristan Luneau,Anaheim Ducks,0
 67,8483677,Samuel Savoie,Chicago Blackhawks,0
@@ -792,7 +787,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 7,8477369,Carson Soucy,Vancouver Canucks,0
 7,8477938,Haydn Fleury,Tampa Bay Lightning,0
 7,8478038,Devon Toews,Colorado Avalanche,1
-7,8479367,William Lockwood,Florida Panthers,1
 7,8479395,Dennis Cholowski,New York Islanders,0
 7,8480801,Brady Tkachuk,Ottawa Senators,2
 7,8481477,Nico Sturm,San Jose Sharks,0
@@ -845,7 +839,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 73,8480058,Pierre-Olivier Joseph,Pittsburgh Penguins,1
 73,8482982,Jet Greaves,Columbus Blue Jackets,0
 73,8484135,Parker Ford,Winnipeg Jets,1
-74,8474590,John Carlson,Washington Capitals,1
+74,8474590,John Carlson,Washington Capitals,2
 74,8476958,Jaccob Slavin,Carolina Hurricanes,0
 74,8477424,Juuse Saros,Nashville Predators,0
 74,8478498,Jake DeBrusk,Boston Bruins,1
@@ -890,7 +884,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 79,8479292,Charlie Lindgren,Washington Capitals,0
 79,8479394,Carter Hart,Philadelphia Flyers,0
 79,8480817,K'Andre Miller,New York Rangers,0
-79,8480828,Michael Callahan,Boston Bruins,0
 79,8481655,Cole Schwindt,Calgary Flames,0
 8,8470613,Brent Burns,Carolina Hurricanes,0
 8,8471214,Alex Ovechkin,Washington Capitals,0
@@ -901,12 +894,10 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 8,8475690,Chris Tanev,Calgary Flames,0
 8,8476875,Mike Matheson,Montréal Canadiens,0
 8,8476885,Jacob Trouba,New York Rangers,0
-8,8477355,Will Butcher,Pittsburgh Penguins,0
 8,8477951,Nick Schmaltz,Arizona Coyotes,0
 8,8477987,Ryan Donato,Chicago Blackhawks,0
 8,8478460,Zach Werenski,Columbus Blue Jackets,0
 8,8478856,Conor Garland,Vancouver Canucks,1
-8,8479985,Cale Fleury,Seattle Kraken,1
 8,8479996,Cody Glass,Nashville Predators,0
 8,8480069,Cale Makar,Colorado Avalanche,0
 8,8480865,Noah Dobson,New York Islanders,0
@@ -914,13 +905,11 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 80,8478435,Dan Vladar,Calgary Flames,0
 80,8479338,Markus Niemelainen,Edmonton Oilers,0
 80,8479400,Pierre-Luc Dubois,Los Angeles Kings,0
-80,8482456,Raivis Ansons,Pittsburgh Penguins,0
 81,8476539,Jonathan Marchessault,Vegas Golden Knights,1
 81,8477330,Dominik Kubalik,Ottawa Senators,2
 81,8478057,Dakota Joshua,Vancouver Canucks,0
 81,8478398,Kyle Connor,Winnipeg Jets,1
 81,8478416,Erik Cernak,Tampa Bay Lightning,0
-81,8479419,Brett Murray,Buffalo Sabres,0
 81,8481579,Jamieson Rees,Carolina Hurricanes,0
 81,8482711,Stanislav Svozil,Columbus Blue Jackets,0
 82,8474013,Ian Cole,Vancouver Canucks,0
@@ -935,7 +924,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 83,8481537,Nikita Okhotiuk,San Jose Sharks,0
 84,8478882,Vladislav Gavrikov,Los Angeles Kings,0
 84,8479594,Nate Clurman,Colorado Avalanche,0
-84,8479661,Tanner Jeannot,Tampa Bay Lightning,0
+84,8479661,Tanner Jeannot,Tampa Bay Lightning,1
 84,8480172,Jan Rutta,San Jose Sharks,0
 84,8481614,Mikko Kokkonen,Toronto Maple Leafs,1
 84,8481615,Anttoni Honka,Carolina Hurricanes,0
@@ -1005,7 +994,6 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 92,8475744,Evgeny Kuznetsov,Washington Capitals,0
 92,8477931,Tomas Nosek,New Jersey Devils,0
 92,8480054,Reilly Walsh,Boston Bruins,0
-92,8481578,Graeme Clarke,New Jersey Devils,0
 92,8482102,Vasily Ponomarev,Carolina Hurricanes,0
 92,8482730,Brandt Clarke,Los Angeles Kings,0
 92,8483431,Logan Cooley,Arizona Coyotes,1
@@ -1031,7 +1019,7 @@ jerseyNumber,person.id,person.fullName,team_name,player_id
 96,8478420,Mikko Rantanen,Colorado Avalanche,0
 96,8478458,Jack Roslovic,Columbus Blue Jackets,1
 96,8483808,Andrei Kuzmenko,Vancouver Canucks,1
-97,8478402,Connor McDavid,Edmonton Oilers,1
+97,8478402,Connor McDavid,Edmonton Oilers,2
 97,8478864,Kirill Kaprizov,Minnesota Wild,2
 98,8479410,Mikhail Sergachev,Tampa Bay Lightning,0
 98,8482470,Ilya Solovyov,Calgary Flames,1
