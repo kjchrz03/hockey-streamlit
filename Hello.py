@@ -6,7 +6,7 @@ st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sideb
 
 @st.cache
 def load_players():
-    github_csv_url = 'https://github.com/kjchrz03/hockey-streamlit/blob/main/data/final_df.csv'
+    github_csv_url = 'data/final_df.csv'
     players_df = pd.read_csv(github_csv_url)
     players_df['Name'] = players_df['person.fullName']
     players_df['Team'] = players_df['team_name']
