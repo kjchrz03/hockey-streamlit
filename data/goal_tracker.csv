@@ -1,0 +1,1240 @@
+jerseyNumber,person.id,person.fullName,position.name,team_name,player_id,x,y
+2,8474090,Brendan Smith,Defenseman,New Jersey Devils,,,
+90,8475193,Tomas Tatar,Left Wing,New Jersey Devils,,,
+56,8475287,Erik Haula,Left Wing,New Jersey Devils,8475287,78.0,-6.0
+56,8475287,Erik Haula,Left Wing,New Jersey Devils,8475287,-61.0,-5.0
+18,8476292,Ondrej Palat,Left Wing,New Jersey Devils,8476292,82.0,8.0
+7,8476462,Dougie Hamilton,Defenseman,New Jersey Devils,,,
+78,8476923,Damon Severson,Defenseman,New Jersey Devils,,,
+18,8477341,Andreas Johnsson,Left Wing,New Jersey Devils,,,
+28,8477425,Miles Wood,Left Wing,New Jersey Devils,,,
+27,8477435,Ryan Graves,Defenseman,New Jersey Devils,,,
+42,8477508,Curtis Lazar,Center,New Jersey Devils,8477508,85.0,7.0
+71,8478399,Jonas Siegenthaler,Defenseman,New Jersey Devils,,,
+96,8478414,Timo Meier,Right Wing,New Jersey Devils,8478414,-77.0,12.0
+6,8478507,John Marino,Defenseman,New Jersey Devils,,,
+63,8479407,Jesper Bratt,Left Wing,New Jersey Devils,8479407,81.0,0.0
+14,8479414,Nathan Bastian,Right Wing,New Jersey Devils,,,
+20,8479415,Michael McLeod,Center,New Jersey Devils,8479415,81.0,-4.0
+20,8479415,Michael McLeod,Center,New Jersey Devils,8479415,72.0,1.0
+13,8480002,Nico Hischier,Center,New Jersey Devils,,,
+70,8480003,Jesper Boqvist,Center,New Jersey Devils,,,
+20,8480188,Fabian Zetterlund,Left Wing,New Jersey Devils,,,
+88,8480860,Kevin Bahl,Defenseman,New Jersey Devils,,,
+17,8481068,Yegor Sharangovich,Center,New Jersey Devils,8481068,-74.0,1.0
+25,8481518,Nolan Foote,Left Wing,New Jersey Devils,,,
+83,8481537,Nikita Okhotiuk,Defenseman,New Jersey Devils,,,
+86,8481559,Jack Hughes,Center,New Jersey Devils,8481559,81.0,-11.0
+12,8481740,Tyce Thompson,Right Wing,New Jersey Devils,8481740,83.0,0.0
+91,8482110,Dawson Mercer,Center,New Jersey Devils,8482110,-86.0,9.0
+10,8482125,Alexander Holtz,Right Wing,New Jersey Devils,8482125,73.0,0.0
+10,8482125,Alexander Holtz,Right Wing,New Jersey Devils,8482125,76.0,-2.0
+43,8482684,Luke Hughes,Defenseman,New Jersey Devils,,,
+41,8477970,Vitek Vanecek,Goalie,New Jersey Devils,,,
+29,8478406,Mackenzie Blackwood,Goalie,New Jersey Devils,,,
+40,8481033,Akira Schmid,Goalie,New Jersey Devils,,,
+11,8470610,Zach Parise,Left Wing,New York Islanders,,,
+15,8473504,Cal Clutterbuck,Right Wing,New York Islanders,8473504,-65.0,-5.0
+12,8474573,Josh Bailey,Right Wing,New York Islanders,,,
+17,8474709,Matt Martin,Left Wing,New York Islanders,,,
+21,8475151,Kyle Palmieri,Center,New York Islanders,,,
+53,8475231,Casey Cizikas,Center,New York Islanders,,,
+27,8475314,Anders Lee,Left Wing,New York Islanders,8475314,34.0,31.0
+29,8475754,Brock Nelson,Center,New York Islanders,8475754,83.0,-5.0
+18,8476404,Andy Andreoff,Center,New York Islanders,,,
+44,8476419,Jean-Gabriel Pageau,Center,New York Islanders,8476419,74.0,0.0
+24,8476429,Scott Mayfield,Defenseman,New York Islanders,,,
+3,8476917,Adam Pelech,Defenseman,New York Islanders,,,
+20,8477392,Hudson Fasching,Right Wing,New York Islanders,,,
+14,8477500,Bo Horvat,Center,New York Islanders,8477500,88.0,-5.0
+6,8477506,Ryan Pulock,Defenseman,New York Islanders,,,
+32,8477527,Ross Johnston,Left Wing,New York Islanders,,,
+18,8478115,Pierre Engvall,Left Wing,New York Islanders,,,
+54,8478367,Cole Bardreau,Center,New York Islanders,,,
+41,8478373,Nikita Soshnikov,Right Wing,New York Islanders,,,
+13,8478445,Mathew Barzal,Center,New York Islanders,,,
+29,8478450,Parker Wotherspoon,Defenseman,New York Islanders,,,
+72,8478463,Anthony Beauvillier,Left Wing,New York Islanders,,,
+20,8479356,Kieffer Bellows,Left Wing,New York Islanders,8479356,-85.0,-1.0
+7,8479395,Dennis Cholowski,Defenseman,New York Islanders,,,
+36,8479526,Otto Koivula,Left Wing,New York Islanders,,,
+2,8480071,Robin Salo,Defenseman,New York Islanders,,,
+25,8480222,Sebastian Aho,Defenseman,New York Islanders,,,
+38,8480242,Arnaud Durandeau,Left Wing,New York Islanders,8480242,86.0,-7.0
+26,8480789,Oliver Wahlstrom,Right Wing,New York Islanders,,,
+8,8480865,Noah Dobson,Defenseman,New York Islanders,,,
+28,8481014,Alexander Romanov,Defenseman,New York Islanders,,,
+4,8481541,Samuel Bolduc,Defenseman,New York Islanders,,,
+10,8481601,Simon Holmstrom,Right Wing,New York Islanders,8481601,81.0,0.0
+56,8482207,William Dufour,Right Wing,New York Islanders,8482207,88.0,-17.0
+27,8482691,Aatu Raty,Center,New York Islanders,,,
+40,8473575,Semyon Varlamov,Goalie,New York Islanders,,,
+30,8478009,Ilya Sorokin,Goalie,New York Islanders,,,
+75,8471817,Ryan Reaves,Right Wing,New York Rangers,,,
+88,8474141,Patrick Kane,Right Wing,New York Rangers,,,
+20,8475184,Chris Kreider,Left Wing,New York Rangers,8475184,-84.0,8.0
+91,8475765,Vladimir Tarasenko,Right Wing,New York Rangers,8475765,66.0,12.0
+16,8476389,Vincent Trocheck,Center,New York Rangers,,,
+93,8476459,Mika Zibanejad,Center,New York Rangers,,,
+21,8476624,Barclay Goodrow,Center,New York Rangers,8476624,-85.0,6.0
+8,8476885,Jacob Trouba,Defenseman,New York Rangers,,,
+26,8476918,Jimmy Vesey,Left Wing,New York Rangers,,,
+64,8477353,Tyler Motte,Center,New York Rangers,8477353,83.0,0.0
+22,8477380,Jonny Brodzinski,Center,New York Rangers,,,
+5,8477433,Ben Harpur,Defenseman,New York Rangers,,,
+22,8477846,Ryan Carpenter,Center,New York Rangers,,,
+79,8478104,Sammy Blais,Left Wing,New York Rangers,,,
+20,8478211,Dryden Hunt,Left Wing,New York Rangers,8478211,-87.0,-21.0
+20,8478211,Dryden Hunt,Left Wing,New York Rangers,8478211,87.0,-8.0
+10,8478550,Artemi Panarin,Left Wing,New York Rangers,,,
+77,8478859,Niko Mikkola,Defenseman,New York Rangers,8478859,-53.0,30.0
+23,8479323,Adam Fox,Defenseman,New York Rangers,,,
+55,8479324,Ryan Lindgren,Defenseman,New York Rangers,,,
+16,8479328,Julien Gauthier,Right Wing,New York Rangers,8479328,-61.0,-20.0
+25,8479333,Libor Hajek,Defenseman,New York Rangers,,,
+15,8479991,Jake Leschyshyn,Center,New York Rangers,,,
+72,8480078,Filip Chytil,Center,New York Rangers,,,
+79,8480817,K'Andre Miller,Defenseman,New York Rangers,,,
+91,8480833,Vitali Kravtsov,Right Wing,New York Rangers,,,
+24,8481554,Kaapo Kakko,Right Wing,New York Rangers,8481554,-83.0,11.0
+6,8481708,Zac Jones,Defenseman,New York Rangers,,,
+4,8482073,Braden Schneider,Defenseman,New York Rangers,,,
+13,8482109,Alexis Lafrenière,Left Wing,New York Rangers,,,
+50,8482157,Will Cuylle,Left Wing,New York Rangers,8482157,-82.0,-4.0
+41,8470860,Jaroslav Halak,Goalie,New York Rangers,,,
+31,8478048,Igor Shesterkin,Goalie,New York Rangers,,,
+61,8474027,Justin Braun,Defenseman,Philadelphia Flyers,,,
+21,8474037,James van Riemsdyk,Left Wing,Philadelphia Flyers,,,
+44,8475235,Nicolas Deslauriers,Left Wing,Philadelphia Flyers,,,
+12,8475763,Kevin Hayes,Right Wing,Philadelphia Flyers,,,
+23,8476310,Lukas Sedlak,Center,Philadelphia Flyers,,,
+24,8476372,Nick Seeler,Defenseman,Philadelphia Flyers,,,
+21,8476872,Scott Laughton,Center,Philadelphia Flyers,,,
+55,8477499,Rasmus Ristolainen,Defenseman,Philadelphia Flyers,,,
+38,8477887,Patrick Brown,Center,Philadelphia Flyers,,,
+6,8477948,Travis Sanheim,Defenseman,Philadelphia Flyers,,,
+77,8477950,Tony DeAngelo,Defenseman,Philadelphia Flyers,8477950,39.0,-19.0
+28,8477962,Brendan Lemieux,Left Wing,Philadelphia Flyers,,,
+71,8478051,Max Willman,Center,Philadelphia Flyers,,,
+,8478173,Hayden Hodgson,Right Wing,Philadelphia Flyers,8478173,,
+11,8478439,Travis Konecny,Right Wing,Philadelphia Flyers,,,
+9,8478500,Ivan Provorov,Defenseman,Philadelphia Flyers,,,
+17,8479322,Wade Allison,Right Wing,Philadelphia Flyers,8479322,-83.0,3.0
+20,8479356,Kieffer Bellows,Left Wing,Philadelphia Flyers,8479356,-85.0,-1.0
+58,8479550,Tanner Laczynski,Center,Philadelphia Flyers,,,
+17,8479772,Zack MacEwen,Center,Philadelphia Flyers,,,
+74,8480015,Owen Tippett,Right Wing,Philadelphia Flyers,,,
+48,8480028,Morgan Frost,Center,Philadelphia Flyers,8480028,-75.0,-3.0
+27,8480220,Noah Cates,Left Wing,Philadelphia Flyers,,,
+62,8480245,Olle Lycksell,Right Wing,Philadelphia Flyers,,,
+86,8480797,Joel Farabee,Left Wing,Philadelphia Flyers,8480797,-69.0,-12.0
+50,8480874,Adam Ginning,Defenseman,Philadelphia Flyers,,,
+5,8481178,Egor Zamula,Defenseman,Philadelphia Flyers,,,
+23,8481521,Ronnie Attard,Defenseman,Philadelphia Flyers,,,
+8,8481546,Cam York,Defenseman,Philadelphia Flyers,,,
+71,8482159,Tyson Foerster,Right Wing,Philadelphia Flyers,,,
+73,8482452,Elliot Desnoyers,Left Wing,Philadelphia Flyers,,,
+71,8482654,Jackson Cates,Center,Philadelphia Flyers,,,
+32,8478433,Felix Sandstrom,Goalie,Philadelphia Flyers,,,
+79,8479394,Carter Hart,Goalie,Philadelphia Flyers,,,
+33,8481035,Samuel Ersson,Goalie,Philadelphia Flyers,,,
+77,8470604,Jeff Carter,Center,Pittsburgh Penguins,,,
+71,8471215,Evgeni Malkin,Center,Pittsburgh Penguins,,,
+87,8471675,Sidney Crosby,Center,Pittsburgh Penguins,,,
+58,8471724,Kris Letang,Defenseman,Pittsburgh Penguins,,,
+26,8473507,Jeff Petry,Defenseman,Pittsburgh Penguins,,,
+12,8474009,Nick Bonino,Center,Pittsburgh Penguins,,,
+7,8475179,Dmitry Kulikov,Defenseman,Pittsburgh Penguins,8475179,-91.0,6.0
+7,8475179,Dmitry Kulikov,Defenseman,Pittsburgh Penguins,8475179,92.0,-12.0
+8,8475208,Brian Dumoulin,Defenseman,Pittsburgh Penguins,,,
+16,8475722,Jason Zucker,Left Wing,Pittsburgh Penguins,,,
+64,8475798,Mikael Granlund,Center,Pittsburgh Penguins,,,
+17,8475810,Bryan Rust,Right Wing,Pittsburgh Penguins,,,
+4,8476166,Taylor Fedun,Defenseman,Pittsburgh Penguins,,,
+15,8476326,Josh Archibald,Right Wing,Pittsburgh Penguins,,,
+67,8476483,Rickard Rakell,Right Wing,Pittsburgh Penguins,8476483,-62.0,13.0
+53,8476927,Teddy Blueger,Center,Pittsburgh Penguins,,,
+26,8476934,Brock McGinn,Left Wing,Pittsburgh Penguins,8476934,59.0,19.0
+2,8477244,Chad Ruhwedel,Defenseman,Pittsburgh Penguins,,,
+59,8477404,Jake Guentzel,Left Wing,Pittsburgh Penguins,,,
+42,8477953,Kasperi Kapanen,Right Wing,Pittsburgh Penguins,,,
+28,8477969,Marcus Pettersson,Defenseman,Pittsburgh Penguins,,,
+52,8478017,Mark Friedman,Defenseman,Pittsburgh Penguins,,,
+43,8478046,Danton Heinen,Left Wing,Pittsburgh Penguins,8478046,-75.0,3.0
+11,8479423,Alex Nylander,Left Wing,Pittsburgh Penguins,8479423,84.0,1.0
+11,8479423,Alex Nylander,Left Wing,Pittsburgh Penguins,8479423,81.0,-4.0
+8,8479465,Drake Caggiula,Left Wing,Pittsburgh Penguins,,,
+73,8480058,Pierre-Olivier Joseph,Defenseman,Pittsburgh Penguins,8480058,35.0,-3.0
+25,8480068,Ryan Poehling,Center,Pittsburgh Penguins,8480068,-83.0,2.0
+25,8480068,Ryan Poehling,Center,Pittsburgh Penguins,8480068,-81.0,7.0
+84,8480172,Jan Rutta,Defenseman,Pittsburgh Penguins,,,
+44,8480836,Jonathan Gruden,Center,Pittsburgh Penguins,8480836,-89.0,-3.0
+36,8480842,Filip Hallander,Center,Pittsburgh Penguins,,,
+24,8480883,Ty Smith,Defenseman,Pittsburgh Penguins,,,
+22,8481591,Sam Poulin,Right Wing,Pittsburgh Penguins,8481591,-84.0,15.0
+22,8481591,Sam Poulin,Right Wing,Pittsburgh Penguins,8481591,-90.0,8.0
+10,8482055,Drew O'Connor,Left Wing,Pittsburgh Penguins,8482055,86.0,1.0
+10,8482055,Drew O'Connor,Left Wing,Pittsburgh Penguins,8482055,28.0,-32.0
+40,8474682,Dustin Tokarski,Goalie,Pittsburgh Penguins,,,
+35,8477465,Tristan Jarry,Goalie,Pittsburgh Penguins,,,
+1,8479193,Casey DeSmith,Goalie,Pittsburgh Penguins,,,
+37,8470638,Patrice Bergeron,Center,Boston Bruins,,,
+46,8471276,David Krejci,Center,Boston Bruins,,,
+86,8471873,Anton Stralman,Defenseman,Boston Bruins,,,
+63,8473419,Brad Marchand,Left Wing,Boston Bruins,,,
+17,8473422,Nick Foligno,Left Wing,Boston Bruins,,,
+7,8475200,Dmitry Orlov,Defenseman,Boston Bruins,,,
+15,8475225,Craig Smith,Center,Boston Bruins,,,
+13,8475745,Charlie Coyle,Center,Boston Bruins,,,
+28,8475762,Derek Forbort,Defenseman,Boston Bruins,,,
+14,8475780,Chris Wagner,Right Wing,Boston Bruins,,,
+71,8475791,Taylor Hall,Left Wing,Boston Bruins,,,
+6,8476422,Mike Reilly,Defenseman,Boston Bruins,,,
+27,8476854,Hampus Lindholm,Defenseman,Boston Bruins,,,
+48,8476891,Matt Grzelcyk,Defenseman,Boston Bruins,,,
+58,8476941,Connor Carrick,Defenseman,Boston Bruins,,,
+75,8477365,Connor Clifton,Defenseman,Boston Bruins,,,
+59,8477479,Tyler Bertuzzi,Left Wing,Boston Bruins,,,
+19,8477903,Garnet Hathaway,Right Wing,Boston Bruins,,,
+92,8477931,Tomas Nosek,Left Wing,Boston Bruins,,,
+88,8477956,David Pastrnak,Right Wing,Boston Bruins,8477956,67.0,21.0
+88,8477956,David Pastrnak,Right Wing,Boston Bruins,8477956,-75.0,3.0
+18,8478401,Pavel Zacha,Center,Boston Bruins,,,
+67,8478415,Jakub Zboril,Defenseman,Boston Bruins,,,
+10,8478421,A.J. Greer,Left Wing,Boston Bruins,,,
+25,8478443,Brandon Carlo,Defenseman,Boston Bruins,,,
+74,8478498,Jake DeBrusk,Left Wing,Boston Bruins,8478498,-69.0,17.0
+44,8479252,Dan Renouf,Defenseman,Boston Bruins,,,
+73,8479325,Charlie McAvoy,Defenseman,Boston Bruins,,,
+11,8479365,Trent Frederic,Center,Boston Bruins,,,
+15,8479533,Joona Koppanen,Left Wing,Boston Bruins,,,
+62,8479546,Oskar Steen,Center,Boston Bruins,8479546,-77.0,-1.0
+95,8479968,Vinni Lettieri,Center,Boston Bruins,8479968,70.0,7.0
+23,8480021,Jack Studnicka,Center,Boston Bruins,,,
+94,8480880,Jakub Lauko,Center,Boston Bruins,,,
+26,8483397,Marc McLaughlin,Center,Boston Bruins,,,
+30,8476234,Keith Kinkaid,Goalie,Boston Bruins,,,
+35,8476999,Linus Ullmark,Goalie,Boston Bruins,,,
+1,8480280,Jeremy Swayman,Goalie,Boston Bruins,,,
+21,8473449,Kyle Okposo,Right Wing,Buffalo Sabres,,,
+8,8475772,Riley Sheahan,Center,Buffalo Sabres,,,
+53,8475784,Jeff Skinner,Left Wing,Buffalo Sabres,8475784,57.0,-20.0
+53,8475784,Jeff Skinner,Left Wing,Buffalo Sabres,8475784,-79.0,4.0
+53,8475784,Jeff Skinner,Left Wing,Buffalo Sabres,8475784,68.0,-11.0
+28,8476878,Zemgus Girgensons,Left Wing,Buffalo Sabres,,,
+13,8476994,Vinnie Hinostroza,Center,Buffalo Sabres,,,
+89,8477949,Alex Tuch,Right Wing,Buffalo Sabres,,,
+24,8478075,Anders Bjork,Left Wing,Buffalo Sabres,,,
+71,8478109,Victor Olofsson,Left Wing,Buffalo Sabres,,,
+12,8478413,Jordan Greenway,Left Wing,Buffalo Sabres,,,
+71,8479335,Rasmus Asplund,Center,Buffalo Sabres,,,
+38,8479348,Kale Clague,Defenseman,Buffalo Sabres,,,
+17,8479370,Tyson Jost,Center,Buffalo Sabres,,,
+61,8479388,Riley Stillman,Defenseman,Buffalo Sabres,8479388,-35.0,-29.0
+72,8479420,Tage Thompson,Center,Buffalo Sabres,8479420,78.0,6.0
+4,8479578,Casey Fitzgerald,Defenseman,Buffalo Sabres,,,
+4,8479602,Jeremy Davies,Defenseman,Buffalo Sabres,8479602,,
+37,8479999,Casey Mittelstadt,Center,Buffalo Sabres,,,
+10,8480035,Henri Jokiharju,Defenseman,Buffalo Sabres,8480035,,
+10,8480035,Henri Jokiharju,Defenseman,Buffalo Sabres,8480035,69.0,-19.0
+78,8480196,Jacob Bryson,Defenseman,Buffalo Sabres,,,
+23,8480807,Mattias Samuelsson,Defenseman,Buffalo Sabres,,,
+26,8480839,Rasmus Dahlin,Defenseman,Buffalo Sabres,,,
+20,8480935,Lawrence Pilut,Defenseman,Buffalo Sabres,,,
+46,8480950,Ilya Lyubushkin,Defenseman,Buffalo Sabres,,,
+19,8481522,Peyton Krebs,Center,Buffalo Sabres,8481522,79.0,-3.0
+24,8481528,Dylan Cozens,Center,Buffalo Sabres,,,
+13,8481751,Lukas Rousek,Right Wing,Buffalo Sabres,,,
+22,8482097,Jack Quinn,Right Wing,Buffalo Sabres,,,
+77,8482175,JJ Peterka,Right Wing,Buffalo Sabres,8482175,-90.0,-5.0
+77,8482175,JJ Peterka,Right Wing,Buffalo Sabres,8482175,80.0,5.0
+25,8482671,Owen Power,Defenseman,Buffalo Sabres,,,
+41,8467950,Craig Anderson,Goalie,Buffalo Sabres,,,
+31,8477480,Eric Comrie,Goalie,Buffalo Sabres,,,
+1,8480045,Ukko-Pekka Luukkonen,Goalie,Buffalo Sabres,,,
+27,8482221,Devon Levi,Goalie,Buffalo Sabres,,,
+63,8474149,Evgenii Dadonov,Right Wing,Montréal Canadiens,8474149,81.0,7.0
+63,8474149,Evgenii Dadonov,Right Wing,Montréal Canadiens,8474149,-82.0,6.0
+68,8474884,Mike Hoffman,Left Wing,Montréal Canadiens,,,
+6,8475227,Chris Wideman,Defenseman,Montréal Canadiens,,,
+58,8475233,David Savard,Defenseman,Montréal Canadiens,,,
+11,8475848,Brendan Gallagher,Right Wing,Montréal Canadiens,,,
+60,8475968,Alex Belzile,Right Wing,Montréal Canadiens,,,
+6,8476441,Joel Edmundson,Defenseman,Montréal Canadiens,,,
+40,8476469,Joel Armia,Right Wing,Montréal Canadiens,,,
+8,8476875,Mike Matheson,Defenseman,Montréal Canadiens,,,
+67,8476919,Chris Tierney,Center,Montréal Canadiens,,,
+17,8476981,Josh Anderson,Right Wing,Montréal Canadiens,8476981,88.0,1.0
+17,8476981,Josh Anderson,Right Wing,Montréal Canadiens,8476981,-65.0,19.0
+27,8477494,Jonathan Drouin,Left Wing,Montréal Canadiens,,,
+91,8477497,Sean Monahan,Center,Montréal Canadiens,8477497,-77.0,0.0
+28,8477989,Christian Dvorak,Center,Montréal Canadiens,,,
+71,8478133,Jake Evans,Center,Montréal Canadiens,,,
+90,8478409,Anthony Richard,Center,Montréal Canadiens,,,
+15,8478495,Denis Gurianov,Right Wing,Montréal Canadiens,,,
+82,8479329,Frederic Allard,Defenseman,Montréal Canadiens,,,
+16,8479514,Rem Pitlick,Center,Montréal Canadiens,,,
+55,8479543,Michael Pezzetta,Left Wing,Montréal Canadiens,,,
+14,8480018,Nick Suzuki,Center,Montréal Canadiens,,,
+38,8480034,Joel Teasdale,Left Wing,Montréal Canadiens,,,
+26,8480192,Johnathan Kovacevic,Defenseman,Montréal Canadiens,,,
+54,8480887,Jordan Harris,Defenseman,Montréal Canadiens,,,
+56,8481058,Jesse Ylönen,Right Wing,Montréal Canadiens,,,
+49,8481093,Rafael Harvey-Pinard,Left Wing,Montréal Canadiens,,,
+64,8481461,Corey Schueneman,Defenseman,Montréal Canadiens,,,
+77,8481523,Kirby Dach,Center,Montréal Canadiens,,,
+22,8481540,Cole Caufield,Right Wing,Montréal Canadiens,8481540,-69.0,-19.0
+57,8482081,Sean Farrell,Center,Montréal Canadiens,,,
+21,8482087,Kaiden Guhle,Defenseman,Montréal Canadiens,8482087,-67.0,6.0
+52,8482111,Justin Barron,Defenseman,Montréal Canadiens,,,
+72,8482964,Arber Xhekaj,Defenseman,Montréal Canadiens,,,
+62,8483424,Owen Beck,Center,Montréal Canadiens,,,
+20,8483515,Juraj Slafkovsky,Left Wing,Montréal Canadiens,8483515,-76.0,2.0
+82,8483549,Lucas Condotta,Left Wing,Montréal Canadiens,,,
+34,8474596,Jake Allen,Goalie,Montréal Canadiens,,,
+35,8478470,Sam Montembeault,Goalie,Montréal Canadiens,,,
+30,8480051,Cayden Primeau,Goalie,Montréal Canadiens,,,
+28,8473512,Claude Giroux,Right Wing,Ottawa Senators,8473512,-82.0,0.0
+61,8473544,Derick Brassard,Center,Ottawa Senators,,,
+5,8474207,Nick Holden,Defenseman,Ottawa Senators,,,
+23,8474612,Travis Hamonic,Defenseman,Ottawa Senators,,,
+16,8475766,Austin Watson,Left Wing,Ottawa Senators,8475766,-83.0,7.0
+64,8477353,Tyler Motte,Center,Ottawa Senators,8477353,83.0,0.0
+29,8477471,Dillon Heatherington,Defenseman,Ottawa Senators,,,
+38,8477887,Patrick Brown,Center,Ottawa Senators,,,
+49,8478078,Rourke Chartier,Center,Ottawa Senators,,,
+72,8478469,Thomas Chabot,Defenseman,Ottawa Senators,,,
+21,8478472,Mathieu Joseph,Right Wing,Ottawa Senators,8478472,-64.0,-23.0
+21,8478472,Mathieu Joseph,Right Wing,Ottawa Senators,8478472,-68.0,-14.0
+32,8478491,Jacob Larsson,Defenseman,Ottawa Senators,,,
+16,8479328,Julien Gauthier,Right Wing,Ottawa Senators,8479328,-61.0,-20.0
+93,8479337,Alex DeBrincat,Right Wing,Ottawa Senators,,,
+6,8479345,Jakob Chychrun,Defenseman,Ottawa Senators,8479345,62.0,-26.0
+6,8479345,Jakob Chychrun,Defenseman,Ottawa Senators,8479345,-83.0,-5.0
+22,8479458,Nikita Zaitsev,Defenseman,Ottawa Senators,,,
+57,8479580,Dylan Gambrell,Center,Ottawa Senators,,,
+9,8480064,Josh Norris,Center,Ottawa Senators,,,
+26,8480073,Erik Brannstrom,Defenseman,Ottawa Senators,,,
+19,8480208,Drake Batherson,Right Wing,Ottawa Senators,8480208,,
+12,8480355,Mark Kastelic,Center,Ottawa Senators,,,
+27,8480448,Parker Kelly,Left Wing,Ottawa Senators,8480448,,
+7,8480801,Brady Tkachuk,Left Wing,Ottawa Senators,8480801,88.0,-2.0
+24,8480879,Jacob Bernard-Docker,Defenseman,Ottawa Senators,,,
+75,8481102,Egor Sokolov,Left Wing,Ottawa Senators,,,
+36,8481422,Jacob Lucchini,Center,Ottawa Senators,,,
+60,8481575,Lassi Thomson,Defenseman,Ottawa Senators,,,
+57,8481596,Shane Pinto,Center,Ottawa Senators,,,
+50,8481679,Maxence Guenette,Defenseman,Ottawa Senators,,,
+71,8482092,Ridly Greig,Center,Ottawa Senators,,,
+43,8482095,Tyler Kleven,Defenseman,Ottawa Senators,,,
+85,8482105,Jake Sanderson,Defenseman,Ottawa Senators,,,
+18,8482116,Tim Stützle,Left Wing,Ottawa Senators,8482116,49.0,19.0
+18,8482116,Tim Stützle,Left Wing,Ottawa Senators,8482116,-57.0,-16.0
+2,8482245,Artem Zub,Defenseman,Ottawa Senators,,,
+33,8475660,Cam Talbot,Goalie,Ottawa Senators,,,
+31,8476341,Anton Forsberg,Goalie,Ottawa Senators,,,
+45,8476433,Magnus Hellberg,Goalie,Ottawa Senators,,,
+34,8480263,Dylan Ferguson,Goalie,Ottawa Senators,,,
+30,8480867,Kevin Mandolese,Goalie,Ottawa Senators,,,
+40,8481544,Mads Sogaard,Goalie,Ottawa Senators,,,
+35,8482447,Leevi Merilainen,Goalie,Ottawa Senators,,,
+55,8470966,Mark Giordano,Defenseman,Toronto Maple Leafs,,,
+8,8474162,Jake Muzzin,Defenseman,Toronto Maple Leafs,,,
+24,8474190,Wayne Simmonds,Right Wing,Toronto Maple Leafs,,,
+2,8474568,Luke Schenn,Defenseman,Toronto Maple Leafs,,,
+78,8474673,TJ Brodie,Defenseman,Toronto Maple Leafs,,,
+18,8474818,Jordie Benn,Defenseman,Toronto Maple Leafs,,,
+90,8475158,Ryan O'Reilly,Center,Toronto Maple Leafs,,,
+43,8475160,Kyle Clifford,Left Wing,Toronto Maple Leafs,8475160,,
+91,8475166,John Tavares,Center,Toronto Maple Leafs,,,
+19,8475714,Calle Jarnkrok,Center,Toronto Maple Leafs,,,
+3,8475718,Justin Holl,Defenseman,Toronto Maple Leafs,,,
+44,8476853,Morgan Rielly,Defenseman,Toronto Maple Leafs,,,
+22,8476931,Jake McCabe,Defenseman,Toronto Maple Leafs,,,
+56,8476979,Erik Gustafsson,Defenseman,Toronto Maple Leafs,8476979,71.0,18.0
+15,8477021,Alex Kerfoot,Center,Toronto Maple Leafs,,,
+88,8477939,William Nylander,Right Wing,Toronto Maple Leafs,,,
+96,8477979,Nicolas Aube-Kubel,Right Wing,Toronto Maple Leafs,8477979,-69.0,7.0
+28,8478043,Sam Lafferty,Center,Toronto Maple Leafs,8478043,,
+58,8478047,Michael Bunting,Left Wing,Toronto Maple Leafs,8478047,-1.0,-40.0
+58,8478047,Michael Bunting,Left Wing,Toronto Maple Leafs,8478047,80.0,0.0
+18,8478115,Pierre Engvall,Left Wing,Toronto Maple Leafs,,,
+20,8478211,Dryden Hunt,Left Wing,Toronto Maple Leafs,8478211,-87.0,-21.0
+20,8478211,Dryden Hunt,Left Wing,Toronto Maple Leafs,8478211,87.0,-8.0
+16,8478483,Mitchell Marner,Right Wing,Toronto Maple Leafs,8478483,-87.0,-2.0
+55,8478569,Noel Acciari,Center,Toronto Maple Leafs,,,
+81,8478843,Denis Malgin,Center,Toronto Maple Leafs,,,
+15,8479315,Joey Anderson,Right Wing,Toronto Maple Leafs,,,
+34,8479318,Auston Matthews,Center,Toronto Maple Leafs,,,
+98,8479376,Victor Mete,Defenseman,Toronto Maple Leafs,,,
+12,8479944,Zach Aston-Reese,Center,Toronto Maple Leafs,,,
+25,8479982,Conor Timmins,Defenseman,Toronto Maple Leafs,8479982,,
+25,8479982,Conor Timmins,Defenseman,Toronto Maple Leafs,8479982,,
+37,8480043,Timothy Liljegren,Defenseman,Toronto Maple Leafs,,,
+64,8480144,David Kampf,Center,Toronto Maple Leafs,,,
+81,8480439,Mac Hollowell,Defenseman,Toronto Maple Leafs,,,
+82,8480820,Filip Kral,Defenseman,Toronto Maple Leafs,,,
+38,8480873,Rasmus Sandin,Defenseman,Toronto Maple Leafs,8480873,-36.0,30.0
+85,8480977,Semyon Der-Arguchintsev,Center,Toronto Maple Leafs,,,
+29,8480995,Pontus Holmberg,Right Wing,Toronto Maple Leafs,,,
+89,8481582,Nicholas Robertson,Left Wing,Toronto Maple Leafs,8481582,-81.0,4.0
+26,8481720,Nick Abruzzese,Center,Toronto Maple Leafs,,,
+63,8482241,Radim Zohorna,Left Wing,Toronto Maple Leafs,8482241,78.0,14.0
+74,8482259,Bobby McMann,Center,Toronto Maple Leafs,,,
+46,8482634,Alex Steeves,Center,Toronto Maple Leafs,8482634,63.0,12.0
+23,8482720,Matthew Knies,Left Wing,Toronto Maple Leafs,8482720,-55.0,-2.0
+23,8482720,Matthew Knies,Left Wing,Toronto Maple Leafs,8482720,89.0,-3.0
+30,8476899,Matt Murray,Goalie,Toronto Maple Leafs,,,
+35,8478492,Ilya Samsonov,Goalie,Toronto Maple Leafs,,,
+50,8478902,Erik Kallgren,Goalie,Toronto Maple Leafs,,,
+60,8479361,Joseph Woll,Goalie,Toronto Maple Leafs,,,
+,8483183,Jett Alexander,Goalie,Toronto Maple Leafs,,,
+8,8470613,Brent Burns,Defenseman,Carolina Hurricanes,,,
+26,8471669,Paul Stastny,Center,Carolina Hurricanes,,,
+11,8473533,Jordan Staal,Center,Carolina Hurricanes,,,
+67,8474157,Max Pacioretty,Left Wing,Carolina Hurricanes,,,
+21,8474613,Derek Stepan,Center,Carolina Hurricanes,,,
+44,8475177,Calvin de Haan,Defenseman,Carolina Hurricanes,,,
+71,8475855,Jesper Fast,Right Wing,Carolina Hurricanes,,,
+23,8476474,Stefan Noesen,Right Wing,Carolina Hurricanes,8476474,-86.0,2.0
+76,8476869,Brady Skjei,Defenseman,Carolina Hurricanes,8476869,-72.0,6.0
+86,8476882,Teuvo Teravainen,Left Wing,Carolina Hurricanes,,,
+41,8476906,Shayne Gostisbehere,Defenseman,Carolina Hurricanes,,,
+48,8476921,Jordan Martinook,Left Wing,Carolina Hurricanes,,,
+74,8476958,Jaccob Slavin,Defenseman,Carolina Hurricanes,,,
+22,8477488,Brett Pesce,Defenseman,Carolina Hurricanes,,,
+73,8478131,Ondrej Kase,Right Wing,Carolina Hurricanes,,,
+20,8478427,Sebastian Aho,Center,Carolina Hurricanes,,,
+5,8478970,Jalen Chatfield,Defenseman,Carolina Hurricanes,,,
+48,8479320,Max Lajoie,Defenseman,Carolina Hurricanes,,,
+13,8479344,Jesse Puljujarvi,Right Wing,Carolina Hurricanes,,,
+15,8479639,Dylan Coghlan,Defenseman,Carolina Hurricanes,,,
+88,8480039,Martin Necas,Center,Carolina Hurricanes,,,
+82,8480829,Jesperi Kotkaniemi,Center,Carolina Hurricanes,,,
+37,8480830,Andrei Svechnikov,Right Wing,Carolina Hurricanes,,,
+18,8480835,Jack Drury,Center,Carolina Hurricanes,,,
+24,8482093,Seth Jarvis,Center,Carolina Hurricanes,,,
+28,8476907,Mackenzie MacEachern,Left Wing,Carolina Hurricanes,,,
+31,8475883,Frederik Andersen,Goalie,Carolina Hurricanes,,,
+32,8477293,Antti Raanta,Goalie,Carolina Hurricanes,,,
+52,8481611,Pyotr Kochetkov,Goalie,Carolina Hurricanes,,,
+12,8470595,Eric Staal,Center,Florida Panthers,,,
+18,8471686,Marc Staal,Defenseman,Florida Panthers,,,
+70,8471887,Patric Hornqvist,Right Wing,Florida Panthers,,,
+22,8474610,Zac Dalpe,Center,Florida Panthers,,,
+7,8475462,Radko Gudas,Defenseman,Florida Panthers,,,
+21,8476393,Nick Cousins,Center,Florida Panthers,,,
+67,8476919,Chris Tierney,Center,Florida Panthers,,,
+10,8477407,Anthony Duclair,Left Wing,Florida Panthers,,,
+23,8477409,Carter Verhaeghe,Center,Florida Panthers,,,
+16,8477493,Aleksander Barkov,Center,Florida Panthers,,,
+5,8477932,Aaron Ekblad,Defenseman,Florida Panthers,,,
+13,8477933,Sam Reinhart,Center,Florida Panthers,,,
+9,8477935,Sam Bennett,Center,Florida Panthers,8477935,-82.0,-5.0
+62,8477986,Brandon Montour,Defenseman,Florida Panthers,,,
+42,8478055,Gustav Forsling,Defenseman,Florida Panthers,,,
+6,8478400,Colin White,Center,Florida Panthers,,,
+22,8478870,Rudolfs Balcers,Left Wing,Florida Panthers,,,
+94,8479066,Ryan Lomberg,Left Wing,Florida Panthers,,,
+19,8479314,Matthew Tkachuk,Left Wing,Florida Panthers,,,
+28,8479372,Josh Mahura,Defenseman,Florida Panthers,,,
+54,8479379,Givani Smith,Right Wing,Florida Panthers,,,
+32,8479523,Lucas Carlsson,Defenseman,Florida Panthers,8479523,-23.0,-35.0
+4,8479578,Casey Fitzgerald,Defenseman,Florida Panthers,,,
+20,8480037,Aleksi Heponiemi,Center,Florida Panthers,,,
+27,8480185,Eetu Luostarinen,Center,Florida Panthers,8480185,-70.0,4.0
+27,8480185,Eetu Luostarinen,Center,Florida Panthers,8480185,73.0,-1.0
+14,8480844,Grigori Denisenko,Left Wing,Florida Panthers,,,
+15,8482113,Anton Lundell,Center,Florida Panthers,8482113,,
+15,8482113,Anton Lundell,Center,Florida Panthers,8482113,,
+3,8482641,Matt Kiersted,Defenseman,Florida Panthers,,,
+76,8483641,Anton Levtchi,Left Wing,Florida Panthers,,,
+72,8475683,Sergei Bobrovsky,Goalie,Florida Panthers,,,
+34,8479312,Alex Lyon,Goalie,Florida Panthers,,,
+30,8481519,Spencer Knight,Goalie,Florida Panthers,,,
+94,8470621,Corey Perry,Right Wing,Tampa Bay Lightning,,,
+17,8473986,Alex Killorn,Center,Tampa Bay Lightning,,,
+82,8474013,Ian Cole,Defenseman,Tampa Bay Lightning,,,
+20,8474034,Pat Maroon,Left Wing,Tampa Bay Lightning,,,
+91,8474564,Steven Stamkos,Center,Tampa Bay Lightning,,,
+24,8474567,Zach Bogosian,Defenseman,Tampa Bay Lightning,,,
+77,8475167,Victor Hedman,Defenseman,Tampa Bay Lightning,,,
+86,8476453,Nikita Kucherov,Right Wing,Tampa Bay Lightning,8476453,77.0,-21.0
+7,8476480,Vladislav Namestnikov,Center,Tampa Bay Lightning,,,
+20,8477426,Nicholas Paul,Left Wing,Tampa Bay Lightning,,,
+41,8477930,Pierre-Edouard Bellemare,Left Wing,Tampa Bay Lightning,,,
+7,8477938,Haydn Fleury,Defenseman,Tampa Bay Lightning,,,
+21,8478010,Brayden Point,Center,Tampa Bay Lightning,,,
+43,8478178,Darren Raddysh,Defenseman,Tampa Bay Lightning,,,
+81,8478416,Erik Cernak,Defenseman,Tampa Bay Lightning,,,
+71,8478519,Anthony Cirelli,Center,Tampa Bay Lightning,8478519,80.0,3.0
+71,8478519,Anthony Cirelli,Center,Tampa Bay Lightning,8478519,68.0,-30.0
+22,8478870,Rudolfs Balcers,Left Wing,Tampa Bay Lightning,,,
+5,8479026,Philippe Myers,Defenseman,Tampa Bay Lightning,,,
+98,8479410,Mikhail Sergachev,Defenseman,Tampa Bay Lightning,,,
+20,8479525,Ross Colton,Center,Tampa Bay Lightning,,,
+38,8479542,Brandon Hagel,Left Wing,Tampa Bay Lightning,8479542,-81.0,0.0
+23,8479591,Michael Eyssimont,Center,Tampa Bay Lightning,,,
+84,8479661,Tanner Jeannot,Left Wing,Tampa Bay Lightning,,,
+12,8479718,Alex Barré-Boulet,Center,Tampa Bay Lightning,8479718,53.0,-5.0
+52,8479984,Cal Foote,Defenseman,Tampa Bay Lightning,,,
+48,8480246,Nick Perbix,Defenseman,Tampa Bay Lightning,,,
+82,8480863,Gabriel Fortier,Left Wing,Tampa Bay Lightning,,,
+45,8481043,Cole Koepke,Left Wing,Tampa Bay Lightning,,,
+1,8470880,Brian Elliott,Goalie,Tampa Bay Lightning,,,
+88,8476883,Andrei Vasilevskiy,Goalie,Tampa Bay Lightning,,,
+8,8471214,Alex Ovechkin,Left Wing,Washington Capitals,,,
+77,8471698,T.J. Oshie,Right Wing,Washington Capitals,,,
+19,8473563,Nicklas Backstrom,Center,Washington Capitals,8473563,77.0,6.0
+20,8474189,Lars Eller,Center,Washington Capitals,,,
+74,8474590,John Carlson,Defenseman,Washington Capitals,8474590,-79.0,4.0
+90,8475149,Marcus Johansson,Left Wing,Washington Capitals,,,
+7,8475200,Dmitry Orlov,Defenseman,Washington Capitals,,,
+15,8475225,Craig Smith,Center,Washington Capitals,,,
+3,8475324,Nick Jensen,Defenseman,Washington Capitals,,,
+26,8475343,Nic Dowd,Center,Washington Capitals,,,
+52,8475625,Matt Irwin,Defenseman,Washington Capitals,,,
+92,8475744,Evgeny Kuznetsov,Center,Washington Capitals,,,
+25,8475795,Dylan McIlrath,Defenseman,Washington Capitals,,,
+43,8476880,Tom Wilson,Right Wing,Washington Capitals,8476880,56.0,-17.0
+56,8476979,Erik Gustafsson,Defenseman,Washington Capitals,8476979,71.0,18.0
+28,8477015,Connor Brown,Right Wing,Washington Capitals,,,
+39,8477511,Anthony Mantha,Right Wing,Washington Capitals,,,
+73,8477839,Conor Sheary,Left Wing,Washington Capitals,8477839,75.0,-3.0
+57,8477845,Trevor van Riemsdyk,Defenseman,Washington Capitals,,,
+19,8477903,Garnet Hathaway,Right Wing,Washington Capitals,,,
+15,8477947,Sonny Milano,Left Wing,Washington Capitals,8477947,-58.0,-10.0
+15,8477947,Sonny Milano,Left Wing,Washington Capitals,8477947,-80.0,4.0
+96,8477979,Nicolas Aube-Kubel,Right Wing,Washington Capitals,8477979,-69.0,7.0
+17,8478440,Dylan Strome,Center,Washington Capitals,8478440,-47.0,0.0
+18,8478506,Gabriel Carlsson,Defenseman,Washington Capitals,,,
+46,8479321,Lucas Johansen,Defenseman,Washington Capitals,,,
+47,8479359,Beck Malenstyn,Left Wing,Washington Capitals,,,
+13,8479404,Henrik Borgstrom,Center,Washington Capitals,,,
+42,8480796,Martin Fehervary,Defenseman,Washington Capitals,,,
+27,8480823,Alexander Alexeyev,Defenseman,Washington Capitals,,,
+38,8480873,Rasmus Sandin,Defenseman,Washington Capitals,8480873,-36.0,30.0
+91,8481441,Joe Snively,Center,Washington Capitals,,,
+24,8481580,Connor McMichael,Center,Washington Capitals,,,
+21,8481656,Aliaksei Protas,Center,Washington Capitals,,,
+38,8482861,Vincent Iorio,Defenseman,Washington Capitals,,,
+35,8475311,Darcy Kuemper,Goalie,Washington Capitals,,,
+79,8479292,Charlie Lindgren,Goalie,Washington Capitals,,,
+3,8471677,Jack Johnson,Defenseman,Chicago Blackhawks,,,
+19,8473604,Jonathan Toews,Center,Chicago Blackhawks,,,
+88,8474141,Patrick Kane,Right Wing,Chicago Blackhawks,,,
+90,8474870,Tyler Johnson,Center,Chicago Blackhawks,8474870,84.0,1.0
+25,8475797,Jarred Tinordi,Defenseman,Chicago Blackhawks,,,
+43,8476278,Colin Blackwell,Center,Chicago Blackhawks,,,
+5,8476473,Connor Murphy,Defenseman,Chicago Blackhawks,,,
+16,8476915,Jujhar Khaira,Left Wing,Chicago Blackhawks,8476915,82.0,-5.0
+16,8476915,Jujhar Khaira,Left Wing,Chicago Blackhawks,8476915,84.0,0.0
+22,8476931,Jake McCabe,Defenseman,Chicago Blackhawks,,,
+89,8476960,Andreas Athanasiou,Center,Chicago Blackhawks,8476960,84.0,-3.0
+53,8477210,Buddy Robinson,Right Wing,Chicago Blackhawks,,,
+16,8477450,Jason Dickinson,Center,Chicago Blackhawks,,,
+4,8477495,Seth Jones,Defenseman,Chicago Blackhawks,,,
+11,8477503,Max Domi,Center,Chicago Blackhawks,8477503,,
+5,8477971,Andreas Englund,Defenseman,Chicago Blackhawks,,,
+28,8478043,Sam Lafferty,Center,Chicago Blackhawks,8478043,,
+24,8478075,Anders Bjork,Left Wing,Chicago Blackhawks,,,
+39,8478224,Luke Philp,Center,Chicago Blackhawks,,,
+6,8478452,Caleb Jones,Defenseman,Chicago Blackhawks,8478452,-41.0,-1.0
+26,8478455,Austin Wagner,Left Wing,Chicago Blackhawks,8478455,89.0,-4.0
+62,8478881,Brett Seney,Left Wing,Chicago Blackhawks,,,
+15,8479315,Joey Anderson,Right Wing,Chicago Blackhawks,,,
+14,8479383,Boris Katchouk,Left Wing,Chicago Blackhawks,,,
+11,8479390,Taylor Raddysh,Right Wing,Chicago Blackhawks,,,
+22,8479458,Nikita Zaitsev,Defenseman,Chicago Blackhawks,,,
+58,8480025,MacKenzie Entwistle,Right Wing,Chicago Blackhawks,8480025,65.0,25.0
+14,8480070,Ian Mitchell,Defenseman,Chicago Blackhawks,,,
+70,8480252,Cole Guttman,Center,Chicago Blackhawks,,,
+37,8480328,David Gust,Right Wing,Chicago Blackhawks,,,
+23,8480798,Philipp Kurashev,Center,Chicago Blackhawks,8480798,86.0,-7.0
+75,8480831,Alec Regula,Defenseman,Chicago Blackhawks,,,
+52,8481147,Reese Johnson,Center,Chicago Blackhawks,,,
+72,8481568,Alex Vlasic,Defenseman,Chicago Blackhawks,,,
+27,8482117,Lukas Reichel,Left Wing,Chicago Blackhawks,,,
+44,8482176,Wyatt Kaiser,Defenseman,Chicago Blackhawks,,,
+41,8482192,Isaak Phillips,Defenseman,Chicago Blackhawks,,,
+86,8482635,Mike Hardman,Left Wing,Chicago Blackhawks,,,
+48,8483619,Filip Roos,Defenseman,Chicago Blackhawks,,,
+31,8471418,Anton Khudobin,Goalie,Chicago Blackhawks,,,
+32,8471774,Alex Stalock,Goalie,Chicago Blackhawks,,,
+34,8475852,Petr Mrazek,Goalie,Chicago Blackhawks,,,
+,8479380,Dylan Wells,Goalie,Chicago Blackhawks,,,
+40,8482821,Arvid Soderblom,Goalie,Chicago Blackhawks,,,
+30,8483530,Jaxson Stauber,Goalie,Chicago Blackhawks,,,
+57,8474102,David Perron,Left Wing,Detroit Red Wings,,,
+48,8475163,Alex Chiasson,Right Wing,Detroit Red Wings,,,
+8,8475279,Ben Chiarot,Defenseman,Detroit Red Wings,,,
+2,8476874,Olli Maatta,Defenseman,Detroit Red Wings,,,
+70,8476897,Oskar Sundqvist,Center,Detroit Red Wings,8476897,-78.0,2.0
+70,8476897,Oskar Sundqvist,Center,Detroit Red Wings,8476897,77.0,2.0
+81,8477330,Dominik Kubalik,Left Wing,Detroit Red Wings,8477330,79.0,0.0
+81,8477330,Dominik Kubalik,Left Wing,Detroit Red Wings,8477330,-84.0,3.0
+18,8477429,Andrew Copp,Center,Detroit Red Wings,,,
+73,8477454,Adam Erne,Left Wing,Detroit Red Wings,8477454,79.0,-2.0
+18,8477462,Robert Hagg,Defenseman,Detroit Red Wings,8477462,,
+59,8477479,Tyler Bertuzzi,Left Wing,Detroit Red Wings,,,
+82,8477851,Jordan Oesterle,Defenseman,Detroit Red Wings,8477851,-38.0,-20.0
+15,8477944,Jakub Vrana,Left Wing,Detroit Red Wings,8477944,78.0,0.0
+71,8477946,Dylan Larkin,Center,Detroit Red Wings,8477946,87.0,-13.0
+71,8477946,Dylan Larkin,Center,Detroit Red Wings,8477946,85.0,-9.0
+71,8477946,Dylan Larkin,Center,Detroit Red Wings,8477946,-50.0,7.0
+14,8477952,Robby Fabbri,Center,Detroit Red Wings,8477952,73.0,-19.0
+14,8477952,Robby Fabbri,Center,Detroit Red Wings,8477952,68.0,-22.0
+96,8478013,Jake Walman,Defenseman,Detroit Red Wings,,,
+21,8478512,Austin Czarnik,Center,Detroit Red Wings,8478512,-79.0,-6.0
+54,8479379,Givani Smith,Right Wing,Detroit Red Wings,,,
+17,8479425,Filip Hronek,Defenseman,Detroit Red Wings,,,
+22,8479644,Matt Luff,Right Wing,Detroit Red Wings,,,
+27,8479992,Michael Rasmussen,Center,Detroit Red Wings,8479992,-66.0,5.0
+27,8479992,Michael Rasmussen,Center,Detroit Red Wings,8479992,-57.0,7.0
+27,8479992,Michael Rasmussen,Center,Detroit Red Wings,8479992,65.0,8.0
+27,8480184,Gustav Lindström,Defenseman,Detroit Red Wings,,,
+24,8480459,Pius Suter,Center,Detroit Red Wings,,,
+90,8480813,Joe Veleno,Center,Detroit Red Wings,,,
+,8480821,Filip Zadina,Right Wing,Detroit Red Wings,,,
+48,8481013,Jonatan Berggren,Right Wing,Detroit Red Wings,,,
+25,8481433,Taro Hirose,Left Wing,Detroit Red Wings,,,
+53,8481542,Moritz Seider,Defenseman,Detroit Red Wings,8481542,35.0,8.0
+53,8481542,Moritz Seider,Defenseman,Detroit Red Wings,8481542,-35.0,-7.0
+85,8481725,Elmer Soderblom,Left Wing,Detroit Red Wings,8481725,56.0,5.0
+23,8482078,Lucas Raymond,Left Wing,Detroit Red Wings,,,
+77,8482762,Simon Edvinsson,Defenseman,Detroit Red Wings,,,
+92,8483464,Marco Kasper,Center,Detroit Red Wings,,,
+45,8476433,Magnus Hellberg,Goalie,Detroit Red Wings,,,
+39,8477968,Alex Nedeljkovic,Goalie,Detroit Red Wings,,,
+35,8478024,Ville Husso,Goalie,Detroit Red Wings,,,
+27,8474151,Ryan McDonagh,Defenseman,Nashville Predators,,,
+59,8474600,Roman Josi,Defenseman,Nashville Predators,,,
+90,8474697,Mark Borowiecki,Defenseman,Nashville Predators,,,
+95,8475168,Matt Duchene,Center,Nashville Predators,,,
+22,8475197,Tyson Barrie,Defenseman,Nashville Predators,,,
+14,8475218,Mattias Ekholm,Defenseman,Nashville Predators,,,
+12,8475793,Ryan Johansen,Center,Nashville Predators,8475793,-63.0,13.0
+64,8475798,Mikael Granlund,Center,Nashville Predators,,,
+62,8475799,Nino Niederreiter,Right Wing,Nashville Predators,,,
+5,8475857,Kevin Gravel,Defenseman,Nashville Predators,,,
+17,8476873,Mark Jankowski,Center,Nashville Predators,,,
+9,8476887,Filip Forsberg,Left Wing,Nashville Predators,,,
+10,8476925,Colton Sissons,Center,Nashville Predators,,,
+47,8477446,Michael McCarron,Right Wing,Nashville Predators,,,
+12,8477482,Zach Sanford,Left Wing,Nashville Predators,8477482,-77.0,1.0
+12,8477482,Zach Sanford,Left Wing,Nashville Predators,8477482,,
+55,8477981,Roland McKeown,Defenseman,Nashville Predators,,,
+82,8478438,Tommy Novak,Center,Nashville Predators,8478438,63.0,14.0
+82,8478438,Tommy Novak,Center,Nashville Predators,8478438,81.0,10.0
+82,8478438,Tommy Novak,Center,Nashville Predators,8478438,-82.0,6.0
+3,8478468,Jeremy Lauzon,Defenseman,Nashville Predators,,,
+13,8478508,Yakov Trenin,Center,Nashville Predators,,,
+45,8478851,Alexandre Carrier,Defenseman,Nashville Predators,,,
+71,8479335,Rasmus Asplund,Center,Nashville Predators,,,
+57,8479371,Dante Fabbro,Defenseman,Nashville Predators,,,
+84,8479661,Tanner Jeannot,Left Wing,Nashville Predators,,,
+52,8479984,Cal Foote,Defenseman,Nashville Predators,,,
+8,8479996,Cody Glass,Center,Nashville Predators,,,
+20,8480009,Eeli Tolvanen,Right Wing,Nashville Predators,8480009,62.0,3.0
+20,8480009,Eeli Tolvanen,Right Wing,Nashville Predators,8480009,75.0,-17.0
+44,8480748,Kiefer Sherwood,Left Wing,Nashville Predators,,,
+46,8480913,Jordan Gross,Defenseman,Nashville Predators,,,
+24,8481056,Spencer Stastney,Defenseman,Nashville Predators,,,
+43,8481077,John Leonard,Left Wing,Nashville Predators,,,
+26,8481577,Philip Tomasino,Center,Nashville Predators,8481577,86.0,5.0
+70,8481585,Egor Afanasyev,Left Wing,Nashville Predators,,,
+75,8481704,Juuso Parssinen,Center,Nashville Predators,,,
+36,8482062,Cole Smith,Left Wing,Nashville Predators,,,
+77,8482146,Luke Evangelista,Right Wing,Nashville Predators,,,
+23,8484256,Jake Livingstone,Defenseman,Nashville Predators,8484256,-90.0,-4.0
+74,8477424,Juuse Saros,Goalie,Nashville Predators,,,
+32,8480947,Kevin Lankinen,Goalie,Nashville Predators,,,
+30,8482137,Yaroslav Askarov,Goalie,Nashville Predators,,,
+41,8474145,Robert Bortuzzo,Defenseman,St. Louis Blues,,,
+6,8474618,Marco Scandella,Defenseman,St. Louis Blues,,,
+90,8475158,Ryan O'Reilly,Center,St. Louis Blues,,,
+10,8475170,Brayden Schenn,Center,St. Louis Blues,8475170,,
+10,8475170,Brayden Schenn,Center,St. Louis Blues,8475170,,
+4,8475181,Nick Leddy,Defenseman,St. Louis Blues,,,
+71,8475752,Tyler Pitlick,Center,St. Louis Blues,8475752,-78.0,15.0
+72,8475753,Justin Faulk,Defenseman,St. Louis Blues,,,
+91,8475765,Vladimir Tarasenko,Right Wing,St. Louis Blues,8475765,66.0,12.0
+17,8476410,Josh Leivo,Left Wing,St. Louis Blues,,,
+20,8476438,Brandon Saad,Left Wing,St. Louis Blues,,,
+47,8476792,Torey Krug,Defenseman,St. Louis Blues,,,
+55,8476892,Colton Parayko,Defenseman,St. Louis Blues,,,
+89,8477402,Pavel Buchnevich,Left Wing,St. Louis Blues,8477402,65.0,1.0
+,8477463,Steven Santini,Defenseman,St. Louis Blues,,,
+26,8477573,Nathan Walker,Left Wing,St. Louis Blues,,,
+15,8477944,Jakub Vrana,Left Wing,St. Louis Blues,8477944,78.0,0.0
+42,8477953,Kasperi Kapanen,Right Wing,St. Louis Blues,,,
+49,8477964,Ivan Barbashev,Center,St. Louis Blues,8477964,-80.0,0.0
+79,8478104,Sammy Blais,Left Wing,St. Louis Blues,,,
+15,8478146,Matthew Highmore,Center,St. Louis Blues,,,
+55,8478569,Noel Acciari,Center,St. Louis Blues,,,
+77,8478859,Niko Mikkola,Defenseman,St. Louis Blues,8478859,-53.0,30.0
+,8479366,Logan Brown,Center,St. Louis Blues,,,
+42,8479375,William Bitten,Center,St. Louis Blues,,,
+25,8479385,Jordan Kyrou,Center,St. Louis Blues,8479385,-36.0,1.0
+18,8480023,Robert Thomas,Center,St. Louis Blues,8480023,56.0,-12.0
+37,8480041,Dmitri Samorukov,Defenseman,St. Louis Blues,,,
+43,8480157,Calle Rosen,Defenseman,St. Louis Blues,,,
+13,8480281,Alexey Toropchenko,Right Wing,St. Louis Blues,8480281,,
+75,8481006,Tyler Tucker,Defenseman,St. Louis Blues,,,
+56,8481070,Hugh McGing,Left Wing,St. Louis Blues,,,
+59,8481543,Nikita Alexandrov,Center,St. Louis Blues,,,
+63,8482089,Jake Neighbours,Left Wing,St. Louis Blues,,,
+51,8482516,Matthew Kessel,Defenseman,St. Louis Blues,,,
+1,8471306,Thomas Greiss,Goalie,St. Louis Blues,,,
+50,8476412,Jordan Binnington,Goalie,St. Louis Blues,,,
+30,8480981,Joel Hofer,Goalie,St. Louis Blues,,,
+22,8473453,Trevor Lewis,Center,Calgary Flames,,,
+17,8473473,Milan Lucic,Left Wing,Calgary Flames,,,
+11,8474150,Mikael Backlund,Center,Calgary Flames,8474150,45.0,14.0
+26,8474628,Michael Stone,Defenseman,Calgary Flames,,,
+91,8475172,Nazem Kadri,Center,Calgary Flames,8475172,-85.0,11.0
+8,8475690,Chris Tanev,Defenseman,Calgary Flames,,,
+73,8475726,Tyler Toffoli,Right Wing,Calgary Flames,8475726,84.0,20.0
+20,8476399,Blake Coleman,Center,Calgary Flames,,,
+24,8476439,Brett Ritchie,Right Wing,Calgary Flames,,,
+10,8476456,Jonathan Huberdeau,Center,Calgary Flames,8476456,-68.0,-2.0
+10,8476456,Jonathan Huberdeau,Center,Calgary Flames,8476456,73.0,-15.0
+52,8477346,MacKenzie Weegar,Defenseman,Calgary Flames,,,
+28,8477496,Elias Lindholm,Center,Calgary Flames,8477496,79.0,2.0
+16,8477507,Nikita Zadorov,Defenseman,Calgary Flames,,,
+27,8477941,Nick Ritchie,Left Wing,Calgary Flames,,,
+88,8478233,Andrew Mangiapane,Left Wing,Calgary Flames,8478233,-81.0,10.0
+88,8478233,Andrew Mangiapane,Left Wing,Calgary Flames,8478233,73.0,1.0
+55,8478396,Noah Hanifin,Defenseman,Calgary Flames,8478396,47.0,28.0
+4,8478397,Rasmus Andersson,Defenseman,Calgary Flames,,,
+48,8478502,Dennis Gilbert,Defenseman,Calgary Flames,,,
+21,8479291,Kevin Rooney,Center,Calgary Flames,,,
+29,8479346,Dillon Dube,Center,Calgary Flames,8479346,-87.0,6.0
+51,8479442,Troy Stecher,Defenseman,Calgary Flames,,,
+45,8479547,Matthew Phillips,Right Wing,Calgary Flames,8479547,-85.0,-18.0
+63,8480008,Adam Ruzicka,Center,Calgary Flames,,,
+57,8480084,Nick DeSimone,Defenseman,Calgary Flames,,,
+22,8481592,Jakob Pelletier,Left Wing,Calgary Flames,,,
+14,8482067,Connor Mackey,Defenseman,Calgary Flames,,,
+63,8482241,Radim Zohorna,Left Wing,Calgary Flames,8482241,78.0,14.0
+71,8482652,Walker Duehr,Right Wing,Calgary Flames,8482652,-75.0,-2.0
+39,8482679,Matt Coronato,Right Wing,Calgary Flames,8482679,-84.0,6.0
+39,8482679,Matt Coronato,Right Wing,Calgary Flames,8482679,68.0,1.0
+39,8482679,Matt Coronato,Right Wing,Calgary Flames,8482679,-66.0,14.0
+25,8474593,Jacob Markstrom,Goalie,Calgary Flames,,,
+80,8478435,Dan Vladar,Goalie,Calgary Flames,,,
+32,8481692,Dustin Wolf,Goalie,Calgary Flames,,,
+3,8471677,Jack Johnson,Defenseman,Colorado Avalanche,,,
+11,8471699,Andrew Cogliano,Center,Colorado Avalanche,,,
+43,8471794,Darren Helm,Center,Colorado Avalanche,,,
+6,8473446,Erik Johnson,Defenseman,Colorado Avalanche,,,
+20,8474189,Lars Eller,Center,Colorado Avalanche,,,
+23,8476310,Lukas Sedlak,Center,Colorado Avalanche,,,
+42,8476312,Josh Manson,Defenseman,Colorado Avalanche,,,
+83,8476442,Matt Nieto,Left Wing,Colorado Avalanche,,,
+17,8476779,Brad Hunt,Defenseman,Colorado Avalanche,,,
+17,8476851,Alex Galchenyuk,Center,Colorado Avalanche,,,
+54,8476948,Charles Hudon,Left Wing,Colorado Avalanche,,,
+56,8477073,Kurtis MacDermid,Defenseman,Colorado Avalanche,8477073,-83.0,4.0
+20,8477126,Jayson Megna,Center,Colorado Avalanche,,,
+25,8477320,Anton Blidh,Left Wing,Colorado Avalanche,,,
+37,8477456,J.T. Compher,Left Wing,Colorado Avalanche,8477456,-70.0,2.0
+62,8477476,Artturi Lehkonen,Left Wing,Colorado Avalanche,,,
+29,8477492,Nathan MacKinnon,Center,Colorado Avalanche,,,
+13,8477501,Valeri Nichushkin,Right Wing,Colorado Avalanche,,,
+5,8477971,Andreas Englund,Defenseman,Colorado Avalanche,,,
+7,8478038,Devon Toews,Defenseman,Colorado Avalanche,8478038,39.0,-3.0
+20,8478211,Dryden Hunt,Left Wing,Colorado Avalanche,8478211,-87.0,-21.0
+20,8478211,Dryden Hunt,Left Wing,Colorado Avalanche,8478211,87.0,-8.0
+96,8478420,Mikko Rantanen,Right Wing,Colorado Avalanche,,,
+17,8478542,Evan Rodrigues,Center,Colorado Avalanche,,,
+81,8478843,Denis Malgin,Center,Colorado Avalanche,,,
+49,8479398,Samuel Girard,Defenseman,Colorado Avalanche,,,
+9,8479439,Jacob MacDonald,Defenseman,Colorado Avalanche,,,
+,8479573,Mikhail Maltsev,Left Wing,Colorado Avalanche,,,
+15,8480032,Shane Bowers,Center,Colorado Avalanche,,,
+8,8480069,Cale Makar,Defenseman,Colorado Avalanche,,,
+87,8480822,Martin Kaut,Right Wing,Colorado Avalanche,,,
+75,8480846,Sampo Ranta,Left Wing,Colorado Avalanche,,,
+25,8481186,Logan O'Connor,Right Wing,Colorado Avalanche,,,
+4,8481524,Bowen Byram,Defenseman,Colorado Avalanche,,,
+15,8481618,Alex Newhook,Center,Colorado Avalanche,,,
+93,8482147,Jean-Luc Foudy,Center,Colorado Avalanche,,,
+68,8482250,Callahan Burke,Center,Colorado Avalanche,,,
+24,8482712,Oskar Olausson,Right Wing,Colorado Avalanche,8482712,-82.0,8.0
+24,8482712,Oskar Olausson,Right Wing,Colorado Avalanche,8482712,53.0,24.0
+59,8483570,Ben Meyers,Center,Colorado Avalanche,,,
+30,8476234,Keith Kinkaid,Goalie,Colorado Avalanche,,,
+31,8477992,Jonas Johansson,Goalie,Colorado Avalanche,,,
+40,8480382,Alexandar Georgiev,Goalie,Colorado Avalanche,,,
+39,8480925,Pavel Francouz,Goalie,Colorado Avalanche,,,
+60,8481020,Justus Annunen,Goalie,Colorado Avalanche,,,
+24,8474089,Brad Malone,Center,Edmonton Oilers,8474089,-71.0,5.0
+44,8474218,Jason Demers,Defenseman,Edmonton Oilers,,,
+91,8475169,Evander Kane,Left Wing,Edmonton Oilers,,,
+22,8475197,Tyson Barrie,Defenseman,Edmonton Oilers,,,
+14,8475218,Mattias Ekholm,Defenseman,Edmonton Oilers,,,
+17,8475760,Nick Bjugstad,Center,Edmonton Oilers,,,
+18,8475786,Zach Hyman,Left Wing,Edmonton Oilers,8475786,84.0,3.0
+93,8476454,Ryan Nugent-Hopkins,Center,Edmonton Oilers,8476454,-73.0,-5.0
+28,8476850,Ryan Murray,Defenseman,Edmonton Oilers,,,
+5,8476879,Cody Ceci,Defenseman,Edmonton Oilers,,,
+94,8476913,Devin Shore,Center,Edmonton Oilers,,,
+27,8476967,Brett Kulak,Defenseman,Edmonton Oilers,,,
+13,8477406,Mattias Janmark,Center,Edmonton Oilers,,,
+25,8477498,Darnell Nurse,Defenseman,Edmonton Oilers,,,
+29,8477934,Leon Draisaitl,Center,Edmonton Oilers,,,
+37,8477998,Warren Foegele,Left Wing,Edmonton Oilers,,,
+97,8478402,Connor McDavid,Center,Edmonton Oilers,8478402,-81.0,2.0
+10,8478585,Derek Ryan,Center,Edmonton Oilers,,,
+80,8479338,Markus Niemelainen,Defenseman,Edmonton Oilers,,,
+13,8479344,Jesse Puljujarvi,Right Wing,Edmonton Oilers,,,
+16,8479347,Tyler Benson,Left Wing,Edmonton Oilers,,,
+73,8479576,Vincent Desharnais,Defenseman,Edmonton Oilers,,,
+56,8479977,Kailer Yamamoto,Right Wing,Edmonton Oilers,8479977,-82.0,-9.0
+56,8479977,Kailer Yamamoto,Right Wing,Edmonton Oilers,8479977,83.0,-10.0
+24,8480011,Klim Kostin,Center,Edmonton Oilers,,,
+57,8480468,James Hamblin,Left Wing,Edmonton Oilers,,,
+71,8480802,Ryan McLeod,Center,Edmonton Oilers,,,
+2,8480803,Evan Bouchard,Defenseman,Edmonton Oilers,,,
+86,8481598,Philip Broberg,Defenseman,Edmonton Oilers,,,
+55,8482077,Dylan Holloway,Left Wing,Edmonton Oilers,8482077,83.0,8.0
+36,8475789,Jack Campbell,Goalie,Edmonton Oilers,,,
+74,8479973,Stuart Skinner,Goalie,Edmonton Oilers,,,
+,8483158,Matthew Berlin,Goalie,Edmonton Oilers,,,
+2,8474568,Luke Schenn,Defenseman,Vancouver Canucks,,,
+57,8474574,Tyler Myers,Defenseman,Vancouver Canucks,,,
+91,8475171,Oliver Ekman-Larsson,Defenseman,Vancouver Canucks,,,
+9,8476468,J.T. Miller,Center,Vancouver Canucks,,,
+34,8476858,Phillip Di Giuseppe,Left Wing,Vancouver Canucks,8476858,-79.0,0.0
+70,8476871,Tanner Pearson,Left Wing,Vancouver Canucks,,,
+4,8477335,Kyle Burroughs,Defenseman,Vancouver Canucks,8477335,-72.0,9.0
+5,8477359,Tucker Poolman,Defenseman,Vancouver Canucks,,,
+14,8477500,Bo Horvat,Center,Vancouver Canucks,8477500,88.0,-5.0
+42,8477508,Curtis Lazar,Center,Vancouver Canucks,8477508,85.0,7.0
+81,8478057,Dakota Joshua,Center,Vancouver Canucks,,,
+33,8478408,Travis Dermott,Defenseman,Vancouver Canucks,8478408,,
+6,8478444,Brock Boeser,Right Wing,Vancouver Canucks,,,
+74,8478451,Ethan Bear,Defenseman,Vancouver Canucks,,,
+47,8478454,Noah Juulsen,Defenseman,Vancouver Canucks,,,
+72,8478463,Anthony Beauvillier,Left Wing,Vancouver Canucks,,,
+55,8478465,Guillaume Brisebois,Defenseman,Vancouver Canucks,,,
+86,8478846,Christian Wolanin,Defenseman,Vancouver Canucks,,,
+8,8478856,Conor Garland,Right Wing,Vancouver Canucks,8478856,72.0,16.0
+19,8478967,Lane Pederson,Center,Vancouver Canucks,,,
+7,8479367,William Lockwood,Right Wing,Vancouver Canucks,8479367,-71.0,5.0
+61,8479388,Riley Stillman,Defenseman,Vancouver Canucks,8479388,-35.0,-29.0
+17,8479425,Filip Hronek,Defenseman,Vancouver Canucks,,,
+40,8480012,Elias Pettersson,Center,Vancouver Canucks,8480012,-49.0,3.0
+23,8480021,Jack Studnicka,Center,Vancouver Canucks,,,
+3,8480056,Jack Rathbone,Defenseman,Vancouver Canucks,,,
+15,8480326,Sheldon Dries,Center,Vancouver Canucks,,,
+43,8480800,Quinn Hughes,Defenseman,Vancouver Canucks,8480800,80.0,2.0
+43,8480800,Quinn Hughes,Defenseman,Vancouver Canucks,8480800,83.0,4.0
+43,8480800,Quinn Hughes,Defenseman,Vancouver Canucks,8480800,51.0,-15.0
+91,8480833,Vitali Kravtsov,Right Wing,Vancouver Canucks,,,
+21,8481535,Nils Hoglander,Left Wing,Vancouver Canucks,,,
+92,8481617,Vasily Podkolzin,Right Wing,Vancouver Canucks,,,
+65,8481624,Ilya Mikheyev,Right Wing,Vancouver Canucks,,,
+25,8481683,Aidan McDonough,Left Wing,Vancouver Canucks,,,
+88,8482496,Nils Aman,Center,Vancouver Canucks,,,
+27,8482691,Aatu Raty,Center,Vancouver Canucks,,,
+96,8483808,Andrei Kuzmenko,Left Wing,Vancouver Canucks,8483808,-59.0,-1.0
+41,8484254,Akito Hirose,Defenseman,Vancouver Canucks,,,
+48,8484287,Cole McWard,Defenseman,Vancouver Canucks,,,
+30,8477484,Spencer Martin,Goalie,Vancouver Canucks,,,
+35,8477967,Thatcher Demko,Goalie,Vancouver Canucks,,,
+60,8480420,Collin Delia,Goalie,Vancouver Canucks,,,
+31,8481668,Arturs Silovs,Goalie,Vancouver Canucks,,,
+12,8474031,Kevin Shattenkirk,Defenseman,Anaheim Ducks,,,
+14,8474641,Adam Henrique,Center,Anaheim Ducks,,,
+38,8474683,Derek Grant,Center,Anaheim Ducks,,,
+33,8475164,Jakob Silfverberg,Right Wing,Anaheim Ducks,,,
+7,8475179,Dmitry Kulikov,Defenseman,Anaheim Ducks,8475179,-91.0,6.0
+7,8475179,Dmitry Kulikov,Defenseman,Anaheim Ducks,8475179,92.0,-12.0
+4,8475764,Cam Fowler,Defenseman,Anaheim Ducks,,,
+39,8475842,Sam Carrick,Center,Anaheim Ducks,8475842,81.0,2.0
+39,8475842,Sam Carrick,Center,Anaheim Ducks,8475842,-81.0,1.0
+3,8475906,John Klingberg,Defenseman,Anaheim Ducks,,,
+17,8476449,Scott Harrington,Defenseman,Anaheim Ducks,,,
+16,8476458,Ryan Strome,Center,Anaheim Ducks,8476458,,
+16,8476458,Ryan Strome,Center,Anaheim Ducks,8476458,,
+28,8476470,Nathan Beaulieu,Defenseman,Anaheim Ducks,,,
+26,8476934,Brock McGinn,Left Wing,Anaheim Ducks,8476934,59.0,19.0
+20,8477126,Jayson Megna,Center,Anaheim Ducks,,,
+25,8477993,Justin Kirkland,Center,Anaheim Ducks,,,
+77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,,,
+42,8478446,Glenn Gawdin,Center,Anaheim Ducks,,,
+45,8478841,Colton White,Defenseman,Anaheim Ducks,,,
+19,8478873,Troy Terry,Right Wing,Anaheim Ducks,8478873,,
+49,8479368,Max Jones,Left Wing,Anaheim Ducks,8479368,,
+5,8480001,Urho Vaakanainen,Defenseman,Anaheim Ducks,,,
+44,8480031,Max Comtois,Left Wing,Anaheim Ducks,,,
+48,8480467,Austin Strand,Defenseman,Anaheim Ducks,,,
+21,8480806,Isac Lundestrom,Center,Anaheim Ducks,,,
+50,8480870,Benoit-Olivier Groulx,Center,Anaheim Ducks,8480870,,
+2,8481122,Simon Benoit,Defenseman,Anaheim Ducks,,,
+20,8481517,Brett Leason,Right Wing,Anaheim Ducks,8481517,-80.0,5.0
+20,8481517,Brett Leason,Right Wing,Anaheim Ducks,8481517,-84.0,0.0
+11,8481533,Trevor Zegras,Center,Anaheim Ducks,,,
+43,8481563,Drew Helleson,Defenseman,Anaheim Ducks,,,
+60,8481605,Jackson LaCombe,Defenseman,Anaheim Ducks,8481605,69.0,13.0
+60,8481605,Jackson LaCombe,Defenseman,Anaheim Ducks,8481605,-75.0,9.0
+62,8481754,Nikita Nesterenko,Center,Anaheim Ducks,,,
+6,8482142,Jamie Drysdale,Defenseman,Anaheim Ducks,,,
+,8482745,Mason McTavish,Center,Anaheim Ducks,,,
+40,8483630,Pavol Regenda,Left Wing,Anaheim Ducks,,,
+36,8476434,John Gibson,Goalie,Anaheim Ducks,,,
+41,8476932,Anthony Stolarz,Goalie,Anaheim Ducks,,,
+31,8480042,Olle Eriksson Ek,Goalie,Anaheim Ducks,,,
+1,8480843,Lukas Dostal,Goalie,Anaheim Ducks,,,
+20,8470600,Ryan Suter,Defenseman,Dallas Stars,,,
+16,8470794,Joe Pavelski,Center,Dallas Stars,8470794,72.0,-12.0
+14,8473994,Jamie Benn,Left Wing,Dallas Stars,,,
+63,8474149,Evgenii Dadonov,Right Wing,Dallas Stars,8474149,81.0,7.0
+63,8474149,Evgenii Dadonov,Right Wing,Dallas Stars,8474149,-82.0,6.0
+91,8475794,Tyler Seguin,Center,Dallas Stars,8475794,-86.0,-6.0
+2,8475825,Jani Hakanpää,Defenseman,Dallas Stars,,,
+6,8476525,Colin Miller,Defenseman,Dallas Stars,,,
+11,8476822,Luke Glendening,Center,Dallas Stars,8476822,66.0,0.0
+12,8476889,Radek Faksa,Center,Dallas Stars,,,
+23,8476902,Esa Lindell,Defenseman,Dallas Stars,,,
+11,8477503,Max Domi,Center,Dallas Stars,8477503,,
+44,8477810,Joel Hanley,Defenseman,Dallas Stars,,,
+42,8478028,Fredrik Olofsson,Left Wing,Dallas Stars,8478028,71.0,0.0
+24,8478449,Roope Hintz,Center,Dallas Stars,,,
+15,8478495,Denis Gurianov,Right Wing,Dallas Stars,,,
+27,8478975,Mason Marchment,Left Wing,Dallas Stars,8478975,-69.0,-9.0
+15,8479362,Riley Tufte,Left Wing,Dallas Stars,8479362,-55.0,-27.0
+15,8479362,Riley Tufte,Left Wing,Dallas Stars,8479362,63.0,-19.0
+15,8479362,Riley Tufte,Left Wing,Dallas Stars,8479362,-83.0,1.0
+51,8479518,Fredrik Karlström,Center,Dallas Stars,,,
+21,8480027,Jason Robertson,Left Wing,Dallas Stars,8480027,83.0,1.0
+21,8480027,Jason Robertson,Left Wing,Dallas Stars,8480027,,
+4,8480036,Miro Heiskanen,Defenseman,Dallas Stars,,,
+24,8480216,Jacob Peterson,Center,Dallas Stars,,,
+43,8480226,Marián Studenic,Right Wing,Dallas Stars,,,
+10,8480848,Ty Dellandrea,Center,Dallas Stars,,,
+5,8480878,Nils Lundkvist,Defenseman,Dallas Stars,8480878,48.0,20.0
+55,8481581,Thomas Harley,Defenseman,Dallas Stars,8481581,,
+25,8481641,Joel Kiviranta,Left Wing,Dallas Stars,8481641,-63.0,17.0
+25,8481712,Matej Blumel,Right Wing,Dallas Stars,8481712,,
+25,8481712,Matej Blumel,Right Wing,Dallas Stars,8481712,81.0,-5.0
+53,8482740,Wyatt Johnston,Center,Dallas Stars,,,
+41,8475809,Scott Wedgewood,Goalie,Dallas Stars,,,
+29,8479979,Jake Oettinger,Goalie,Dallas Stars,,,
+32,8483575,Matt Murray,Goalie,Dallas Stars,,,
+2,8471303,Alexander Edler,Defenseman,Los Angeles Kings,,,
+11,8471685,Anze Kopitar,Center,Los Angeles Kings,,,
+8,8474563,Drew Doughty,Defenseman,Los Angeles Kings,,,
+24,8476479,Phillip Danault,Center,Los Angeles Kings,,,
+22,8477942,Kevin Fiala,Left Wing,Los Angeles Kings,,,
+9,8477960,Adrian Kempe,Right Wing,Los Angeles Kings,8477960,,
+9,8477960,Adrian Kempe,Right Wing,Los Angeles Kings,8477960,,
+9,8477960,Adrian Kempe,Right Wing,Los Angeles Kings,8477960,,
+28,8477962,Brendan Lemieux,Left Wing,Los Angeles Kings,,,
+33,8478042,Viktor Arvidsson,Right Wing,Los Angeles Kings,8478042,,
+84,8478882,Vladislav Gavrikov,Defenseman,Los Angeles Kings,,,
+3,8478911,Matt Roy,Defenseman,Los Angeles Kings,,,
+91,8479336,Carl Grundstrom,Right Wing,Los Angeles Kings,,,
+57,8479421,Jacob Moverare,Defenseman,Los Angeles Kings,8479421,,
+12,8479675,Trevor Moore,Left Wing,Los Angeles Kings,8479675,,
+17,8479772,Zack MacEwen,Center,Los Angeles Kings,,,
+28,8479994,Jaret Anderson-Dolan,Center,Los Angeles Kings,,,
+44,8479998,Mikey Anderson,Defenseman,Los Angeles Kings,,,
+13,8480014,Gabriel Vilardi,Center,Los Angeles Kings,,,
+24,8480072,Lias Andersson,Center,Los Angeles Kings,,,
+9,8480113,Alex Iafallo,Left Wing,Los Angeles Kings,,,
+26,8480336,Sean Walker,Defenseman,Los Angeles Kings,,,
+50,8480434,Sean Durzi,Defenseman,Los Angeles Kings,,,
+15,8480845,Rasmus Kupari,Center,Los Angeles Kings,,,
+68,8481239,Samuel Fagemo,Left Wing,Los Angeles Kings,8481239,,
+68,8481239,Samuel Fagemo,Left Wing,Los Angeles Kings,8481239,55.0,19.0
+46,8481481,Blake Lizotte,Center,Los Angeles Kings,,,
+39,8481532,Alex Turcotte,Center,Los Angeles Kings,,,
+34,8481560,Arthur Kaliyev,Right Wing,Los Angeles Kings,,,
+7,8481600,Tobias Bjornfot,Defenseman,Los Angeles Kings,,,
+53,8481606,Jordan Spence,Defenseman,Los Angeles Kings,,,
+55,8482124,Quinton Byfield,Center,Los Angeles Kings,,,
+92,8482730,Brandt Clarke,Defenseman,Los Angeles Kings,,,
+32,8471734,Jonathan Quick,Goalie,Los Angeles Kings,,,
+70,8476914,Joonas Korpisalo,Goalie,Los Angeles Kings,,,
+40,8477361,Cal Petersen,Goalie,Los Angeles Kings,,,
+29,8477831,Pheonix Copley,Goalie,Los Angeles Kings,,,
+44,8471709,Marc-Edouard Vlasic,Defenseman,San Jose Sharks,8471709,70.0,2.0
+12,8474009,Nick Bonino,Center,San Jose Sharks,,,
+39,8474053,Logan Couture,Center,San Jose Sharks,,,
+65,8474578,Erik Karlsson,Defenseman,San Jose Sharks,,,
+28,8475461,Andrew Agozzino,Left Wing,San Jose Sharks,8475461,-68.0,-1.0
+28,8475461,Andrew Agozzino,Left Wing,San Jose Sharks,8475461,,
+83,8476442,Matt Nieto,Left Wing,San Jose Sharks,,,
+17,8476449,Scott Harrington,Defenseman,San Jose Sharks,,,
+48,8476881,Tomas Hertl,Center,San Jose Sharks,8476881,78.0,-18.0
+48,8476881,Tomas Hertl,Center,San Jose Sharks,8476881,56.0,-15.0
+33,8476884,Derrick Pouliot,Defenseman,San Jose Sharks,,,
+5,8476988,Matt Benning,Defenseman,San Jose Sharks,,,
+44,8477034,Jaycob Megna,Defenseman,San Jose Sharks,,,
+18,8477341,Andreas Johnsson,Left Wing,San Jose Sharks,,,
+53,8478058,CJ Suess,Left Wing,San Jose Sharks,,,
+23,8478067,Oskar Lindblom,Left Wing,San Jose Sharks,,,
+62,8478099,Kevin Labanc,Right Wing,San Jose Sharks,,,
+96,8478414,Timo Meier,Right Wing,San Jose Sharks,8478414,-77.0,12.0
+10,8478431,Evgeny Svechnikov,Left Wing,San Jose Sharks,,,
+18,8478904,Steven Lorentz,Center,San Jose Sharks,8478904,-80.0,-1.0
+41,8479304,Kyle Criscuolo,Center,San Jose Sharks,,,
+11,8479316,Luke Kunin,Center,San Jose Sharks,,,
+73,8479393,Noah Gregor,Center,San Jose Sharks,,,
+9,8479439,Jacob MacDonald,Defenseman,San Jose Sharks,,,
+23,8479591,Michael Eyssimont,Center,San Jose Sharks,,,
+28,8479705,Jeffrey Viel,Left Wing,San Jose Sharks,,,
+42,8479981,Jonah Gadjovich,Left Wing,San Jose Sharks,,,
+38,8479983,Mario Ferraro,Defenseman,San Jose Sharks,,,
+51,8480160,Radim Simek,Defenseman,San Jose Sharks,,,
+20,8480188,Fabian Zetterlund,Left Wing,San Jose Sharks,,,
+24,8480216,Jacob Peterson,Center,San Jose Sharks,,,
+87,8480822,Martin Kaut,Right Wing,San Jose Sharks,,,
+7,8481477,Nico Sturm,Center,San Jose Sharks,,,
+3,8481567,Henry Thrun,Defenseman,San Jose Sharks,8481567,35.0,-2.0
+3,8481567,Henry Thrun,Defenseman,San Jose Sharks,8481567,52.0,2.0
+71,8481812,Nikolai Knyzhov,Defenseman,San Jose Sharks,,,
+75,8482101,Danil Gushchin,Left Wing,San Jose Sharks,,,
+17,8482133,Thomas Bordeleau,Center,San Jose Sharks,,,
+52,8482181,Tristen Robins,Center,San Jose Sharks,,,
+57,8482197,Adam Raska,Right Wing,San Jose Sharks,,,
+94,8482222,Alexander Barabanov,Left Wing,San Jose Sharks,,,
+72,8482667,William Eklund,Left Wing,San Jose Sharks,8482667,-68.0,21.0
+59,8482824,Nick Cicek,Defenseman,San Jose Sharks,,,
+47,8473503,James Reimer,Goalie,San Jose Sharks,,,
+30,8477180,Aaron Dell,Goalie,San Jose Sharks,,,
+36,8478039,Kaapo Kahkonen,Goalie,San Jose Sharks,,,
+32,8480199,Eetu Makiniemi,Goalie,San Jose Sharks,,,
+,8474161,Jakub Voracek,Right Wing,Columbus Blue Jackets,,,
+14,8474679,Gustav Nyquist,Center,Columbus Blue Jackets,,,
+44,8475790,Erik Gudbranson,Defenseman,Columbus Blue Jackets,,,
+13,8476346,Johnny Gaudreau,Left Wing,Columbus Blue Jackets,,,
+7,8476374,Sean Kuraly,Center,Columbus Blue Jackets,,,
+38,8476432,Boone Jenner,Center,Columbus Blue Jackets,,,
+16,8476867,Brendan Gaunce,Center,Columbus Blue Jackets,,,
+96,8478458,Jack Roslovic,Center,Columbus Blue Jackets,8478458,-85.0,3.0
+8,8478460,Zach Werenski,Defenseman,Columbus Blue Jackets,,,
+84,8478882,Vladislav Gavrikov,Defenseman,Columbus Blue Jackets,,,
+19,8478967,Lane Pederson,Center,Columbus Blue Jackets,,,
+29,8479339,Patrik Laine,Left Wing,Columbus Blue Jackets,8479339,-76.0,5.0
+29,8479339,Patrik Laine,Left Wing,Columbus Blue Jackets,8479339,77.0,-4.0
+2,8479369,Andrew Peeke,Defenseman,Columbus Blue Jackets,,,
+22,8479402,Jake Bean,Defenseman,Columbus Blue Jackets,,,
+24,8479671,Mathieu Olivier,Right Wing,Columbus Blue Jackets,,,
+17,8479941,Justin Danforth,Right Wing,Columbus Blue Jackets,8479941,-87.0,-8.0
+36,8479945,Gavin Bayreuther,Defenseman,Columbus Blue Jackets,,,
+52,8480205,Emil Bemstrom,Right Wing,Columbus Blue Jackets,8480205,-66.0,-20.0
+52,8480205,Emil Bemstrom,Right Wing,Columbus Blue Jackets,8480205,-69.0,-22.0
+72,8480292,Carson Meyer,Right Wing,Columbus Blue Jackets,8480292,84.0,3.0
+72,8480292,Carson Meyer,Right Wing,Columbus Blue Jackets,8480292,-69.0,2.0
+64,8480441,Trey Fix-Wolansky,Right Wing,Columbus Blue Jackets,,,
+50,8480762,Eric Robinson,Left Wing,Columbus Blue Jackets,,,
+19,8480853,Liam Foudy,Center,Columbus Blue Jackets,,,
+27,8480871,Adam Boqvist,Defenseman,Columbus Blue Jackets,,,
+86,8480893,Kirill Marchenko,Right Wing,Columbus Blue Jackets,,,
+75,8481072,Tim Berni,Defenseman,Columbus Blue Jackets,,,
+23,8481161,Jake Christiansen,Defenseman,Columbus Blue Jackets,,,
+46,8481649,Joona Luoto,Left Wing,Columbus Blue Jackets,,,
+39,8481690,Tyler Angle,Center,Columbus Blue Jackets,,,
+36,8482179,Justin Richards,Center,Columbus Blue Jackets,,,
+6,8482399,Billy Sweezey,Defenseman,Columbus Blue Jackets,,,
+62,8482448,Samuel Knazko,Defenseman,Columbus Blue Jackets,,,
+82,8482451,Mikael Pyyhtia,Left Wing,Columbus Blue Jackets,,,
+59,8482475,Yegor Chinakhov,Right Wing,Columbus Blue Jackets,,,
+21,8482623,Josh Dunne,Center,Columbus Blue Jackets,,,
+91,8482660,Kent Johnson,Center,Columbus Blue Jackets,,,
+4,8482705,Cole Sillinger,Center,Columbus Blue Jackets,,,
+81,8482711,Stanislav Svozil,Defenseman,Columbus Blue Jackets,,,
+55,8483460,David Jiricek,Defenseman,Columbus Blue Jackets,,,
+77,8483565,Nick Blankenburg,Defenseman,Columbus Blue Jackets,,,
+47,8483620,Marcus Bjork,Defenseman,Columbus Blue Jackets,,,
+41,8484125,Hunter McKown,Center,Columbus Blue Jackets,,,
+31,8474636,Michael Hutchinson,Goalie,Columbus Blue Jackets,,,
+32,8476903,Jon Gillies,Goalie,Columbus Blue Jackets,,,
+70,8476914,Joonas Korpisalo,Goalie,Columbus Blue Jackets,,,
+90,8478007,Elvis Merzlikins,Goalie,Columbus Blue Jackets,,,
+40,8480193,Daniil Tarasov,Goalie,Columbus Blue Jackets,,,
+73,8482982,Jet Greaves,Goalie,Columbus Blue Jackets,,,
+33,8471274,Alex Goligoski,Defenseman,Minnesota Wild,8471274,-62.0,-11.0
+75,8471817,Ryan Reaves,Right Wing,Minnesota Wild,,,
+14,8474679,Gustav Nyquist,Center,Minnesota Wild,,,
+46,8474716,Jared Spurgeon,Defenseman,Minnesota Wild,,,
+90,8475149,Marcus Johansson,Left Wing,Minnesota Wild,,,
+17,8475220,Marcus Foligno,Left Wing,Minnesota Wild,,,
+36,8475692,Mats Zuccarello,Right Wing,Minnesota Wild,,,
+4,8475750,Jon Merrill,Defenseman,Minnesota Wild,,,
+3,8475906,John Klingberg,Defenseman,Minnesota Wild,,,
+56,8476390,Joseph Cramarossa,Center,Minnesota Wild,,,
+62,8476396,Steven Fogarty,Center,Minnesota Wild,,,
+25,8476463,Jonas Brodin,Defenseman,Minnesota Wild,8476463,33.0,-4.0
+24,8476856,Matt Dumba,Defenseman,Minnesota Wild,,,
+70,8476897,Oskar Sundqvist,Center,Minnesota Wild,8476897,-78.0,2.0
+70,8476897,Oskar Sundqvist,Center,Minnesota Wild,8476897,77.0,2.0
+38,8477451,Ryan Hartman,Right Wing,Minnesota Wild,,,
+19,8477464,Nic Petan,Center,Minnesota Wild,,,
+6,8477541,Dakota Mermis,Defenseman,Minnesota Wild,,,
+89,8477919,Frederick Gaudreau,Center,Minnesota Wild,,,
+5,8478136,Jake Middleton,Defenseman,Minnesota Wild,,,
+12,8478413,Jordan Greenway,Left Wing,Minnesota Wild,,,
+14,8478493,Joel Eriksson Ek,Center,Minnesota Wild,,,
+97,8478864,Kirill Kaprizov,Left Wing,Minnesota Wild,8478864,-84.0,6.0
+97,8478864,Kirill Kaprizov,Left Wing,Minnesota Wild,8478864,-62.0,1.0
+18,8479351,Sam Steel,Center,Minnesota Wild,8479351,,
+17,8479370,Tyson Jost,Center,Minnesota Wild,,,
+21,8479520,Brandon Duhaime,Right Wing,Minnesota Wild,,,
+15,8479972,Mason Shaw,Center,Minnesota Wild,,,
+74,8480267,Sammy Walker,Center,Minnesota Wild,8480267,-79.0,-1.0
+74,8480267,Sammy Walker,Center,Minnesota Wild,8480267,85.0,-2.0
+72,8480275,Nick Swaney,Right Wing,Minnesota Wild,,,
+2,8480884,Calen Addison,Defenseman,Minnesota Wild,,,
+26,8480980,Connor Dewar,Center,Minnesota Wild,8480980,64.0,11.0
+68,8480994,Damien Giroux,Center,Minnesota Wild,,,
+53,8481550,Adam Beckman,Left Wing,Minnesota Wild,8481550,-81.0,-8.0
+12,8481557,Matt Boldy,Left Wing,Minnesota Wild,,,
+23,8482079,Marco Rossi,Center,Minnesota Wild,,,
+7,8482122,Brock Faber,Defenseman,Minnesota Wild,,,
+29,8470594,Marc-Andre Fleury,Goalie,Minnesota Wild,,,
+32,8479406,Filip Gustavsson,Goalie,Minnesota Wild,,,
+17,8471218,Blake Wheeler,Right Wing,Winnipeg Jets,8471218,85.0,-5.0
+89,8474040,Sam Gagner,Center,Winnipeg Jets,,,
+5,8475455,Brenden Dillon,Defenseman,Winnipeg Jets,,,
+62,8475799,Nino Niederreiter,Right Wing,Winnipeg Jets,,,
+2,8476331,Dylan DeMelo,Defenseman,Winnipeg Jets,,,
+17,8476392,Adam Lowry,Center,Winnipeg Jets,,,
+55,8476460,Mark Scheifele,Center,Winnipeg Jets,,,
+7,8476480,Vladislav Namestnikov,Center,Winnipeg Jets,,,
+21,8476952,Dominic Toninato,Center,Winnipeg Jets,8476952,-82.0,1.0
+88,8477220,Nate Schmidt,Defenseman,Winnipeg Jets,,,
+8,8477357,Saku Maenalanen,Right Wing,Winnipeg Jets,,,
+44,8477504,Josh Morrissey,Defenseman,Winnipeg Jets,,,
+27,8477940,Nikolaj Ehlers,Left Wing,Winnipeg Jets,,,
+81,8478398,Kyle Connor,Left Wing,Winnipeg Jets,8478398,-71.0,18.0
+12,8478424,Jansen Harkins,Center,Winnipeg Jets,8478424,-74.0,5.0
+12,8478424,Jansen Harkins,Center,Winnipeg Jets,8478424,78.0,-4.0
+77,8478476,Kyle Capobianco,Defenseman,Winnipeg Jets,8478476,-60.0,16.0
+82,8478831,Kevin Stenlund,Center,Winnipeg Jets,8478831,-85.0,3.0
+22,8478891,Mason Appleton,Center,Winnipeg Jets,,,
+64,8479378,Logan Stanley,Defenseman,Winnipeg Jets,,,
+80,8479400,Pierre-Luc Dubois,Center,Winnipeg Jets,,,
+71,8479536,Axel Jonsson-Fjallby,Left Wing,Winnipeg Jets,,,
+23,8479591,Michael Eyssimont,Center,Winnipeg Jets,,,
+54,8480049,Dylan Samberg,Defenseman,Winnipeg Jets,,,
+4,8480145,Neal Pionk,Defenseman,Winnipeg Jets,8480145,-39.0,30.0
+36,8480289,Morgan Barron,Center,Winnipeg Jets,8480289,-74.0,0.0
+87,8480443,Kristian Reichel,Center,Winnipeg Jets,,,
+46,8480901,Karson Kuhlman,Center,Winnipeg Jets,,,
+19,8481019,David Gustafsson,Center,Winnipeg Jets,8481019,-75.0,-11.0
+14,8481572,Ville Heinola,Defenseman,Winnipeg Jets,,,
+91,8482149,Cole Perfetti,Center,Winnipeg Jets,8482149,-74.0,6.0
+37,8476945,Connor Hellebuyck,Goalie,Winnipeg Jets,,,
+31,8479496,David Rittich,Goalie,Winnipeg Jets,,,
+44,8475178,Zack Kassian,Right Wing,Arizona Coyotes,,,
+2,8475747,Patrik Nemeth,Defenseman,Arizona Coyotes,,,
+17,8475760,Nick Bjugstad,Center,Arizona Coyotes,,,
+72,8476329,Travis Boyd,Center,Arizona Coyotes,,,
+24,8476439,Brett Ritchie,Right Wing,Arizona Coyotes,,,
+41,8476906,Shayne Gostisbehere,Defenseman,Arizona Coyotes,,,
+38,8477070,Liam O'Brien,Center,Arizona Coyotes,,,
+3,8477384,Josh Brown,Defenseman,Arizona Coyotes,,,
+26,8477460,Laurent Dauphin,Center,Arizona Coyotes,,,
+48,8477520,Jean-Sebastien Dea,Center,Arizona Coyotes,,,
+27,8477941,Nick Ritchie,Left Wing,Arizona Coyotes,,,
+8,8477951,Nick Schmaltz,Center,Arizona Coyotes,,,
+65,8478062,Dysin Mayo,Defenseman,Arizona Coyotes,,,
+14,8478147,Bokondji Imama,Left Wing,Arizona Coyotes,,,
+36,8478432,Christian Fischer,Right Wing,Arizona Coyotes,,,
+67,8478474,Lawson Crouse,Left Wing,Arizona Coyotes,8478474,,
+9,8479343,Clayton Keller,Right Wing,Arizona Coyotes,8479343,,
+6,8479345,Jakob Chychrun,Defenseman,Arizona Coyotes,8479345,62.0,-26.0
+6,8479345,Jakob Chychrun,Defenseman,Arizona Coyotes,8479345,-83.0,-5.0
+51,8479442,Troy Stecher,Defenseman,Arizona Coyotes,,,
+53,8479619,Michael Carcone,Left Wing,Arizona Coyotes,8479619,,
+4,8479976,Juuso Valimaki,Defenseman,Arizona Coyotes,,,
+25,8479982,Conor Timmins,Defenseman,Arizona Coyotes,8479982,,
+25,8479982,Conor Timmins,Defenseman,Arizona Coyotes,8479982,,
+29,8480849,Barrett Hayton,Center,Arizona Coyotes,8480849,,
+29,8480849,Barrett Hayton,Center,Arizona Coyotes,8480849,,
+22,8480855,Jack McBain,Center,Arizona Coyotes,,,
+73,8480890,Jan Jenik,Right Wing,Arizona Coyotes,8480890,,
+5,8480891,Michael Kesselring,Defenseman,Arizona Coyotes,,,
+13,8480979,Nathan Smith,Center,Arizona Coyotes,,,
+77,8481599,Victor Soderstrom,Defenseman,Arizona Coyotes,,,
+52,8481609,Vladislav Kolyachonok,Defenseman,Arizona Coyotes,,,
+63,8481711,Matias Maccelli,Left Wing,Arizona Coyotes,8481711,,
+14,8482067,Connor Mackey,Defenseman,Arizona Coyotes,,,
+90,8482655,J.J. Moser,Defenseman,Arizona Coyotes,,,
+11,8482699,Dylan Guenther,Right Wing,Arizona Coyotes,8482699,,
+21,8483597,Milos Kelemen,Left Wing,Arizona Coyotes,8483597,-71.0,-1.0
+70,8478872,Karel Vejmelka,Goalie,Arizona Coyotes,,,
+39,8478971,Connor Ingram,Goalie,Arizona Coyotes,,,
+1,8481031,Ivan Prosvetov,Goalie,Arizona Coyotes,,,
+8,8473548,Phil Kessel,Right Wing,Vegas Golden Knights,,,
+23,8474166,Alec Martinez,Defenseman,Vegas Golden Knights,,,
+7,8474565,Alex Pietrangelo,Defenseman,Vegas Golden Knights,,,
+3,8475188,Brayden McNabb,Defenseman,Vegas Golden Knights,,,
+19,8475191,Reilly Smith,Right Wing,Vegas Golden Knights,,,
+51,8475278,Byron Froese,Center,Vegas Golden Knights,,,
+61,8475913,Mark Stone,Right Wing,Vegas Golden Knights,,,
+71,8476448,William Karlsson,Center,Vegas Golden Knights,8476448,-72.0,-19.0
+81,8476539,Jonathan Marchessault,Right Wing,Vegas Golden Knights,8476539,-81.0,10.0
+20,8476905,Chandler Stephenson,Center,Vegas Golden Knights,,,
+53,8476927,Teddy Blueger,Center,Vegas Golden Knights,,,
+17,8477018,Ben Hutton,Defenseman,Vegas Golden Knights,8477018,70.0,7.0
+27,8477447,Shea Theodore,Defenseman,Vegas Golden Knights,,,
+28,8477478,William Carrier,Left Wing,Vegas Golden Knights,,,
+49,8477964,Ivan Barbashev,Center,Vegas Golden Knights,8477964,-80.0,0.0
+22,8478020,Michael Amadio,Right Wing,Vegas Golden Knights,,,
+9,8478403,Jack Eichel,Center,Vegas Golden Knights,,,
+55,8478434,Keegan Kolesar,Right Wing,Vegas Golden Knights,,,
+10,8478462,Nicolas Roy,Center,Vegas Golden Knights,,,
+21,8479353,Brett Howden,Center,Vegas Golden Knights,8479353,81.0,-3.0
+14,8479980,Nicolas Hague,Defenseman,Vegas Golden Knights,8479980,30.0,1.0
+15,8479991,Jake Leschyshyn,Center,Vegas Golden Knights,,,
+46,8480007,Jonas Rondbjerg,Right Wing,Vegas Golden Knights,,,
+2,8480727,Zach Whitecloud,Defenseman,Vegas Golden Knights,,,
+56,8480776,Sheldon Rempal,Right Wing,Vegas Golden Knights,8480776,67.0,-26.0
+43,8481032,Paul Cotter,Center,Vegas Golden Knights,,,
+94,8481167,Brayden Pachal,Defenseman,Vegas Golden Knights,,,
+6,8481527,Kaedan Korczak,Defenseman,Vegas Golden Knights,,,
+16,8481604,Pavel Dorofeyev,Left Wing,Vegas Golden Knights,,,
+42,8482624,Daniil Miromanov,Defenseman,Vegas Golden Knights,,,
+32,8471734,Jonathan Quick,Goalie,Vegas Golden Knights,,,
+39,8476316,Laurent Brossoit,Goalie,Vegas Golden Knights,,,
+33,8478499,Adin Hill,Goalie,Vegas Golden Knights,,,
+30,8480238,Jiri Patera,Goalie,Vegas Golden Knights,,,
+36,8480313,Logan Thompson,Goalie,Vegas Golden Knights,,,
+7,8474586,Jordan Eberle,Right Wing,Seattle Kraken,,,
+4,8474602,Justin Schultz,Defenseman,Seattle Kraken,,,
+17,8475768,Jaden Schwartz,Center,Seattle Kraken,,,
+6,8476457,Adam Larsson,Defenseman,Seattle Kraken,,,
+24,8476467,Jamie Oleksiak,Defenseman,Seattle Kraken,,,
+37,8476826,Yanni Gourde,Center,Seattle Kraken,,,
+44,8477034,Jaycob Megna,Defenseman,Seattle Kraken,,,
+7,8477369,Carson Soucy,Defenseman,Seattle Kraken,,,
+15,8477401,John Hayden,Center,Seattle Kraken,,,
+22,8477416,Oliver Bjorkstrand,Right Wing,Seattle Kraken,,,
+95,8477444,Andre Burakovsky,Left Wing,Seattle Kraken,,,
+23,8477467,Gustav Olofsson,Defenseman,Seattle Kraken,,,
+21,8477505,Alex Wennberg,Center,Seattle Kraken,,,
+19,8477955,Jared McCann,Left Wing,Seattle Kraken,,,
+8,8477987,Ryan Donato,Center,Seattle Kraken,,,
+29,8478407,Vince Dunn,Defenseman,Seattle Kraken,,,
+88,8478466,Daniel Sprong,Right Wing,Seattle Kraken,8478466,-82.0,8.0
+88,8478466,Daniel Sprong,Right Wing,Seattle Kraken,8478466,-77.0,-10.0
+3,8478840,Will Borgen,Defenseman,Seattle Kraken,8478840,67.0,-3.0
+13,8479293,Brandon Tanev,Left Wing,Seattle Kraken,,,
+8,8479985,Cale Fleury,Defenseman,Seattle Kraken,8479985,64.0,-23.0
+39,8479987,Morgan Geekie,Center,Seattle Kraken,,,
+20,8480009,Eeli Tolvanen,Right Wing,Seattle Kraken,8480009,62.0,3.0
+20,8480009,Eeli Tolvanen,Right Wing,Seattle Kraken,8480009,75.0,-17.0
+46,8480901,Karson Kuhlman,Center,Seattle Kraken,,,
+10,8482665,Matty Beniers,Center,Seattle Kraken,8482665,-75.0,6.0
+38,8482834,Jesper Froden,Right Wing,Seattle Kraken,,,
+51,8483524,Shane Wright,Center,Seattle Kraken,,,
+52,8481789,Tye Kartye,Left Wing,Seattle Kraken,8481789,-59.0,5.0
+31,8474889,Martin Jones,Goalie,Seattle Kraken,,,
+31,8475831,Philipp Grubauer,Goalie,Seattle Kraken,,,
+35,8478916,Joey Daccord,Goalie,Seattle Kraken,,,

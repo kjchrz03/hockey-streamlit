@@ -150,5 +150,3 @@ st.sidebar.info("Read more about how the model works and see the code on my [Git
 #and Win Shares (WS), all scraped from [Basketball Reference](http://www.basketball-reference.com).  
 
 #The seven market value buckets used were:  \$0-5M, \$5-10M, \$10-15M, \$15-20M, \$20-25M, \$25-30M, and \$30M+.  In keeping with best data science practices, the model was trained and fine-tuned on player data from previous years and was not exposed to any data from the 2021-22 NBA season before generating these predictions.''')
-
-    
