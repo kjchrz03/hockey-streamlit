@@ -99,26 +99,44 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 ## Player Tab                           ##
 ##########################################
 
+
 with tab_player:
-    player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index =508)
-    
+    player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
+
     player_position = players_df[players_df.Name == player].Position.to_list()[0]
-    player_goals = players_df['goals']
-    
+    player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
+
     st.write(f'''
-         ##### <div style="text-align: center"> In the 2021-22 NBA season, <span style="color:blue">[{player}]</span> earned a salary of <span style="color:blue"> {player_goals}   </span> </div>
-         
-          
-         ''', unsafe_allow_html=True)
-    
-    styler_player = (players_df[players_df.Name == player][cols]
-                   .style.set_properties(**{'background': 'azure', 'border': '1.2px solid'})
-                   .hide(axis='index')
-                   .set_table_styles(dfstyle)
-                  # .applymap(color_surplusvalue, subset=pd.IndexSlice[:, ['Surplus Value ($M)']])
-                  )
-    st.table(styler_player)
-    
+         ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+    ''', unsafe_allow_html=True)
+
+    # Select only the desired columns from the DataFrame
+    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
+
+    # Create an HTML table with desired styling
+    html_table = f"""
+    <table style="background: azure; border: 1.2px solid; width: 100%">
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Goals</th>
+        </tr>
+        <tr>
+            <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
+        </tr>
+    </table>
+    """
+
+    # Display the HTML table in Streamlit
+    st.write(html_table, unsafe_allow_html=True)
+    # Convert the Styler object to HTML and display it without the index
+    #st.write(styler_player.render(), unsafe_allow_html=True)
+
+
     
    # st.markdown('''#### Most Similar Players:''', unsafe_allow_html=True)
 
