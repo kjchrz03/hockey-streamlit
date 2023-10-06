@@ -6,7 +6,7 @@ st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sideb
 
 #@st.cache
 def load_players():
-    github_csv_url = 'data/goal_tracker.csv'
+    github_csv_url = 'data/final_game_data.csv'
     players_df = pd.read_csv(github_csv_url)
     players_df['Name'] = players_df['person.fullName']
     players_df['Position'] = players_df['position.name']
