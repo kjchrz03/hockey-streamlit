@@ -9,7 +9,7 @@ def load_players():
     github_csv_url = 'data/final_game_data.csv'
     players_df = pd.read_csv(github_csv_url)
     players_df['Name'] = players_df['person.fullName']
-    players_df['Position'] = players_df['position.name']
+    players_df['Position'] = players_df['position']
     players_df['Team'] = players_df['team_name']
     players_df['Goals'] = players_df['goals']
     return players_df
@@ -87,9 +87,10 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 
 
 
-st.sidebar.markdown(" ## About Check This Data")
-st.sidebar.markdown("Dip your toes into advanced hockey analytics with some of my favorite metrics"  )              
-st.sidebar.info("Read more about how the model works and see the code on my [Github](https://github.com/kjchrz03/hockey-streamlit).", icon="ℹ️")
+#st.sidebar.markdown(" ## About Check This Data")
+#st.sidebar.markdown("Dip your toes into advanced hockey analytics with some of my favorite metrics"  )              
+#st.sidebar.info("Read more about how the model works and see the code on my [Github](https://github.com/kjchrz03/hockey-streamlit).", icon="ℹ️")
+
 
 ##########################################
 ## Player Tab                           ##
@@ -102,7 +103,7 @@ with tab_player:
     #player_sal_class_predict = dfplayers[dfplayers.Name == player].Sal_class_predict.to_list()[0]
     #player_max_proba = dfplayers[dfplayers.Name == player].Max_proba.to_list()[0]          
     #player_salary = dfplayers[dfplayers.Name == player]['Salary ($M)'].to_list()[0]
-    player_goals = players_df['player_id']
+    player_goals = players_df['goals']
     #if player_salary == '<2':
     #    player_salary = '<$2M'
     #else:
