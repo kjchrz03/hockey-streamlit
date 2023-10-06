@@ -12,6 +12,7 @@ def load_players():
     github_csv_url = 'data/final_game_data.csv'
     players_df = pd.read_csv(github_csv_url)
     players_df['Name'] = players_df['person.fullName']
+    players_df['Player ID'] = players_df['person.id']
     players_df['Position'] = players_df['position']
     players_df['Team'] = players_df['team_name']
     players_df['Goals'] = players_df['goals']
@@ -20,6 +21,19 @@ def load_players():
 players_df = load_players()
 
 cols = ['Name','Position','Team','Goals']
+
+def goal_mapping():
+    github_csv_url = 'data/goal_tracker.csv'
+    goal_mapping = pd.read_csv(github_csv_url)
+    goal_mapping['Name'] = goal_mapping['person.fullName']
+    goal_mapping['ID'] = goal_mapping['person.id']
+    goal_mapping['x'] = goal_mapping['x']
+    goal_mapping['y'] = goal_mapping['y']
+    return goal_mapping
+
+players_df = goal_mapping()
+
+cols = ['Name','x','y']
 
 # CSS for tables
 
@@ -104,7 +118,22 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 
 
 with tab_player:
-    player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
+    #player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
+    # Create a select box with player names
+    player = st.selectbox("Choose a player:", players_df['Name'], index=0)
+
+# Use JavaScript to extract the selected player ID
+    person_id = st.empty()
+    player.markdown(
+    f'<script>document.addEventListener("DOMContentLoaded", function(){{document.querySelector(".stSelectbox").addEventListener("change", function(e){{document.querySelector("#person-id").innerHTML = e.target.options[e.target.selectedIndex].getAttribute("person-id")}});}});</script>'
+)
+
+# Display the selected player ID (hidden from the user)
+    person_id.write(f"Selected Player ID: <span id='person-id'></span>", unsafe_allow_html=True)
+
+# Store the player ID in a hidden field for later use
+person_id_hidden = person_id.empty()
+person_id_hidden.write(f"<span id='person_id_hidden' style='display: none;'>{players_df.loc[players_df['Name'] == player, 'person.id'].values[0]}</span>", unsafe_allow_html=True)
 
     player_position = players_df[players_df.Name == player].Position.to_list()[0]
     player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
@@ -138,6 +167,14 @@ with tab_player:
     st.write(html_table, unsafe_allow_html=True)
     # Convert the Styler object to HTML and display it without the index
     #st.write(styler_player.render(), unsafe_allow_html=True)
+
+#heat map
+player_map = 
+player_map['goal_no'] = player_map.index + 1
+
+
+
+
 
 
     
