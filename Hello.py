@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from hockey_rink import NHLRink, RinkImage
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
