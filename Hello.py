@@ -117,29 +117,29 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 ##########################################
 
 
-#with tab_player:
-#    player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
+with tab_player:
+    player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
 
-#    player_position = players_df[players_df.Name == player].position.to_list()[0]
+    player_position = players_df[players_df.Name == player].position.to_list()[0]
    # player_goals = players_df[players_df.Name == player].goals.to_list()[0]
 #    #player_goals = players_df['goals']
-#    player_goals = 5
-#    st.write(f'''
-#         ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
-#    ''', unsafe_allow_html=True)
-#
+    player_goals = 5
+    st.write(f'''
+         ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+    ''', unsafe_allow_html=True)
+
 #    # Select only the desired columns from the DataFrame
-#    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names3
-#
-#    # Apply styling to the selected columns
-#    styler_player = (players_df[players_df.Name == player][selected_columns]
-#                     .style.set_properties(**{'background': 'azure', 'border': '1.2px solid'})
-#                     .hide_index()  # Hide the index summary
-#                     .set_table_styles(dfstyle)
-#                     )
+    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names3
+
+    # Apply styling to the selected columns
+    styler_player = (players_df[players_df.Name == player][selected_columns]
+                     .style.set_properties(**{'background': 'azure', 'border': '1.2px solid'})
+                     .hide_index()  # Hide the index summary
+                     .set_table_styles(dfstyle)
+                     )
 
     # Display the styled DataFrame in Streamlit without the summary
-#    st.write(styler_player, unsafe_allow_html=True)
+    st.write(styler_player, unsafe_allow_html=True)
 
 ##########################################
 ## Team Tab                             ##
