@@ -132,21 +132,21 @@ with tab_player:
 
     # Create an HTML table with desired styling
     st.write(f'''
-        <table style="background: azure; border: 1.2px solid; width: 100%">
-        <tr>
-            <td>Name</td>
-            <td>Position</td>
-            <td>Team</td>
-            <td>Goals</td>
-        </tr>
-        <tr>
-            <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
-        </tr>
-    </table>
-   ''', unsafe_allow_html=True)
+    <table style="background: azure; border: 1.2px solid; width: 100%">
+    <tr>
+        <td style="font-weight: bold;">Name</td>
+        <td style="font-weight: bold;">Position</td>
+        <td style="font-weight: bold;">Team</td>
+        <td style="font-weight: bold;">Goals</td>
+    </tr>
+    <tr>
+        <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
+    </tr>
+</table>
+''', unsafe_allow_html=True)
 
     # Display the HTML table in Streamlit
     #st.write(html_table, unsafe_allow_html=True)
