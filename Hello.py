@@ -134,7 +134,7 @@ with tab_player:
     st.write(f'''
         <table style="background: azure; border: 1.2px solid; width: 100%">
         <tr>
-            <td class="bold-data">Name</td>
+            <td style="font-weight: bold;>Name</td>
             <td class="bold-data">Position</td>
             <td class="bold-data">Team</td>
             <td class="bold-data">Goals</td>
