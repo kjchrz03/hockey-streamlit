@@ -9,10 +9,10 @@ st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sideb
 
 #@st.cache
 def load_players():
-    github_csv_url = 'data/final_game_data.csv'
+    github_csv_url = 'data/goal_counts.csv'
     players_df = pd.read_csv(github_csv_url)
-    players_df['Name'] = players_df['person.fullName']
-    players_df['Player ID'] = players_df['person.id']
+    players_df['Name'] = players_df['player_name']
+    players_df['Player ID'] = players_df['player_id']
     players_df['Position'] = players_df['position']
     players_df['Team'] = players_df['team_name']
     players_df['Goals'] = players_df['goals']
@@ -23,10 +23,10 @@ players_df = load_players()
 cols = ['Name','Position','Team','Goals']
 
 def goal_mapping():
-    github_csv_url = 'data/goal_tracker.csv'
+    github_csv_url = 'data/goal_locations.csv'
     goal_mapping = pd.read_csv(github_csv_url)
-    goal_mapping['Name'] = goal_mapping['person.fullName']
-    goal_mapping['ID'] = goal_mapping['person.id']
+    goal_mapping['Name'] = goal_mapping['player_name']
+    goal_mapping['ID'] = goal_mapping['player_id']
     goal_mapping['x'] = goal_mapping['x']
     goal_mapping['y'] = goal_mapping['y']
     return goal_mapping
