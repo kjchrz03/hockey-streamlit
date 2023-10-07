@@ -131,16 +131,27 @@ with tab_player:
     selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
 
     # Create an HTML table with desired styling
-    html_table = players_df[players_df.Name == player][selected_columns].to_html(
-        escape=False, classes='styled-table'
-    )
+    html_table = f"""
+    <table style="background: azure; border: 1.2px solid; width: 100%">
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Goals</th>
+        </tr>
+        <tr>
+            <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
+        </tr>
+    </table>
+    """
 
-    styler_player = (players_df[players_df.Name == player][cols]
-                   .style.set_properties(**{'background': 'azure', 'border': '1.2px solid'})
-                   .hide(axis='index')
-                   .set_table_styles(dfstyle)
-                   .applymap(color_surplusvalue, subset=pd.IndexSlice[:, ['Surplus Value ($M)']]))
-    st.table(styler_player)
+    # Display the HTML table in Streamlit
+    st.write(html_table, unsafe_allow_html=True)
+    # Convert the Styler object to HTML and display it without the index
+    #st.write(styler_player.render(), unsafe_allow_html=True)
 
 ##########################################
 ## Team Tab                             ##
