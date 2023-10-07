@@ -22,18 +22,18 @@ players_df = load_players()
 
 cols = ['Name','Position','Team','Goals']
 
-def goal_mapping():
-    github_csv_url = 'data/goal_locations.csv'
-    goal_mapping = pd.read_csv(github_csv_url)
-    goal_mapping['Name'] = goal_mapping['player_name']
-    goal_mapping['ID'] = goal_mapping['player_id']
-    goal_mapping['x'] = goal_mapping['x']
-    goal_mapping['y'] = goal_mapping['y']
-    return goal_mapping
+#def goal_mapping():
+#    github_csv_url = 'data/goal_locations.csv'
+#    goal_mapping = pd.read_csv(github_csv_url)
+#    goal_mapping['Name'] = goal_mapping['player_name']
+#    goal_mapping['ID'] = goal_mapping['player_id']
+#    goal_mapping['x'] = goal_mapping['x']
+#    goal_mapping['y'] = goal_mapping['y']
+#    return goal_mapping
 
-players_df = goal_mapping()
+#players_df = goal_mapping()
 
-cols = ['Name','x','y']
+#cols = ['Name','x','y']
 
 # CSS for tables
 
@@ -120,9 +120,8 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 with tab_player:
     player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
 
-    player_position = players_df[players_df.Name == player].position.to_list()[0]
-    player_goals = players_df[players_df['Name'] == player]['goals'].to_list()[0]
-
+    player_position = players_df[players_df.Name == player].Position.to_list()[0]
+    player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
 
     st.write(f'''
          ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
@@ -132,29 +131,28 @@ with tab_player:
     selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
 
     # Create an HTML table with desired styling
-    html_table = f"""
+    st.write(f'''
     <table style="background: azure; border: 1.2px solid; width: 100%">
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Team</th>
-            <th>Goals</th>
-        </tr>
-        <tr>
-            <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
-        </tr>
-    </table>
-    """
+    <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Team</th>
+        <th>Goals</th>
+    </tr>
+    <tr>
+        <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
+    </tr>
+</table>
+''', unsafe_allow_html=True)
+
 
     # Display the HTML table in Streamlit
-    st.write(html_table, unsafe_allow_html=True)
+#st.write(html_table, unsafe_allow_html=True)
     # Convert the Styler object to HTML and display it without the index
     #st.write(styler_player.render(), unsafe_allow_html=True)
-
-
 
 ##########################################
 ## Team Tab                             ##
