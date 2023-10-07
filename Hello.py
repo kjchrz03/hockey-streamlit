@@ -120,8 +120,9 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 with tab_player:
     player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
 
-    player_position = players_df[players_df.Name == player].Position.to_list()[0]
-    player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
+    player_position = players_df[players_df.Name == player].position.to_list()[0]
+    player_goals = players_df[players_df['Name'] == player]['goals'].to_list()[0]
+
 
     st.write(f'''
          ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
