@@ -118,35 +118,20 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 
 
 with tab_player:
-    #player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
-    # Create a select box with player names
-    player = st.selectbox("Choose a player:", players_df['Name'], index=0)
+    player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
 
-# Use JavaScript to extract the selected player ID
-    player_id = st.empty()
-    player.markdown(
-    f'<script>document.addEventListener("DOMContentLoaded", function(){{document.querySelector(".stSelectbox").addEventListener("change", function(e){{document.querySelector("#player-id").innerHTML = e.target.options[e.target.selectedIndex].getAttribute("player-id")}});}});</script>'
-)
+    player_position = players_df[players_df.Name == player].Position.to_list()[0]
+    player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
 
-# Display the selected player ID (hidden from the user)
-    player_id.write(f"Selected Player ID: <span id='player-id'></span>", unsafe_allow_html=True)
-
-# Store the player ID in a hidden field for later use
-#player_id_hidden = player_id.empty()
-#player_id_hidden.write(f"<span id='player_id_hidden' style='display: none;'>{players_df.loc[players_df['Name'] == player, 'player_id'].values[0]}</span>", unsafe_allow_html=True)
-
-player_position = players_df[players_df.Name == player].Position.to_list()[0]
-player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
-
-st.write(f'''
+    st.write(f'''
          ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
     ''', unsafe_allow_html=True)
 
     # Select only the desired columns from the DataFrame
-selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
+    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
 
     # Create an HTML table with desired styling
-html_table = f"""
+    html_table = f"""
     <table style="background: azure; border: 1.2px solid; width: 100%">
         <tr>
             <th>Name</th>
@@ -164,42 +149,11 @@ html_table = f"""
     """
 
     # Display the HTML table in Streamlit
-st.write(html_table, unsafe_allow_html=True)
+    st.write(html_table, unsafe_allow_html=True)
     # Convert the Styler object to HTML and display it without the index
     #st.write(styler_player.render(), unsafe_allow_html=True)
 
-#heat map
-#player_map = 
-#player_map['goal_no'] = player_map.index + 1
 
-
-
-
-
-
-    
-   # st.markdown('''#### Most Similar Players:''', unsafe_allow_html=True)
-
-    #df_mostsimilar = (dfplayers[(dfplayers.Name != player) & (dfplayers.Sal_class_predict == player_sal_class_predict)
-    #                          &  (dfplayers.Pos == player_pos) ]
-    #                           .sort_values(by='Max_proba', key=lambda col: np.abs(col-player_max_proba))[cols][:10])
-
- #   styler_mostsimilar = (df_mostsimilar.style
- #                         .set_properties(**{'background': 'azure', 'border': '1.2px solid'})
- #                         .hide(axis='index')
- #                         .set_table_styles(dfstyle)
- #                         .applymap(color_surplusvalue, subset=pd.IndexSlice[:, ['Surplus Value ($M)']])
- #                        )                                                  
- #   st.table(styler_mostsimilar)
-    
- #   st.success('''**A Brief Note on Methods:**  
-
-#The machine learning model deployed in this app is a Random Forest 
-#Classifier that uses the following information to predict a player's market value: Games Played, Games Started, 
-#Minutes Per Game, Points Per Game, Usage Percentage, Offensive Box Plus/Minus (OBPM), Value Over Replacement Player (VORP), 
-#and Win Shares (WS), all scraped from [Basketball Reference](http://www.basketball-reference.com).  
-
-#The seven market value buckets used were:  \$0-5M, \$5-10M, \$10-15M, \$15-20M, \$20-25M, \$25-30M, and \$30M+.  In keeping with best data science practices, the model was trained and fine-tuned on player data from previous years and was not exposed to any data from the 2021-22 NBA season before generating these predictions.''')
 
 ##########################################
 ## Team Tab                             ##
