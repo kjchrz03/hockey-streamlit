@@ -22,18 +22,18 @@ players_df = load_players()
 
 cols = ['Name','Position','Team','Goals']
 
-def goal_mapping():
-    github_csv_url = 'data/goal_locations.csv'
-    goal_mapping = pd.read_csv(github_csv_url)
-    goal_mapping['Name'] = goal_mapping['player_name']
-    goal_mapping['ID'] = goal_mapping['player_id']
-    goal_mapping['x'] = goal_mapping['x']
-    goal_mapping['y'] = goal_mapping['y']
-    return goal_mapping
+#def goal_mapping():
+#    github_csv_url = 'data/goal_locations.csv'
+#    goal_mapping = pd.read_csv(github_csv_url)
+#    goal_mapping['Name'] = goal_mapping['player_name']
+#    goal_mapping['ID'] = goal_mapping['player_id']
+#    goal_mapping['x'] = goal_mapping['x']
+#    goal_mapping['y'] = goal_mapping['y']
+#    return goal_mapping
 
-players_df = goal_mapping()
+#players_df = goal_mapping()
 
-cols = ['Name','x','y']
+#cols = ['Name','x','y']
 
 # CSS for tables
 
@@ -121,7 +121,7 @@ with tab_player:
     player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
     player_position = players_df[players_df.Name == player].position.to_list()[0]
    # player_goals = players_df[players_df.Name == player].goals.to_list()[0]
-#  player_goals = players_df['goals']
+
     player_goals = 5
     st.write(f'''
          ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
