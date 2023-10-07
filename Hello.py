@@ -135,9 +135,9 @@ with tab_player:
         <table style="background: azure; border: 1.2px solid; width: 100%">
         <tr>
             <td style="font-weight: bold;>Name</td>
-            <td class="bold-data">Position</td>
-            <td class="bold-data">Team</td>
-            <td class="bold-data">Goals</td>
+            <td style="font-weight: bold;>Position</td>
+            <td style="font-weight: bold;>Team</td>
+            <td style="font-weight: bold;>Goals</td>
         </tr>
         <tr>
             <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
