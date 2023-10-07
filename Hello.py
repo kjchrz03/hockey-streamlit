@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from hockey_rink import NHLRink, RinkImage
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
@@ -9,6 +12,7 @@ def load_players():
     github_csv_url = 'data/final_game_data.csv'
     players_df = pd.read_csv(github_csv_url)
     players_df['Name'] = players_df['person.fullName']
+    players_df['Player ID'] = players_df['person.id']
     players_df['Position'] = players_df['position']
     players_df['Team'] = players_df['team_name']
     players_df['Goals'] = players_df['goals']
@@ -17,6 +21,21 @@ def load_players():
 players_df = load_players()
 
 cols = ['Name','Position','Team','Goals']
+
+def goal_mapping():
+    github_csv_url = 'data/goal_tracker.csv'
+    goal_mapping = pd.read_csv(github_csv_url)
+    goal_mapping['Name'] = goal_mapping['person.fullName']
+    goal_mapping['ID'] = goal_mapping['person.id']
+    goal_mapping['x'] = goal_mapping['x']
+    goal_mapping['y'] = goal_mapping['y']
+    return goal_mapping
+
+players_df = goal_mapping()
+
+cols = ['Name','x','y']
+
+# CSS for tables
 
 hide_table_row_index = """
             <style>
@@ -54,6 +73,7 @@ def color_surplusvalue(val):
 heading_properties = [('font-size', '16px'),('text-align', 'center'),
                       ('color', 'black'),  ('font-weight', 'bold'),
                       ('background', 'mediumturquoise'),('border', '1.2px solid')]
+
 cell_properties = [('font-size', '16px'),('text-align', 'center')]
 
 dfstyle = [{"selector": "th", "props": heading_properties},
@@ -65,7 +85,7 @@ st.markdown(
     """
 <style>
 .streamlit-expanderHeader {
-   font-weight: bold;
+ #   font-weight: bold;
     background: aliceblue;
     font-size: 18px;
 }
@@ -96,38 +116,67 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 ## Player Tab                           ##
 ##########################################
 
+
 with tab_player:
-    player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index =508)
-    
-    #player_pos = players_df[players_df.Name == player].Pos.to_list()[0]
-    #player_sal_class_predict = dfplayers[dfplayers.Name == player].Sal_class_predict.to_list()[0]
-    #player_max_proba = dfplayers[dfplayers.Name == player].Max_proba.to_list()[0]          
-    #player_salary = dfplayers[dfplayers.Name == player]['Salary ($M)'].to_list()[0]
-    player_goals = players_df['goals']
-    #if player_salary == '<2':
-    #    player_salary = '<$2M'
-    #else:
-    #    player_salary = '$' +  player_salary + 'M'   
-    #player_marketvalue = dfplayers[dfplayers.Name == player]['Market Value ($M)'].to_list()[0]
-    #if player_marketvalue == '30+':
-    #    player_marketvalue = '$30M+'
-    #else:
-    #    player_marketvalue = '$' +  player_marketvalue + 'M'
-    #player_url = 'https://www.basketball-reference.com' + dfplayers[dfplayers.Name == player]['ID'].to_list()[0]                   
-    
-    #st.write(f'''
-         ##### <div style="text-align: center"> In the 2021-22 NBA season, <span style="color:blue">[{player}]({player_url})</span> earned a salary of <span style="color:blue"> {player_salary}   </span> </div>
-         
-          ##### <div style="text-align: center"> According to our model, his market value was <span style="color:blue">{player_marketvalue}</span> </div>
-     #    ''', unsafe_allow_html=True)
-    
-    #styler_player = (players_df[players_df.Name == player][cols]
-    #               .style.set_properties(**{'background': 'azure', 'border': '1.2px solid'})
-    #               .hide(axis='index')
-    #               .set_table_styles(dfstyle)
-    #               .applymap(color_surplusvalue, subset=pd.IndexSlice[:, ['Surplus Value ($M)']]))
-    #st.table(styler_player)
-    
+    #player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
+    # Create a select box with player names
+    player = st.selectbox("Choose a player:", players_df['Name'], index=0)
+
+# Use JavaScript to extract the selected player ID
+    person_id = st.empty()
+    player.markdown(
+    f'<script>document.addEventListener("DOMContentLoaded", function(){{document.querySelector(".stSelectbox").addEventListener("change", function(e){{document.querySelector("#person-id").innerHTML = e.target.options[e.target.selectedIndex].getAttribute("person-id")}});}});</script>'
+)
+
+# Display the selected player ID (hidden from the user)
+    person_id.write(f"Selected Player ID: <span id='person-id'></span>", unsafe_allow_html=True)
+
+# Store the player ID in a hidden field for later use
+person_id_hidden = person_id.empty()
+person_id_hidden.write(f"<span id='person_id_hidden' style='display: none;'>{players_df.loc[players_df['Name'] == player, 'person.id'].values[0]}</span>", unsafe_allow_html=True)
+
+    player_position = players_df[players_df.Name == player].Position.to_list()[0]
+    player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
+
+    st.write(f'''
+         ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+    ''', unsafe_allow_html=True)
+
+    # Select only the desired columns from the DataFrame
+    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
+
+    # Create an HTML table with desired styling
+    html_table = f"""
+    <table style="background: azure; border: 1.2px solid; width: 100%">
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Goals</th>
+        </tr>
+        <tr>
+            <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
+        </tr>
+    </table>
+    """
+
+    # Display the HTML table in Streamlit
+    st.write(html_table, unsafe_allow_html=True)
+    # Convert the Styler object to HTML and display it without the index
+    #st.write(styler_player.render(), unsafe_allow_html=True)
+
+#heat map
+player_map = 
+player_map['goal_no'] = player_map.index + 1
+
+
+
+
+
+
     
    # st.markdown('''#### Most Similar Players:''', unsafe_allow_html=True)
 
@@ -151,3 +200,25 @@ with tab_player:
 #and Win Shares (WS), all scraped from [Basketball Reference](http://www.basketball-reference.com).  
 
 #The seven market value buckets used were:  \$0-5M, \$5-10M, \$10-15M, \$15-20M, \$20-25M, \$25-30M, and \$30M+.  In keeping with best data science practices, the model was trained and fine-tuned on player data from previous years and was not exposed to any data from the 2021-22 NBA season before generating these predictions.''')
+
+##########################################
+## Team Tab                             ##
+##########################################    
+    
+#with tab_team:
+#    team = st.selectbox("Choose a team (or click below and start typing):", dfteams.Team, index=1)
+#   
+#    styler_team = (dfplayers[dfplayers.Team == team_to_tm[team]][cols].style
+#                          .set_properties(**{'background': 'azure', 'border': '1.2px solid'})
+#                          .hide(axis='index')
+#                          .set_table_styles(dfstyle)
+#                          .applymap(color_surplusvalue, subset=pd.IndexSlice[:, ['Surplus Value ($M)']])                                                    )
+#    st.table(styler_team)
+#    
+#    st.success('''**A Brief Note on Methods:**  
+
+    
+##########################################
+## Explore Tab                          ##
+##########################################
+   
