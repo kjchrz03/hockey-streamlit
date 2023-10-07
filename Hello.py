@@ -22,18 +22,18 @@ players_df = load_players()
 
 cols = ['Name','Position','Team','Goals']
 
-#def goal_mapping():
-#    github_csv_url = 'data/goal_locations.csv'
-#    goal_mapping = pd.read_csv(github_csv_url)
-#    goal_mapping['Name'] = goal_mapping['player_name']
-#    goal_mapping['ID'] = goal_mapping['player_id']
-#    goal_mapping['x'] = goal_mapping['x']
-#    goal_mapping['y'] = goal_mapping['y']
-#    return goal_mapping
+def load_map():
+    github_csv_url = 'data/goal_locations.csv'
+    goal_mapping = pd.read_csv(github_csv_url)
+    goal_mapping['Name'] = goal_mapping['player_name']
+    goal_mapping['ID'] = goal_mapping['player_id']
+    goal_mapping['x'] = goal_mapping['x']
+    goal_mapping['y'] = goal_mapping['y']
+    return goal_mapping
 
-#players_df = goal_mapping()
+goal_mapping = load_map()
 
-#cols = ['Name','x','y']
+cols = ['Name','x','y']
 
 # CSS for tables
 
