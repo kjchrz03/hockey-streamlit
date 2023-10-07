@@ -117,44 +117,29 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 ##########################################
 
 
-with tab_player:
-    player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
+#with tab_player:
+#    player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
 
-    player_position = players_df[players_df.Name == player].position.to_list()[0]
-    player_goals = players_df[players_df['Name'] == player]['goals'].to_list()[0]
+#    player_position = players_df[players_df.Name == player].position.to_list()[0]
+   # player_goals = players_df[players_df.Name == player].goals.to_list()[0]
+#    #player_goals = players_df['goals']
+#    player_goals = 5
+#    st.write(f'''
+#         ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+#    ''', unsafe_allow_html=True)
+#
+#    # Select only the desired columns from the DataFrame
+#    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names3
+#
+#    # Apply styling to the selected columns
+#    styler_player = (players_df[players_df.Name == player][selected_columns]
+#                     .style.set_properties(**{'background': 'azure', 'border': '1.2px solid'})
+#                     .hide_index()  # Hide the index summary
+#                     .set_table_styles(dfstyle)
+#                     )
 
-
-    st.write(f'''
-         ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
-    ''', unsafe_allow_html=True)
-
-    # Select only the desired columns from the DataFrame
-    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
-
-    # Create an HTML table with desired styling
-    html_table = f"""
-    <table style="background: azure; border: 1.2px solid; width: 100%">
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Team</th>
-            <th>Goals</th>
-        </tr>
-        <tr>
-            <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
-        </tr>
-    </table>
-    """
-
-    # Display the HTML table in Streamlit
-    st.write(html_table, unsafe_allow_html=True)
-    # Convert the Styler object to HTML and display it without the index
-    #st.write(styler_player.render(), unsafe_allow_html=True)
-
-
+    # Display the styled DataFrame in Streamlit without the summary
+#    st.write(styler_player, unsafe_allow_html=True)
 
 ##########################################
 ## Team Tab                             ##
