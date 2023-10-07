@@ -131,7 +131,7 @@ with tab_player:
     selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
 
     # Create an HTML table with desired styling
-html_table = f"""
+    st.write(f'''
     <table style="background: azure; border: 1.2px solid; width: 100%">
     <tr>
         <th>Name</th>
@@ -146,11 +146,11 @@ html_table = f"""
         <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
     </tr>
 </table>
-"""
+''', unsafe_allow_html=True)
 
 
     # Display the HTML table in Streamlit
-st.write(html_table, unsafe_allow_html=True)
+#st.write(html_table, unsafe_allow_html=True)
     # Convert the Styler object to HTML and display it without the index
     #st.write(styler_player.render(), unsafe_allow_html=True)
 
