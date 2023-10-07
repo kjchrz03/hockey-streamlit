@@ -132,27 +132,24 @@ with tab_player:
 
     # Create an HTML table with desired styling
     st.write(f'''
-    <table style="background: azure; border: 1.2px solid; width: 100%">
-    <tr>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Team</th>
-        <th>Goals</th>
-    </tr>
-    <tr>
-        <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
-    </tr>
-</table>
-''', unsafe_allow_html=True)
-
+        <table style="background: azure; border: 1.2px solid; width: 100%">
+        <tr>
+            <td class="bold-data">Name</td>
+            <td class="bold-data">Position</td>
+            <td class="bold-data">Team</td>
+            <td class="bold-data">Goals</td>
+        </tr>
+        <tr>
+            <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
+            <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
+        </tr>
+    </table>
+   ''', unsafe_allow_html=True)
 
     # Display the HTML table in Streamlit
-#st.write(html_table, unsafe_allow_html=True)
-    # Convert the Styler object to HTML and display it without the index
-    #st.write(styler_player.render(), unsafe_allow_html=True)
+    #st.write(html_table, unsafe_allow_html=True)
 
 ##########################################
 ## Team Tab                             ##
