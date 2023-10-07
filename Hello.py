@@ -123,30 +123,30 @@ with tab_player:
     player = st.selectbox("Choose a player:", players_df['Name'], index=0)
 
 # Use JavaScript to extract the selected player ID
-    person_id = st.empty()
+    player_id = st.empty()
     player.markdown(
-    f'<script>document.addEventListener("DOMContentLoaded", function(){{document.querySelector(".stSelectbox").addEventListener("change", function(e){{document.querySelector("#person-id").innerHTML = e.target.options[e.target.selectedIndex].getAttribute("person-id")}});}});</script>'
+    f'<script>document.addEventListener("DOMContentLoaded", function(){{document.querySelector(".stSelectbox").addEventListener("change", function(e){{document.querySelector("#player-id").innerHTML = e.target.options[e.target.selectedIndex].getAttribute("player-id")}});}});</script>'
 )
 
 # Display the selected player ID (hidden from the user)
-    person_id.write(f"Selected Player ID: <span id='person-id'></span>", unsafe_allow_html=True)
+    player_id.write(f"Selected Player ID: <span id='player-id'></span>", unsafe_allow_html=True)
 
 # Store the player ID in a hidden field for later use
-person_id_hidden = person_id.empty()
-person_id_hidden.write(f"<span id='person_id_hidden' style='display: none;'>{players_df.loc[players_df['Name'] == player, 'person.id'].values[0]}</span>", unsafe_allow_html=True)
+player_id_hidden = player_id.empty()
+player_id_hidden.write(f"<span id='player_id_hidden' style='display: none;'>{players_df.loc[players_df['Name'] == player, 'player_id'].values[0]}</span>", unsafe_allow_html=True)
 
-    player_position = players_df[players_df.Name == player].Position.to_list()[0]
-    player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
+player_position = players_df[players_df.Name == player].Position.to_list()[0]
+player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
 
-    st.write(f'''
+st.write(f'''
          ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
     ''', unsafe_allow_html=True)
 
     # Select only the desired columns from the DataFrame
-    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
+selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
 
     # Create an HTML table with desired styling
-    html_table = f"""
+html_table = f"""
     <table style="background: azure; border: 1.2px solid; width: 100%">
         <tr>
             <th>Name</th>
@@ -164,13 +164,13 @@ person_id_hidden.write(f"<span id='person_id_hidden' style='display: none;'>{pla
     """
 
     # Display the HTML table in Streamlit
-    st.write(html_table, unsafe_allow_html=True)
+st.write(html_table, unsafe_allow_html=True)
     # Convert the Styler object to HTML and display it without the index
     #st.write(styler_player.render(), unsafe_allow_html=True)
 
 #heat map
-player_map = 
-player_map['goal_no'] = player_map.index + 1
+#player_map = 
+#player_map['goal_no'] = player_map.index + 1
 
 
 
