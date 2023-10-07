@@ -132,7 +132,7 @@ with tab_player:
 
     # Create an HTML table with desired styling
     st.write(f'''
-        ##### <table style="background: azure; border: 1.2px solid; width: 100%">
+        <table style="background: azure; border: 1.2px solid; width: 100%">
         <tr>
             <th>Name</th>
             <th>Position</th>
