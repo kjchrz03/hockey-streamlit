@@ -135,6 +135,13 @@ with tab_player:
         escape=False, classes='styled-table'
     )
 
+    styler_player = (players_df[players_df.Name == player][cols]
+                   .style.set_properties(**{'background': 'azure', 'border': '1.2px solid'})
+                   .hide(axis='index')
+                   .set_table_styles(dfstyle)
+                   .applymap(color_surplusvalue, subset=pd.IndexSlice[:, ['Surplus Value ($M)']]))
+    st.table(styler_player)
+
 ##########################################
 ## Team Tab                             ##
 ##########################################    
