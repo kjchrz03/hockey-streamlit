@@ -134,10 +134,10 @@ with tab_player:
     st.write(f'''
         <table style="background: azure; border: 1.2px solid; width: 100%">
         <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Team</th>
-            <th>Goals</th>
+            <td>Name</td>
+            <td>Position</td>
+            <td>Team</td>
+            <td>Goals</td>
         </tr>
         <tr>
             <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
