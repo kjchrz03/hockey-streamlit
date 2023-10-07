@@ -150,7 +150,7 @@ html_table = f"""
 
 
     # Display the HTML table in Streamlit
-    st.write(html_table, unsafe_allow_html=True)
+st.write(html_table, unsafe_allow_html=True)
     # Convert the Styler object to HTML and display it without the index
     #st.write(styler_player.render(), unsafe_allow_html=True)
 
