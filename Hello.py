@@ -132,8 +132,8 @@ with tab_player:
     player_id.write(f"Selected Player ID: <span id='player-id'></span>", unsafe_allow_html=True)
 
 # Store the player ID in a hidden field for later use
-player_id_hidden = player_id.empty()
-player_id_hidden.write(f"<span id='player_id_hidden' style='display: none;'>{players_df.loc[players_df['Name'] == player, 'player_id'].values[0]}</span>", unsafe_allow_html=True)
+#player_id_hidden = player_id.empty()
+#player_id_hidden.write(f"<span id='player_id_hidden' style='display: none;'>{players_df.loc[players_df['Name'] == player, 'player_id'].values[0]}</span>", unsafe_allow_html=True)
 
 player_position = players_df[players_df.Name == player].Position.to_list()[0]
 player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
