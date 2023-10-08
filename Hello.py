@@ -22,18 +22,18 @@ players_df = load_players()
 
 cols = ['Name','Position','Team','Goals']
 
-#def goal_mapping():
-#    github_csv_url = 'data/goal_locations.csv'
-#    goal_mapping = pd.read_csv(github_csv_url)
-#    goal_mapping['Name'] = goal_mapping['player_name']
-#    goal_mapping['ID'] = goal_mapping['player_id']
-#    goal_mapping['x'] = goal_mapping['x']
-#    goal_mapping['y'] = goal_mapping['y']
-#    return goal_mapping
+def load_map():
+    github_csv_url = 'data/goal_locations.csv'
+    goal_mapping = pd.read_csv(github_csv_url)
+    goal_mapping['Name'] = goal_mapping['player_name']
+    goal_mapping['ID'] = goal_mapping['player_id']
+    goal_mapping['x'] = goal_mapping['x']
+    goal_mapping['y'] = goal_mapping['y']
+    return goal_mapping
 
-#players_df = goal_mapping()
+goal_mapping = load_map()
 
-#cols = ['Name','x','y']
+cols = ['Name','x','y']
 
 # CSS for tables
 
@@ -132,21 +132,21 @@ with tab_player:
 
     # Create an HTML table with desired styling
     st.write(f'''
-        <table style="background: azure; border: 1.2px solid; width: 100%">
-        <tr>
-            <td class="bold-data">Name</td>
-            <td class="bold-data">Position</td>
-            <td class="bold-data">Team</td>
-            <td class="bold-data">Goals</td>
-        </tr>
-        <tr>
-            <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
-        </tr>
-    </table>
-   ''', unsafe_allow_html=True)
+    <table style="background: azure; border: 1.2px solid; width: 100%">
+    <tr>
+        <td style="font-weight: bold;">Name</td>
+        <td style="font-weight: bold;">Position</td>
+        <td style="font-weight: bold;">Team</td>
+        <td style="font-weight: bold;">Goals</td>
+    </tr>
+    <tr>
+        <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
+    </tr>
+</table>
+''', unsafe_allow_html=True)
 
     # Display the HTML table in Streamlit
     #st.write(html_table, unsafe_allow_html=True)
