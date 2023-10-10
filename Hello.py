@@ -26,17 +26,18 @@ cols = ['Name','Position','Team','Goals']
 
 
 def load_map():
-    github_csv_url = 'data/goal_locations.csv'
+    github_csv_url = 'data/ice_map_data.csv'
     goal_mapping = pd.read_csv(github_csv_url)
     goal_mapping['Name'] = goal_mapping['player_name']
     goal_mapping['ID'] = goal_mapping['player_id']
-    goal_mapping['x'] = goal_mapping['x']
-    goal_mapping['y'] = goal_mapping['y']
+    goal_mapping['Goal Number'] = goal_mapping['goal_no']
+    goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
+    goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
     return goal_mapping
 
 goal_mapping = load_map()
 
-cols = ['Name','x','y']
+cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
 
 # CSS for tables
 
