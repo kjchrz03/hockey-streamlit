@@ -148,8 +148,16 @@ with tab_player:
 </table>
 ''', unsafe_allow_html=True)
 
-    # Display the HTML table in Streamlit
-    #st.write(html_table, unsafe_allow_html=True)
+## goal mapping
+
+
+
+
+
+
+
+
+
 
 ##########################################
 ## Team Tab                             ##
