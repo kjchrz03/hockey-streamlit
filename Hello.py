@@ -22,18 +22,22 @@ players_df = load_players()
 
 cols = ['Name','Position','Team','Goals']
 
+#def load_teams():
+
+
 def load_map():
-    github_csv_url = 'data/goal_locations.csv'
+    github_csv_url = 'data/ice_map_data.csv'
     goal_mapping = pd.read_csv(github_csv_url)
     goal_mapping['Name'] = goal_mapping['player_name']
     goal_mapping['ID'] = goal_mapping['player_id']
-    goal_mapping['x'] = goal_mapping['x']
-    goal_mapping['y'] = goal_mapping['y']
+    goal_mapping['Goal Number'] = goal_mapping['goal_no']
+    goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
+    goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
     return goal_mapping
 
 goal_mapping = load_map()
 
-cols = ['Name','x','y']
+cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
 
 # CSS for tables
 
@@ -148,23 +152,30 @@ with tab_player:
 </table>
 ''', unsafe_allow_html=True)
 
-    # Display the HTML table in Streamlit
-    #st.write(html_table, unsafe_allow_html=True)
+## goal mapping
+
+
+
+
+
+
+
+
+
 
 ##########################################
 ## Team Tab                             ##
 ##########################################    
     
 #with tab_team:
-#    team = st.selectbox("Choose a team (or click below and start typing):", dfteams.Team, index=1)
+#    team = st.selectbox("Choose a team (or click below and start typing):", players_df.Team, index=1)
 #   
-#    styler_team = (dfplayers[dfplayers.Team == team_to_tm[team]][cols].style
+#    styler_team = (players_df[players_df.Team == team_to_tm[team]][cols].style
 #                          .set_properties(**{'background': 'azure', 'border': '1.2px solid'})
 #                          .hide(axis='index')
-#                          .set_table_styles(dfstyle)
-#                          .applymap(color_surplusvalue, subset=pd.IndexSlice[:, ['Surplus Value ($M)']])                                                    )
+#                          .set_table_styles(dfstyle))                                               
 #    st.table(styler_team)
-#    
+    
 #    st.success('''**A Brief Note on Methods:**  
 
     
