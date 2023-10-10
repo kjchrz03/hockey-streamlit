@@ -22,6 +22,9 @@ players_df = load_players()
 
 cols = ['Name','Position','Team','Goals']
 
+#def load_teams():
+
+
 def load_map():
     github_csv_url = 'data/goal_locations.csv'
     goal_mapping = pd.read_csv(github_csv_url)
@@ -164,15 +167,14 @@ with tab_player:
 ##########################################    
     
 #with tab_team:
-#    team = st.selectbox("Choose a team (or click below and start typing):", dfteams.Team, index=1)
+#    team = st.selectbox("Choose a team (or click below and start typing):", players_df.Team, index=1)
 #   
-#    styler_team = (dfplayers[dfplayers.Team == team_to_tm[team]][cols].style
+#    styler_team = (players_df[players_df.Team == team_to_tm[team]][cols].style
 #                          .set_properties(**{'background': 'azure', 'border': '1.2px solid'})
 #                          .hide(axis='index')
-#                          .set_table_styles(dfstyle)
-#                          .applymap(color_surplusvalue, subset=pd.IndexSlice[:, ['Surplus Value ($M)']])                                                    )
+#                          .set_table_styles(dfstyle))                                               
 #    st.table(styler_team)
-#    
+    
 #    st.success('''**A Brief Note on Methods:**  
 
     
