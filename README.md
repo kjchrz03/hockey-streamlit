@@ -15,5 +15,7 @@ I have lots of ideas I want to develop for this app. I have a rough roadmap of i
  <li> Advanced Stats trackers </li>
  <li> Player report cards </li>
  <li> Award trackers </li>
+ <li> Adding previous seasons' data for trend tracking </li>
+ <li> Expanding into franchise-level data </li>
 </ul>
 
