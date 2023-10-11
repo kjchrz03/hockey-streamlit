@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 import subprocess
 
@@ -128,7 +129,7 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 
 
 with tab_player:
-  player_id_mapping = {row['Name']: row['player_ID'] for index, row in players_df.iterrows()}
+  player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
 
 # Display the player dropdown with hidden player IDs
 selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
@@ -139,7 +140,7 @@ player_position = players_df[players_df.Name == selected_player_name].Position.t
 player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
 
 st.write(f'''
-        ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+        ##### <div style="text-align: center"> This season, <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
 ''', unsafe_allow_html=True)
 
 # Select only the desired columns from the DataFrame
@@ -155,18 +156,17 @@ st.write(f'''
     <td style="font-weight: bold;">Goals</td>
 </tr>
 <tr>
-    <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
-    <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
-    <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
-    <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
+    <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
+    <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
+    <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
+    <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
 </tr>
 </table>
 ''', unsafe_allow_html=True)
 
 ## goal mapping
-#player_goals = goal_counts.query('player_id == 8477426')
-player_goals = ('player_name == @selected_player_name')
-player_name = player_goals['player_name']
+player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
+
 
 goals = (
     player_goals
@@ -175,6 +175,7 @@ goals = (
         y=player_goals.y_adjusted * np.sign(player_goals.x_adjusted),
     )
 )
+
 
 rink = NHLRink(rotation=270, net={"visible": False})
 
@@ -199,7 +200,7 @@ rink.text(
 
 #Additional Test
 location_texth = rink.text(
-    0.5, 0.05, player_name, ax=ax,
+    0.5, 0.05, selected_player_name, ax=ax,
     use_rink_coordinates=False,
     ha="center", va="center", fontsize=20,
 )
