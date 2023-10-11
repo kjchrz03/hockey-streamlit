@@ -198,7 +198,8 @@ st.pyplot(fig)
 st.write("Player Goals Detail:")
 st.write(player_goals)
 
-
+text = "Ice rink heat map package from [The Bucketless](https://www.example.com)"
+st.markdown(text, unsafe_allow_html=True)
 
 
 
