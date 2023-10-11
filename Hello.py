@@ -1,9 +1,19 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-#from hockey_rink import NHLRink, RinkImage
-#import matplotlib.pyplot as plt
-#import seaborn as sns
+import matplotlib
+matplotlib.use('Agg')  # Use the Agg backend
+import matplotlib.pyplot as plt
+
+import subprocess
+
+# Install the library from the GitHub repository using pip within your Streamlit app
+subprocess.run(["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"])
+
+
+# Import the external library
+import hockey_rink
+from hockey_rink import NHLRink, RinkImage
 
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
@@ -23,7 +33,6 @@ players_df = load_players()
 cols = ['Name','Position','Team','Goals']
 
 #def load_teams():
-
 
 def load_map():
     github_csv_url = 'data/ice_map_data.csv'
@@ -110,56 +119,89 @@ st.markdown('''##### <span style="color:gray">Explore NHL Advanced Stats, Simply
 tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Lookup", "Explore", "FAQ"])
 
 
-
-#st.sidebar.markdown(" ## About Check This Data")
-#st.sidebar.markdown("Dip your toes into advanced hockey analytics with some of my favorite metrics"  )              
-#st.sidebar.info("Read more about how the model works and see the code on my [Github](https://github.com/kjchrz03/hockey-streamlit).", icon="ℹ️")
-
-
 ##########################################
 ## Player Tab                           ##
 ##########################################
 
 
 with tab_player:
-    player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
+  player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
 
-    player_position = players_df[players_df.Name == player].Position.to_list()[0]
-    player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
+# Display the player dropdown with hidden player IDs
+selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
 
-    st.write(f'''
-         ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
-    ''', unsafe_allow_html=True)
+# Get the player ID based on the selected player name
+selected_player_id = player_id_mapping[selected_player_name]
+player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
+player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
 
-    # Select only the desired columns from the DataFrame
-    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
-
-    # Create an HTML table with desired styling
-    st.write(f'''
-    <table style="background: azure; border: 1.2px solid; width: 100%">
-    <tr>
-        <td style="font-weight: bold;">Name</td>
-        <td style="font-weight: bold;">Position</td>
-        <td style="font-weight: bold;">Team</td>
-        <td style="font-weight: bold;">Goals</td>
-    </tr>
-    <tr>
-        <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
-    </tr>
-</table>
+st.write(f'''
+        ##### <div style="text-align: center"> This season, <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
 ''', unsafe_allow_html=True)
 
+# Select only the desired columns from the DataFrame
+selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
+
+# Create an HTML table with desired styling
+st.write(f'''
+<table style="background: azure; border: 1.2px solid; width: 100%">
+<tr>
+    <td style="font-weight: bold;">Name</td>
+    <td style="font-weight: bold;">Position</td>
+    <td style="font-weight: bold;">Team</td>
+    <td style="font-weight: bold;">Goals</td>
+</tr>
+<tr>
+    <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
+    <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
+    <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
+    <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
+</tr>
+</table>
+''', unsafe_allow_html=True)
+st.markdown("<br>", unsafe_allow_html=True)
 ## goal mapping
+player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
 
+    # Create an NHLRink object
+rink = hockey_rink.NHLRink(rotation=270, net={"visible": False})
 
+# Define the figure and axes for the rink map
+fig, ax = plt.subplots(1, 1, figsize=(10, 16)) 
 
+# Draw the rink on the single Axes object
+rink.draw(display_range="half", ax=ax)
 
+# Scatter plot for goals
+rink.scatter(
+    "x_adjusted", "y_adjusted", ax=ax,
+    facecolor="white", edgecolor="black", s=500,
+    data=player_goals
+)
 
+# Add text for goal numbers
+rink.text(
+    "x_adjusted", "y_adjusted", "goal_no", ax=ax,
+    ha="center", va="center", fontsize=8, 
+    data=player_goals
+)
 
+# Additional Test
+location_texth = rink.text(
+    0.5, 0.05, selected_player_name, ax=ax,
+    use_rink_coordinates=False,
+    ha="center", va="center", fontsize=20,
+)
 
+# Display the rink map
+st.pyplot(fig)
+
+# Rest of your code for player information and goals
+st.write("Player Goals Detail:")
+st.write(player_goals)
+
+text = "Ice rink heat map package from [The Bucketless](https://www.example.com)"
+st.markdown(text, unsafe_allow_html=True)
 
 
 
