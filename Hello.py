@@ -122,10 +122,15 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 
 
 with tab_player:
-    player = st.selectbox("Choose a player (or click below and start typing):", players_df.Name, index=0)
+  player_id_mapping = {row['Name']: row['Player_ID'] for index, row in players_df.iterrows()}
 
-    player_position = players_df[players_df.Name == player].Position.to_list()[0]
-    player_goals = players_df[players_df.Name == player].Goals.to_list()[0]
+# Display the player dropdown with hidden player IDs
+    selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
+
+# Get the player ID based on the selected player name
+    selected_player_id = player_id_mapping[selected_player_name]
+    player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
+    player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
 
     st.write(f'''
          ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
