@@ -153,7 +153,45 @@ with tab_player:
 ''', unsafe_allow_html=True)
 
 ## goal mapping
+#player_goals = goal_counts.query('player_id == 8477426')
+player_goals = ('player_name == @selected_player_name')
+player_name = player_goals['player_name']
 
+goals = (
+    player_goals
+    .assign(
+        x=np.abs(player_goals.x_adjusted),
+        y=player_goals.y_adjusted * np.sign(player_goals.x_adjusted),
+    )
+)
+
+rink = NHLRink(rotation=270, net={"visible": False})
+
+fig, ax = plt.subplots(1, 1, figsize=(10, 20))
+
+# Draw the rink on the single Axes object
+rink.draw(display_range="half", ax=ax)
+
+# Scatter plot for goals
+rink.scatter(
+    "x_adjusted", "y_adjusted", ax=ax,
+    facecolor="white", edgecolor="black", s=500,
+    data=goals
+)
+
+# Add text for goal numbers
+rink.text(
+    "x_adjusted", "y_adjusted", "goal_no", ax=ax,
+    ha="center", va="center", fontsize=8, 
+    data=goals
+)
+
+#Additional Test
+location_texth = rink.text(
+    0.5, 0.05, player_name, ax=ax,
+    use_rink_coordinates=False,
+    ha="center", va="center", fontsize=20,
+)
 
 
 
