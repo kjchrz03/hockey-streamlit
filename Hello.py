@@ -201,11 +201,8 @@ location_texth = rink.text(
 st.pyplot(fig)
 
 # Rest of your code for player information and goals
-st.write("Player Goals:")
+st.write("Player Goals Detail:")
 st.write(player_goals)
-
-
-
 
 
 
