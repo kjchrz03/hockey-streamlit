@@ -163,23 +163,15 @@ st.write(f'''
 </tr>
 </table>
 ''', unsafe_allow_html=True)
-
+st.markdown("<br>", unsafe_allow_html=True)
 ## goal mapping
 player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
 
+    # Create an NHLRink object
+rink = hockey_rink.NHLRink(rotation=270, net={"visible": False})
 
-goals = (
-    player_goals
-    .assign(
-        x=np.abs(player_goals.x_adjusted),
-        y=player_goals.y_adjusted * np.sign(player_goals.x_adjusted),
-    )
-)
-
-
-rink = NHLRink(rotation=270, net={"visible": False})
-
-fig, ax = plt.subplots(1, 1, figsize=(10, 20))
+# Define the figure and axes for the rink map
+fig, ax = plt.subplots(1, 1, figsize=(10, 16)) 
 
 # Draw the rink on the single Axes object
 rink.draw(display_range="half", ax=ax)
@@ -188,23 +180,29 @@ rink.draw(display_range="half", ax=ax)
 rink.scatter(
     "x_adjusted", "y_adjusted", ax=ax,
     facecolor="white", edgecolor="black", s=500,
-    data=goals
+    data=player_goals
 )
 
 # Add text for goal numbers
 rink.text(
     "x_adjusted", "y_adjusted", "goal_no", ax=ax,
     ha="center", va="center", fontsize=8, 
-    data=goals
+    data=player_goals
 )
 
-#Additional Test
+# Additional Test
 location_texth = rink.text(
     0.5, 0.05, selected_player_name, ax=ax,
     use_rink_coordinates=False,
     ha="center", va="center", fontsize=20,
 )
 
+# Display the rink map
+st.pyplot(fig)
+
+# Rest of your code for player information and goals
+st.write("Player Goals:")
+st.write(player_goals)
 
 
 
