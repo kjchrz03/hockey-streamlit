@@ -1,9 +1,16 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-#from hockey_rink import NHLRink, RinkImage
-#import matplotlib.pyplot as plt
-#import seaborn as sns
+
+import subprocess
+
+# Install the library from the GitHub repository using pip within your Streamlit app
+subprocess.run(["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"])
+
+
+# Import the external library
+import hockey_rink
+from hockey_rink import NHLRink, RinkImage
 
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
@@ -23,7 +30,6 @@ players_df = load_players()
 cols = ['Name','Position','Team','Goals']
 
 #def load_teams():
-
 
 def load_map():
     github_csv_url = 'data/ice_map_data.csv'
@@ -122,38 +128,38 @@ tab_player, tab_team, tab_explore, tab_faq = st.tabs(["Player Lookup", "Team Loo
 
 
 with tab_player:
-  player_id_mapping = {row['Name']: row['Player_ID'] for index, row in players_df.iterrows()}
+  player_id_mapping = {row['Name']: row['player_ID'] for index, row in players_df.iterrows()}
 
 # Display the player dropdown with hidden player IDs
-    selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
+selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
 
 # Get the player ID based on the selected player name
-    selected_player_id = player_id_mapping[selected_player_name]
-    player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
-    player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
+selected_player_id = player_id_mapping[selected_player_name]
+player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
+player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
 
-    st.write(f'''
-         ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
-    ''', unsafe_allow_html=True)
+st.write(f'''
+        ##### <div style="text-align: center"> This season, <span style="color:blue">{player}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+''', unsafe_allow_html=True)
 
-    # Select only the desired columns from the DataFrame
-    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
+# Select only the desired columns from the DataFrame
+selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
 
-    # Create an HTML table with desired styling
-    st.write(f'''
-    <table style="background: azure; border: 1.2px solid; width: 100%">
-    <tr>
-        <td style="font-weight: bold;">Name</td>
-        <td style="font-weight: bold;">Position</td>
-        <td style="font-weight: bold;">Team</td>
-        <td style="font-weight: bold;">Goals</td>
-    </tr>
-    <tr>
-        <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
-    </tr>
+# Create an HTML table with desired styling
+st.write(f'''
+<table style="background: azure; border: 1.2px solid; width: 100%">
+<tr>
+    <td style="font-weight: bold;">Name</td>
+    <td style="font-weight: bold;">Position</td>
+    <td style="font-weight: bold;">Team</td>
+    <td style="font-weight: bold;">Goals</td>
+</tr>
+<tr>
+    <td>{players_df.loc[players_df.Name == player, 'Name'].values[0]}</td>
+    <td>{players_df.loc[players_df.Name == player, 'Position'].values[0]}</td>
+    <td>{players_df.loc[players_df.Name == player, 'Team'].values[0]}</td>
+    <td>{players_df.loc[players_df.Name == player, 'Goals'].values[0]}</td>
+</tr>
 </table>
 ''', unsafe_allow_html=True)
 
