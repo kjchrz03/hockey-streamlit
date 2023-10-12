@@ -1,56 +1,56 @@
 jersey_number,player_id,player_name,position,team_name,goals
-9,8480113,Alex Iafallo,Left Wing,Winnipeg Jets,4
-15,8481618,Alex Newhook,Center,Montréal Canadiens,8
-88,8478233,Andrew Mangiapane,Left Wing,Calgary Flames,8
-34,8479318,Auston Matthews,Center,Toronto Maple Leafs,12
-76,8476869,Brady Skjei,Defenseman,Carolina Hurricanes,4
+9,8480113,Alex Iafallo,Left Wing,Winnipeg Jets,1
+15,8481618,Alex Newhook,Center,Montréal Canadiens,2
+88,8478233,Andrew Mangiapane,Left Wing,Calgary Flames,2
+34,8479318,Auston Matthews,Center,Toronto Maple Leafs,3
+76,8476869,Brady Skjei,Defenseman,Carolina Hurricanes,1
 38,8479542,Brandon Hagel,Left Wing,Tampa Bay Lightning,1
-6,8478444,Brock Boeser,Right Wing,Vancouver Canucks,16
+6,8478444,Brock Boeser,Right Wing,Vancouver Canucks,4
 17,8475810,Bryan Rust,Right Wing,Pittsburgh Penguins,1
-8,8480069,Cale Makar,Defenseman,Colorado Avalanche,4
-91,8479336,Carl Grundstrom,Right Wing,Los Angeles Kings,4
+8,8480069,Cale Makar,Defenseman,Colorado Avalanche,1
+91,8479336,Carl Grundstrom,Right Wing,Los Angeles Kings,1
 20,8476905,Chandler Stephenson,Center,Vegas Golden Knights,1
-22,8481540,Cole Caufield,Right Wing,Montréal Canadiens,4
+22,8481540,Cole Caufield,Right Wing,Montréal Canadiens,1
 70,8480252,Cole Guttman,Center,Chicago Blackhawks,1
-98,8484144,Connor Bedard,Center,Chicago Blackhawks,4
-8,8478856,Conor Garland,Right Wing,Vancouver Canucks,4
-81,8478057,Dakota Joshua,Center,Vancouver Canucks,4
-88,8477956,David Pastrnak,Right Wing,Boston Bruins,8
-28,8477496,Elias Lindholm,Center,Calgary Flames,4
-40,8480012,Elias Pettersson,Center,Vancouver Canucks,4
+98,8484144,Connor Bedard,Center,Chicago Blackhawks,1
+8,8478856,Conor Garland,Right Wing,Vancouver Canucks,1
+81,8478057,Dakota Joshua,Center,Vancouver Canucks,1
+88,8477956,David Pastrnak,Right Wing,Boston Bruins,2
+28,8477496,Elias Lindholm,Center,Calgary Flames,1
+40,8480012,Elias Pettersson,Center,Vancouver Canucks,1
 49,8477964,Ivan Barbashev,Center,Vegas Golden Knights,1
-9,8476468,J.T. Miller,Center,Vancouver Canucks,4
-74,8476958,Jaccob Slavin,Defenseman,Carolina Hurricanes,4
+9,8476468,J.T. Miller,Center,Vancouver Canucks,1
+74,8476958,Jaccob Slavin,Defenseman,Carolina Hurricanes,1
 9,8478403,Jack Eichel,Center,Vegas Golden Knights,1
-71,8478133,Jake Evans,Center,Montréal Canadiens,4
+71,8478133,Jake Evans,Center,Montréal Canadiens,1
 19,8477955,Jared McCann,Left Wing,Seattle Kraken,1
 16,8477450,Jason Dickinson,Center,Chicago Blackhawks,1
-56,8481058,Jesse Ylönen,Right Wing,Montréal Canadiens,4
+56,8481058,Jesse Ylönen,Right Wing,Montréal Canadiens,1
 81,8476539,Jonathan Marchessault,Right Wing,Vegas Golden Knights,1
-11,8473533,Jordan Staal,Center,Carolina Hurricanes,4
+11,8473533,Jordan Staal,Center,Carolina Hurricanes,1
 75,8481704,Juuso Parssinen,Center,Nashville Predators,1
-81,8478398,Kyle Connor,Left Wing,Winnipeg Jets,4
-29,8477934,Leon Draisaitl,Center,Edmonton Oilers,4
-52,8477346,MacKenzie Weegar,Defenseman,Calgary Flames,4
-55,8476460,Mark Scheifele,Center,Winnipeg Jets,4
-21,8478472,Mathieu Joseph,Right Wing,Ottawa Senators,4
-58,8478047,Michael Bunting,Left Wing,Carolina Hurricanes,4
-96,8478420,Mikko Rantanen,Right Wing,Colorado Avalanche,8
-28,8477425,Miles Wood,Left Wing,Colorado Avalanche,4
-16,8478483,Mitchell Marner,Right Wing,Toronto Maple Leafs,4
-29,8477492,Nathan MacKinnon,Center,Colorado Avalanche,4
+81,8478398,Kyle Connor,Left Wing,Winnipeg Jets,1
+29,8477934,Leon Draisaitl,Center,Edmonton Oilers,1
+52,8477346,MacKenzie Weegar,Defenseman,Calgary Flames,1
+55,8476460,Mark Scheifele,Center,Winnipeg Jets,1
+21,8478472,Mathieu Joseph,Right Wing,Ottawa Senators,1
+58,8478047,Michael Bunting,Left Wing,Carolina Hurricanes,1
+96,8478420,Mikko Rantanen,Right Wing,Colorado Avalanche,2
+28,8477425,Miles Wood,Left Wing,Colorado Avalanche,1
+16,8478483,Mitchell Marner,Right Wing,Toronto Maple Leafs,1
+29,8477492,Nathan MacKinnon,Center,Colorado Avalanche,1
 20,8477426,Nicholas Paul,Left Wing,Tampa Bay Lightning,2
 17,8473422,Nick Foligno,Left Wing,Chicago Blackhawks,1
 86,8476453,Nikita Kucherov,Right Wing,Tampa Bay Lightning,2
-18,8479393,Noah Gregor,Center,Toronto Maple Leafs,4
-27,8480448,Parker Kelly,Left Wing,Ottawa Senators,4
-55,8482124,Quinton Byfield,Center,Los Angeles Kings,4
-4,8478397,Rasmus Andersson,Defenseman,Calgary Flames,4
+18,8479393,Noah Gregor,Center,Toronto Maple Leafs,1
+27,8480448,Parker Kelly,Left Wing,Ottawa Senators,1
+55,8482124,Quinton Byfield,Center,Los Angeles Kings,1
+4,8478397,Rasmus Andersson,Defenseman,Calgary Flames,1
 8,8477987,Ryan Donato,Center,Chicago Blackhawks,1
 90,8475158,Ryan O'Reilly,Center,Nashville Predators,1
 87,8471675,Sidney Crosby,Center,Pittsburgh Penguins,1
-86,8476882,Teuvo Teravainen,Left Wing,Carolina Hurricanes,4
-18,8482116,Tim Stützle,Center,Ottawa Senators,4
+86,8476882,Teuvo Teravainen,Left Wing,Carolina Hurricanes,1
+18,8482116,Tim Stützle,Center,Ottawa Senators,1
 82,8478438,Tommy Novak,Center,Nashville Predators,1
-11,8479365,Trent Frederic,Center,Boston Bruins,4
-88,8477939,William Nylander,Right Wing,Toronto Maple Leafs,4
+11,8479365,Trent Frederic,Center,Boston Bruins,1
+88,8477939,William Nylander,Right Wing,Toronto Maple Leafs,1
