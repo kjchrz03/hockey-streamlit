@@ -14,8 +14,11 @@ subprocess.run(["pip", "install", "git+https://github.com/the-bucketless/hockey_
 # Import the external library
 import hockey_rink
 from hockey_rink import NHLRink, RinkImage
-
+from PIL import Image 
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
+
+image = Image.open('logo.png')
+st.image(image)
 
 #@st.cache
 def load_players():
