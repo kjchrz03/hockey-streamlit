@@ -8,6 +8,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 13,8482109,Alexis Lafrenière,Left Wing,New York Rangers,24,1,-82.0,-7.0
 88,8478233,Andrew Mangiapane,Left Wing,Calgary Flames,84,1,-74.0,7.0
 88,8478233,Andrew Mangiapane,Left Wing,Calgary Flames,344,3,-65.0,7.0
+71,8478519,Anthony Cirelli,Center,Tampa Bay Lightning,125,2,81.0,5.0
 10,8478550,Artemi Panarin,Left Wing,New York Rangers,155,2,60.0,-1.0
 34,8479318,Auston Matthews,Center,Toronto Maple Leafs,81,1,-67.0,-1.0
 34,8479318,Auston Matthews,Center,Toronto Maple Leafs,99,1,-81.0,29.0
@@ -19,8 +20,10 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 38,8476432,Boone Jenner,Center,Columbus Blue Jackets,84,1,80.0,1.0
 38,8476432,Boone Jenner,Center,Columbus Blue Jackets,163,2,-80.0,3.0
 76,8476869,Brady Skjei,Defenseman,Carolina Hurricanes,294,3,-48.0,-36.0
+7,8480801,Brady Tkachuk,Left Wing,Ottawa Senators,158,2,-71.0,8.0
 7,8480801,Brady Tkachuk,Left Wing,Ottawa Senators,208,2,-55.0,-21.0
 7,8480801,Brady Tkachuk,Left Wing,Ottawa Senators,225,3,86.0,4.0
+7,8480801,Brady Tkachuk,Left Wing,Ottawa Senators,267,3,80.0,1.0
 21,8479520,Brandon Duhaime,Right Wing,Minnesota Wild,345,3,69.0,1.0
 38,8479542,Brandon Hagel,Left Wing,Tampa Bay Lightning,70,1,67.0,4.0
 38,8479542,Brandon Hagel,Left Wing,Tampa Bay Lightning,228,3,71.0,7.0
@@ -38,6 +41,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 8,8480069,Cale Makar,Defenseman,Colorado Avalanche,136,2,-49.0,12.0
 19,8475714,Calle Jarnkrok,Center,Toronto Maple Leafs,307,3,-85.0,2.0
 89,8474715,Cam Atkinson,Right Wing,Philadelphia Flyers,293,3,-86.0,0.0
+4,8475764,Cam Fowler,Defenseman,Anaheim Ducks,281,3,-53.0,12.0
 8,8481546,Cam York,Defenseman,Philadelphia Flyers,190,2,71.0,20.0
 91,8479336,Carl Grundstrom,Right Wing,Los Angeles Kings,168,2,81.0,7.0
 23,8477409,Carter Verhaeghe,Center,Florida Panthers,304,3,81.0,7.0
@@ -74,6 +78,9 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 71,8471215,Evgeni Malkin,Center,Pittsburgh Penguins,134,2,-71.0,-6.0
 71,8471215,Evgeni Malkin,Center,Pittsburgh Penguins,275,3,74.0,-10.0
 18,8480821,Filip Zadina,Right Wing,San Jose Sharks,87,1,75.0,-12.0
+77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,50,1,74.0,-27.0
+77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,164,2,-72.0,14.0
+77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,287,3,63.0,23.0
 14,8474679,Gustav Nyquist,Center,Nashville Predators,264,3,86.0,-32.0
 49,8477964,Ivan Barbashev,Center,Vegas Golden Knights,115,2,67.0,8.0
 37,8477456,J.T. Compher,Left Wing,Detroit Red Wings,180,2,80.0,0.0
@@ -118,8 +125,10 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 23,8482079,Marco Rossi,Center,Minnesota Wild,179,2,-81.0,2.0
 55,8476460,Mark Scheifele,Center,Winnipeg Jets,42,1,-69.0,5.0
 55,8476460,Mark Scheifele,Center,Winnipeg Jets,322,3,76.0,-12.0
+88,8480039,Martin Necas,Center,Carolina Hurricanes,264,3,-82.0,6.0
 22,8478891,Mason Appleton,Center,Winnipeg Jets,292,3,-72.0,-2.0
 21,8478472,Mathieu Joseph,Right Wing,Ottawa Senators,20,1,78.0,0.0
+21,8478472,Mathieu Joseph,Right Wing,Ottawa Senators,206,2,-65.0,-11.0
 12,8481557,Matt Boldy,Left Wing,Minnesota Wild,146,2,-75.0,-27.0
 27,8482679,Matt Coronato,Right Wing,Calgary Flames,188,2,79.0,19.0
 95,8475168,Matt Duchene,Center,Dallas Stars,341,5,-75.0,1.0
@@ -146,6 +155,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 18,8479393,Noah Gregor,Center,Toronto Maple Leafs,144,2,64.0,25.0
 27,8480448,Parker Kelly,Left Wing,Ottawa Senators,275,3,77.0,2.0
 29,8479339,Patrik Laine,Left Wing,Columbus Blue Jackets,301,3,88.0,9.0
+34,8483490,Pavel Mintyukov,Defenseman,Anaheim Ducks,73,1,72.0,10.0
 55,8482124,Quinton Byfield,Right Wing,Los Angeles Kings,243,2,75.0,10.0
 4,8478397,Rasmus Andersson,Defenseman,Calgary Flames,215,2,54.0,-1.0
 19,8475191,Reilly Smith,Right Wing,Pittsburgh Penguins,210,3,68.0,-6.0
@@ -154,6 +164,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 8,8477987,Ryan Donato,Center,Chicago Blackhawks,203,2,83.0,0.0
 38,8477451,Ryan Hartman,Right Wing,Minnesota Wild,75,1,82.0,-2.0
 90,8475158,Ryan O'Reilly,Center,Nashville Predators,175,2,81.0,1.0
+39,8475842,Sam Carrick,Center,Anaheim Ducks,44,1,66.0,11.0
 13,8477933,Sam Reinhart,Center,Florida Panthers,105,1,84.0,-8.0
 50,8480434,Sean Durzi,Defenseman,Arizona Coyotes,114,2,42.0,0.0
 91,8477497,Sean Monahan,Center,Montréal Canadiens,201,2,73.0,4.0
@@ -162,9 +173,13 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 87,8471675,Sidney Crosby,Center,Pittsburgh Penguins,189,2,-82.0,-19.0
 91,8474564,Steven Stamkos,Center,Tampa Bay Lightning,62,1,80.0,14.0
 91,8474564,Steven Stamkos,Center,Tampa Bay Lightning,168,2,-68.0,21.0
+84,8479661,Tanner Jeannot,Left Wing,Tampa Bay Lightning,176,2,79.0,-2.0
 70,8476871,Tanner Pearson,Left Wing,Montréal Canadiens,152,2,52.0,16.0
+86,8476882,Teuvo Teravainen,Left Wing,Carolina Hurricanes,154,2,75.0,-10.0
+86,8476882,Teuvo Teravainen,Left Wing,Carolina Hurricanes,207,3,-33.0,-17.0
 86,8476882,Teuvo Teravainen,Left Wing,Carolina Hurricanes,223,2,74.0,-31.0
 18,8482116,Tim Stützle,Center,Ottawa Senators,280,3,78.0,21.0
+18,8482116,Tim Stützle,Center,Ottawa Senators,284,3,82.0,1.0
 82,8478438,Tommy Novak,Center,Nashville Predators,255,3,-73.0,-23.0
 11,8478439,Travis Konecny,Right Wing,Philadelphia Flyers,72,1,-69.0,-14.0
 11,8478439,Travis Konecny,Right Wing,Philadelphia Flyers,88,1,-83.0,1.0
@@ -175,6 +190,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 90,8474870,Tyler Johnson,Center,Chicago Blackhawks,292,3,85.0,8.0
 75,8481006,Tyler Tucker,Defenseman,St. Louis Blues,121,2,-51.0,3.0
 77,8475167,Victor Hedman,Defenseman,Tampa Bay Lightning,245,3,41.0,-5.0
+91,8475765,Vladimir Tarasenko,Right Wing,Ottawa Senators,48,1,81.0,10.0
 50,8482157,Will Cuylle,Left Wing,New York Rangers,265,3,-65.0,1.0
 88,8477939,William Nylander,Right Wing,Toronto Maple Leafs,120,1,-90.0,2.0
 88,8477939,William Nylander,Right Wing,Toronto Maple Leafs,202,2,60.0,32.0
