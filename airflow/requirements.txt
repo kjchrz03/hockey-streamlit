@@ -1,8 +1,0 @@
-altair
-numpy
-pandas
-pydeck
-streamlit
-matplotlib
-hockey_rink
-importlib.metadata
