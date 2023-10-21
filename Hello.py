@@ -20,7 +20,7 @@ st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sideb
 image = Image.open('logo.png')
 st.image(image)
 
-#@st.cache
+#player goals info
 def load_players():
     github_csv_url = 'data/goal_counts.csv'
     players_df = pd.read_csv(github_csv_url)
@@ -35,11 +35,10 @@ players_df = load_players()
 
 cols = ['Name','Position','Team','Goals']
 
-#def load_teams():
-
+#goal scoring data
 def load_map():
-    github_csv_url = 'data/ice_map_data.csv'
-    goal_mapping = pd.read_csv(github_csv_url)
+    github_ice_map_url = 'data/ice_map_data.csv'
+    goal_mapping = pd.read_csv(github_ice_map_url)
     goal_mapping['Name'] = goal_mapping['player_name']
     goal_mapping['ID'] = goal_mapping['player_id']
     goal_mapping['Goal Number'] = goal_mapping['goal_no']
@@ -50,6 +49,27 @@ def load_map():
 goal_mapping = load_map()
 
 cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
+
+#game matchup data
+def load_matchups():
+
+    github_shots_url = 'data/game_matchups.csv'
+    shots = pd.read_csv(github_shots_url)
+    shots['Event'] = shots['event']
+    shots['Matchup'] = shots['matchup'].unique()
+    return shots
+
+#game matchup data
+def load_logos():
+    github_logos_url = 'data/logos.csv'
+    logos = pd.read_csv(github_logos_url)
+    logos['Tri Code'] = logos['tri_code']
+    logos['Team ID'] = logos['id']
+    logos['Logo'] = logos['logo']
+    return logos
+
+logos = load_logos()
+cols = ['Tri Code','Team ID','Logo']
 
 # CSS for tables
 
@@ -209,11 +229,11 @@ st.markdown(text, unsafe_allow_html=True)
 
 
 ##########################################
-## Team Tab                             ##
+## Explore Games                             ##
 ##########################################    
     
-#with tab_team:
-#    team = st.selectbox("Choose a team (or click below and start typing):", players_df.Team, index=1)
+with tab_games:
+#    gmae = st.selectbox("Choose a matchup (or click below and start typing):", players_df.Team, index=1)
 #   
 #    styler_team = (players_df[players_df.Team == team_to_tm[team]][cols].style
 #                          .set_properties(**{'background': 'azure', 'border': '1.2px solid'})
