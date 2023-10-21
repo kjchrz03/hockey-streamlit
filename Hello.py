@@ -52,12 +52,14 @@ cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
 
 #game matchup data
 def load_matchups():
-
     github_shots_url = 'data/game_matchups.csv'
     shots = pd.read_csv(github_shots_url)
     shots['Event'] = shots['event']
     shots['Matchup'] = shots['matchup'].unique()
     return shots
+matchups = load_matchups()
+
+cols = ['Event', 'Matchup']
 
 #game matchup data
 def load_logos():
