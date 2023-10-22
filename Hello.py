@@ -56,6 +56,8 @@ def load_matchups():
     shots = pd.read_csv(github_shots_url)
     shots['Event'] = shots['event']
     shots['Matchup'] = shots['matchup']
+    unique_matchups = shots[['game_id', 'Matchup']].drop_duplicates()
+    shots = pd.merge(shots, unique_matchups, on='game_id', how='inner')
     shots['Home Team'] = shots['home_team_name']
     shots['Away Team'] = shots['away_team_name']
     return shots
@@ -269,10 +271,10 @@ with tab_games:
     selected_matchup_shots = shots[shots['game_id'] == selected_game_id]
 
 # Example usage: Display some information about the selected matchup
-#if selected_game_id in matchup_mapping.values():
-#    st.write(f"Selected Game ID: {selected_game_id}")
-#    st.write(f"Selected Matchup: {selected_matchup}")
-#    st.write(f"Number of Shots in this Matchup: {len(selected_matchup_shots)}")
+if selected_game_id in matchup_mapping.values():
+    st.write(f"Selected Game ID: {selected_game_id}")
+    st.write(f"Selected Matchup: {selected_matchup}")
+    st.write(f"Number of Shots in this Matchup: {len(selected_matchup_shots)}")
 
 
 ## goal mapping
