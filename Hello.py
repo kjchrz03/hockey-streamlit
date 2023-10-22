@@ -272,16 +272,32 @@ goal_counts = goals.groupby('name')['event'].count()
 
 # Display information about the selected matchup and the number of goals
 if selected_game_id in game_id_mapping.values():
-    st.write(f"Selected Matchup: {selected_home_team} vs. {selected_away_team}")
-    st.write(f"Number of Shots in this Matchup: {len(selected_matchup_shots)}")
-    st.write(f"Number of Goals in this Matchup: {number_of_goals}")
+   
+ # Select only the desired columns from the DataFrame
+    selected_columns = ['Matchup', 'Total Shot Attempts', 'Total Goals']  # Replace with your actual column names
 
+    # Create an HTML table with desired styling
+    st.write(f'''
+    <table style="background: azure; border: 1.2px solid; width: 100%">
+    <tr>
+        <td style="font-weight: bold;">Matchup</td>
+        <td style="font-weight: bold;">Total Shot Attempts</td>
+        <td style="font-weight: bold;">Total Goals</td>
+    </tr>
+    <tr>
+        <td>{selected_home_team} vs. {selected_away_team}</td>
+        <td>{len(selected_matchup_shots)}</td>
+        <td>{number_of_goals}</td>
+    </tr>
+    </table>
+    ''', unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    
     # Display the goal counts for each 'name'
     st.write("Final Score:")
     for name, count in goal_counts.items():
         st.write(f"{name}: {count}")
-
-
 
 ## goal mapping
     # The rest of your script goes here
