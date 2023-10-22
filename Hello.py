@@ -55,7 +55,7 @@ def load_matchups():
     github_shots_url = 'data/game_matchups.csv'
     shots = pd.read_csv(github_shots_url)
     shots['Event'] = shots['event']
-    shots['Matchup'] = shots['matchup_date']
+    shots['Matchup'] = shots['matchup']
     shots['Home Team'] = shots['home_team_name']
     shots['Away Team'] = shots['away_team_name']
     return shots
@@ -241,7 +241,7 @@ st.markdown(text, unsafe_allow_html=True)
 ##########################################    
    
 with tab_games:
-    game_id_mapping = {row['matchup_date']: row['game_id'] for index, row in shots.iterrows()}
+    game_id_mapping = {row['matchup']: row['game_id'] for index, row in shots.iterrows()}
 
     # Display the player dropdown with hidden player IDs
     selected_matchup = st.selectbox("Choose a matchup (or click below and start typing):", list(game_id_mapping.keys()), index=0)
@@ -252,7 +252,7 @@ with tab_games:
     #player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
   
     def create_matchup_mapping(data_frame):
-        matchup_mapping = {f"{row['home_team_name']} vs {row['away_team_name']}, {row['gameDate']}": row['game_id'] for index, row in data_frame.iterrows()}
+        matchup_mapping = {f"{row['Home Team']} vs {row['Away Team']}, {row['gameDate']}": row['game_id'] for index, row in data_frame.iterrows()}
         return matchup_mapping
 
 # Create the matchup mapping
