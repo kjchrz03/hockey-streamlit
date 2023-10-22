@@ -245,26 +245,43 @@ with tab_games:
     logos = load_logos()
 
     cols = ['Tri Code','Team ID','Logo']
+st.title("Explore Games")
+
+# Create a mapping of game matchups to their corresponding game IDs
+game_id_mapping = {row['matchup']: row['game_id'] for index, row in shots.iterrows()}
+
+# Display the game matchup dropdown with hidden game IDs
+selected_matchup = st.selectbox("Choose a matchup (or click below and start typing):", list(game_id_mapping.keys()), index=0)
+
+# Get the selected game ID based on the chosen matchup
+selected_game_id = game_id_mapping[selected_matchup]
+
+# You can now use selected_game_id to filter your shots data based on the chosen matchup
+selected_matchup_shots = shots[shots['game_id'] == selected_game_id]
+
+# Extract home team and away team names
+selected_home_team = shots.loc[shots['game_id'] == selected_game_id, 'home_team_name'].values[0]
+selected_away_team = shots.loc[shots['game_id'] == selected_game_id, 'away_team_name'].values[0]
+
+# Calculate the number of goals in the selected matchup
+number_of_goals = selected_matchup_shots[selected_matchup_shots['event'] == 'Goal']['event'].count()
+
+# Group and count goals by 'name'
+goals = selected_matchup_shots[selected_matchup_shots['event'] == 'Goal']
+goal_counts = goals.groupby('name')['event'].count()
+
+# Display information about the selected matchup and the number of goals
+if selected_game_id in game_id_mapping.values():
+    st.write(f"Selected Matchup: {selected_home_team} vs. {selected_away_team}")
+    st.write(f"Number of Shots in this Matchup: {len(selected_matchup_shots)}")
+    st.write(f"Number of Goals in this Matchup: {number_of_goals}")
+
+    # Display the goal counts for each 'name'
+    st.write("Final Score:")
+    for name, count in goal_counts.items():
+        st.write(f"{name}: {count}")
 
 
-    st.title("Explore Games")
-        # Create a mapping of game matchups to their corresponding game IDs
-    game_id_mapping = {row['matchup']: row['game_id'] for index, row in shots.iterrows()}
-
-        # Display the game matchup dropdown with hidden game IDs
-    selected_matchup = st.selectbox("Choose a matchup (or click below and start typing):", list(game_id_mapping.keys()), index=0)
-
-        # Get the selected game ID based on the chosen matchup
-    selected_game_id = game_id_mapping[selected_matchup]
-
-        # You can now use selected_game_id to filter your shots data based on the chosen matchup
-    selected_matchup_shots = shots[shots['game_id'] == selected_game_id]
-
-    # Example usage: Display some information about the selected matchup
-    if selected_game_id in game_id_mapping.values():
-        st.write(f"Selected Matchup: {selected_matchup}")
-        st.write(f"Number of Shots in this Matchup: {len(selected_matchup_shots)}")
-#how many goals?
 
 ## goal mapping
     # The rest of your script goes here
