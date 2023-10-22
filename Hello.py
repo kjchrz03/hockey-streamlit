@@ -56,6 +56,8 @@ def load_matchups():
     shots = pd.read_csv(github_shots_url)
     shots['Event'] = shots['event']
     shots['Matchup'] = shots['matchup_date']
+    shots['Home Team'] = shots['home_team_name']
+    shots['Away Team'] = shots['away_team_name']
     return shots
 
 shots = load_matchups()
@@ -250,7 +252,7 @@ with tab_games:
     #player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
   
     def create_matchup_mapping(data_frame):
-        matchup_mapping = {f"{row['home_team_tri_code']} vs {row['away_team_tri_code']}, {row['gameDate']}": row['game_id'] for index, row in data_frame.iterrows()}
+        matchup_mapping = {f"{row['home_team_name']} vs {row['away_team_name']}, {row['gameDate']}": row['game_id'] for index, row in data_frame.iterrows()}
         return matchup_mapping
 
 # Create the matchup mapping
