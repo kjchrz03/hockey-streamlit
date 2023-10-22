@@ -49,30 +49,31 @@ def load_map():
 goal_mapping = load_map()
 
 cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
+
 # game matchup data
-def load_matchups():
-    github_shots_url = 'data/game_matchups.csv'
-    shots = pd.read_csv(github_shots_url)
-    shots['Event'] = shots['event']
-    shots['Matchup'] = shots['Matchup']
-    return shots
+#def load_matchups():
+#    github_shots_url = 'data/game_matchups.csv'
+#    shots = pd.read_csv(github_shots_url)
+#    shots['Event'] = shots['event']
+#    shots['Matchup'] = shots['Matchup']
+#    return shots
 
-matchups = load_matchups()
+#shots = load_matchups()
 
-cols = ['Event', 'Matchup']
+#cols = ['Event', 'Matchup']
 
 
 #game matchup data
-def load_logos():
-    github_logos_url = 'data/logos.csv'
-    logos = pd.read_csv(github_logos_url)
-    logos['Tri Code'] = logos['tri_code']
-    logos['Team ID'] = logos['id']
-    logos['Logo'] = logos['logo']
-    return logos
+#def load_logos():
+#    github_logos_url = 'data/logos.csv'
+#    logos = pd.read_csv(github_logos_url)
+#    logos['Tri Code'] = logos['tri_code']
+#    logos['Team ID'] = logos['id']
+#    logos['Logo'] = logos['logo']
+#    return logos
 
-logos = load_logos()
-cols = ['Tri Code','Team ID','Logo']
+#logos = load_logos()
+#cols = ['Tri Code','Team ID','Logo']
 
 # CSS for tables
 
