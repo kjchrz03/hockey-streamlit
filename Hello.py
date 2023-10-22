@@ -97,6 +97,7 @@ tab_player, tab_games = st.tabs(["Player Goals", "Explore Games"])
 ##########################################
 ## Player Tab                           ##
 ##########################################
+# 
 with tab_player:
 
 #player goals info
@@ -111,7 +112,6 @@ with tab_player:
         return players_df
 
     players_df = load_players()
-
     cols = ['Name','Position','Team','Goals']
 
     #goal scoring data
@@ -124,13 +124,10 @@ with tab_player:
         goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
         goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
         return goal_mapping
-
     goal_mapping = load_map()
-
     cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
 
     #player id hidden and mapped to player name
-
     player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
 
     # Display the player dropdown with hidden player IDs
@@ -210,11 +207,10 @@ with tab_player:
     text = "Ice rink heat map package from [The Bucketless](https://github.com/the-bucketless/hockey_rink)"
     st.markdown(text, unsafe_allow_html=True)
 
-
-
 ##########################################
 ## Explore Games                             ##
 ##########################################    
+
 with tab_games:
     # game matchup data
     def load_matchups():
@@ -229,9 +225,7 @@ with tab_games:
         return shots
 
     shots = load_matchups()
-
     cols = ['Event', 'Matchup']
-
 
     #game matchup logos
     def load_logos():
@@ -243,120 +237,120 @@ with tab_games:
         return logos
 
     logos = load_logos()
-
     cols = ['Tri Code','Team ID','Logo']
-st.title("Explore Games")
 
-# Create a mapping of game matchups to their corresponding game IDs
-game_id_mapping = {row['matchup']: row['game_id'] for index, row in shots.iterrows()}
+    st.title("<h2>Explore Games</h2>")
 
-# Display the game matchup dropdown with hidden game IDs
-selected_matchup = st.selectbox("Choose a matchup (or click below and start typing):", list(game_id_mapping.keys()), index=0)
+    # Create a mapping of game matchups to their corresponding game IDs
+    game_id_mapping = {row['matchup']: row['game_id'] for index, row in shots.iterrows()}
 
-# Get the selected game ID based on the chosen matchup
-selected_game_id = game_id_mapping[selected_matchup]
+    # Display the game matchup dropdown with hidden game IDs
+    selected_matchup = st.selectbox("Choose a matchup (or click below and start typing):", list(game_id_mapping.keys()), index=0)
 
-# You can now use selected_game_id to filter your shots data based on the chosen matchup
-selected_matchup_shots = shots[shots['game_id'] == selected_game_id]
+    # Get the selected game ID based on the chosen matchup
+    selected_game_id = game_id_mapping[selected_matchup]
 
-# Extract home team and away team names
-selected_home_team = shots.loc[shots['game_id'] == selected_game_id, 'home_team_name'].values[0]
-selected_away_team = shots.loc[shots['game_id'] == selected_game_id, 'away_team_name'].values[0]
+    # You can now use selected_game_id to filter your shots data based on the chosen matchup
+    selected_matchup_shots = shots[shots['game_id'] == selected_game_id]
 
-# Calculate the number of goals in the selected matchup
-number_of_goals = selected_matchup_shots[selected_matchup_shots['event'] == 'Goal']['event'].count()
+    # Extract home team and away team names
+    selected_home_team = shots.loc[shots['game_id'] == selected_game_id, 'home_team_name'].values[0]
+    selected_away_team = shots.loc[shots['game_id'] == selected_game_id, 'away_team_name'].values[0]
 
-# Group and count goals by 'name'
-goals = selected_matchup_shots[selected_matchup_shots['event'] == 'Goal']
-goal_counts = goals.groupby('name')['event'].count()
+    # Calculate the number of goals in the selected matchup
+    number_of_goals = selected_matchup_shots[selected_matchup_shots['event'] == 'Goal']['event'].count()
 
-# Display information about the selected matchup and the number of goals
-if selected_game_id in game_id_mapping.values():
-   
- # Select only the desired columns from the DataFrame
-    selected_columns = ['Matchup', 'Total Shot Attempts', 'Total Goals']  # Replace with your actual column names
+    # Group and count goals by 'name'
+    goals = selected_matchup_shots[selected_matchup_shots['event'] == 'Goal']
+    goal_counts = goals.groupby('name')['event'].count()
 
-    # Create an HTML table with desired styling
-    st.write(f'''
-    <table style="background: azure; border: 1.2px solid; width: 100%">
-    <tr>
-        <td style="font-weight: bold;">Matchup</td>
-        <td style="font-weight: bold;">Total Shot Attempts</td>
-        <td style="font-weight: bold;">Total Goals</td>
-    </tr>
-    <tr>
-        <td>{selected_home_team} vs. {selected_away_team}</td>
-        <td>{len(selected_matchup_shots)}</td>
-        <td>{number_of_goals}</td>
-    </tr>
-    </table>
-    ''', unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
+    # Display information about the selected matchup and the number of goals
+    if selected_game_id in game_id_mapping.values():
     
-    # Display the goal counts for each 'name'
-    st.write("Final Score:")
-    for name, count in goal_counts.items():
-        st.write(f"{name}: {count}")
+    # Select only the desired columns from the DataFrame
+        selected_columns = ['Matchup', 'Total Shot Attempts', 'Total Goals']  # Replace with your actual column names
 
-## goal mapping
-    # The rest of your script goes here
-    for period in [1, 2, 3]:
-        period_data = shots.query("game_id == @selected_game_id and period == @period")
+        # Create an HTML table with desired styling
+        st.write(f'''
+        <table style="background: azure; border: 1.2px solid; width: 100%">
+        <tr>
+            <td style="font-weight: bold;">Matchup</td>
+            <td style="font-weight: bold;">Total Shot Attempts</td>
+            <td style="font-weight: bold;">Total Goals</td>
+        </tr>
+        <tr>
+            <td>{selected_home_team} vs. {selected_away_team}</td>
+            <td>{len(selected_matchup_shots)}</td>
+            <td>{number_of_goals}</td>
+        </tr>
+        </table>
+        ''', unsafe_allow_html=True)
+        st.markdown("<br>", unsafe_allow_html=True)
         
-        # Find the home team's ID and away team's ID for the current period
-        home_team_id = period_data['home_team'].values[0]
-        away_team_id = period_data['away_team'].values[0]
+        # Display the goal counts for each 'name'
+        st.write("Final Score:")
+        for name, count in goal_counts.items():
+            st.write(f"{name}: {count}")
 
-        # Retrieve the logo links for the home and away teams from your logo_df
-        home_team_logo_link = logos.loc[logos['id'] == home_team_id, 'logo'].values[0]
-        away_team_logo_link = logos.loc[logos['id'] == away_team_id, 'logo'].values[0]
+    ## goal mapping
+        # The rest of your script goes here
+        for period in [1, 2, 3]:
+            period_data = shots.query("game_id == @selected_game_id and period == @period")
+            
+            # Find the home team's ID and away team's ID for the current period
+            home_team_id = period_data['home_team'].values[0]
+            away_team_id = period_data['away_team'].values[0]
 
-        fig, ax = plt.subplots(figsize=(12, 8))
+            # Retrieve the logo links for the home and away teams from your logo_df
+            home_team_logo_link = logos.loc[logos['id'] == home_team_id, 'logo'].values[0]
+            away_team_logo_link = logos.loc[logos['id'] == away_team_id, 'logo'].values[0]
 
-        # Map the triCode values to colors
-        period_data.loc[:, 'color'] = 'blue'  # Assign blue as the default color
-        period_data.loc[period_data['id'] == home_team_id, 'color'] = 'orange'
+            fig, ax = plt.subplots(figsize=(12, 8))
 
-        # Update shots marked as "Goals" with green color
-        period_data.loc[period_data['event'] == 'Goal', 'color'] = 'green'
+            # Map the triCode values to colors
+            period_data.loc[:, 'color'] = 'blue'  # Assign blue as the default color
+            period_data.loc[period_data['id'] == home_team_id, 'color'] = 'orange'
 
-        rink = NHLRink(
-            home_team_logo={
-                "feature_class": RinkImage,
-                "image_path": home_team_logo_link,
-                "x": 55, "length": 50, "width": 42,
-                "zorder": 15, "alpha": 0.5,
-            },
-            away_team_logo={
-                "feature_class": RinkImage,
-                "image_path": away_team_logo_link,
-                "x": -55, "length": 50, "width": 29,
-                "zorder": 15, "alpha": 0.5,
-            }
-        )
+            # Update shots marked as "Goals" with green color
+            period_data.loc[period_data['event'] == 'Goal', 'color'] = 'green'
 
-        # Switch the logos' positions for the second period
-        if period == 2:
             rink = NHLRink(
                 home_team_logo={
                     "feature_class": RinkImage,
-                    "image_path": away_team_logo_link,
+                    "image_path": home_team_logo_link,
                     "x": 55, "length": 50, "width": 42,
                     "zorder": 15, "alpha": 0.5,
                 },
                 away_team_logo={
                     "feature_class": RinkImage,
-                    "image_path": home_team_logo_link,
+                    "image_path": away_team_logo_link,
                     "x": -55, "length": 50, "width": 29,
                     "zorder": 15, "alpha": 0.5,
                 }
             )
 
-        # Use the 'color' column for dot colors
-        rink.scatter("x", "y", s=100, c=period_data['color'], edgecolor="white", data=period_data, ax=ax)
+            # Switch the logos' positions for the second period
+            if period == 2:
+                rink = NHLRink(
+                    home_team_logo={
+                        "feature_class": RinkImage,
+                        "image_path": away_team_logo_link,
+                        "x": 55, "length": 50, "width": 42,
+                        "zorder": 15, "alpha": 0.5,
+                    },
+                    away_team_logo={
+                        "feature_class": RinkImage,
+                        "image_path": home_team_logo_link,
+                        "x": -55, "length": 50, "width": 29,
+                        "zorder": 15, "alpha": 0.5,
+                    }
+                )
 
-        ax.set_title(f"Game ID: {selected_game_id}, Period {period} Shot Locations")
-        st.pyplot(fig) 
+            # Use the 'color' column for dot colors
+            rink.scatter("x", "y", s=100, c=period_data['color'], edgecolor="white", data=period_data, ax=ax)
+
+            ax.set_title(f"Game ID: {selected_game_id}, Period {period} Shot Locations")
+            st.pyplot(fig) 
 ##########################################
 ## Explore Tab                          ##
 ##########################################
