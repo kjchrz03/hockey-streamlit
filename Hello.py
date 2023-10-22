@@ -150,7 +150,7 @@ st.title("Check This Data")
 st.markdown('''##### <span style="color:gray">Explore NHL Advanced Stats, Simply</span>
             ''', unsafe_allow_html=True)
                 
-tab_player, tab_games, tab_explore, tab_faq = st.tabs(["Player Goals", "Explore Games", "Explore", "FAQ"])
+tab_player, tab_games = st.tabs(["Player Goals", "Explore Games"])
 
 
 ##########################################
