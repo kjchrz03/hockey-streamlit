@@ -51,19 +51,19 @@ goal_mapping = load_map()
 cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
 
 # game matchup data
-#def load_matchups():
-#    github_shots_url = 'data/game_matchups.csv'
-#    shots = pd.read_csv(github_shots_url)
-#    shots['Event'] = shots['event']
-#    shots['Matchup'] = shots['Matchup']
-#    return shots
+def load_matchups():
+    github_shots_url = 'data/game_matchups.csv'
+    shots = pd.read_csv(github_shots_url)
+    shots['Event'] = shots['event']
+    shots['Matchup'] = shots['matchup_date']
+    return shots
 
-#shots = load_matchups()
+shots = load_matchups()
 
-#cols = ['Event', 'Matchup']
+cols = ['Event', 'Matchup']
 
 
-#game matchup data
+#game matchup logos
 #def load_logos():
 #    github_logos_url = 'data/logos.csv'
 #    logos = pd.read_csv(github_logos_url)
@@ -73,6 +73,7 @@ cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
 #    return logos
 
 #logos = load_logos()
+
 #cols = ['Tri Code','Team ID','Logo']
 
 # CSS for tables
@@ -150,6 +151,7 @@ tab_player, tab_games, tab_explore, tab_faq = st.tabs(["Player Goals", "Explore 
 ## Player Tab                           ##
 ##########################################
 
+#player id hidden and mapped to player name
 with tab_player:
   player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
 
@@ -236,33 +238,33 @@ st.markdown(text, unsafe_allow_html=True)
 ## Explore Games                             ##
 ##########################################    
    
-#with tab_games:
-#    game_id_mapping = {row['matchup']: row['game_id'] for index, row in matchups.iterrows()}
+with tab_games:
+    game_id_mapping = {row['matchup_date']: row['game_id'] for index, row in shots.iterrows()}
 
-#    # Display the player dropdown with hidden player IDs
-#    selected_matchup = st.selectbox("Choose a matchup (or click below and start typing):", list(game_id_mapping.keys()), index=0)
-#
-#    # Get the player ID based on the selected player name
-#    selected_game_id = game_id_mapping[selected_matchup]
-#    #player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
-#    #player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
-#    
-#    def create_matchup_mapping(data_frame):
-#        matchup_mapping = {f"{row['home_team_tri_code']} vs {row['away_team_tri_code']}, {row['gameDate']}": row['game_id'] for index, row in data_frame.iterrows()}
-#        return matchup_mapping#
-#
+    # Display the player dropdown with hidden player IDs
+    selected_matchup = st.selectbox("Choose a matchup (or click below and start typing):", list(game_id_mapping.keys()), index=0)
+
+    # Get the player ID based on the selected player name
+    selected_game_id = game_id_mapping[selected_matchup]
+    #player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
+    #player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
+  
+    def create_matchup_mapping(data_frame):
+        matchup_mapping = {f"{row['home_team_tri_code']} vs {row['away_team_tri_code']}, {row['gameDate']}": row['game_id'] for index, row in data_frame.iterrows()}
+        return matchup_mapping
+
 # Create the matchup mapping
-#matchup_mapping = create_matchup_mapping(matchups)
+    matchup_mapping = create_matchup_mapping(shots)
 
 # Display the matchup dropdown with hidden game IDs
-#selected_matchup = st.selectbox("Choose a matchup:", list(matchup_mapping.keys()), index=0)
+    selected_matchup = st.selectbox("Choose a matchup:", list(matchup_mapping.keys()), index=0)
 
 
 # Get the game ID based on the selected matchup
-#selected_game_id = matchup_mapping[selected_matchup]
+    selected_game_id = matchup_mapping[selected_matchup]
 
 # You can now use selected_game_id to filter your shots data based on the chosen matchup
-#selected_matchup_shots = matchups[matchups['game_id'] == selected_game_id]
+    selected_matchup_shots = shots[shots['game_id'] == selected_game_id]
 
 # Example usage: Display some information about the selected matchup
 #if selected_game_id in matchup_mapping.values():
