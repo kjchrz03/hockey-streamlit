@@ -292,7 +292,6 @@ if selected_game_id in game_id_mapping.values():
     </table>
     ''', unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
-
     
     # Display the goal counts for each 'name'
     st.write("Final Score:")
