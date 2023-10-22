@@ -22,65 +22,6 @@ st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sideb
 image = Image.open('logo.png')
 st.image(image)
 
-#player goals info
-def load_players():
-    github_csv_url = 'data/goal_counts.csv'
-    players_df = pd.read_csv(github_csv_url)
-    players_df['Name'] = players_df['player_name']
-    players_df['Player ID'] = players_df['player_id']
-    players_df['Position'] = players_df['position']
-    players_df['Team'] = players_df['team_name']
-    players_df['Goals'] = players_df['goals']
-    return players_df
-
-players_df = load_players()
-
-cols = ['Name','Position','Team','Goals']
-
-#goal scoring data
-def load_map():
-    github_ice_map_url = 'data/ice_map_data.csv'
-    goal_mapping = pd.read_csv(github_ice_map_url)
-    goal_mapping['Name'] = goal_mapping['player_name']
-    goal_mapping['ID'] = goal_mapping['player_id']
-    goal_mapping['Goal Number'] = goal_mapping['goal_no']
-    goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
-    goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
-    return goal_mapping
-
-goal_mapping = load_map()
-
-cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
-
-# game matchup data
-def load_matchups():
-    github_shots_url = 'data/game_matchups.csv'
-    shots = pd.read_csv(github_shots_url)
-    shots['Event'] = shots['event']
-    shots['Matchup'] = shots['matchup']
-    unique_matchups = shots[['game_id', 'Matchup']].drop_duplicates()
-    shots = pd.merge(shots, unique_matchups, on='game_id', how='inner')
-    shots['Home Team'] = shots['home_team_name']
-    shots['Away Team'] = shots['away_team_name']
-    return shots
-
-shots = load_matchups()
-
-cols = ['Event', 'Matchup']
-
-
-#game matchup logos
-def load_logos():
-    github_logos_url = 'data/logos.csv'
-    logos = pd.read_csv(github_logos_url)
-    logos['Tri Code'] = logos['tri_code']
-    logos['Team ID'] = logos['id']
-    logos['Logo'] = logos['logo']
-    return logos
-
-logos = load_logos()
-
-cols = ['Tri Code','Team ID','Logo']
 
 # CSS for tables
 
@@ -156,118 +97,180 @@ tab_player, tab_games = st.tabs(["Player Goals", "Explore Games"])
 ##########################################
 ## Player Tab                           ##
 ##########################################
-
-#player id hidden and mapped to player name
 with tab_player:
-  player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
 
-# Display the player dropdown with hidden player IDs
-selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
+#player goals info
+    def load_players():
+        github_csv_url = 'data/goal_counts.csv'
+        players_df = pd.read_csv(github_csv_url)
+        players_df['Name'] = players_df['player_name']
+        players_df['Player ID'] = players_df['player_id']
+        players_df['Position'] = players_df['position']
+        players_df['Team'] = players_df['team_name']
+        players_df['Goals'] = players_df['goals']
+        return players_df
 
-# Get the player ID based on the selected player name
-selected_player_id = player_id_mapping[selected_player_name]
-player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
-player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
+    players_df = load_players()
 
-st.write(f'''
-        ##### <div style="text-align: center"> This season, <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
-''', unsafe_allow_html=True)
+    cols = ['Name','Position','Team','Goals']
 
-# Select only the desired columns from the DataFrame
-selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
+    #goal scoring data
+    def load_map():
+        github_ice_map_url = 'data/ice_map_data.csv'
+        goal_mapping = pd.read_csv(github_ice_map_url)
+        goal_mapping['Name'] = goal_mapping['player_name']
+        goal_mapping['ID'] = goal_mapping['player_id']
+        goal_mapping['Goal Number'] = goal_mapping['goal_no']
+        goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
+        goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
+        return goal_mapping
 
-# Create an HTML table with desired styling
-st.write(f'''
-<table style="background: azure; border: 1.2px solid; width: 100%">
-<tr>
-    <td style="font-weight: bold;">Name</td>
-    <td style="font-weight: bold;">Position</td>
-    <td style="font-weight: bold;">Team</td>
-    <td style="font-weight: bold;">Goals</td>
-</tr>
-<tr>
-    <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
-    <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
-    <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
-    <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
-</tr>
-</table>
-''', unsafe_allow_html=True)
-st.markdown("<br>", unsafe_allow_html=True)
+    goal_mapping = load_map()
 
-## goal mapping
-player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
+    cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
 
-# Create an NHLRink object
-rink = hockey_rink.NHLRink(rotation=270, net={"visible": False})
+    #player id hidden and mapped to player name
 
-# Define the figure and axes for the rink map
-fig, ax = plt.subplots(1, 1, figsize=(10, 16)) 
+    player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
 
-# Draw the rink on the single Axes object
-rink.draw(display_range="half", ax=ax)
+    # Display the player dropdown with hidden player IDs
+    selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
 
-# Scatter plot for goals
-rink.scatter(
-    "x_adjusted", "y_adjusted", ax=ax,
-    facecolor="white", edgecolor="black", s=500,
-    data=player_goals
-)
+    # Get the player ID based on the selected player name
+    selected_player_id = player_id_mapping[selected_player_name]
+    player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
+    player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
 
-# Add text for goal numbers
-rink.text(
-    "x_adjusted", "y_adjusted", "goal_no", ax=ax,
-    ha="center", va="center", fontsize=8, 
-    data=player_goals
-)
+    st.write(f'''
+            ##### <div style="text-align: center"> This season, <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+    ''', unsafe_allow_html=True)
 
-# Additional Test
-location_texth = rink.text(
-    0.5, 0.05, selected_player_name, ax=ax,
-    use_rink_coordinates=False,
-    ha="center", va="center", fontsize=20,
-)
+    # Select only the desired columns from the DataFrame
+    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
 
-# Display the rink map
-st.pyplot(fig)
+    # Create an HTML table with desired styling
+    st.write(f'''
+    <table style="background: azure; border: 1.2px solid; width: 100%">
+    <tr>
+        <td style="font-weight: bold;">Name</td>
+        <td style="font-weight: bold;">Position</td>
+        <td style="font-weight: bold;">Team</td>
+        <td style="font-weight: bold;">Goals</td>
+    </tr>
+    <tr>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
+    </tr>
+    </table>
+    ''', unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
 
-# Rest of your code for player information and goals
-st.write("Player Goals Detail:")
-st.write(player_goals)
+    ## goal mapping
+    player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
 
-text = "Ice rink heat map package from [The Bucketless](https://github.com/the-bucketless/hockey_rink)"
-st.markdown(text, unsafe_allow_html=True)
+    # Create an NHLRink object
+    rink = hockey_rink.NHLRink(rotation=270, net={"visible": False})
+
+    # Define the figure and axes for the rink map
+    fig, ax = plt.subplots(1, 1, figsize=(10, 16)) 
+
+    # Draw the rink on the single Axes object
+    rink.draw(display_range="half", ax=ax)
+
+    # Scatter plot for goals
+    rink.scatter(
+        "x_adjusted", "y_adjusted", ax=ax,
+        facecolor="white", edgecolor="black", s=500,
+        data=player_goals
+    )
+
+    # Add text for goal numbers
+    rink.text(
+        "x_adjusted", "y_adjusted", "goal_no", ax=ax,
+        ha="center", va="center", fontsize=8, 
+        data=player_goals
+    )
+
+    # Additional Test
+    location_texth = rink.text(
+        0.5, 0.05, selected_player_name, ax=ax,
+        use_rink_coordinates=False,
+        ha="center", va="center", fontsize=20,
+    )
+
+    # Display the rink map
+    st.pyplot(fig)
+
+    # Rest of your code for player information and goals
+    st.write("Player Goals Detail:")
+    st.write(player_goals)
+
+    text = "Ice rink heat map package from [The Bucketless](https://github.com/the-bucketless/hockey_rink)"
+    st.markdown(text, unsafe_allow_html=True)
 
 
 
 ##########################################
 ## Explore Games                             ##
 ##########################################    
-
 with tab_games:
-    # Create a mapping of game matchups to their corresponding game IDs
+    # game matchup data
+    def load_matchups():
+        github_shots_url = 'data/game_matchups.csv'
+        shots = pd.read_csv(github_shots_url)
+        shots['Event'] = shots['event']
+        shots['Matchup'] = shots['matchup']
+        unique_matchups = shots[['game_id', 'Matchup']].drop_duplicates()
+        shots = pd.merge(shots, unique_matchups, on='game_id', how='inner')
+        shots['Home Team'] = shots['home_team_name']
+        shots['Away Team'] = shots['away_team_name']
+        return shots
+
+    shots = load_matchups()
+
+    cols = ['Event', 'Matchup']
+
+
+    #game matchup logos
+    def load_logos():
+        github_logos_url = 'data/logos.csv'
+        logos = pd.read_csv(github_logos_url)
+        logos['Tri Code'] = logos['tri_code']
+        logos['Team ID'] = logos['id']
+        logos['Logo'] = logos['logo']
+        return logos
+
+    logos = load_logos()
+
+    cols = ['Tri Code','Team ID','Logo']
+
+
+    st.title("Explore Games")
+        # Create a mapping of game matchups to their corresponding game IDs
     game_id_mapping = {row['matchup']: row['game_id'] for index, row in shots.iterrows()}
 
-    # Display the game matchup dropdown with hidden game IDs
+        # Display the game matchup dropdown with hidden game IDs
     selected_matchup = st.selectbox("Choose a matchup (or click below and start typing):", list(game_id_mapping.keys()), index=0)
 
-    # Get the selected game ID based on the chosen matchup
+        # Get the selected game ID based on the chosen matchup
     selected_game_id = game_id_mapping[selected_matchup]
 
-    # You can now use selected_game_id to filter your shots data based on the chosen matchup
+        # You can now use selected_game_id to filter your shots data based on the chosen matchup
     selected_matchup_shots = shots[shots['game_id'] == selected_game_id]
 
     # Example usage: Display some information about the selected matchup
     if selected_game_id in game_id_mapping.values():
-        st.write(f"Selected Game ID: {selected_game_id}")
         st.write(f"Selected Matchup: {selected_matchup}")
         st.write(f"Number of Shots in this Matchup: {len(selected_matchup_shots)}")
+#how many goals?
 
 ## goal mapping
     # The rest of your script goes here
-    for period in [1, 2, 3]:  # Assuming you have three periods in a game
+    for period in [1, 2, 3]:
         period_data = shots.query("game_id == @selected_game_id and period == @period")
-
+        
         # Find the home team's ID and away team's ID for the current period
         home_team_id = period_data['home_team'].values[0]
         away_team_id = period_data['away_team'].values[0]
@@ -281,6 +284,9 @@ with tab_games:
         # Map the triCode values to colors
         period_data.loc[:, 'color'] = 'blue'  # Assign blue as the default color
         period_data.loc[period_data['id'] == home_team_id, 'color'] = 'red'
+
+        # Update shots marked as "Goals" with green color
+        period_data.loc[period_data['event'] == 'Goal', 'color'] = 'green'
 
         rink = NHLRink(
             home_team_logo={
@@ -318,8 +324,7 @@ with tab_games:
         rink.scatter("x", "y", s=100, c=period_data['color'], edgecolor="white", data=period_data, ax=ax)
 
         ax.set_title(f"Game ID: {selected_game_id}, Period {period} Shot Locations")
-
-        plt.show()
+        st.pyplot(fig) 
 ##########################################
 ## Explore Tab                          ##
 ##########################################
