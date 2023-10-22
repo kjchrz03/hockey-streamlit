@@ -4,6 +4,8 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')  # Use the Agg backend
 import matplotlib.pyplot as plt
+from PIL import Image
+import urllib.request
 
 import subprocess
 
@@ -68,17 +70,17 @@ cols = ['Event', 'Matchup']
 
 
 #game matchup logos
-#def load_logos():
-#    github_logos_url = 'data/logos.csv'
-#    logos = pd.read_csv(github_logos_url)
-#    logos['Tri Code'] = logos['tri_code']
-#    logos['Team ID'] = logos['id']
-#    logos['Logo'] = logos['logo']
-#    return logos
+def load_logos():
+    github_logos_url = 'data/logos.csv'
+    logos = pd.read_csv(github_logos_url)
+    logos['Tri Code'] = logos['tri_code']
+    logos['Team ID'] = logos['id']
+    logos['Logo'] = logos['logo']
+    return logos
 
-#logos = load_logos()
+logos = load_logos()
 
-#cols = ['Tri Code','Team ID','Logo']
+cols = ['Tri Code','Team ID','Logo']
 
 # CSS for tables
 
@@ -233,7 +235,7 @@ st.pyplot(fig)
 st.write("Player Goals Detail:")
 st.write(player_goals)
 
-text = "Ice rink heat map package from [The Bucketless](https://www.example.com)"
+text = "Ice rink heat map package from [The Bucketless](https://github.com/the-bucketless/hockey_rink)"
 st.markdown(text, unsafe_allow_html=True)
 
 
@@ -241,104 +243,83 @@ st.markdown(text, unsafe_allow_html=True)
 ##########################################
 ## Explore Games                             ##
 ##########################################    
-   
+
 with tab_games:
+    # Create a mapping of game matchups to their corresponding game IDs
     game_id_mapping = {row['matchup']: row['game_id'] for index, row in shots.iterrows()}
 
-    # Display the player dropdown with hidden player IDs
+    # Display the game matchup dropdown with hidden game IDs
     selected_matchup = st.selectbox("Choose a matchup (or click below and start typing):", list(game_id_mapping.keys()), index=0)
 
-    # Get the player ID based on the selected player name
+    # Get the selected game ID based on the chosen matchup
     selected_game_id = game_id_mapping[selected_matchup]
-    #player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
-    #player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
-  
-    def create_matchup_mapping(data_frame):
-        matchup_mapping = {f"{row['Home Team']} vs {row['Away Team']}, {row['gameDate']}": row['game_id'] for index, row in data_frame.iterrows()}
-        return matchup_mapping
 
-# Create the matchup mapping
-    matchup_mapping = create_matchup_mapping(shots)
-
-# Display the matchup dropdown with hidden game IDs
-    selected_matchup = st.selectbox("Choose a matchup:", list(matchup_mapping.keys()), index=0)
-
-
-# Get the game ID based on the selected matchup
-    selected_game_id = matchup_mapping[selected_matchup]
-
-# You can now use selected_game_id to filter your shots data based on the chosen matchup
+    # You can now use selected_game_id to filter your shots data based on the chosen matchup
     selected_matchup_shots = shots[shots['game_id'] == selected_game_id]
 
-# Example usage: Display some information about the selected matchup
-if selected_game_id in matchup_mapping.values():
-    st.write(f"Selected Game ID: {selected_game_id}")
-    st.write(f"Selected Matchup: {selected_matchup}")
-    st.write(f"Number of Shots in this Matchup: {len(selected_matchup_shots)}")
-
+    # Example usage: Display some information about the selected matchup
+    if selected_game_id in game_id_mapping.values():
+        st.write(f"Selected Game ID: {selected_game_id}")
+        st.write(f"Selected Matchup: {selected_matchup}")
+        st.write(f"Number of Shots in this Matchup: {len(selected_matchup_shots)}")
 
 ## goal mapping
-#shots = matchups
+    # The rest of your script goes here
+    for period in [1, 2, 3]:  # Assuming you have three periods in a game
+        period_data = shots.query("game_id == @selected_game_id and period == @period")
 
-#for game_id in shots['game_id'].unique():
-    # Loop through periods
-#    for period in [1, 2, 3]:  # Assuming you have three periods in a game
-#        period_data = shots.query("game_id == @game_id and period == @period")
-#
-#        # Find the home team's ID and away team's ID for the current period
-#        home_team_id = period_data['home_team'].values[0]
-#        away_team_id = period_data['away_team'].values[0]
+        # Find the home team's ID and away team's ID for the current period
+        home_team_id = period_data['home_team'].values[0]
+        away_team_id = period_data['away_team'].values[0]
 
-#        # Retrieve the logo links for the home and away teams from your logo_df
-#        home_team_logo_link = logos.loc[logos['id'] == home_team_id, 'logo'].values[0]
-#        away_team_logo_link = logos.loc[logos['id'] == away_team_id, 'logo'].values[0]
+        # Retrieve the logo links for the home and away teams from your logo_df
+        home_team_logo_link = logos.loc[logos['id'] == home_team_id, 'logo'].values[0]
+        away_team_logo_link = logos.loc[logos['id'] == away_team_id, 'logo'].values[0]
 
- #       fig, ax = plt.subplots(figsize=(12, 8))
+        fig, ax = plt.subplots(figsize=(12, 8))
 
         # Map the triCode values to colors
- #       period_data.loc[:, 'color'] = 'blue'  # Assign blue as the default color
- #       period_data.loc[period_data['id'] == home_team_id, 'color'] = 'red'
+        period_data.loc[:, 'color'] = 'blue'  # Assign blue as the default color
+        period_data.loc[period_data['id'] == home_team_id, 'color'] = 'red'
 
-#        rink = NHLRink(
- #           home_team_logo={
-  #              "feature_class": RinkImage,
-   #             "image_path": home_team_logo_link,
-    #            "x": 55, "length": 50, "width": 42,
-     #           "zorder": 15, "alpha": 0.5,
-     #       },
-     #       away_team_logo={
-     #           "feature_class": RinkImage,
-     #           "image_path": away_team_logo_link,
-     #           "x": -55, "length": 50, "width": 29,
-     #           "zorder": 15, "alpha": 0.5,
-     #       }
-     #   )
+        rink = NHLRink(
+            home_team_logo={
+                "feature_class": RinkImage,
+                "image_path": home_team_logo_link,
+                "x": 55, "length": 50, "width": 42,
+                "zorder": 15, "alpha": 0.5,
+            },
+            away_team_logo={
+                "feature_class": RinkImage,
+                "image_path": away_team_logo_link,
+                "x": -55, "length": 50, "width": 29,
+                "zorder": 15, "alpha": 0.5,
+            }
+        )
 
         # Switch the logos' positions for the second period
-  #      if period == 2:
-  #          rink = NHLRink(
-  #              home_team_logo={
-  #                  "feature_class": RinkImage,
-  #                  "image_path": away_team_logo_link,
-  #                  "x": 55, "length": 50, "width": 42,
-  #                  "zorder": 15, "alpha": 0.5,
-  #              },
-  #              away_team_logo={
-  #                  "feature_class": RinkImage,
-  #                  "image_path": home_team_logo_link,
-  #                  "x": -55, "length": 50, "width": 29,
-  #                  "zorder": 15, "alpha": 0.5,
-  #              }
-  #          )
+        if period == 2:
+            rink = NHLRink(
+                home_team_logo={
+                    "feature_class": RinkImage,
+                    "image_path": away_team_logo_link,
+                    "x": 55, "length": 50, "width": 42,
+                    "zorder": 15, "alpha": 0.5,
+                },
+                away_team_logo={
+                    "feature_class": RinkImage,
+                    "image_path": home_team_logo_link,
+                    "x": -55, "length": 50, "width": 29,
+                    "zorder": 15, "alpha": 0.5,
+                }
+            )
 
         # Use the 'color' column for dot colors
- #       rink.scatter("x", "y", s=100, c=period_data['color'], edgecolor="white", data=period_data, ax=ax)
-#
- #       ax.set_title(f"Game ID: {game_id}, Period {period} Shot Locations")
-#
- #   plt.show()
+        rink.scatter("x", "y", s=100, c=period_data['color'], edgecolor="white", data=period_data, ax=ax)
 
+        ax.set_title(f"Game ID: {selected_game_id}, Period {period} Shot Locations")
+
+        plt.show()
 ##########################################
 ## Explore Tab                          ##
 ##########################################
-   
