@@ -315,7 +315,7 @@ if selected_game_id in game_id_mapping.values():
 
         # Map the triCode values to colors
         period_data.loc[:, 'color'] = 'blue'  # Assign blue as the default color
-        period_data.loc[period_data['id'] == home_team_id, 'color'] = 'red'
+        period_data.loc[period_data['id'] == home_team_id, 'color'] = 'orange'
 
         # Update shots marked as "Goals" with green color
         period_data.loc[period_data['event'] == 'Goal', 'color'] = 'green'
