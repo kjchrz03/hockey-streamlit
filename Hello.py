@@ -25,7 +25,7 @@ primaryColor="#fafaff"
 backgroundColor="#e1dee9"
 secondaryBackgroundColor="#d5cfe1"
 textColor="#262730"
-font="serif"
+font="Garamond"
 
 # CSS for tables
 hide_table_row_index = """
@@ -78,13 +78,21 @@ st.markdown(
     .streamlit-expanderHeader {
     #   font-weight: bold;
         background: #e1dee9;
-        font-size: 18px;
+        font-size: 180px;
     }
     </style>
     """,
         unsafe_allow_html=True,
     )
     
+custom_css = """
+<style>
+    .streamlit-tabs-label {
+        font-size: 20px;  /* You can adjust the font size as needed */
+    }
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
   
 ##########################################
 ##  Title, Tabs, and Sidebar            ##
