@@ -63,7 +63,7 @@ def color_surplusvalue(val):
 
 heading_properties = [('font-size', '16px'),('text-align', 'center'),
                       ('color', 'black'),  ('font-weight', 'bold'),
-                      ('background', 'mediumturquoise'),('border', '1.2px solid')]
+                      ('background', 'e1dee9'),('border', '1.2px solid')]
 
 cell_properties = [('font-size', '16px'),('text-align', 'center')]
 
@@ -77,7 +77,7 @@ st.markdown(
     <style>
     .streamlit-expanderHeader {
     #   font-weight: bold;
-        background: aliceblue;
+        background: e1dee9;
         font-size: 18px;
     }
     </style>
@@ -91,7 +91,7 @@ st.markdown(
 ##########################################
 
 st.title("Check This Data")
-st.markdown('''##### <span style="color:gray">Explore NHL Advanced Stats, Simply</span>
+st.markdown('''##### <span style="color:aaaaaa">Explore NHL Advanced Stats, Simply</span>
             ''', unsafe_allow_html=True)
                 
 tab_player, tab_games = st.tabs(["Player Goals", "Matchups"])
