@@ -87,13 +87,12 @@ st.title("Check This Data")
 st.markdown('''##### <span style="color:gray">Explore NHL Advanced Stats, Simply</span>
             ''', unsafe_allow_html=True)
                 
-tab_player, tab_games = st.tabs(["Player Goals", "Explore Games"])
-
+tab_player, tab_games = st.tabs(["Player Goals", "Matchups"])
 
 ##########################################
 ## Player Tab                           ##
 ##########################################
-# 
+
 with tab_player:
 
 #player goals info
@@ -123,6 +122,8 @@ with tab_player:
     goal_mapping = load_map()
     cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
 
+    st.header('Explore Player Goals')
+
     #player id hidden and mapped to player name
     player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
 
@@ -135,7 +136,7 @@ with tab_player:
     player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
 
     st.write(f'''
-            ##### <div style="text-align: center"> This season, <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+            ##### <div style="text-align: center"> This season  <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
     ''', unsafe_allow_html=True)
 
     # Select only the desired columns from the DataFrame
@@ -204,7 +205,7 @@ with tab_player:
     st.markdown(text, unsafe_allow_html=True)
 
 ##########################################
-## Explore Games                             ##
+## Explore Matchups                     ##
 ##########################################    
 
 with tab_games:
@@ -235,7 +236,6 @@ with tab_games:
     logos = load_logos()
     cols = ['Tri Code','Team ID','Logo']
 
-    #st.title("Explore Games")
     st.header('Explore Matchups')
 
     # Create a mapping of game matchups to their corresponding game IDs
