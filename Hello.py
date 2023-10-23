@@ -77,7 +77,7 @@ st.markdown(
     <style>
     .streamlit-expanderHeader {
     #   font-weight: bold;
-        background: e1dee9;
+        background: #e1dee9;
         font-size: 18px;
     }
     </style>
@@ -91,7 +91,7 @@ st.markdown(
 ##########################################
 
 st.title("Check This Data")
-st.markdown('''##### <span style="color:aaaaaa">Explore NHL Advanced Stats, Simply</span>
+st.markdown('''##### <span style="color: #aaaaaa">Explore NHL Advanced Stats, Simply</span>
             ''', unsafe_allow_html=True)
                 
 tab_player, tab_games = st.tabs(["Player Goals", "Matchups"])
