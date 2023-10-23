@@ -342,7 +342,7 @@ with tab_games:
                     away_team_logo={
                         "feature_class": RinkImage,
                         "image_path": home_team_logo_link,
-                        "x": -55, "length": 50, "width": 29,
+                        "x": -55, "length": 50, "width": 42,
                         "zorder": 15, "alpha": 0.5,
                     }
                 )
