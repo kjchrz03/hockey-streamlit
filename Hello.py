@@ -6,12 +6,10 @@ matplotlib.use('Agg')  # Use the Agg backend
 import matplotlib.pyplot as plt
 from PIL import Image
 import urllib.request
-
 import subprocess
 
 # Install the library from the GitHub repository using pip within your Streamlit app
 subprocess.run(["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"])
-
 
 # Import the external library
 import hockey_rink
