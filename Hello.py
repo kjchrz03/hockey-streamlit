@@ -240,7 +240,8 @@ with tab_games:
     cols = ['Tri Code','Team ID','Logo']
 
     #st.title("Explore Games")
-    st.markdown("Explore Matchups")
+    st.header('Explore Matchups')
+    
     # Create a mapping of game matchups to their corresponding game IDs
     game_id_mapping = {row['matchup']: row['game_id'] for index, row in shots.iterrows()}
 
