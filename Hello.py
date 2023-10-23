@@ -22,9 +22,13 @@ st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sideb
 image = Image.open('logo.png')
 st.image(image)
 
-
+st.set_page_config(
+    page_title="Goal Mapping",
+    page_icon="🏒",
+    layout="wide",  # Set to wide layout
+    initial_sidebar_state="expanded"
+)
 # CSS for tables
-
 hide_table_row_index = """
             <style>
             thead tr th:first-child {display:none}
@@ -70,17 +74,17 @@ dfstyle = [{"selector": "th", "props": heading_properties},
 # Expander Styling
 
 st.markdown(
-    """
-<style>
-.streamlit-expanderHeader {
- #   font-weight: bold;
-    background: aliceblue;
-    font-size: 18px;
-}
-</style>
-""",
-    unsafe_allow_html=True,
-)
+        """
+    <style>
+    .streamlit-expanderHeader {
+    #   font-weight: bold;
+        background: aliceblue;
+        font-size: 18px;
+    }
+    </style>
+    """,
+        unsafe_allow_html=True,
+    )
     
   
 ##########################################
@@ -268,10 +272,10 @@ with tab_games:
     # Display information about the selected matchup and the number of goals
     if selected_game_id in game_id_mapping.values():
     
-    # Select only the desired columns from the DataFrame
+        # Table Columns
         selected_columns = ['Matchup', 'Total Shot Attempts', 'Total Goals']  # Replace with your actual column names
 
-        # Create an HTML table with desired styling
+        # HTML Table
         st.write(f'''
         <table style="background: azure; border: 1.2px solid; width: 100%">
         <tr>
@@ -352,6 +356,8 @@ with tab_games:
 
             ax.set_title(f"Game ID: {selected_game_id}, Period {period} Shot Locations")
             st.pyplot(fig) 
+
+
 ##########################################
 ## Explore Tab                          ##
 ##########################################
