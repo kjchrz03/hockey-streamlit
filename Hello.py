@@ -239,8 +239,8 @@ with tab_games:
     logos = load_logos()
     cols = ['Tri Code','Team ID','Logo']
 
-    st.title("<h2>Explore Games</h2>")
-
+    #st.title("Explore Games")
+    st.markdown("Explore Matchups")
     # Create a mapping of game matchups to their corresponding game IDs
     game_id_mapping = {row['matchup']: row['game_id'] for index, row in shots.iterrows()}
 
