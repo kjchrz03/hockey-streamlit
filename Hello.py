@@ -303,6 +303,8 @@ with tab_games:
         st.write("Final Score:")
         for name, count in goal_counts.items():
             st.write(f"{name}: {count}")
+        
+        st.write("Home team shot attempts (🟠) 🏒 Away team shot attempts (🔵) 🏒 Goals are (🟢)")
 
     ## goal mapping
         # The rest of your script goes here
