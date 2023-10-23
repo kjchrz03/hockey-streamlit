@@ -151,7 +151,7 @@ with tab_player:
 
     # Create an HTML table with desired styling
     st.write(f'''
-    <table style="background: azure; border: 1.2px solid; width: 100%">
+    <table style="background: d5cfe1; border: 1.2px solid; width: 100%">
     <tr>
         <td style="font-weight: bold;">Name</td>
         <td style="font-weight: bold;">Position</td>
