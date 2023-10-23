@@ -21,11 +21,11 @@ image = Image.open('logo.png')
 st.image(image)
 
 
-primaryColor="#F63366"
-backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
+primaryColor="#fafaff"
+backgroundColor="#e1dee9"
+secondaryBackgroundColor="#d5cfe1"
 textColor="#262730"
-font="sans serif"
+font="serif"
 
 # CSS for tables
 hide_table_row_index = """
