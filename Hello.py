@@ -20,12 +20,6 @@ st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sideb
 image = Image.open('logo.png')
 st.image(image)
 
-st.set_page_config(
-    page_title="Goal Mapping",
-    page_icon="🏒",
-    layout="wide",  # Set to wide layout
-    initial_sidebar_state="expanded"
-)
 # CSS for tables
 hide_table_row_index = """
             <style>
