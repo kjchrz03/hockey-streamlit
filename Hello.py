@@ -241,7 +241,7 @@ with tab_games:
 
     #st.title("Explore Games")
     st.header('Explore Matchups')
-    
+
     # Create a mapping of game matchups to their corresponding game IDs
     game_id_mapping = {row['matchup']: row['game_id'] for index, row in shots.iterrows()}
 
@@ -325,7 +325,7 @@ with tab_games:
                 away_team_logo={
                     "feature_class": RinkImage,
                     "image_path": away_team_logo_link,
-                    "x": -55, "length": 50, "width": 29,
+                    "x": -55, "length": 50, "width": 42,
                     "zorder": 15, "alpha": 0.5,
                 }
             )
