@@ -363,7 +363,7 @@ with tab_games:
             # Use the 'color' column for dot colors
             rink.scatter("x", "y", s=100, c=period_data['color'], edgecolor="white", data=period_data, ax=ax)
 
-            ax.set_title(f"Game ID: {selected_game_id}, Period {period} Shot Locations")
+            ax.set_title(f"Period {period} Shot Locations")
             st.pyplot(fig) 
 
 
