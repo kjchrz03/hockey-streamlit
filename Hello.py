@@ -72,23 +72,23 @@ dfstyle = [{"selector": "th", "props": heading_properties},
 
 # Expander Styling
 
-st.markdown(
-        """
-    <style>
-    .streamlit-expanderHeader {
-    #   font-weight: bold;
-        background: #e1dee9;
-        font-size: 180px;
-    }
-    </style>
-    """,
-        unsafe_allow_html=True,
-    )
+#st.markdown(
+    #     """
+    # <style>
+    # .streamlit-expanderHeader {
+    # #   font-weight: bold;
+    #     background: #e1dee9;
+    #     font-size: 180px;
+    # }
+    # </style>
+    # """,
+    #     unsafe_allow_html=True,
+    # )
     
 custom_css = """
 <style>
     .streamlit-tabs-label {
-        font-size: 20px;  /* You can adjust the font size as needed */
+        font-size: 120px;  /* You can adjust the font size as needed */
     }
 </style>
 """
