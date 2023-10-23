@@ -305,7 +305,7 @@ with tab_games:
             st.write(f"{name}: {count}")
         
         st.write("Home team shot attempts (🟠) 🏒 Away team shot attempts (🔵) 🏒 Goals are (🟢)")
-
+        st.write("Some home teams like to start on the right, others on the left. I am working on making arena adjustments.")
     ## goal mapping
         # The rest of your script goes here
         for period in [1, 2, 3]:
