@@ -35,7 +35,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 20,8476438,Brandon Saad,Left Wing,St. Louis Blues,2
 94,8481167,Brayden Pachal,Defenseman,Vegas Golden Knights,1
 10,8475170,Brayden Schenn,Center,St. Louis Blues,1
-11,8475848,Brendan Gallagher,Right Wing,Montréal Canadiens,1
+11,8475848,Brendan Gallagher,Right Wing,Montréal Canadiens,2
 28,8477962,Brendan Lemieux,Left Wing,Carolina Hurricanes,1
 8,8470613,Brent Burns,Defenseman,Carolina Hurricanes,2
 21,8479353,Brett Howden,Center,Vegas Golden Knights,1
@@ -127,7 +127,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 16,8477450,Jason Dickinson,Center,Chicago Blackhawks,1
 21,8480027,Jason Robertson,Left Wing,Dallas Stars,1
 16,8475722,Jason Zucker,Left Wing,Arizona Coyotes,2
-53,8475784,Jeff Skinner,Left Wing,Buffalo Sabres,2
+53,8475784,Jeff Skinner,Left Wing,Buffalo Sabres,3
 63,8479407,Jesper Bratt,Left Wing,New Jersey Devils,3
 71,8475855,Jesper Fast,Right Wing,Carolina Hurricanes,1
 82,8480829,Jesperi Kotkaniemi,Center,Carolina Hurricanes,3
@@ -147,6 +147,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 11,8473533,Jordan Staal,Center,Carolina Hurricanes,1
 44,8477504,Josh Morrissey,Defenseman,Winnipeg Jets,1
 9,8480064,Josh Norris,Center,Ottawa Senators,2
+52,8482111,Justin Barron,Defenseman,Montréal Canadiens,1
 17,8479941,Justin Danforth,Right Wing,Columbus Blue Jackets,3
 4,8474602,Justin Schultz,Defenseman,Seattle Kraken,1
 75,8481704,Juuso Parssinen,Center,Nashville Predators,2
@@ -253,7 +254,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 91,8474564,Steven Stamkos,Center,Tampa Bay Lightning,2
 72,8479420,Tage Thompson,Center,Buffalo Sabres,1
 84,8479661,Tanner Jeannot,Left Wing,Tampa Bay Lightning,1
-70,8476871,Tanner Pearson,Left Wing,Montréal Canadiens,2
+70,8476871,Tanner Pearson,Left Wing,Montréal Canadiens,3
 11,8479390,Taylor Raddysh,Right Wing,Chicago Blackhawks,1
 86,8476882,Teuvo Teravainen,Left Wing,Carolina Hurricanes,4
 17,8482133,Thomas Bordeleau,Center,San Jose Sharks,1
