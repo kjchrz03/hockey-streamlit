@@ -3,6 +3,10 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 11,8484166,Adam Fantilli,Center,Columbus Blue Jackets,288,3,63.0,-9.0
 23,8479323,Adam Fox,Defenseman,New York Rangers,115,2,73.0,26.0
 23,8479323,Adam Fox,Defenseman,New York Rangers,175,2,85.0,13.0
+23,8479323,Adam Fox,Defenseman,New York Rangers,236,3,84.0,6.0
+14,8474641,Adam Henrique,Center,Anaheim Ducks,148,2,-86.0,-3.0
+17,8476392,Adam Lowry,Center,Winnipeg Jets,20,1,74.0,6.0
+17,8476392,Adam Lowry,Center,Winnipeg Jets,105,2,-87.0,4.0
 63,8480008,Adam Ruzicka,Center,Calgary Flames,39,1,53.0,5.0
 63,8480008,Adam Ruzicka,Center,Calgary Flames,230,3,-78.0,-24.0
 9,8477960,Adrian Kempe,Right Wing,Los Angeles Kings,290,3,-40.0,1.0
@@ -23,6 +27,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 9,8480113,Alex Iafallo,Left Wing,Winnipeg Jets,10,1,-79.0,5.0
 9,8480113,Alex Iafallo,Left Wing,Winnipeg Jets,194,2,-76.0,5.0
 9,8480113,Alex Iafallo,Left Wing,Winnipeg Jets,255,3,-76.0,-8.0
+78,8482155,Alex Laferriere,Right Wing,Los Angeles Kings,70,1,-78.0,1.0
 78,8482155,Alex Laferriere,Right Wing,Los Angeles Kings,147,2,70.0,-5.0
 15,8481618,Alex Newhook,Center,Montréal Canadiens,110,2,-85.0,-9.0
 15,8481618,Alex Newhook,Center,Montréal Canadiens,243,3,71.0,-1.0
@@ -53,6 +58,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 11,8471685,Anze Kopitar,Center,Los Angeles Kings,260,3,-55.0,25.0
 11,8471685,Anze Kopitar,Center,Los Angeles Kings,292,3,-86.0,-3.0
 2,8482245,Artem Zub,Defenseman,Ottawa Senators,140,2,-32.0,-5.0
+10,8478550,Artemi Panarin,Left Wing,New York Rangers,42,1,50.0,-10.0
 10,8478550,Artemi Panarin,Left Wing,New York Rangers,62,1,78.0,-14.0
 10,8478550,Artemi Panarin,Left Wing,New York Rangers,155,2,60.0,-1.0
 10,8478550,Artemi Panarin,Left Wing,New York Rangers,215,3,71.0,0.0
@@ -87,10 +93,12 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 63,8473419,Brad Marchand,Left Wing,Boston Bruins,325,3,80.0,-7.0
 4,8482073,Braden Schneider,Defenseman,New York Rangers,162,2,49.0,-8.0
 76,8476869,Brady Skjei,Defenseman,Carolina Hurricanes,294,3,-48.0,-36.0
+7,8480801,Brady Tkachuk,Left Wing,Ottawa Senators,68,1,-73.0,-18.0
 7,8480801,Brady Tkachuk,Left Wing,Ottawa Senators,158,2,-71.0,8.0
 7,8480801,Brady Tkachuk,Left Wing,Ottawa Senators,208,2,-55.0,-21.0
 7,8480801,Brady Tkachuk,Left Wing,Ottawa Senators,225,3,86.0,4.0
 7,8480801,Brady Tkachuk,Left Wing,Ottawa Senators,267,3,80.0,1.0
+7,8480801,Brady Tkachuk,Left Wing,Ottawa Senators,285,3,-81.0,-6.0
 21,8479520,Brandon Duhaime,Right Wing,Minnesota Wild,46,1,71.0,17.0
 21,8479520,Brandon Duhaime,Right Wing,Minnesota Wild,345,3,69.0,1.0
 38,8479542,Brandon Hagel,Left Wing,Tampa Bay Lightning,70,1,67.0,4.0
@@ -110,6 +118,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 8,8470613,Brent Burns,Defenseman,Carolina Hurricanes,23,1,54.0,-17.0
 8,8470613,Brent Burns,Defenseman,Carolina Hurricanes,141,2,-59.0,22.0
 21,8479353,Brett Howden,Center,Vegas Golden Knights,107,2,-85.0,-2.0
+20,8481517,Brett Leason,Right Wing,Anaheim Ducks,211,3,84.0,-7.0
 20,8481517,Brett Leason,Right Wing,Anaheim Ducks,263,3,-68.0,-16.0
 22,8477488,Brett Pesce,Defenseman,Carolina Hurricanes,289,3,-51.0,-39.0
 6,8478444,Brock Boeser,Right Wing,Vancouver Canucks,53,1,-66.0,-14.0
@@ -134,6 +143,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 8,8480069,Cale Makar,Defenseman,Colorado Avalanche,342,3,-44.0,1.0
 19,8475714,Calle Jarnkrok,Center,Toronto Maple Leafs,307,3,-85.0,2.0
 89,8474715,Cam Atkinson,Right Wing,Philadelphia Flyers,129,2,83.0,-1.0
+89,8474715,Cam Atkinson,Right Wing,Philadelphia Flyers,160,2,79.0,-3.0
 89,8474715,Cam Atkinson,Right Wing,Philadelphia Flyers,227,3,-88.0,-2.0
 89,8474715,Cam Atkinson,Right Wing,Philadelphia Flyers,293,3,-86.0,0.0
 4,8475764,Cam Fowler,Defenseman,Anaheim Ducks,281,3,-53.0,12.0
@@ -142,14 +152,17 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 91,8479336,Carl Grundstrom,Right Wing,Los Angeles Kings,168,2,81.0,7.0
 91,8479336,Carl Grundstrom,Right Wing,Los Angeles Kings,335,3,-79.0,7.0
 7,8477369,Carson Soucy,Defenseman,Vancouver Canucks,154,2,-57.0,0.0
+7,8477369,Carson Soucy,Defenseman,Vancouver Canucks,257,3,-42.0,-9.0
 23,8477409,Carter Verhaeghe,Center,Florida Panthers,70,1,-80.0,7.0
 23,8477409,Carter Verhaeghe,Center,Florida Panthers,140,2,78.0,-9.0
 23,8477409,Carter Verhaeghe,Center,Florida Panthers,304,3,81.0,7.0
 53,8475231,Casey Cizikas,Center,New York Islanders,308,3,80.0,3.0
+37,8479999,Casey Mittelstadt,Center,Buffalo Sabres,101,2,-72.0,-18.0
 37,8479999,Casey Mittelstadt,Center,Buffalo Sabres,248,3,-80.0,-4.0
 20,8476905,Chandler Stephenson,Center,Vegas Golden Knights,33,1,-83.0,8.0
 20,8476905,Chandler Stephenson,Center,Vegas Golden Knights,190,2,76.0,-7.0
 13,8475745,Charlie Coyle,Center,Boston Bruins,109,2,-80.0,1.0
+73,8479325,Charlie McAvoy,Defenseman,Boston Bruins,87,1,80.0,-2.0
 20,8475184,Chris Kreider,Left Wing,New York Rangers,68,1,-83.0,9.0
 20,8475184,Chris Kreider,Left Wing,New York Rangers,79,1,-78.0,-16.0
 20,8475184,Chris Kreider,Left Wing,New York Rangers,148,2,-84.0,8.0
@@ -199,17 +212,22 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 88,8477956,David Pastrnak,Right Wing,Boston Bruins,185,2,-80.0,4.0
 88,8477956,David Pastrnak,Right Wing,Boston Bruins,191,2,63.0,-10.0
 88,8477956,David Pastrnak,Right Wing,Boston Bruins,216,2,-77.0,1.0
+88,8477956,David Pastrnak,Right Wing,Boston Bruins,255,3,80.0,-2.0
+88,8477956,David Pastrnak,Right Wing,Boston Bruins,281,3,-41.0,-3.0
 88,8477956,David Pastrnak,Right Wing,Boston Bruins,285,3,77.0,-9.0
 57,8474102,David Perron,Left Wing,Detroit Red Wings,170,2,83.0,-2.0
 57,8474102,David Perron,Left Wing,Detroit Red Wings,185,2,80.0,-11.0
 94,8476913,Devin Shore,Center,Seattle Kraken,68,1,80.0,0.0
 7,8478038,Devon Toews,Defenseman,Colorado Avalanche,160,2,80.0,-13.0
 29,8479346,Dillon Dube,Center,Calgary Flames,93,1,81.0,6.0
+81,8477330,Dominik Kubalik,Left Wing,Ottawa Senators,142,2,60.0,-10.0
 7,8476462,Dougie Hamilton,Defenseman,New Jersey Devils,94,1,-58.0,0.0
 7,8476462,Dougie Hamilton,Defenseman,New Jersey Devils,161,2,-46.0,5.0
 7,8476462,Dougie Hamilton,Defenseman,New Jersey Devils,324,3,32.0,2.0
+19,8480208,Drake Batherson,Right Wing,Ottawa Senators,287,3,-78.0,-4.0
 8,8474563,Drew Doughty,Defenseman,Los Angeles Kings,98,1,-50.0,-19.0
 8,8474563,Drew Doughty,Defenseman,Los Angeles Kings,193,2,41.0,9.0
+8,8474563,Drew Doughty,Defenseman,Los Angeles Kings,305,3,-38.0,-8.0
 8,8474563,Drew Doughty,Defenseman,Los Angeles Kings,313,3,-34.0,18.0
 24,8481528,Dylan Cozens,Center,Buffalo Sabres,238,3,81.0,8.0
 24,8481528,Dylan Cozens,Center,Buffalo Sabres,244,3,-87.0,32.0
@@ -224,6 +242,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 17,8478440,Dylan Strome,Center,Washington Capitals,201,3,-79.0,-5.0
 17,8478440,Dylan Strome,Center,Washington Capitals,262,3,79.0,-7.0
 17,8478440,Dylan Strome,Center,Washington Capitals,293,3,77.0,-14.0
+20,8480009,Eeli Tolvanen,Right Wing,Seattle Kraken,160,2,-78.0,1.0
 5,8481178,Egor Zamula,Defenseman,Philadelphia Flyers,13,1,-40.0,-7.0
 28,8477496,Elias Lindholm,Center,Calgary Flames,253,3,-55.0,-3.0
 28,8477496,Elias Lindholm,Center,Calgary Flames,337,3,-78.0,-3.0
@@ -257,11 +276,15 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 18,8480821,Filip Zadina,Right Wing,San Jose Sharks,87,1,75.0,-12.0
 18,8480821,Filip Zadina,Right Wing,San Jose Sharks,157,2,-47.0,-19.0
 77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,50,1,74.0,-27.0
+77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,76,1,56.0,-6.0
+77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,132,2,-87.0,8.0
 77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,164,2,-72.0,14.0
 77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,251,3,-83.0,-4.0
+77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,251,3,74.0,2.0
 77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,287,3,63.0,23.0
 77,8478366,Frank Vatrano,Right Wing,Anaheim Ducks,300,4,75.0,2.0
 22,8478028,Fredrik Olofsson,Left Wing,Colorado Avalanche,159,2,69.0,-11.0
+42,8478055,Gustav Forsling,Defenseman,Florida Panthers,167,2,40.0,15.0
 14,8474679,Gustav Nyquist,Center,Nashville Predators,264,3,86.0,-32.0
 65,8481624,Ilya Mikheyev,Right Wing,Vancouver Canucks,27,1,-45.0,-6.0
 65,8481624,Ilya Mikheyev,Right Wing,Vancouver Canucks,227,3,-73.0,-6.0
@@ -269,9 +292,11 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 90,8482655,J.J. Moser,Defenseman,Arizona Coyotes,38,1,88.0,6.0
 37,8477456,J.T. Compher,Left Wing,Detroit Red Wings,180,2,80.0,0.0
 9,8476468,J.T. Miller,Center,Vancouver Canucks,145,2,86.0,-3.0
+9,8476468,J.T. Miller,Center,Vancouver Canucks,173,2,74.0,-2.0
 9,8476468,J.T. Miller,Center,Vancouver Canucks,240,3,-49.0,-16.0
 9,8476468,J.T. Miller,Center,Vancouver Canucks,269,3,-82.0,-3.0
 77,8482175,JJ Peterka,Right Wing,Buffalo Sabres,21,1,-66.0,13.0
+77,8482175,JJ Peterka,Right Wing,Buffalo Sabres,53,1,77.0,7.0
 77,8482175,JJ Peterka,Right Wing,Buffalo Sabres,182,2,-73.0,-6.0
 77,8482175,JJ Peterka,Right Wing,Buffalo Sabres,221,3,55.0,-11.0
 74,8476958,Jaccob Slavin,Defenseman,Carolina Hurricanes,155,2,86.0,-6.0
@@ -280,6 +305,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 9,8478403,Jack Eichel,Center,Vegas Golden Knights,114,1,-81.0,1.0
 9,8478403,Jack Eichel,Center,Vegas Golden Knights,279,3,79.0,14.0
 9,8478403,Jack Eichel,Center,Vegas Golden Knights,306,3,17.0,-9.0
+9,8478403,Jack Eichel,Center,Vegas Golden Knights,343,5,76.0,2.0
 86,8481559,Jack Hughes,Center,New Jersey Devils,204,3,50.0,-4.0
 86,8481559,Jack Hughes,Center,New Jersey Devils,215,2,-88.0,-20.0
 86,8481559,Jack Hughes,Center,New Jersey Devils,229,3,-82.0,-3.0
@@ -298,6 +324,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 22,8479402,Jake Bean,Defenseman,Columbus Blue Jackets,51,1,75.0,-8.0
 71,8478133,Jake Evans,Center,Montréal Canadiens,15,1,81.0,-8.0
 59,8477404,Jake Guentzel,Left Wing,Pittsburgh Penguins,231,3,68.0,-8.0
+59,8477404,Jake Guentzel,Left Wing,Pittsburgh Penguins,316,3,53.0,-17.0
 63,8482089,Jake Neighbours,Left Wing,St. Louis Blues,130,2,-86.0,-3.0
 85,8482105,Jake Sanderson,Defenseman,Ottawa Senators,89,1,37.0,-3.0
 85,8482105,Jake Sanderson,Defenseman,Ottawa Senators,188,2,-33.0,-2.0
@@ -313,6 +340,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 21,8474037,James van Riemsdyk,Left Wing,Boston Bruins,274,3,75.0,3.0
 14,8473994,Jamie Benn,Left Wing,Dallas Stars,101,2,84.0,-6.0
 14,8473994,Jamie Benn,Left Wing,Dallas Stars,271,3,-65.0,16.0
+19,8477955,Jared McCann,Left Wing,Seattle Kraken,58,1,87.0,-5.0
 19,8477955,Jared McCann,Left Wing,Seattle Kraken,151,2,-75.0,-1.0
 19,8477955,Jared McCann,Left Wing,Seattle Kraken,281,3,82.0,10.0
 19,8477955,Jared McCann,Left Wing,Seattle Kraken,303,3,58.0,-19.0
@@ -342,7 +370,9 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 90,8480813,Joe Veleno,Center,Detroit Red Wings,48,1,-65.0,-5.0
 90,8480813,Joe Veleno,Center,Detroit Red Wings,125,2,72.0,-2.0
 90,8480813,Joe Veleno,Center,Detroit Red Wings,134,2,84.0,-13.0
+90,8480813,Joe Veleno,Center,Detroit Red Wings,234,3,-66.0,-20.0
 90,8480813,Joe Veleno,Center,Detroit Red Wings,260,3,-84.0,-9.0
+40,8476469,Joel Armia,Right Wing,Montréal Canadiens,200,3,-68.0,13.0
 14,8478493,Joel Eriksson Ek,Center,Minnesota Wild,117,2,-78.0,0.0
 14,8478493,Joel Eriksson Ek,Center,Minnesota Wild,164,2,85.0,3.0
 14,8478493,Joel Eriksson Ek,Center,Minnesota Wild,232,3,84.0,-4.0
@@ -351,6 +381,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 86,8480797,Joel Farabee,Left Wing,Philadelphia Flyers,24,1,-80.0,-9.0
 86,8480797,Joel Farabee,Left Wing,Philadelphia Flyers,58,1,84.0,5.0
 86,8480797,Joel Farabee,Left Wing,Philadelphia Flyers,85,1,-81.0,-3.0
+86,8480797,Joel Farabee,Left Wing,Philadelphia Flyers,267,3,-71.0,-16.0
 74,8474590,John Carlson,Defenseman,Washington Capitals,102,1,-71.0,1.0
 74,8474590,John Carlson,Defenseman,Washington Capitals,332,5,-74.0,6.0
 91,8475166,John Tavares,Center,Toronto Maple Leafs,112,2,-80.0,-8.0
@@ -374,6 +405,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 9,8480064,Josh Norris,Center,Ottawa Senators,122,2,-66.0,1.0
 9,8480064,Josh Norris,Center,Ottawa Senators,303,3,85.0,-10.0
 52,8482111,Justin Barron,Defenseman,Montréal Canadiens,19,1,-72.0,-1.0
+52,8482111,Justin Barron,Defenseman,Montréal Canadiens,23,1,-80.0,0.0
 52,8482111,Justin Barron,Defenseman,Montréal Canadiens,38,1,-76.0,-22.0
 17,8479941,Justin Danforth,Right Wing,Columbus Blue Jackets,56,1,88.0,4.0
 17,8479941,Justin Danforth,Right Wing,Columbus Blue Jackets,240,3,83.0,10.0
@@ -381,6 +413,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 4,8474602,Justin Schultz,Defenseman,Seattle Kraken,38,1,68.0,27.0
 75,8481704,Juuso Parssinen,Center,Nashville Predators,205,3,-82.0,4.0
 75,8481704,Juuso Parssinen,Center,Nashville Predators,305,3,-44.0,30.0
+79,8480817,K'Andre Miller,Defenseman,New York Rangers,296,4,-68.0,11.0
 24,8481554,Kaapo Kakko,Right Wing,New York Rangers,155,2,-82.0,1.0
 6,8481527,Kaedan Korczak,Defenseman,Vegas Golden Knights,159,2,51.0,-21.0
 56,8479977,Kailer Yamamoto,Right Wing,Seattle Kraken,87,1,84.0,16.0
@@ -398,6 +431,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 81,8478398,Kyle Connor,Left Wing,Winnipeg Jets,123,2,70.0,5.0
 81,8478398,Kyle Connor,Left Wing,Winnipeg Jets,205,3,-72.0,-19.0
 81,8478398,Kyle Connor,Left Wing,Winnipeg Jets,317,3,-29.0,34.0
+21,8475151,Kyle Palmieri,Center,New York Islanders,82,1,-82.0,-5.0
 21,8475151,Kyle Palmieri,Center,New York Islanders,87,1,83.0,1.0
 21,8475151,Kyle Palmieri,Center,New York Islanders,120,2,-81.0,-6.0
 20,8474189,Lars Eller,Center,Pittsburgh Penguins,125,2,-80.0,3.0
@@ -423,10 +457,12 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 17,8475220,Marcus Foligno,Left Wing,Minnesota Wild,220,3,84.0,-9.0
 17,8475220,Marcus Foligno,Left Wing,Minnesota Wild,281,3,-52.0,-38.0
 90,8475149,Marcus Johansson,Left Wing,Minnesota Wild,296,3,-65.0,-20.0
+55,8470966,Mark Giordano,Defenseman,Toronto Maple Leafs,200,2,84.0,6.0
 55,8476460,Mark Scheifele,Center,Winnipeg Jets,42,1,-69.0,5.0
 55,8476460,Mark Scheifele,Center,Winnipeg Jets,289,3,-82.0,-5.0
 55,8476460,Mark Scheifele,Center,Winnipeg Jets,322,3,76.0,-12.0
 55,8476460,Mark Scheifele,Center,Winnipeg Jets,344,4,81.0,2.0
+61,8475913,Mark Stone,Right Wing,Vegas Golden Knights,246,3,76.0,-11.0
 61,8475913,Mark Stone,Right Wing,Vegas Golden Knights,279,3,81.0,5.0
 88,8480039,Martin Necas,Center,Carolina Hurricanes,99,1,-83.0,-1.0
 88,8480039,Martin Necas,Center,Carolina Hurricanes,264,3,-82.0,6.0
@@ -453,14 +489,17 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 95,8475168,Matt Duchene,Center,Dallas Stars,356,5,73.0,6.0
 24,8476856,Matt Dumba,Defenseman,Arizona Coyotes,33,1,-62.0,2.0
 48,8476891,Matt Grzelcyk,Defenseman,Boston Bruins,120,2,-73.0,30.0
+17,8474709,Matt Martin,Left Wing,New York Islanders,254,3,-83.0,-6.0
 23,8482720,Matthew Knies,Left Wing,Toronto Maple Leafs,272,3,-68.0,-20.0
 23,8482720,Matthew Knies,Left Wing,Toronto Maple Leafs,282,3,-67.0,6.0
 45,8479547,Matthew Phillips,Right Wing,Washington Capitals,141,2,82.0,2.0
 51,8483505,Matthew Poitras,Center,Boston Bruins,240,3,-75.0,0.0
 51,8483505,Matthew Poitras,Center,Boston Bruins,241,3,80.0,-3.0
 51,8483505,Matthew Poitras,Center,Boston Bruins,256,3,-81.0,5.0
+19,8479314,Matthew Tkachuk,Left Wing,Florida Panthers,171,2,69.0,7.0
 23,8480807,Mattias Samuelsson,Defenseman,Buffalo Sabres,210,2,-62.0,1.0
 22,8478020,Michael Amadio,Right Wing,Vegas Golden Knights,70,1,-77.0,-11.0
+22,8478020,Michael Amadio,Right Wing,Vegas Golden Knights,139,2,-80.0,8.0
 58,8478047,Michael Bunting,Left Wing,Carolina Hurricanes,143,2,84.0,5.0
 58,8478047,Michael Bunting,Left Wing,Carolina Hurricanes,149,2,-86.0,-6.0
 53,8479619,Michael Carcone,Left Wing,Arizona Coyotes,180,2,82.0,4.0
@@ -468,6 +507,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 23,8479591,Michael Eyssimont,Center,Tampa Bay Lightning,173,2,-64.0,-23.0
 20,8479415,Michael McLeod,Center,New Jersey Devils,260,3,81.0,6.0
 27,8479992,Michael Rasmussen,Center,Detroit Red Wings,113,2,84.0,-8.0
+93,8476459,Mika Zibanejad,Center,New York Rangers,244,3,68.0,11.0
 8,8476875,Mike Matheson,Defenseman,Montréal Canadiens,200,2,52.0,23.0
 8,8476875,Mike Matheson,Defenseman,Montréal Canadiens,290,3,-80.0,0.0
 44,8479998,Mikey Anderson,Defenseman,Los Angeles Kings,30,1,-72.0,-3.0
@@ -500,12 +540,14 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 17,8475760,Nick Bjugstad,Center,Arizona Coyotes,89,1,-62.0,7.0
 17,8475760,Nick Bjugstad,Center,Arizona Coyotes,131,2,-81.0,3.0
 17,8475760,Nick Bjugstad,Center,Arizona Coyotes,320,5,-79.0,6.0
+21,8476393,Nick Cousins,Center,Florida Panthers,279,3,-82.0,6.0
 17,8473422,Nick Foligno,Left Wing,Chicago Blackhawks,318,3,-79.0,1.0
 4,8475181,Nick Leddy,Defenseman,St. Louis Blues,82,1,36.0,29.0
 8,8477951,Nick Schmaltz,Center,Arizona Coyotes,215,2,70.0,0.0
 8,8477951,Nick Schmaltz,Center,Arizona Coyotes,269,3,-75.0,-20.0
 8,8477951,Nick Schmaltz,Center,Arizona Coyotes,322,5,-77.0,5.0
 14,8480018,Nick Suzuki,Center,Montréal Canadiens,120,2,52.0,9.0
+14,8480018,Nick Suzuki,Center,Montréal Canadiens,311,5,-82.0,-3.0
 13,8480002,Nico Hischier,Center,New Jersey Devils,145,2,-78.0,-8.0
 13,8480002,Nico Hischier,Center,New Jersey Devils,218,3,78.0,-13.0
 14,8479980,Nicolas Hague,Defenseman,Vegas Golden Knights,187,2,56.0,-24.0
@@ -522,6 +564,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 27,8477940,Nikolaj Ehlers,Left Wing,Winnipeg Jets,77,1,67.0,-7.0
 21,8481535,Nils Hoglander,Left Wing,Vancouver Canucks,104,1,-78.0,2.0
 21,8481535,Nils Hoglander,Left Wing,Vancouver Canucks,118,2,79.0,3.0
+62,8475799,Nino Niederreiter,Right Wing,Winnipeg Jets,107,2,-83.0,9.0
 62,8475799,Nino Niederreiter,Right Wing,Winnipeg Jets,284,3,36.0,30.0
 8,8480865,Noah Dobson,Defenseman,New York Islanders,289,3,45.0,-1.0
 8,8480865,Noah Dobson,Defenseman,New York Islanders,318,3,-48.0,-14.0
@@ -537,6 +580,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 89,8477402,Pavel Buchnevich,Left Wing,St. Louis Blues,178,2,-75.0,3.0
 16,8481604,Pavel Dorofeyev,Left Wing,Vegas Golden Knights,9,1,-76.0,-1.0
 34,8483490,Pavel Mintyukov,Defenseman,Anaheim Ducks,73,1,72.0,10.0
+18,8478401,Pavel Zacha,Center,Boston Bruins,58,1,79.0,2.0
 18,8478401,Pavel Zacha,Center,Boston Bruins,133,2,-70.0,2.0
 23,8480798,Philipp Kurashev,Center,Chicago Blackhawks,288,4,-51.0,3.0
 24,8476479,Phillip Danault,Center,Los Angeles Kings,284,3,71.0,7.0
@@ -561,10 +605,12 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 19,8475191,Reilly Smith,Right Wing,Pittsburgh Penguins,65,1,64.0,8.0
 19,8475191,Reilly Smith,Right Wing,Pittsburgh Penguins,210,3,68.0,-6.0
 19,8475191,Reilly Smith,Right Wing,Pittsburgh Penguins,310,3,61.0,34.0
+71,8482092,Ridly Greig,Center,Ottawa Senators,21,1,-80.0,-5.0
 71,8482092,Ridly Greig,Center,Ottawa Senators,265,3,70.0,-2.0
 14,8477952,Robby Fabbri,Center,Detroit Red Wings,348,3,-79.0,5.0
 18,8480023,Robert Thomas,Center,St. Louis Blues,254,3,76.0,7.0
 18,8480023,Robert Thomas,Center,St. Louis Blues,324,5,78.0,4.0
+59,8474600,Roman Josi,Defenseman,Nashville Predators,330,4,-55.0,8.0
 24,8478449,Roope Hintz,Center,Dallas Stars,107,2,66.0,-15.0
 24,8478449,Roope Hintz,Center,Dallas Stars,148,2,75.0,6.0
 20,8479525,Ross Colton,Center,Colorado Avalanche,304,3,32.0,-39.0
@@ -581,8 +627,11 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 12,8475793,Ryan Johansen,Center,Colorado Avalanche,297,3,-67.0,1.0
 93,8476454,Ryan Nugent-Hopkins,Center,Edmonton Oilers,90,1,-80.0,14.0
 93,8476454,Ryan Nugent-Hopkins,Center,Edmonton Oilers,187,2,-62.0,-20.0
+90,8475158,Ryan O'Reilly,Center,Nashville Predators,86,1,81.0,-8.0
 90,8475158,Ryan O'Reilly,Center,Nashville Predators,111,2,-71.0,-5.0
 90,8475158,Ryan O'Reilly,Center,Nashville Predators,175,2,81.0,1.0
+90,8475158,Ryan O'Reilly,Center,Nashville Predators,215,2,-82.0,4.0
+16,8476458,Ryan Strome,Center,Anaheim Ducks,8,1,84.0,13.0
 16,8476458,Ryan Strome,Center,Anaheim Ducks,159,2,81.0,-3.0
 39,8475842,Sam Carrick,Center,Anaheim Ducks,44,1,66.0,11.0
 18,8478043,Sam Lafferty,Center,Vancouver Canucks,271,3,-82.0,5.0
@@ -602,6 +651,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 50,8480434,Sean Durzi,Defenseman,Arizona Coyotes,322,3,-52.0,-1.0
 7,8476374,Sean Kuraly,Center,Columbus Blue Jackets,124,2,-57.0,14.0
 91,8477497,Sean Monahan,Center,Montréal Canadiens,82,1,-82.0,0.0
+91,8477497,Sean Monahan,Center,Montréal Canadiens,138,2,84.0,-4.0
 91,8477497,Sean Monahan,Center,Montréal Canadiens,201,2,73.0,4.0
 91,8477497,Sean Monahan,Center,Montréal Canadiens,239,3,-81.0,0.0
 26,8480336,Sean Walker,Defenseman,Philadelphia Flyers,196,2,70.0,25.0
@@ -621,6 +671,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 87,8471675,Sidney Crosby,Center,Pittsburgh Penguins,148,2,-79.0,-4.0
 87,8471675,Sidney Crosby,Center,Pittsburgh Penguins,184,2,-79.0,14.0
 87,8471675,Sidney Crosby,Center,Pittsburgh Penguins,189,2,-82.0,-19.0
+87,8471675,Sidney Crosby,Center,Pittsburgh Penguins,218,2,-80.0,3.0
 87,8471675,Sidney Crosby,Center,Pittsburgh Penguins,250,3,57.0,4.0
 10,8481601,Simon Holmstrom,Right Wing,New York Islanders,135,2,-65.0,7.0
 15,8477947,Sonny Milano,Left Wing,Washington Capitals,92,1,-72.0,-20.0
@@ -645,7 +696,6 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 86,8476882,Teuvo Teravainen,Left Wing,Carolina Hurricanes,207,3,-33.0,-17.0
 86,8476882,Teuvo Teravainen,Left Wing,Carolina Hurricanes,223,2,74.0,-31.0
 86,8476882,Teuvo Teravainen,Left Wing,Carolina Hurricanes,261,3,-82.0,11.0
-17,8482133,Thomas Bordeleau,Center,San Jose Sharks,48,1,80.0,-3.0
 55,8481581,Thomas Harley,Defenseman,Dallas Stars,257,3,-52.0,8.0
 18,8482116,Tim Stützle,Center,Ottawa Senators,280,3,78.0,21.0
 18,8482116,Tim Stützle,Center,Ottawa Senators,284,3,82.0,1.0
@@ -660,18 +710,22 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 11,8478439,Travis Konecny,Right Wing,Philadelphia Flyers,73,1,-54.0,-28.0
 11,8478439,Travis Konecny,Right Wing,Philadelphia Flyers,88,1,-83.0,1.0
 11,8478439,Travis Konecny,Right Wing,Philadelphia Flyers,93,1,65.0,4.0
+11,8478439,Travis Konecny,Right Wing,Philadelphia Flyers,165,2,71.0,-16.0
+11,8478439,Travis Konecny,Right Wing,Philadelphia Flyers,238,3,-74.0,9.0
 11,8478439,Travis Konecny,Right Wing,Philadelphia Flyers,277,3,83.0,15.0
 11,8478439,Travis Konecny,Right Wing,Philadelphia Flyers,306,3,-74.0,0.0
 6,8477948,Travis Sanheim,Defenseman,Philadelphia Flyers,261,3,-58.0,3.0
 11,8479365,Trent Frederic,Center,Boston Bruins,73,1,83.0,-10.0
 11,8479365,Trent Frederic,Center,Boston Bruins,245,3,82.0,4.0
 61,8473453,Trevor Lewis,Center,Los Angeles Kings,60,1,-71.0,-12.0
+61,8473453,Trevor Lewis,Center,Los Angeles Kings,128,2,83.0,6.0
 12,8479675,Trevor Moore,Left Wing,Los Angeles Kings,68,1,-82.0,4.0
 12,8479675,Trevor Moore,Left Wing,Los Angeles Kings,176,2,62.0,15.0
 12,8479675,Trevor Moore,Left Wing,Los Angeles Kings,192,2,-80.0,-2.0
 12,8479675,Trevor Moore,Left Wing,Los Angeles Kings,261,3,72.0,7.0
 12,8479675,Trevor Moore,Left Wing,Los Angeles Kings,274,3,52.0,-27.0
 12,8479675,Trevor Moore,Left Wing,Los Angeles Kings,332,5,-74.0,0.0
+11,8481533,Trevor Zegras,Center,Anaheim Ducks,208,3,60.0,5.0
 19,8478873,Troy Terry,Right Wing,Anaheim Ducks,26,1,81.0,12.0
 19,8478873,Troy Terry,Right Wing,Anaheim Ducks,318,3,-81.0,-13.0
 52,8481789,Tye Kartye,Left Wing,Seattle Kraken,211,2,-68.0,3.0
@@ -682,6 +736,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 90,8474870,Tyler Johnson,Center,Chicago Blackhawks,223,2,-75.0,0.0
 90,8474870,Tyler Johnson,Center,Chicago Blackhawks,292,3,85.0,8.0
 57,8474574,Tyler Myers,Defenseman,Vancouver Canucks,106,2,46.0,-8.0
+57,8474574,Tyler Myers,Defenseman,Vancouver Canucks,219,3,-73.0,13.0
 91,8475794,Tyler Seguin,Center,Dallas Stars,40,1,-80.0,0.0
 73,8475726,Tyler Toffoli,Right Wing,New Jersey Devils,107,2,67.0,-22.0
 73,8475726,Tyler Toffoli,Right Wing,New Jersey Devils,129,2,-79.0,12.0
@@ -705,11 +760,13 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 37,8477998,Warren Foegele,Left Wing,Edmonton Oilers,107,2,-47.0,2.0
 37,8477998,Warren Foegele,Left Wing,Edmonton Oilers,208,2,65.0,-19.0
 50,8482157,Will Cuylle,Left Wing,New York Rangers,265,3,-65.0,1.0
+28,8477478,William Carrier,Left Wing,Vegas Golden Knights,178,2,-64.0,-12.0
 72,8482667,William Eklund,Left Wing,San Jose Sharks,193,2,-87.0,5.0
 71,8476448,William Karlsson,Center,Vegas Golden Knights,20,1,-80.0,1.0
 71,8476448,William Karlsson,Center,Vegas Golden Knights,27,1,75.0,6.0
 71,8476448,William Karlsson,Center,Vegas Golden Knights,304,3,-76.0,6.0
 88,8477939,William Nylander,Right Wing,Toronto Maple Leafs,17,1,-82.0,-18.0
+88,8477939,William Nylander,Right Wing,Toronto Maple Leafs,80,1,-75.0,-19.0
 88,8477939,William Nylander,Right Wing,Toronto Maple Leafs,115,2,-80.0,10.0
 88,8477939,William Nylander,Right Wing,Toronto Maple Leafs,120,1,-90.0,2.0
 88,8477939,William Nylander,Right Wing,Toronto Maple Leafs,202,2,60.0,32.0
