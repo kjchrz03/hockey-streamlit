@@ -600,6 +600,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 7,8475462,Radko Gudas,Defenseman,Anaheim Ducks,80,1,-33.0,32.0,1,33.0,-32.0
 4,8478397,Rasmus Andersson,Defenseman,Calgary Flames,215,2,54.0,-1.0,1,54.0,-1.0
 26,8480839,Rasmus Dahlin,Defenseman,Buffalo Sabres,183,2,37.0,-17.0,1,37.0,-17.0
+26,8480839,Rasmus Dahlin,Defenseman,Buffalo Sabres,272,3,-86.0,34.0,2,86.0,-34.0
 52,8481147,Reese Johnson,Center,Chicago Blackhawks,154,2,62.0,-7.0,1,62.0,-7.0
 19,8475191,Reilly Smith,Right Wing,Pittsburgh Penguins,21,1,66.0,3.0,1,66.0,3.0
 19,8475191,Reilly Smith,Right Wing,Pittsburgh Penguins,65,1,64.0,8.0,2,64.0,8.0
@@ -745,6 +746,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 73,8475726,Tyler Toffoli,Right Wing,New Jersey Devils,268,3,75.0,11.0,5,75.0,11.0
 73,8475726,Tyler Toffoli,Right Wing,New Jersey Devils,325,3,64.0,-12.0,6,64.0,-12.0
 75,8481006,Tyler Tucker,Defenseman,St. Louis Blues,121,2,-51.0,3.0,1,51.0,-3.0
+17,8479370,Tyson Jost,Center,Buffalo Sabres,136,2,-54.0,-3.0,1,54.0,3.0
 13,8477501,Valeri Nichushkin,Right Wing,Colorado Avalanche,298,3,18.0,-38.0,1,18.0,-38.0
 77,8475167,Victor Hedman,Defenseman,Tampa Bay Lightning,245,3,41.0,-5.0,1,41.0,-5.0
 29,8478407,Vince Dunn,Defenseman,Seattle Kraken,141,2,-51.0,-7.0,1,51.0,7.0
