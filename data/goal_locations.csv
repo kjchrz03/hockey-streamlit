@@ -613,7 +613,11 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y
 7,8475462,Radko Gudas,Defenseman,Anaheim Ducks,80,1,-33.0,32.0
 4,8478397,Rasmus Andersson,Defenseman,Calgary Flames,215,2,54.0,-1.0
 26,8480839,Rasmus Dahlin,Defenseman,Buffalo Sabres,183,2,37.0,-17.0
+<<<<<<< HEAD
 26,8480839,Rasmus Dahlin,Defenseman,Buffalo Sabres,273,3,-86.0,34.0
+=======
+26,8480839,Rasmus Dahlin,Defenseman,Buffalo Sabres,272,3,-86.0,34.0
+>>>>>>> d70b0420c273d798492e6385a920e9a4c25fd87c
 52,8481147,Reese Johnson,Center,Chicago Blackhawks,154,2,62.0,-7.0
 19,8475191,Reilly Smith,Right Wing,Pittsburgh Penguins,21,1,66.0,3.0
 19,8475191,Reilly Smith,Right Wing,Pittsburgh Penguins,65,1,64.0,8.0
