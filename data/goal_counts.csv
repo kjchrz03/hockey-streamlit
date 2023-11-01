@@ -5,7 +5,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 14,8474641,Adam Henrique,Center,Anaheim Ducks,1
 17,8476392,Adam Lowry,Center,Winnipeg Jets,2
 63,8480008,Adam Ruzicka,Center,Calgary Flames,2
-9,8477960,Adrian Kempe,Right Wing,Los Angeles Kings,2
+9,8477960,Adrian Kempe,Right Wing,Los Angeles Kings,3
 23,8474166,Alec Martinez,Defenseman,Vegas Golden Knights,1
 16,8477493,Aleksander Barkov,Center,Florida Panthers,2
 12,8479718,Alex Barré-Boulet,Center,Tampa Bay Lightning,3
@@ -18,6 +18,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 10,8482125,Alexander Holtz,Right Wing,New Jersey Devils,2
 13,8482109,Alexis Lafrenière,Left Wing,New York Rangers,4
 27,8475314,Anders Lee,Left Wing,New York Islanders,1
+5,8477971,Andreas Englund,Defenseman,Los Angeles Kings,1
 96,8483808,Andrei Kuzmenko,Left Wing,Vancouver Canucks,2
 18,8477429,Andrew Copp,Center,Detroit Red Wings,3
 88,8478233,Andrew Mangiapane,Left Wing,Calgary Flames,3
@@ -27,7 +28,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 11,8471685,Anze Kopitar,Center,Los Angeles Kings,4
 2,8482245,Artem Zub,Defenseman,Ottawa Senators,1
 10,8478550,Artemi Panarin,Left Wing,New York Rangers,5
-34,8481560,Arthur Kaliyev,Right Wing,Los Angeles Kings,1
+34,8481560,Arthur Kaliyev,Right Wing,Los Angeles Kings,2
 62,8477476,Artturi Lehkonen,Left Wing,Colorado Avalanche,2
 34,8479318,Auston Matthews,Center,Toronto Maple Leafs,7
 8,8475279,Ben Chiarot,Defenseman,Detroit Red Wings,1
@@ -80,7 +81,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 91,8482149,Cole Perfetti,Center,Winnipeg Jets,1
 36,8482062,Cole Smith,Left Wing,Nashville Predators,2
 55,8476892,Colton Parayko,Defenseman,St. Louis Blues,1
-10,8476925,Colton Sissons,Center,Nashville Predators,4
+10,8476925,Colton Sissons,Center,Nashville Predators,5
 98,8484144,Connor Bedard,Center,Chicago Blackhawks,4
 26,8480980,Connor Dewar,Center,Minnesota Wild,2
 97,8478402,Connor McDavid,Center,Edmonton Oilers,2
@@ -92,6 +93,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 6,8477541,Dakota Mermis,Defenseman,Minnesota Wild,2
 78,8476923,Damon Severson,Defenseman,Columbus Blue Jackets,1
 88,8478466,Daniel Sprong,Right Wing,Detroit Red Wings,3
+57,8479371,Dante Fabbro,Defenseman,Nashville Predators,1
 25,8477498,Darnell Nurse,Defenseman,Edmonton Oilers,1
 19,8481019,David Gustafsson,Center,Winnipeg Jets,2
 55,8483460,David Jiricek,Defenseman,Columbus Blue Jackets,1
@@ -112,7 +114,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 20,8480009,Eeli Tolvanen,Right Wing,Seattle Kraken,1
 5,8481178,Egor Zamula,Defenseman,Philadelphia Flyers,1
 28,8477496,Elias Lindholm,Center,Calgary Flames,2
-40,8480012,Elias Pettersson,Center,Vancouver Canucks,2
+40,8480012,Elias Pettersson,Center,Vancouver Canucks,5
 52,8480205,Emil Bemstrom,Right Wing,Columbus Blue Jackets,3
 56,8476979,Erik Gustafsson,Defenseman,New York Rangers,2
 56,8475287,Erik Haula,Left Wing,New Jersey Devils,5
@@ -136,7 +138,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 49,8477964,Ivan Barbashev,Center,Vegas Golden Knights,1
 90,8482655,J.J. Moser,Defenseman,Arizona Coyotes,1
 37,8477456,J.T. Compher,Left Wing,Detroit Red Wings,2
-9,8476468,J.T. Miller,Center,Vancouver Canucks,4
+9,8476468,J.T. Miller,Center,Vancouver Canucks,5
 77,8482175,JJ Peterka,Right Wing,Buffalo Sabres,4
 74,8476958,Jaccob Slavin,Defenseman,Carolina Hurricanes,3
 9,8478403,Jack Eichel,Center,Vegas Golden Knights,4
@@ -173,7 +175,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 14,8478493,Joel Eriksson Ek,Center,Minnesota Wild,5
 86,8480797,Joel Farabee,Left Wing,Philadelphia Flyers,4
 74,8474590,John Carlson,Defenseman,Washington Capitals,2
-91,8475166,John Tavares,Center,Toronto Maple Leafs,4
+91,8475166,John Tavares,Center,Toronto Maple Leafs,5
 25,8476463,Jonas Brodin,Defenseman,Minnesota Wild,1
 10,8476456,Jonathan Huberdeau,Center,Calgary Flames,2
 81,8476539,Jonathan Marchessault,Right Wing,Vegas Golden Knights,5
@@ -287,7 +289,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 34,8483490,Pavel Mintyukov,Defenseman,Anaheim Ducks,1
 18,8478401,Pavel Zacha,Center,Boston Bruins,3
 23,8480798,Philipp Kurashev,Center,Chicago Blackhawks,1
-24,8476479,Phillip Danault,Center,Los Angeles Kings,1
+24,8476479,Phillip Danault,Center,Los Angeles Kings,2
 34,8476858,Phillip Di Giuseppe,Left Wing,Vancouver Canucks,2
 41,8477930,Pierre-Edouard Bellemare,Left Wing,Seattle Kraken,1
 80,8479400,Pierre-Luc Dubois,Center,Los Angeles Kings,4
@@ -312,7 +314,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 90,8475158,Ryan O'Reilly,Center,Nashville Predators,4
 16,8476458,Ryan Strome,Center,Anaheim Ducks,2
 39,8475842,Sam Carrick,Center,Anaheim Ducks,1
-18,8478043,Sam Lafferty,Center,Vancouver Canucks,1
+18,8478043,Sam Lafferty,Center,Vancouver Canucks,2
 13,8477933,Sam Reinhart,Center,Florida Panthers,8
 79,8478104,Sammy Blais,Left Wing,St. Louis Blues,1
 11,8481239,Samuel Fagemo,Left Wing,Nashville Predators,1

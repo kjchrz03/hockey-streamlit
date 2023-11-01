@@ -10,8 +10,9 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 17,8476392,Adam Lowry,Center,Winnipeg Jets,105,2,-87.0,4.0,2,87.0,-4.0
 63,8480008,Adam Ruzicka,Center,Calgary Flames,39,1,53.0,5.0,1,53.0,5.0
 63,8480008,Adam Ruzicka,Center,Calgary Flames,230,3,-78.0,-24.0,2,78.0,24.0
-9,8477960,Adrian Kempe,Right Wing,Los Angeles Kings,290,3,-40.0,1.0,1,40.0,-1.0
-9,8477960,Adrian Kempe,Right Wing,Los Angeles Kings,308,3,-36.0,-19.0,2,36.0,19.0
+9,8477960,Adrian Kempe,Right Wing,Los Angeles Kings,255,3,86.0,-3.0,1,86.0,-3.0
+9,8477960,Adrian Kempe,Right Wing,Los Angeles Kings,290,3,-40.0,1.0,2,40.0,-1.0
+9,8477960,Adrian Kempe,Right Wing,Los Angeles Kings,308,3,-36.0,-19.0,3,36.0,19.0
 23,8474166,Alec Martinez,Defenseman,Vegas Golden Knights,167,2,-61.0,7.0,1,61.0,-7.0
 16,8477493,Aleksander Barkov,Center,Florida Panthers,49,1,-69.0,-16.0,1,69.0,16.0
 16,8477493,Aleksander Barkov,Center,Florida Panthers,70,1,-87.0,3.0,2,87.0,-3.0
@@ -45,6 +46,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 13,8482109,Alexis Lafrenière,Left Wing,New York Rangers,180,2,-79.0,5.0,3,79.0,-5.0
 13,8482109,Alexis Lafrenière,Left Wing,New York Rangers,190,2,68.0,-21.0,4,68.0,-21.0
 27,8475314,Anders Lee,Left Wing,New York Islanders,232,3,60.0,6.0,1,60.0,6.0
+5,8477971,Andreas Englund,Defenseman,Los Angeles Kings,28,1,81.0,-5.0,1,81.0,-5.0
 96,8483808,Andrei Kuzmenko,Left Wing,Vancouver Canucks,61,1,-73.0,3.0,1,73.0,-3.0
 96,8483808,Andrei Kuzmenko,Left Wing,Vancouver Canucks,277,3,81.0,-19.0,2,81.0,-19.0
 18,8477429,Andrew Copp,Center,Detroit Red Wings,139,2,81.0,-3.0,1,81.0,-3.0
@@ -66,7 +68,8 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 10,8478550,Artemi Panarin,Left Wing,New York Rangers,92,1,81.0,3.0,3,81.0,3.0
 10,8478550,Artemi Panarin,Left Wing,New York Rangers,155,2,60.0,-1.0,4,60.0,-1.0
 10,8478550,Artemi Panarin,Left Wing,New York Rangers,215,3,71.0,0.0,5,71.0,0.0
-34,8481560,Arthur Kaliyev,Right Wing,Los Angeles Kings,229,3,81.0,1.0,1,81.0,1.0
+34,8481560,Arthur Kaliyev,Right Wing,Los Angeles Kings,143,2,-76.0,9.0,1,76.0,-9.0
+34,8481560,Arthur Kaliyev,Right Wing,Los Angeles Kings,229,3,81.0,1.0,2,81.0,1.0
 62,8477476,Artturi Lehkonen,Left Wing,Colorado Avalanche,128,2,70.0,-9.0,1,70.0,-9.0
 62,8477476,Artturi Lehkonen,Left Wing,Colorado Avalanche,173,2,81.0,0.0,2,81.0,0.0
 34,8479318,Auston Matthews,Center,Toronto Maple Leafs,81,1,-67.0,-1.0,1,67.0,1.0
@@ -196,9 +199,10 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 36,8482062,Cole Smith,Left Wing,Nashville Predators,71,1,70.0,-1.0,2,70.0,-1.0
 55,8476892,Colton Parayko,Defenseman,St. Louis Blues,137,2,-37.0,15.0,1,37.0,-15.0
 10,8476925,Colton Sissons,Center,Nashville Predators,29,1,-63.0,15.0,1,63.0,-15.0
-10,8476925,Colton Sissons,Center,Nashville Predators,80,1,61.0,-11.0,2,61.0,-11.0
-10,8476925,Colton Sissons,Center,Nashville Predators,170,2,-81.0,1.0,3,81.0,-1.0
-10,8476925,Colton Sissons,Center,Nashville Predators,227,2,78.0,-2.0,4,78.0,-2.0
+10,8476925,Colton Sissons,Center,Nashville Predators,71,1,80.0,-1.0,2,80.0,-1.0
+10,8476925,Colton Sissons,Center,Nashville Predators,80,1,61.0,-11.0,3,61.0,-11.0
+10,8476925,Colton Sissons,Center,Nashville Predators,170,2,-81.0,1.0,4,81.0,-1.0
+10,8476925,Colton Sissons,Center,Nashville Predators,227,2,78.0,-2.0,5,78.0,-2.0
 98,8484144,Connor Bedard,Center,Chicago Blackhawks,6,1,-68.0,12.0,1,68.0,-12.0
 98,8484144,Connor Bedard,Center,Chicago Blackhawks,16,1,-59.0,2.0,2,59.0,-2.0
 98,8484144,Connor Bedard,Center,Chicago Blackhawks,33,1,-88.0,-3.0,3,88.0,3.0
@@ -220,6 +224,7 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 88,8478466,Daniel Sprong,Right Wing,Detroit Red Wings,33,1,-88.0,-1.0,1,88.0,1.0
 88,8478466,Daniel Sprong,Right Wing,Detroit Red Wings,204,2,79.0,1.0,2,79.0,1.0
 88,8478466,Daniel Sprong,Right Wing,Detroit Red Wings,270,3,-75.0,1.0,3,75.0,-1.0
+57,8479371,Dante Fabbro,Defenseman,Nashville Predators,75,1,32.0,-8.0,1,32.0,-8.0
 25,8477498,Darnell Nurse,Defenseman,Edmonton Oilers,14,1,62.0,5.0,1,62.0,5.0
 19,8481019,David Gustafsson,Center,Winnipeg Jets,95,1,-75.0,15.0,1,75.0,-15.0
 19,8481019,David Gustafsson,Center,Winnipeg Jets,100,2,75.0,8.0,2,75.0,8.0
@@ -265,8 +270,11 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 5,8481178,Egor Zamula,Defenseman,Philadelphia Flyers,13,1,-40.0,-7.0,1,40.0,7.0
 28,8477496,Elias Lindholm,Center,Calgary Flames,253,3,-55.0,-3.0,1,55.0,3.0
 28,8477496,Elias Lindholm,Center,Calgary Flames,337,3,-78.0,-3.0,2,78.0,3.0
-40,8480012,Elias Pettersson,Center,Vancouver Canucks,158,2,44.0,-25.0,1,44.0,-25.0
-40,8480012,Elias Pettersson,Center,Vancouver Canucks,163,2,-65.0,-12.0,2,65.0,12.0
+40,8480012,Elias Pettersson,Center,Vancouver Canucks,106,2,54.0,-6.0,1,54.0,-6.0
+40,8480012,Elias Pettersson,Center,Vancouver Canucks,158,2,44.0,-25.0,2,44.0,-25.0
+40,8480012,Elias Pettersson,Center,Vancouver Canucks,163,2,-65.0,-12.0,3,65.0,12.0
+40,8480012,Elias Pettersson,Center,Vancouver Canucks,180,2,70.0,-23.0,4,70.0,-23.0
+40,8480012,Elias Pettersson,Center,Vancouver Canucks,263,3,-82.0,-1.0,5,82.0,1.0
 52,8480205,Emil Bemstrom,Right Wing,Columbus Blue Jackets,71,1,63.0,21.0,1,63.0,21.0
 52,8480205,Emil Bemstrom,Right Wing,Columbus Blue Jackets,95,1,57.0,21.0,2,57.0,21.0
 52,8480205,Emil Bemstrom,Right Wing,Columbus Blue Jackets,178,2,-86.0,-9.0,3,86.0,9.0
@@ -322,8 +330,9 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 37,8477456,J.T. Compher,Left Wing,Detroit Red Wings,284,3,-84.0,-6.0,2,84.0,6.0
 9,8476468,J.T. Miller,Center,Vancouver Canucks,145,2,86.0,-3.0,1,86.0,-3.0
 9,8476468,J.T. Miller,Center,Vancouver Canucks,173,2,74.0,-2.0,2,74.0,-2.0
-9,8476468,J.T. Miller,Center,Vancouver Canucks,240,3,-49.0,-16.0,3,49.0,16.0
-9,8476468,J.T. Miller,Center,Vancouver Canucks,269,3,-82.0,-3.0,4,82.0,3.0
+9,8476468,J.T. Miller,Center,Vancouver Canucks,211,3,-89.0,-2.0,3,89.0,2.0
+9,8476468,J.T. Miller,Center,Vancouver Canucks,240,3,-49.0,-16.0,4,49.0,16.0
+9,8476468,J.T. Miller,Center,Vancouver Canucks,269,3,-82.0,-3.0,5,82.0,3.0
 77,8482175,JJ Peterka,Right Wing,Buffalo Sabres,21,1,-66.0,13.0,1,66.0,-13.0
 77,8482175,JJ Peterka,Right Wing,Buffalo Sabres,53,1,77.0,7.0,2,77.0,7.0
 77,8482175,JJ Peterka,Right Wing,Buffalo Sabres,182,2,-73.0,-6.0,3,73.0,6.0
@@ -423,8 +432,9 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 74,8474590,John Carlson,Defenseman,Washington Capitals,332,5,-74.0,6.0,2,74.0,-6.0
 91,8475166,John Tavares,Center,Toronto Maple Leafs,112,2,-80.0,-8.0,1,80.0,8.0
 91,8475166,John Tavares,Center,Toronto Maple Leafs,154,2,56.0,0.0,2,56.0,0.0
-91,8475166,John Tavares,Center,Toronto Maple Leafs,302,3,-33.0,-23.0,3,33.0,23.0
-91,8475166,John Tavares,Center,Toronto Maple Leafs,317,4,82.0,5.0,4,82.0,5.0
+91,8475166,John Tavares,Center,Toronto Maple Leafs,232,3,-70.0,-14.0,3,70.0,14.0
+91,8475166,John Tavares,Center,Toronto Maple Leafs,302,3,-33.0,-23.0,4,33.0,23.0
+91,8475166,John Tavares,Center,Toronto Maple Leafs,317,4,82.0,5.0,5,82.0,5.0
 25,8476463,Jonas Brodin,Defenseman,Minnesota Wild,231,3,-54.0,12.0,1,54.0,-12.0
 10,8476456,Jonathan Huberdeau,Center,Calgary Flames,5,1,-80.0,-21.0,1,80.0,21.0
 10,8476456,Jonathan Huberdeau,Center,Calgary Flames,283,3,-69.0,-3.0,2,69.0,3.0
@@ -642,7 +652,8 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 18,8478401,Pavel Zacha,Center,Boston Bruins,133,2,-70.0,2.0,2,70.0,-2.0
 18,8478401,Pavel Zacha,Center,Boston Bruins,314,4,-73.0,22.0,3,73.0,-22.0
 23,8480798,Philipp Kurashev,Center,Chicago Blackhawks,288,4,-51.0,3.0,1,51.0,-3.0
-24,8476479,Phillip Danault,Center,Los Angeles Kings,284,3,71.0,7.0,1,71.0,7.0
+24,8476479,Phillip Danault,Center,Los Angeles Kings,57,1,83.0,5.0,1,83.0,5.0
+24,8476479,Phillip Danault,Center,Los Angeles Kings,284,3,71.0,7.0,2,71.0,7.0
 34,8476858,Phillip Di Giuseppe,Left Wing,Vancouver Canucks,104,2,77.0,-2.0,1,77.0,-2.0
 34,8476858,Phillip Di Giuseppe,Left Wing,Vancouver Canucks,135,2,77.0,-1.0,2,77.0,-1.0
 41,8477930,Pierre-Edouard Bellemare,Left Wing,Seattle Kraken,114,1,79.0,-3.0,1,79.0,-3.0
@@ -697,7 +708,8 @@ jersey_number,player_id,player_name,position,team_name,eventIdx,period,x,y,goal_
 16,8476458,Ryan Strome,Center,Anaheim Ducks,8,1,84.0,13.0,1,84.0,13.0
 16,8476458,Ryan Strome,Center,Anaheim Ducks,159,2,81.0,-3.0,2,81.0,-3.0
 39,8475842,Sam Carrick,Center,Anaheim Ducks,44,1,66.0,11.0,1,66.0,11.0
-18,8478043,Sam Lafferty,Center,Vancouver Canucks,271,3,-82.0,5.0,1,82.0,-5.0
+18,8478043,Sam Lafferty,Center,Vancouver Canucks,65,1,-85.0,3.0,1,85.0,-3.0
+18,8478043,Sam Lafferty,Center,Vancouver Canucks,271,3,-82.0,5.0,2,82.0,-5.0
 13,8477933,Sam Reinhart,Center,Florida Panthers,24,1,-79.0,4.0,1,79.0,-4.0
 13,8477933,Sam Reinhart,Center,Florida Panthers,95,1,-72.0,3.0,2,72.0,-3.0
 13,8477933,Sam Reinhart,Center,Florida Panthers,105,1,84.0,-8.0,3,84.0,-8.0
