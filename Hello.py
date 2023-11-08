@@ -97,9 +97,10 @@ st.markdown(custom_css, unsafe_allow_html=True)
 ##########################################
 ##  Title, Tabs, and Sidebar            ##
 ##########################################
-
+#Explore NHL Advanced Stats, Simply
 st.title("Check This Data")
-st.markdown('''##### <span style="color: #aaaaaa">Explore NHL Advanced Stats, Simply</span>
+st.markdown('''##### <span style="color: #aaaaaa">Note: it would appear that the NHL API website is currently down (11/7/2023).
+            Hopefully we will be back online soon. </span>
             ''', unsafe_allow_html=True)
                 
 tab_player, tab_games = st.tabs(["Goals", "Matchups"])
