@@ -97,7 +97,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 ##########################################
 ##  Title, Tabs, and Sidebar            ##
 ##########################################
-
+#Explore NHL Advanced Stats, Simply
 st.title("Check This Data")
 st.markdown('''##### <span style="color: #aaaaaa">Explore NHL Advanced Stats, Simply</span>
             ''', unsafe_allow_html=True)
@@ -368,5 +368,5 @@ with tab_games:
 
 
 ##########################################
-## Explore Tab                          ##
+## Explore Tab  League-Wide Stats       ##
 ##########################################
