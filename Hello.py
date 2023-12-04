@@ -257,7 +257,7 @@ with tab_games:
     game_id_mapping = {row['matchup']: row['game_id'] for index, row in shots.iterrows()}
 
     # Display the game matchup dropdown with hidden game IDs
-    selected_matchup = st.selectbox("Choose a matchup (or click below and start typing):", list(game_id_mapping.keys()), index=0)
+    selected_matchup = st.selectbox("Choose a matchup (or click below and start typing - through 11/7/2023):", list(game_id_mapping.keys()), index=0)
 
     # Get the selected game ID based on the chosen matchup
     selected_game_id = game_id_mapping[selected_matchup]
