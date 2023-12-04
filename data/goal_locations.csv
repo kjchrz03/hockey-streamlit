@@ -191,6 +191,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 20.0,8476438.0,Brandon Saad,L,St. Louis Blues,55,1,70.0,5.0
 20.0,8476438.0,Brandon Saad,L,St. Louis Blues,181,2,-75.0,11.0
 20.0,8476438.0,Brandon Saad,L,St. Louis Blues,264,3,67.0,17.0
+13.0,8479293.0,Brandon Tanev,L,Seattle Kraken,91,1,83.0,-8.0
 94.0,8481167.0,Brayden Pachal,D,Vegas Golden Knights,216,3,-64.0,14.0
 21.0,8478010.0,Brayden Point,C,Tampa Bay Lightning,17,1,70.0,-7.0
 21.0,8478010.0,Brayden Point,C,Tampa Bay Lightning,84,1,67.0,3.0
@@ -253,6 +254,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 8.0,8480069.0,Cale Makar,D,Colorado Avalanche,65,1,-70.0,-10.0
 8.0,8480069.0,Cale Makar,D,Colorado Avalanche,136,2,-49.0,12.0
 8.0,8480069.0,Cale Makar,D,Colorado Avalanche,342,3,-44.0,1.0
+8.0,8480069.0,Cale Makar,D,Colorado Avalanche,593,3,-61.0,9.0
 19.0,8475714.0,Calle Jarnkrok,C,Toronto Maple Leafs,116,1,-78.0,-6.0
 19.0,8475714.0,Calle Jarnkrok,C,Toronto Maple Leafs,307,3,-85.0,2.0
 89.0,8474715.0,Cam Atkinson,R,Philadelphia Flyers,84,1,-81.0,6.0
@@ -343,6 +345,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 26.0,8480980.0,Connor Dewar,C,Minnesota Wild,51,1,83.0,5.0
 97.0,8478402.0,Connor McDavid,C,Edmonton Oilers,97,1,-70.0,7.0
 97.0,8478402.0,Connor McDavid,C,Edmonton Oilers,127,2,-81.0,-10.0
+97.0,8478402.0,Connor McDavid,C,Edmonton Oilers,692,3,73.0,17.0
 24.0,8481580.0,Connor McMichael,C,Washington Capitals,156,2,55.0,7.0
 24.0,8481580.0,Connor McMichael,C,Washington Capitals,212,3,-78.0,-6.0
 24.0,8481580.0,Connor McMichael,C,Washington Capitals,373,2,82.0,-4.0
@@ -469,6 +472,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 91.0,8475169.0,Evander Kane,L,Edmonton Oilers,104,1,63.0,15.0
 91.0,8475169.0,Evander Kane,L,Edmonton Oilers,260,3,79.0,-2.0
 91.0,8475169.0,Evander Kane,L,Edmonton Oilers,335,3,13.0,-17.0
+91.0,8475169.0,Evander Kane,L,Edmonton Oilers,809,3,79.0,0.0
 71.0,8471215.0,Evgeni Malkin,C,Pittsburgh Penguins,4,1,84.0,13.0
 71.0,8471215.0,Evgeni Malkin,C,Pittsburgh Penguins,93,1,-72.0,-1.0
 71.0,8471215.0,Evgeni Malkin,C,Pittsburgh Penguins,134,2,-71.0,-6.0
@@ -687,6 +691,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 13.0,8476346.0,Johnny Gaudreau,L,Columbus Blue Jackets,299,3,48.0,3.0
 25.0,8476463.0,Jonas Brodin,D,Minnesota Wild,231,3,-54.0,12.0
 46.0,8480007.0,Jonas Rondbjerg,R,Vegas Golden Knights,309,3,-81.0,0.0
+27.0,8477494.0,Jonathan Drouin,L,Colorado Avalanche,658,3,-82.0,-5.0
 10.0,8476456.0,Jonathan Huberdeau,C,Calgary Flames,5,1,-80.0,-21.0
 10.0,8476456.0,Jonathan Huberdeau,C,Calgary Flames,283,3,-69.0,-3.0
 81.0,8476539.0,Jonathan Marchessault,R,Vegas Golden Knights,79,1,51.0,-8.0
@@ -781,6 +786,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 29.0,8477934.0,Leon Draisaitl,C,Edmonton Oilers,37,1,-75.0,-6.0
 29.0,8477934.0,Leon Draisaitl,C,Edmonton Oilers,147,2,-82.0,23.0
 29.0,8477934.0,Leon Draisaitl,C,Edmonton Oilers,165,2,82.0,-22.0
+29.0,8477934.0,Leon Draisaitl,C,Edmonton Oilers,228,1,65.0,-22.0
 38.0,8477070.0,Liam O'Brien,C,Arizona Coyotes,107,2,-87.0,2.0
 38.0,8477070.0,Liam O'Brien,C,Arizona Coyotes,201,2,-81.0,1.0
 92.0,8483431.0,Logan Cooley,C,Arizona Coyotes,69,1,-79.0,1.0
@@ -841,6 +847,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 23.0,8482745.0,Mason McTavish,C,Anaheim Ducks,311,3,-67.0,-1.0
 23.0,8482745.0,Mason McTavish,C,Anaheim Ducks,330,4,73.0,15.0
 23.0,8482745.0,Mason McTavish,C,Anaheim Ducks,543,3,77.0,-2.0
+13.0,8478445.0,Mathew Barzal,C,New York Islanders,24,1,-55.0,1.0
 13.0,8478445.0,Mathew Barzal,C,New York Islanders,110,2,-53.0,-28.0
 13.0,8478445.0,Mathew Barzal,C,New York Islanders,160,2,-79.0,-3.0
 21.0,8478472.0,Mathieu Joseph,R,Ottawa Senators,20,1,78.0,0.0
@@ -921,6 +928,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 96.0,8478420.0,Mikko Rantanen,R,Colorado Avalanche,274,3,-61.0,8.0
 96.0,8478420.0,Mikko Rantanen,R,Colorado Avalanche,276,3,71.0,11.0
 96.0,8478420.0,Mikko Rantanen,R,Colorado Avalanche,378,5,-85.0,6.0
+96.0,8478420.0,Mikko Rantanen,R,Colorado Avalanche,426,2,88.0,3.0
 96.0,8478420.0,Mikko Rantanen,R,Colorado Avalanche,497,2,81.0,3.0
 96.0,8478420.0,Mikko Rantanen,R,Colorado Avalanche,793,3,85.0,-24.0
 28.0,8477425.0,Miles Wood,L,Colorado Avalanche,331,3,61.0,1.0
@@ -1116,6 +1124,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 20.0,8479525.0,Ross Colton,C,Colorado Avalanche,46,1,-76.0,10.0
 20.0,8479525.0,Ross Colton,C,Colorado Avalanche,304,3,32.0,-39.0
 20.0,8479525.0,Ross Colton,C,Colorado Avalanche,314,2,76.0,7.0
+20.0,8479525.0,Ross Colton,C,Colorado Avalanche,451,2,85.0,7.0
 49.0,8478078.0,Rourke Chartier,C,Ottawa Senators,586,3,78.0,-11.0
 8.0,8477987.0,Ryan Donato,C,Chicago Blackhawks,70,1,74.0,11.0
 8.0,8477987.0,Ryan Donato,C,Chicago Blackhawks,203,2,83.0,0.0
@@ -1331,6 +1340,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 26.0,8484304.0,Uvis Balinskis,D,Florida Panthers,255,1,-84.0,-7.0
 13.0,8477501.0,Valeri Nichushkin,R,Colorado Avalanche,298,3,18.0,-38.0
 13.0,8477501.0,Valeri Nichushkin,R,Colorado Avalanche,701,3,-73.0,1.0
+13.0,8477501.0,Valeri Nichushkin,R,Colorado Avalanche,763,3,-80.0,2.0
 77.0,8475167.0,Victor Hedman,D,Tampa Bay Lightning,96,1,-79.0,-2.0
 77.0,8475167.0,Victor Hedman,D,Tampa Bay Lightning,245,3,41.0,-5.0
 29.0,8478407.0,Vince Dunn,D,Seattle Kraken,141,2,-51.0,-7.0
@@ -1396,6 +1406,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 18.0,8475786.0,Zach Hyman,L,Edmonton Oilers,175,2,-85.0,-7.0
 18.0,8475786.0,Zach Hyman,L,Edmonton Oilers,184,1,-84.0,1.0
 18.0,8475786.0,Zach Hyman,L,Edmonton Oilers,242,1,-74.0,3.0
+18.0,8475786.0,Zach Hyman,L,Edmonton Oilers,664,3,83.0,1.0
 8.0,8478460.0,Zach Werenski,D,Columbus Blue Jackets,281,3,-63.0,41.0
 28.0,8476878.0,Zemgus Girgensons,L,Buffalo Sabres,42,1,65.0,12.0
 28.0,8476878.0,Zemgus Girgensons,L,Buffalo Sabres,51,1,-64.0,3.0
