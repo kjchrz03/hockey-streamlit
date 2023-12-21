@@ -28,7 +28,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 13,8480281.0,Alexey Toropchenko,R,St. Louis Blues,5
 13,8482109.0,Alexis Lafrenière,L,New York Rangers,10
 21,8481656.0,Aliaksei Protas,C,Washington Capitals,5
-27,8475314.0,Anders Lee,L,New York Islanders,8
+27,8475314.0,Anders Lee,L,New York Islanders,9
 96,8483808.0,Andrei Kuzmenko,L,Vancouver Canucks,6
 37,8480830.0,Andrei Svechnikov,R,Carolina Hurricanes,2
 11,8471699.0,Andrew Cogliano,C,Colorado Avalanche,3
@@ -45,6 +45,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 62,8477476.0,Artturi Lehkonen,L,Colorado Avalanche,3
 51,8475766.0,Austin Watson,L,Tampa Bay Lightning,1
 34,8479318.0,Auston Matthews,C,Toronto Maple Leafs,27
+71,8479536.0,Axel Jonsson-Fjallby,L,Winnipeg Jets,1
 21,8476624.0,Barclay Goodrow,C,New York Rangers,1
 29,8480849.0,Barrett Hayton,C,Arizona Coyotes,2
 47,8479359.0,Beck Malenstyn,L,Washington Capitals,2
@@ -69,7 +70,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 38,8479542.0,Brandon Hagel,L,Tampa Bay Lightning,10
 62,8477986.0,Brandon Montour,D,Florida Panthers,1
 20,8476438.0,Brandon Saad,L,St. Louis Blues,8
-13,8479293.0,Brandon Tanev,L,Seattle Kraken,2
+13,8479293.0,Brandon Tanev,L,Seattle Kraken,3
 3,8475188.0,Brayden McNabb,D,Vegas Golden Knights,2
 94,8481167.0,Brayden Pachal,D,Vegas Golden Knights,1
 21,8478010.0,Brayden Point,C,Tampa Bay Lightning,14
@@ -154,7 +155,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 2,8476331.0,Dylan DeMelo,D,Winnipeg Jets,1
 55,8482077.0,Dylan Holloway,L,Edmonton Oilers,1
 71,8477946.0,Dylan Larkin,C,Detroit Red Wings,13
-17,8478440.0,Dylan Strome,C,Washington Capitals,16
+17,8478440.0,Dylan Strome,C,Washington Capitals,17
 20,8480009.0,Eeli Tolvanen,R,Seattle Kraken,9
 27,8480185.0,Eetu Luostarinen,C,Florida Panthers,4
 5,8481178.0,Egor Zamula,D,Philadelphia Flyers,1
@@ -182,7 +183,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 77,8478366.0,Frank Vatrano,R,Anaheim Ducks,14
 89,8477919.0,Frederick Gaudreau,C,Minnesota Wild,2
 22,8478028.0,Fredrik Olofsson,L,Colorado Avalanche,2
-13,8480014.0,Gabriel Vilardi,C,Winnipeg Jets,5
+13,8480014.0,Gabriel Vilardi,C,Winnipeg Jets,6
 19,8477903.0,Garnet Hathaway,R,Philadelphia Flyers,2
 54,8479379.0,Givani Smith,R,San Jose Sharks,1
 42,8478055.0,Gustav Forsling,D,Florida Panthers,3
@@ -190,9 +191,9 @@ jersey_number,player_id,player_name,position,team_name,goals
 14,8474679.0,Gustav Nyquist,C,Nashville Predators,5
 27,8476854.0,Hampus Lindholm,D,Boston Bruins,1
 7,8477938.0,Haydn Fleury,D,Tampa Bay Lightning,1
-29,8482148.0,Hendrix Lapierre,C,Washington Capitals,1
+29,8482148.0,Hendrix Lapierre,C,Washington Capitals,2
 10,8480035.0,Henri Jokiharju,D,Buffalo Sabres,2
-20,8477392.0,Hudson Fasching,R,New York Islanders,1
+20,8477392.0,Hudson Fasching,R,New York Islanders,2
 65,8481624.0,Ilya Mikheyev,R,Vancouver Canucks,10
 49,8477964.0,Ivan Barbashev,C,Vegas Golden Knights,8
 9,8478500.0,Ivan Provorov,D,Columbus Blue Jackets,2
@@ -247,6 +248,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 16,8470794.0,Joe Pavelski,C,Dallas Stars,13
 90,8480813.0,Joe Veleno,C,Detroit Red Wings,7
 40,8476469.0,Joel Armia,R,Montréal Canadiens,4
+6,8476441.0,Joel Edmundson,D,Washington Capitals,1
 14,8478493.0,Joel Eriksson Ek,C,Minnesota Wild,14
 86,8480797.0,Joel Farabee,L,Philadelphia Flyers,13
 94,8481641.0,Joel Kiviranta,L,Colorado Avalanche,4
@@ -263,7 +265,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 10,8476456.0,Jonathan Huberdeau,C,Calgary Flames,4
 81,8476539.0,Jonathan Marchessault,R,Vegas Golden Knights,19
 22,8477380.0,Jonny Brodzinski,C,New York Rangers,1
-7,8474586.0,Jordan Eberle,R,Seattle Kraken,4
+7,8474586.0,Jordan Eberle,R,Seattle Kraken,5
 12,8478413.0,Jordan Greenway,L,Buffalo Sabres,2
 25,8479385.0,Jordan Kyrou,C,St. Louis Blues,7
 48,8476921.0,Jordan Martinook,L,Carolina Hurricanes,2
@@ -326,7 +328,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 38,8479983.0,Mario Ferraro,D,San Jose Sharks,1
 55,8470966.0,Mark Giordano,D,Toronto Maple Leafs,1
 17,8476873.0,Mark Jankowski,C,Nashville Predators,1
-55,8476460.0,Mark Scheifele,C,Winnipeg Jets,11
+55,8476460.0,Mark Scheifele,C,Winnipeg Jets,12
 61,8475913.0,Mark Stone,R,Vegas Golden Knights,10
 42,8480796.0,Martin Fehervary,D,Washington Capitals,1
 88,8480039.0,Martin Necas,C,Carolina Hurricanes,10
@@ -384,7 +386,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 14,8479414.0,Nathan Bastian,R,New Jersey Devils,1
 29,8477492.0,Nathan MacKinnon,C,Colorado Avalanche,16
 91,8475172.0,Nazem Kadri,C,Calgary Flames,8
-4,8480145.0,Neal Pionk,D,Winnipeg Jets,1
+4,8480145.0,Neal Pionk,D,Winnipeg Jets,2
 26,8475343.0,Nic Dowd,C,Washington Capitals,4
 20,8477426.0,Nicholas Paul,L,Tampa Bay Lightning,10
 89,8481582.0,Nicholas Robertson,L,Toronto Maple Leafs,3
@@ -404,7 +406,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 91,8477507.0,Nikita Zadorov,D,Vancouver Canucks,1
 22,8479458.0,Nikita Zaitsev,D,Chicago Blackhawks,1
 77,8478859.0,Niko Mikkola,D,Florida Panthers,3
-27,8477940.0,Nikolaj Ehlers,L,Winnipeg Jets,10
+27,8477940.0,Nikolaj Ehlers,L,Winnipeg Jets,11
 88,8482496.0,Nils Aman,C,Vancouver Canucks,1
 21,8481535.0,Nils Hoglander,L,Vancouver Canucks,12
 62,8475799.0,Nino Niederreiter,R,Winnipeg Jets,8
@@ -416,6 +418,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 22,8477416.0,Oliver Bjorkstrand,R,Seattle Kraken,11
 91,8475171.0,Oliver Ekman-Larsson,D,Florida Panthers,7
 26,8480789.0,Oliver Wahlstrom,R,New York Islanders,4
+2,8476874.0,Olli Maatta,D,Detroit Red Wings,1
 18,8476292.0,Ondrej Palat,L,New Jersey Devils,6
 62,8479546.0,Oskar Steen,C,Boston Bruins,1
 70,8476897.0,Oskar Sundqvist,C,St. Louis Blues,3
@@ -423,7 +426,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 74,8480015.0,Owen Tippett,R,Philadelphia Flyers,11
 27,8480448.0,Parker Kelly,L,Ottawa Senators,1
 20,8474034.0,Pat Maroon,L,Minnesota Wild,3
-88,8474141.0,Patrick Kane,R,Detroit Red Wings,1
+88,8474141.0,Patrick Kane,R,Detroit Red Wings,2
 29,8479339.0,Patrik Laine,L,Columbus Blue Jackets,6
 43,8481032.0,Paul Cotter,C,Vegas Golden Knights,4
 89,8477402.0,Pavel Buchnevich,L,St. Louis Blues,10
