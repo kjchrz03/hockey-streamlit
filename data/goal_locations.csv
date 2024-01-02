@@ -983,6 +983,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 17.0,8478440.0,Dylan Strome,C,Washington Capitals,810,4,62.0,-12.0,2023020285
 17.0,8478440.0,Dylan Strome,C,Washington Capitals,831,4,57.0,-8.0,2023020496
 20.0,8480009.0,Eeli Tolvanen,R,Seattle Kraken,16,1,-85.0,-5.0,2023020185
+20.0,8480009.0,Eeli Tolvanen,R,Seattle,85,1,-81.0,0.0,2023020573
 20.0,8480009.0,Eeli Tolvanen,R,Seattle Kraken,227,1,73.0,4.0,2023020170
 20.0,8480009.0,Eeli Tolvanen,R,Seattle Kraken,379,2,-78.0,1.0,2023020118
 20.0,8480009.0,Eeli Tolvanen,R,Seattle Kraken,472,2,-85.0,9.0,2023020453
@@ -3383,6 +3384,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 37.0,8477998.0,Warren Foegele,L,Edmonton Oilers,328,2,-86.0,-2.0,2023020391
 37.0,8477998.0,Warren Foegele,L,Edmonton Oilers,491,2,65.0,-19.0,2023020044
 37.0,8477998.0,Warren Foegele,L,Edmonton Oilers,560,3,63.0,1.0,2023020511
+3.0,8478840.0,Will Borgen,D,Seattle,317,2,55.0,-28.0,2023020573
 50.0,8482157.0,Will Cuylle,L,New York Rangers,438,2,82.0,-2.0,2023020183
 50.0,8482157.0,Will Cuylle,L,New York Rangers,465,2,70.0,6.0,2023020370
 50.0,8482157.0,Will Cuylle,L,New York Rangers,610,3,-65.0,1.0,2023020022
@@ -3457,6 +3459,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,115,1,85.0,-7.0,2023020060
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,158,1,-63.0,5.0,2023020133
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,270,1,88.0,-11.0,2023020292
+37.0,8476826.0,Yanni Gourde,C,Seattle,566,3,-85.0,-4.0,2023020573
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,614,3,85.0,1.0,2023020265
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,828,5,76.0,-10.0,2023020473
 59.0,8482475.0,Yegor Chinakhov,R,Columbus Blue Jackets,96,1,50.0,4.0,2023020420

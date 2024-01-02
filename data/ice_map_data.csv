@@ -991,6 +991,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 20.0,8480009.0,Eeli Tolvanen,R,Seattle Kraken,734,3,47.0,38.0,2023020438,7,47.0,38.0
 20.0,8480009.0,Eeli Tolvanen,R,Seattle Kraken,472,2,-85.0,9.0,2023020453,8,85.0,-9.0
 20.0,8480009.0,Eeli Tolvanen,R,Seattle Kraken,744,3,85.0,0.0,2023020482,9,85.0,0.0
+20.0,8480009.0,Eeli Tolvanen,R,Seattle,85,1,-81.0,0.0,2023020573,10,81.0,-0.0
 27.0,8480185.0,Eetu Luostarinen,C,Florida Panthers,226,1,-84.0,-9.0,2023020253,1,84.0,9.0
 27.0,8480185.0,Eetu Luostarinen,C,Florida Panthers,844,3,-86.0,-6.0,2023020323,2,86.0,6.0
 27.0,8480185.0,Eetu Luostarinen,C,Florida Panthers,627,3,-80.0,1.0,2023020406,3,80.0,-1.0
@@ -3383,6 +3384,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 37.0,8477998.0,Warren Foegele,L,Edmonton Oilers,328,2,-86.0,-2.0,2023020391,4,86.0,2.0
 37.0,8477998.0,Warren Foegele,L,Edmonton Oilers,328,2,-86.0,-2.0,2023020391,5,86.0,2.0
 37.0,8477998.0,Warren Foegele,L,Edmonton Oilers,560,3,63.0,1.0,2023020511,6,63.0,1.0
+3.0,8478840.0,Will Borgen,D,Seattle,317,2,55.0,-28.0,2023020573,1,55.0,-28.0
 50.0,8482157.0,Will Cuylle,L,New York Rangers,610,3,-65.0,1.0,2023020022,1,65.0,-1.0
 50.0,8482157.0,Will Cuylle,L,New York Rangers,675,3,-79.0,2.0,2023020148,2,79.0,-2.0
 50.0,8482157.0,Will Cuylle,L,New York Rangers,438,2,82.0,-2.0,2023020183,3,82.0,-2.0
@@ -3459,6 +3461,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,614,3,85.0,1.0,2023020265,3,85.0,1.0
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,270,1,88.0,-11.0,2023020292,4,88.0,-11.0
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,828,5,76.0,-10.0,2023020473,5,76.0,-10.0
+37.0,8476826.0,Yanni Gourde,C,Seattle,566,3,-85.0,-4.0,2023020573,6,85.0,4.0
 59.0,8482475.0,Yegor Chinakhov,R,Columbus Blue Jackets,232,1,61.0,-20.0,2023020230,1,61.0,-20.0
 59.0,8482475.0,Yegor Chinakhov,R,Columbus Blue Jackets,490,2,-67.0,-5.0,2023020321,2,67.0,5.0
 59.0,8482475.0,Yegor Chinakhov,R,Columbus Blue Jackets,375,2,-87.0,9.0,2023020337,3,87.0,-9.0

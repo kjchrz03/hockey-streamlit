@@ -159,6 +159,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 55,8482077.0,Dylan Holloway,L,Edmonton Oilers,1
 71,8477946.0,Dylan Larkin,C,Detroit Red Wings,14
 17,8478440.0,Dylan Strome,C,Washington Capitals,17
+20,8480009.0,Eeli Tolvanen,R,Seattle,1
 20,8480009.0,Eeli Tolvanen,R,Seattle Kraken,9
 27,8480185.0,Eetu Luostarinen,C,Florida Panthers,5
 5,8481178.0,Egor Zamula,D,Philadelphia Flyers,2
@@ -495,8 +496,8 @@ jersey_number,player_id,player_name,position,team_name,goals
 7,8476374.0,Sean Kuraly,C,Columbus Blue Jackets,6
 91,8477497.0,Sean Monahan,C,Montréal Canadiens,10
 26,8480336.0,Sean Walker,D,Philadelphia Flyers,4
-20,8478427.0,Sebastian Aho,C,Carolina Hurricanes,15
 25,8480222.0,Sebastian Aho,D,New York Islanders,1
+20,8478427.0,Sebastian Aho,C,Carolina Hurricanes,15
 24,8482093.0,Seth Jarvis,C,Carolina Hurricanes,12
 41,8476906.0,Shayne Gostisbehere,D,Detroit Red Wings,7
 27,8477447.0,Shea Theodore,D,Vegas Golden Knights,6
@@ -521,8 +522,8 @@ jersey_number,player_id,player_name,position,team_name,goals
 28,8478414.0,Timo Meier,R,New Jersey Devils,9
 43,8476880.0,Tom Wilson,R,Washington Capitals,10
 48,8476881.0,Tomas Hertl,C,San Jose Sharks,16
-90,8475193.0,Tomas Tatar,L,Seattle Kraken,1
 90,8475193.0,Tomas Tatar,L,Colorado Avalanche,1
+90,8475193.0,Tomas Tatar,L,Seattle Kraken,1
 82,8478438.0,Tommy Novak,C,Nashville Predators,6
 77,8477950.0,Tony DeAngelo,D,Carolina Hurricanes,2
 47,8476792.0,Torey Krug,D,St. Louis Blues,1
@@ -564,6 +565,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 7,8476480.0,Vladislav Namestnikov,C,Winnipeg Jets,3
 71,8482652.0,Walker Duehr,R,Calgary Flames,1
 37,8477998.0,Warren Foegele,L,Edmonton Oilers,6
+3,8478840.0,Will Borgen,D,Seattle,1
 50,8482157.0,Will Cuylle,L,New York Rangers,6
 28,8477478.0,William Carrier,L,Vegas Golden Knights,5
 72,8482667.0,William Eklund,L,San Jose Sharks,8
@@ -572,6 +574,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 53,8482740.0,Wyatt Johnston,C,Dallas Stars,9
 13,8478508.0,Yakov Trenin,C,Nashville Predators,9
 37,8476826.0,Yanni Gourde,C,Seattle Kraken,5
+37,8476826.0,Yanni Gourde,C,Seattle,1
 59,8482475.0,Yegor Chinakhov,R,Columbus Blue Jackets,10
 17,8481068.0,Yegor Sharangovich,C,Calgary Flames,14
 9,8484145.0,Zach Benson,L,Buffalo Sabres,4
