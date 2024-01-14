@@ -121,6 +121,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 89.0,8477949.0,Alex Tuch,R,Buffalo Sabres,57,1,-52.0,-9.0,2023020612
 89.0,8477949.0,Alex Tuch,R,Buffalo Sabres,286,2,-79.0,-2.0,2023020180
 89.0,8477949.0,Alex Tuch,R,Buffalo Sabres,312,2,-71.0,-1.0,2023020252
+89.0,8477949.0,Alex Tuch,R,Buffalo Sabres,315,2,-79.0,-4.0,2023020625
 89.0,8477949.0,Alex Tuch,R,Buffalo Sabres,460,2,68.0,5.0,2023020085
 89.0,8477949.0,Alex Tuch,R,Buffalo Sabres,509,2,-75.0,1.0,2023020322
 89.0,8477949.0,Alex Tuch,R,Buffalo Sabres,675,3,74.0,-5.0,2023020460
@@ -131,6 +132,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 72.0,8481568.0,Alex Vlasic,D,Chicago Blackhawks,130,1,-33.0,-37.0,2023020416
 21.0,8477505.0,Alex Wennberg,C,Seattle Kraken,252,1,82.0,-3.0,2023020248
 21.0,8477505.0,Alex Wennberg,C,Seattle Kraken,266,1,86.0,11.0,2023020333
+21.0,8477505.0,Alex Wennberg,C,Seattle Kraken,328,2,83.0,-4.0,2023020625
 21.0,8477505.0,Alex Wennberg,C,Seattle Kraken,510,2,84.0,-3.0,2023020239
 21.0,8477505.0,Alex Wennberg,C,Seattle Kraken,629,3,68.0,13.0,2023020539
 21.0,8477505.0,Alex Wennberg,C,Seattle Kraken,633,3,61.0,14.0,2023020438
@@ -150,6 +152,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 28.0,8481014.0,Alexander Romanov,D,New York Islanders,264,1,46.0,13.0,2023020216
 28.0,8481014.0,Alexander Romanov,D,New York Islanders,308,2,-59.0,-18.0,2023020457
 28.0,8481014.0,Alexander Romanov,D,New York Islanders,421,2,-34.0,-22.0,2023020582
+45.0,8478851.0,Alexandre Carrier,D,Nashville Predators,679,3,78.0,-14.0,2023020629
 45.0,8478851.0,Alexandre Carrier,D,Nashville Predators,729,3,67.0,-14.0,2023020288
 42.0,8480074.0,Alexandre Texier,C,Columbus Blue Jackets,79,1,64.0,-1.0,2023020210
 42.0,8480074.0,Alexandre Texier,C,Columbus Blue Jackets,200,1,60.0,12.0,2023020268
@@ -294,6 +297,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 34.0,8479318.0,Auston Matthews,C,Toronto Maple Leafs,153,1,-71.0,-1.0,2023020267
 34.0,8479318.0,Auston Matthews,C,Toronto Maple Leafs,158,1,-67.0,-1.0,2023020026
 34.0,8479318.0,Auston Matthews,C,Toronto Maple Leafs,193,1,-81.0,29.0,2023020026
+34.0,8479318.0,Auston Matthews,C,Toronto Maple Leafs,247,1,-82.0,23.0,2023020627
 34.0,8479318.0,Auston Matthews,C,Toronto Maple Leafs,334,2,48.0,2.0,2023020177
 34.0,8479318.0,Auston Matthews,C,Toronto Maple Leafs,374,2,69.0,-20.0,2023020517
 34.0,8479318.0,Auston Matthews,C,Toronto Maple Leafs,379,2,80.0,-2.0,2023020177
@@ -340,10 +344,12 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 20.0,8476399.0,Blake Coleman,C,Calgary Flames,571,3,81.0,2.0,2023020450
 20.0,8476399.0,Blake Coleman,C,Calgary Flames,635,3,75.0,0.0,2023020526
 20.0,8476399.0,Blake Coleman,C,Calgary Flames,648,3,-67.0,12.0,2023020186
+20.0,8476399.0,Blake Coleman,C,Calgary Flames,669,3,-86.0,-8.0,2023020634
 20.0,8476399.0,Blake Coleman,C,Calgary Flames,697,3,-59.0,-4.0,2023020401
 20.0,8476399.0,Blake Coleman,C,Calgary Flames,697,3,-59.0,-4.0,2023020401
 20.0,8476399.0,Blake Coleman,C,Calgary Flames,697,3,-59.0,-4.0,2023020401
 20.0,8476399.0,Blake Coleman,C,Calgary Flames,781,3,34.0,10.0,2023020578
+20.0,8476399.0,Blake Coleman,C,Calgary Flames,789,3,-72.0,-5.0,2023020634
 20.0,8476399.0,Blake Coleman,C,Calgary Flames,798,3,-72.0,-1.0,2023020483
 17.0,8471218.0,Blake Wheeler,R,New York Rangers,87,1,-77.0,-18.0,2023020432
 17.0,8471218.0,Blake Wheeler,R,New York Rangers,142,1,-85.0,11.0,2023020511
@@ -438,6 +444,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 7.0,8480801.0,Brady Tkachuk,L,Ottawa Senators,199,1,85.0,-2.0,2023020162
 7.0,8480801.0,Brady Tkachuk,L,Ottawa Senators,296,2,-83.0,3.0,2023020520
 7.0,8480801.0,Brady Tkachuk,L,Ottawa Senators,423,2,-71.0,8.0,2023020033
+7.0,8480801.0,Brady Tkachuk,L,Ottawa Senators,435,2,-75.0,-12.0,2023020634
 7.0,8480801.0,Brady Tkachuk,L,Ottawa Senators,532,2,-89.0,5.0,2023020382
 7.0,8480801.0,Brady Tkachuk,L,Ottawa Senators,584,2,-55.0,-21.0,2023020019
 7.0,8480801.0,Brady Tkachuk,L,Ottawa Senators,614,3,86.0,4.0,2023020019
@@ -461,6 +468,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 38.0,8479542.0,Brandon Hagel,L,Tampa Bay Lightning,598,3,72.0,-15.0,2023020303
 38.0,8479542.0,Brandon Hagel,L,Tampa Bay Lightning,656,3,82.0,-18.0,2023020133
 38.0,8479542.0,Brandon Hagel,L,Tampa Bay Lightning,741,3,77.0,7.0,2023020594
+38.0,8479542.0,Brandon Hagel,L,Tampa Bay Lightning,747,3,85.0,5.0,2023020626
 38.0,8479542.0,Brandon Hagel,L,Tampa Bay Lightning,754,3,-81.0,3.0,2023020040
 38.0,8479542.0,Brandon Hagel,L,Tampa Bay Lightning,814,3,82.0,0.0,2023020177
 38.0,8479542.0,Brandon Hagel,L,Tampa Bay Lightning,820,3,88.0,-7.0,2023020246
@@ -501,6 +509,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 21.0,8478010.0,Brayden Point,C,Tampa Bay Lightning,731,3,69.0,18.0,2023020303
 21.0,8478010.0,Brayden Point,C,Tampa Bay Lightning,861,5,75.0,0.0,2023020521
 10.0,8475170.0,Brayden Schenn,C,St. Louis Blues,25,1,62.0,-6.0,2023020219
+10.0,8475170.0,Brayden Schenn,C,St. Louis Blues,58,1,75.0,11.0,2023020630
 10.0,8475170.0,Brayden Schenn,C,St. Louis Blues,81,1,64.0,23.0,2023020348
 10.0,8475170.0,Brayden Schenn,C,St. Louis Blues,136,1,-83.0,4.0,2023020287
 10.0,8475170.0,Brayden Schenn,C,St. Louis Blues,270,1,81.0,4.0,2023020219
@@ -518,6 +527,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 11.0,8475848.0,Brendan Gallagher,R,Montréal Canadiens,574,3,-70.0,-3.0,2023020153
 28.0,8477962.0,Brendan Lemieux,L,Carolina Hurricanes,306,2,-67.0,-20.0,2023020032
 28.0,8477962.0,Brendan Lemieux,L,Carolina Hurricanes,467,2,-80.0,-3.0,2023020328
+5.0,8475455.0,Brenden Dillon,D,Winnipeg Jets,63,1,-78.0,-12.0,2023020631
 5.0,8475455.0,Brenden Dillon,D,Winnipeg Jets,230,1,-31.0,-36.0,2023020441
 5.0,8475455.0,Brenden Dillon,D,Winnipeg Jets,371,2,78.0,9.0,2023020160
 5.0,8475455.0,Brenden Dillon,D,Winnipeg Jets,536,3,-57.0,-23.0,2023020160
@@ -583,6 +593,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 29.0,8475754.0,Brock Nelson,C,New York Islanders,324,2,-67.0,-4.0,2023020064
 29.0,8475754.0,Brock Nelson,C,New York Islanders,362,2,-76.0,17.0,2023020383
 29.0,8475754.0,Brock Nelson,C,New York Islanders,401,2,-74.0,-16.0,2023020150
+29.0,8475754.0,Brock Nelson,C,New York Islanders,442,2,-80.0,13.0,2023020628
 29.0,8475754.0,Brock Nelson,C,New York Islanders,461,2,-79.0,4.0,2023020286
 29.0,8475754.0,Brock Nelson,C,New York Islanders,555,3,75.0,4.0,2023020134
 29.0,8475754.0,Brock Nelson,C,New York Islanders,558,3,77.0,14.0,2023020464
@@ -590,6 +601,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 29.0,8475754.0,Brock Nelson,C,New York Islanders,601,3,82.0,9.0,2023020286
 29.0,8475754.0,Brock Nelson,C,New York Islanders,607,3,80.0,-6.0,2023020260
 29.0,8475754.0,Brock Nelson,C,New York Islanders,715,3,82.0,-10.0,2023020457
+29.0,8475754.0,Brock Nelson,C,New York Islanders,749,3,52.0,1.0,2023020628
 17.0,8475810.0,Bryan Rust,R,Pittsburgh Penguins,100,1,83.0,-9.0,2023020002
 17.0,8475810.0,Bryan Rust,R,Pittsburgh Penguins,100,1,77.0,-4.0,2023020245
 17.0,8475810.0,Bryan Rust,R,Pittsburgh Penguins,284,1,79.0,-3.0,2023020088
@@ -752,6 +764,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 9.0,8479343.0,Clayton Keller,R,Arizona Coyotes,332,2,-59.0,25.0,2023020037
 9.0,8479343.0,Clayton Keller,R,Arizona Coyotes,367,2,81.0,-2.0,2023020509
 9.0,8479343.0,Clayton Keller,R,Arizona Coyotes,380,2,65.0,-15.0,2023020218
+9.0,8479343.0,Clayton Keller,R,Arizona Coyotes,390,2,-80.0,3.0,2023020633
 9.0,8479343.0,Clayton Keller,R,Arizona Coyotes,440,2,-78.0,7.0,2023020470
 9.0,8479343.0,Clayton Keller,R,Arizona Coyotes,455,2,-69.0,24.0,2023020097
 9.0,8479343.0,Clayton Keller,R,Arizona Coyotes,457,2,-59.0,22.0,2023020066
@@ -778,8 +791,10 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 91.0,8482149.0,Cole Perfetti,C,Winnipeg Jets,365,2,80.0,8.0,2023020211
 91.0,8482149.0,Cole Perfetti,C,Winnipeg Jets,392,2,85.0,8.0,2023020200
 91.0,8482149.0,Cole Perfetti,C,Winnipeg Jets,421,2,69.0,-11.0,2023020236
+91.0,8482149.0,Cole Perfetti,C,Winnipeg Jets,422,2,85.0,-7.0,2023020631
 91.0,8482149.0,Cole Perfetti,C,Winnipeg Jets,460,2,84.0,0.0,2023020058
 91.0,8482149.0,Cole Perfetti,C,Winnipeg Jets,473,2,87.0,-4.0,2023020619
+91.0,8482149.0,Cole Perfetti,C,Winnipeg Jets,579,3,-73.0,14.0,2023020631
 91.0,8482149.0,Cole Perfetti,C,Winnipeg Jets,655,3,-78.0,1.0,2023020357
 91.0,8482149.0,Cole Perfetti,C,Winnipeg Jets,659,3,-83.0,5.0,2023020481
 91.0,8482149.0,Cole Perfetti,C,Winnipeg Jets,700,3,-57.0,21.0,2023020604
@@ -846,6 +861,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 97.0,8478402.0,Connor McDavid,C,Edmonton Oilers,130,1,69.0,-11.0,2023020320
 97.0,8478402.0,Connor McDavid,C,Edmonton Oilers,236,1,72.0,-11.0,2023020583
 97.0,8478402.0,Connor McDavid,C,Edmonton Oilers,244,1,-70.0,7.0,2023020044
+97.0,8478402.0,Connor McDavid,C,Edmonton Oilers,275,2,-85.0,-5.0,2023020632
 97.0,8478402.0,Connor McDavid,C,Edmonton Oilers,280,2,-88.0,-3.0,2023020407
 97.0,8478402.0,Connor McDavid,C,Edmonton Oilers,330,2,-81.0,-10.0,2023020029
 97.0,8478402.0,Connor McDavid,C,Edmonton Oilers,341,2,-74.0,4.0,2023020272
@@ -865,6 +881,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 24.0,8481580.0,Connor McMichael,C,Washington Capitals,718,3,-71.0,13.0,2023020232
 5.0,8476473.0,Connor Murphy,D,Chicago Blackhawks,746,3,-79.0,9.0,2023020422
 47.0,8482074.0,Connor Zary,C,Calgary Flames,71,1,-78.0,-24.0,2023020595
+47.0,8482074.0,Connor Zary,C,Calgary Flames,75,1,-65.0,-12.0,2023020634
 47.0,8482074.0,Connor Zary,C,Calgary Flames,97,1,-79.0,-2.0,2023020142
 47.0,8482074.0,Connor Zary,C,Calgary Flames,101,1,81.0,-13.0,2023020207
 47.0,8482074.0,Connor Zary,C,Calgary Flames,461,2,-82.0,-3.0,2023020231
@@ -897,6 +914,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 81.0,8478057.0,Dakota Joshua,C,Vancouver Canucks,489,2,-82.0,6.0,2023020224
 81.0,8478057.0,Dakota Joshua,C,Vancouver Canucks,491,2,78.0,10.0,2023020527
 81.0,8478057.0,Dakota Joshua,C,Vancouver Canucks,719,3,-85.0,-3.0,2023020009
+81.0,8478057.0,Dakota Joshua,C,Vancouver Canucks,788,3,14.0,22.0,2023020628
 81.0,8478057.0,Dakota Joshua,C,Vancouver Canucks,798,3,-48.0,27.0,2023020611
 6.0,8477541.0,Dakota Mermis,D,Minnesota Wild,361,2,32.0,30.0,2023020073
 6.0,8477541.0,Dakota Mermis,D,Minnesota Wild,532,3,82.0,5.0,2023020104
@@ -939,6 +957,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 64.0,8480144.0,David Kampf,C,Toronto Maple Leafs,812,3,85.0,-3.0,2023020432
 88.0,8477956.0,David Pastrnak,R,Boston Bruins,42,1,64.0,23.0,2023020518
 88.0,8477956.0,David Pastrnak,R,Boston Bruins,59,1,-68.0,-18.0,2023020229
+88.0,8477956.0,David Pastrnak,R,Boston Bruins,65,1,-71.0,-28.0,2023020633
 88.0,8477956.0,David Pastrnak,R,Boston Bruins,81,1,81.0,-3.0,2023020589
 88.0,8477956.0,David Pastrnak,R,Boston Bruins,162,1,63.0,-13.0,2023020484
 88.0,8477956.0,David Pastrnak,R,Boston Bruins,187,1,49.0,-16.0,2023020364
@@ -983,6 +1002,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 91.0,8482110.0,Dawson Mercer,C,New Jersey Devils,673,3,83.0,-5.0,2023020206
 91.0,8482110.0,Dawson Mercer,C,New Jersey Devils,698,3,81.0,13.0,2023020236
 91.0,8482110.0,Dawson Mercer,C,New Jersey Devils,718,3,47.0,6.0,2023020528
+15.0,8478495.0,Denis Gurianov,R,Nashville Predators,823,3,79.0,2.0,2023020629
 10.0,8478585.0,Derek Ryan,C,Edmonton Oilers,62,1,-77.0,0.0,2023020257
 10.0,8478585.0,Derek Ryan,C,Edmonton Oilers,229,1,80.0,-9.0,2023020421
 10.0,8478585.0,Derek Ryan,C,Edmonton Oilers,449,2,81.0,0.0,2023020257
@@ -1004,6 +1024,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 7.0,8475200.0,Dmitry Orlov,D,Carolina Hurricanes,735,3,-93.0,21.0,2023020603
 81.0,8477330.0,Dominik Kubalik,L,Ottawa Senators,115,1,39.0,15.0,2023020190
 81.0,8477330.0,Dominik Kubalik,L,Ottawa Senators,202,1,-76.0,-1.0,2023020493
+81.0,8477330.0,Dominik Kubalik,L,Ottawa Senators,273,1,86.0,3.0,2023020634
 81.0,8477330.0,Dominik Kubalik,L,Ottawa Senators,359,2,60.0,-10.0,2023020123
 81.0,8477330.0,Dominik Kubalik,L,Ottawa Senators,398,2,-52.0,16.0,2023020412
 81.0,8477330.0,Dominik Kubalik,L,Ottawa Senators,412,2,81.0,-5.0,2023020451
@@ -1038,6 +1059,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 24.0,8481528.0,Dylan Cozens,C,Buffalo Sabres,708,3,-87.0,32.0,2023020113
 24.0,8481528.0,Dylan Cozens,C,Buffalo Sabres,782,4,-68.0,6.0,2023020040
 2.0,8476331.0,Dylan DeMelo,D,Winnipeg Jets,404,2,51.0,-8.0,2023020020
+11.0,8482699.0,Dylan Guenther,R,Arizona Coyotes,504,2,-55.0,2.0,2023020633
 11.0,8482699.0,Dylan Guenther,R,Arizona Coyotes,720,3,89.0,4.0,2023020619
 55.0,8482077.0,Dylan Holloway,L,Edmonton Oilers,262,1,-84.0,-12.0,2023020220
 71.0,8477946.0,Dylan Larkin,C,Detroit Red Wings,53,1,-60.0,-10.0,2023020380
@@ -1108,6 +1130,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 40.0,8480012.0,Elias Pettersson,C,Vancouver Canucks,307,2,54.0,-6.0,2023020140
 40.0,8480012.0,Elias Pettersson,C,Vancouver Canucks,408,2,-65.0,-12.0,2023020068
 40.0,8480012.0,Elias Pettersson,C,Vancouver Canucks,409,2,44.0,-25.0,2023020009
+40.0,8480012.0,Elias Pettersson,C,Vancouver Canucks,430,2,85.0,-4.0,2023020628
 40.0,8480012.0,Elias Pettersson,C,Vancouver Canucks,455,2,84.0,14.0,2023020172
 40.0,8480012.0,Elias Pettersson,C,Vancouver Canucks,468,2,-90.0,6.0,2023020621
 40.0,8480012.0,Elias Pettersson,C,Vancouver Canucks,495,2,70.0,-23.0,2023020140
@@ -1254,6 +1277,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 9.0,8476887.0,Filip Forsberg,L,Nashville Predators,842,5,81.0,4.0,2023020384
 9.0,8476887.0,Filip Forsberg,L,Nashville Predators,853,4,-86.0,-2.0,2023020435
 17.0,8479425.0,Filip Hronek,D,Vancouver Canucks,222,1,-69.0,-20.0,2023020314
+17.0,8479425.0,Filip Hronek,D,Vancouver Canucks,243,1,-67.0,16.0,2023020628
 17.0,8479425.0,Filip Hronek,D,Vancouver Canucks,646,3,-50.0,-16.0,2023020241
 18.0,8480821.0,Filip Zadina,R,San Jose Sharks,241,1,75.0,-12.0,2023020016
 18.0,8480821.0,Filip Zadina,R,San Jose Sharks,372,2,-47.0,-19.0,2023020047
@@ -1262,6 +1286,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 77.0,8478366.0,Frank Vatrano,R,Anaheim Ducks,69,1,71.0,-3.0,2023020226
 77.0,8478366.0,Frank Vatrano,R,Anaheim Ducks,120,1,74.0,-27.0,2023020034
 77.0,8478366.0,Frank Vatrano,R,Anaheim Ducks,166,1,80.0,14.0,2023020540
+77.0,8478366.0,Frank Vatrano,R,Anaheim Ducks,205,1,-82.0,-3.0,2023020629
 77.0,8478366.0,Frank Vatrano,R,Anaheim Ducks,216,1,56.0,-6.0,2023020117
 77.0,8478366.0,Frank Vatrano,R,Anaheim Ducks,255,1,38.0,-27.0,2023020226
 77.0,8478366.0,Frank Vatrano,R,Anaheim Ducks,354,2,-87.0,8.0,2023020117
@@ -1288,6 +1313,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 13.0,8480014.0,Gabriel Vilardi,C,Winnipeg Jets,536,3,-85.0,-4.0,2023020601
 13.0,8480014.0,Gabriel Vilardi,C,Winnipeg Jets,554,3,-83.0,-4.0,2023020467
 13.0,8480014.0,Gabriel Vilardi,C,Winnipeg Jets,557,3,66.0,-15.0,2023020446
+13.0,8480014.0,Gabriel Vilardi,C,Winnipeg Jets,663,3,-86.0,-5.0,2023020631
 13.0,8480014.0,Gabriel Vilardi,C,Winnipeg Jets,718,3,-80.0,-10.0,2023020425
 19.0,8477903.0,Garnet Hathaway,R,Philadelphia Flyers,249,1,-84.0,5.0,2023020131
 19.0,8477903.0,Garnet Hathaway,R,Philadelphia Flyers,465,2,84.0,5.0,2023020157
@@ -1317,6 +1343,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 29.0,8482148.0,Hendrix Lapierre,C,Washington Capitals,701,3,-66.0,7.0,2023020263
 10.0,8480035.0,Henri Jokiharju,D,Buffalo Sabres,222,1,30.0,7.0,2023020204
 10.0,8480035.0,Henri Jokiharju,D,Buffalo Sabres,572,3,49.0,-9.0,2023020157
+3.0,8481567.0,Henry Thrun,D,San Jose Sharks,388,2,-70.0,8.0,2023020627
 20.0,8477392.0,Hudson Fasching,R,New York Islanders,243,1,59.0,14.0,2023020260
 20.0,8477392.0,Hudson Fasching,R,New York Islanders,267,2,-82.0,-2.0,2023020496
 82.0,8474013.0,Ian Cole,D,Vancouver Canucks,35,1,-31.0,-10.0,2023020584
@@ -1443,6 +1470,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 22.0,8482097.0,Jack Quinn,R,Buffalo Sabres,667,3,84.0,-2.0,2023020498
 96.0,8478458.0,Jack Roslovic,C,Columbus Blue Jackets,48,1,85.0,-6.0,2023020103
 96.0,8478458.0,Jack Roslovic,C,Columbus Blue Jackets,792,4,-61.0,5.0,2023020073
+24.0,8480879.0,Jacob Bernard-Docker,D,Ottawa Senators,68,1,39.0,-27.0,2023020634
 24.0,8480879.0,Jacob Bernard-Docker,D,Ottawa Senators,318,2,-33.0,9.0,2023020507
 24.0,8480879.0,Jacob Bernard-Docker,D,Ottawa Senators,616,3,32.0,-28.0,2023020395
 24.0,8480879.0,Jacob Bernard-Docker,D,Ottawa Senators,616,3,32.0,-28.0,2023020395
@@ -1460,6 +1488,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 17.0,8475768.0,Jaden Schwartz,C,Seattle Kraken,270,1,73.0,-24.0,2023020201
 17.0,8475768.0,Jaden Schwartz,C,Seattle Kraken,293,2,81.0,0.0,2023020028
 17.0,8475768.0,Jaden Schwartz,C,Seattle Kraken,366,2,-77.0,-2.0,2023020091
+17.0,8475768.0,Jaden Schwartz,C,Seattle Kraken,453,2,79.0,-4.0,2023020625
 17.0,8475768.0,Jaden Schwartz,C,Seattle Kraken,524,2,-55.0,24.0,2023020091
 17.0,8475768.0,Jaden Schwartz,C,Seattle Kraken,556,3,-84.0,-2.0,2023020185
 17.0,8475768.0,Jaden Schwartz,C,Seattle Kraken,564,3,84.0,6.0,2023020220
@@ -1472,6 +1501,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 74.0,8478498.0,Jake DeBrusk,L,Boston Bruins,397,2,-81.0,0.0,2023020340
 74.0,8478498.0,Jake DeBrusk,L,Boston Bruins,493,2,-86.0,6.0,2023020282
 74.0,8478498.0,Jake DeBrusk,L,Boston Bruins,502,2,-70.0,1.0,2023020589
+74.0,8478498.0,Jake DeBrusk,L,Boston Bruins,627,3,-67.0,12.0,2023020633
 74.0,8478498.0,Jake DeBrusk,L,Boston Bruins,720,3,56.0,-3.0,2023020607
 74.0,8478498.0,Jake DeBrusk,L,Boston Bruins,908,5,66.0,5.0,2023020145
 71.0,8478133.0,Jake Evans,C,Montréal Canadiens,49,1,81.0,-8.0,2023020005
@@ -1495,6 +1525,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 59.0,8477404.0,Jake Guentzel,L,Pittsburgh Penguins,815,3,53.0,-17.0,2023020123
 59.0,8477404.0,Jake Guentzel,L,Pittsburgh Penguins,827,3,88.0,4.0,2023020434
 59.0,8477404.0,Jake Guentzel,L,Pittsburgh Penguins,835,3,84.0,2.0,2023020363
+22.0,8476931.0,Jake McCabe,D,Toronto Maple Leafs,585,3,-69.0,14.0,2023020627
 22.0,8476931.0,Jake McCabe,D,Toronto Maple Leafs,783,3,-45.0,-12.0,2023020449
 5.0,8478136.0,Jake Middleton,D,Minnesota Wild,182,1,-76.0,-15.0,2023020347
 5.0,8478136.0,Jake Middleton,D,Minnesota Wild,444,2,82.0,8.0,2023020480
@@ -1574,6 +1605,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 19.0,8477955.0,Jared McCann,L,Seattle Kraken,725,3,68.0,19.0,2023020346
 19.0,8477955.0,Jared McCann,L,Seattle Kraken,764,4,47.0,8.0,2023020133
 19.0,8477955.0,Jared McCann,L,Seattle Kraken,788,3,58.0,-19.0,2023020091
+16.0,8477450.0,Jason Dickinson,C,Chicago Blackhawks,79,1,-71.0,-6.0,2023020632
 16.0,8477450.0,Jason Dickinson,C,Chicago Blackhawks,101,1,82.0,0.0,2023020222
 16.0,8477450.0,Jason Dickinson,C,Chicago Blackhawks,127,1,-72.0,-23.0,2023020295
 16.0,8477450.0,Jason Dickinson,C,Chicago Blackhawks,146,1,-39.0,7.0,2023020333
@@ -1620,6 +1652,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 77.0,8470604.0,Jeff Carter,C,Pittsburgh Penguins,651,3,77.0,-2.0,2023020434
 46.0,8473507.0,Jeff Petry,D,Detroit Red Wings,290,2,51.0,-35.0,2023020479
 46.0,8473507.0,Jeff Petry,D,Detroit Red Wings,484,2,-31.0,20.0,2023020600
+53.0,8475784.0,Jeff Skinner,L,Buffalo Sabres,77,1,78.0,-17.0,2023020625
 53.0,8475784.0,Jeff Skinner,L,Buffalo Sabres,95,1,87.0,-14.0,2023020082
 53.0,8475784.0,Jeff Skinner,L,Buffalo Sabres,108,1,-67.0,-18.0,2023020085
 53.0,8475784.0,Jeff Skinner,L,Buffalo Sabres,204,1,86.0,-10.0,2023020040
@@ -1638,6 +1671,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 3.0,8478468.0,Jeremy Lauzon,D,Nashville Predators,351,2,-32.0,12.0,2023020275
 3.0,8478468.0,Jeremy Lauzon,D,Nashville Predators,464,2,-54.0,-15.0,2023020491
 3.0,8478468.0,Jeremy Lauzon,D,Nashville Predators,667,3,66.0,13.0,2023020455
+70.0,8480003.0,Jesper Boqvist,C,Boston Bruins,404,2,56.0,4.0,2023020633
 63.0,8479407.0,Jesper Bratt,L,New Jersey Devils,71,1,70.0,11.0,2023020387
 63.0,8479407.0,Jesper Bratt,L,New Jersey Devils,92,1,60.0,21.0,2023020127
 63.0,8479407.0,Jesper Bratt,L,New Jersey Devils,238,1,75.0,1.0,2023020113
@@ -1858,6 +1892,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 44.0,8477504.0,Josh Morrissey,D,Winnipeg Jets,433,2,-57.0,-23.0,2023020402
 44.0,8477504.0,Josh Morrissey,D,Winnipeg Jets,433,2,-57.0,-23.0,2023020402
 44.0,8477504.0,Josh Morrissey,D,Winnipeg Jets,433,2,-57.0,-23.0,2023020402
+44.0,8477504.0,Josh Morrissey,D,Winnipeg Jets,453,2,60.0,20.0,2023020631
 44.0,8477504.0,Josh Morrissey,D,Winnipeg Jets,558,3,-78.0,-9.0,2023020262
 44.0,8477504.0,Josh Morrissey,D,Winnipeg Jets,697,3,-87.0,-5.0,2023020319
 9.0,8480064.0,Josh Norris,C,Ottawa Senators,94,1,72.0,-17.0,2023020478
@@ -1961,6 +1996,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 12.0,8474031.0,Kevin Shattenkirk,D,Boston Bruins,299,2,52.0,-41.0,2023020574
 12.0,8474031.0,Kevin Shattenkirk,D,Boston Bruins,312,2,-77.0,-15.0,2023020408
 12.0,8474031.0,Kevin Shattenkirk,D,Boston Bruins,440,2,-81.0,4.0,2023020364
+82.0,8478831.0,Kevin Stenlund,C,Florida Panthers,211,1,-80.0,3.0,2023020630
 82.0,8478831.0,Kevin Stenlund,C,Florida Panthers,248,1,80.0,7.0,2023020329
 82.0,8478831.0,Kevin Stenlund,C,Florida Panthers,250,1,-62.0,26.0,2023020052
 82.0,8478831.0,Kevin Stenlund,C,Florida Panthers,448,2,81.0,-21.0,2023020272
@@ -2083,6 +2119,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 91.0,8484153.0,Leo Carlsson,C,Anaheim Ducks,885,5,81.0,3.0,2023020366
 29.0,8477934.0,Leon Draisaitl,C,Edmonton Oilers,19,1,83.0,2.0,2023020029
 29.0,8477934.0,Leon Draisaitl,C,Edmonton Oilers,24,1,-63.0,-19.0,2023020490
+29.0,8477934.0,Leon Draisaitl,C,Edmonton Oilers,106,1,77.0,-2.0,2023020632
 29.0,8477934.0,Leon Draisaitl,C,Edmonton Oilers,118,1,-75.0,-6.0,2023020044
 29.0,8477934.0,Leon Draisaitl,C,Edmonton Oilers,217,1,-77.0,-2.0,2023020545
 29.0,8477934.0,Leon Draisaitl,C,Edmonton Oilers,228,1,65.0,-22.0,2023020227
@@ -2251,6 +2288,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 27.0,8478975.0,Mason Marchment,L,Dallas Stars,549,3,84.0,-2.0,2023020388
 27.0,8478975.0,Mason Marchment,L,Dallas Stars,626,3,-82.0,-1.0,2023020274
 23.0,8482745.0,Mason McTavish,C,Anaheim Ducks,223,1,66.0,-8.0,2023020604
+23.0,8482745.0,Mason McTavish,C,Anaheim Ducks,264,1,-79.0,23.0,2023020629
 23.0,8482745.0,Mason McTavish,C,Anaheim Ducks,285,2,-80.0,-1.0,2023020290
 23.0,8482745.0,Mason McTavish,C,Anaheim Ducks,346,2,-78.0,-4.0,2023020290
 23.0,8482745.0,Mason McTavish,C,Anaheim Ducks,387,2,-81.0,-3.0,2023020271
@@ -2289,6 +2327,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 63.0,8481711.0,Matias Maccelli,L,Arizona Coyotes,236,1,-84.0,-5.0,2023020434
 63.0,8481711.0,Matias Maccelli,L,Arizona Coyotes,259,1,68.0,-19.0,2023020365
 63.0,8481711.0,Matias Maccelli,L,Arizona Coyotes,428,2,-75.0,4.0,2023020459
+63.0,8481711.0,Matias Maccelli,L,Arizona Coyotes,565,3,79.0,2.0,2023020633
 36.0,8475692.0,Mats Zuccarello,R,Minnesota Wild,220,1,-76.0,12.0,2023020369
 36.0,8475692.0,Mats Zuccarello,R,Minnesota Wild,374,2,61.0,8.0,2023020073
 36.0,8475692.0,Mats Zuccarello,R,Minnesota Wild,502,2,56.0,26.0,2023020223
@@ -2349,10 +2388,13 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 19.0,8479314.0,Matthew Tkachuk,L,Florida Panthers,341,2,-77.0,-2.0,2023020599
 19.0,8479314.0,Matthew Tkachuk,L,Florida Panthers,399,2,69.0,7.0,2023020118
 19.0,8479314.0,Matthew Tkachuk,L,Florida Panthers,435,2,60.0,-21.0,2023020359
+19.0,8479314.0,Matthew Tkachuk,L,Florida Panthers,538,3,-71.0,23.0,2023020630
+19.0,8479314.0,Matthew Tkachuk,L,Florida Panthers,587,3,-72.0,8.0,2023020630
 19.0,8479314.0,Matthew Tkachuk,L,Florida Panthers,653,3,-85.0,-2.0,2023020581
 19.0,8479314.0,Matthew Tkachuk,L,Florida Panthers,708,3,66.0,-39.0,2023020420
 19.0,8479314.0,Matthew Tkachuk,L,Florida Panthers,713,3,87.0,-7.0,2023020168
 19.0,8479314.0,Matthew Tkachuk,L,Florida Panthers,718,3,0.0,1.0,2023020606
+19.0,8479314.0,Matthew Tkachuk,L,Florida Panthers,747,3,34.0,-24.0,2023020630
 14.0,8475218.0,Mattias Ekholm,D,Edmonton Oilers,23,1,83.0,4.0,2023020391
 14.0,8475218.0,Mattias Ekholm,D,Edmonton Oilers,23,1,83.0,4.0,2023020391
 14.0,8475218.0,Mattias Ekholm,D,Edmonton Oilers,114,1,60.0,28.0,2023020179
@@ -2364,6 +2406,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 10.0,8482665.0,Matty Beniers,C,Seattle Kraken,210,1,66.0,11.0,2023020333
 10.0,8482665.0,Matty Beniers,C,Seattle Kraken,421,2,-67.0,-18.0,2023020201
 10.0,8482665.0,Matty Beniers,C,Seattle Kraken,433,2,-69.0,-6.0,2023020482
+10.0,8482665.0,Matty Beniers,C,Seattle Kraken,514,2,69.0,23.0,2023020625
 10.0,8482665.0,Matty Beniers,C,Seattle Kraken,643,3,71.0,-4.0,2023020265
 10.0,8482665.0,Matty Beniers,C,Seattle Kraken,830,5,78.0,2.0,2023020473
 11.0,8477503.0,Max Domi,C,Toronto Maple Leafs,180,1,-58.0,18.0,2023020498
@@ -2528,6 +2571,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,217,1,80.0,-10.0,2023020432
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,218,1,-73.0,-20.0,2023020613
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,298,2,57.0,21.0,2023020346
+16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,298,2,84.0,11.0,2023020627
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,315,2,64.0,-11.0,2023020395
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,315,2,64.0,-11.0,2023020395
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,315,2,64.0,-11.0,2023020395
@@ -2537,6 +2581,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,521,2,-75.0,-13.0,2023020108
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,560,3,70.0,0.0,2023020432
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,599,3,-65.0,-20.0,2023020177
+16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,618,3,-84.0,-3.0,2023020627
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,639,3,-79.0,-5.0,2023020449
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,872,5,-73.0,-2.0,2023020346
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,899,5,-76.0,0.0,2023020005
@@ -2567,6 +2612,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 39.0,8479987.0,Morgan Geekie,C,Boston Bruins,694,3,72.0,-10.0,2023020518
 44.0,8476853.0,Morgan Rielly,D,Toronto Maple Leafs,145,1,84.0,6.0,2023020108
 44.0,8476853.0,Morgan Rielly,D,Toronto Maple Leafs,172,1,77.0,-15.0,2023020083
+44.0,8476853.0,Morgan Rielly,D,Toronto Maple Leafs,235,1,-68.0,-13.0,2023020627
 44.0,8476853.0,Morgan Rielly,D,Toronto Maple Leafs,473,3,-51.0,-21.0,2023020267
 44.0,8476853.0,Morgan Rielly,D,Toronto Maple Leafs,818,3,-86.0,-7.0,2023020429
 53.0,8481542.0,Moritz Seider,D,Detroit Red Wings,310,2,46.0,7.0,2023020380
@@ -2634,6 +2680,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 20.0,8477426.0,Nicholas Paul,L,Tampa Bay Lightning,727,3,76.0,30.0,2023020504
 20.0,8477426.0,Nicholas Paul,L,Tampa Bay Lightning,765,3,81.0,-1.0,2023020181
 89.0,8481582.0,Nicholas Robertson,L,Toronto Maple Leafs,114,1,80.0,-12.0,2023020295
+89.0,8481582.0,Nicholas Robertson,L,Toronto Maple Leafs,634,3,-74.0,21.0,2023020627
 89.0,8481582.0,Nicholas Robertson,L,Toronto Maple Leafs,640,3,-82.0,3.0,2023020215
 89.0,8481582.0,Nicholas Robertson,L,Toronto Maple Leafs,733,3,-83.0,-10.0,2023020190
 17.0,8475760.0,Nick Bjugstad,C,Arizona Coyotes,162,1,65.0,15.0,2023020287
@@ -2658,6 +2705,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 17.0,8473422.0,Nick Foligno,L,Chicago Blackhawks,788,3,-79.0,1.0,2023020002
 4.0,8475181.0,Nick Leddy,D,St. Louis Blues,206,1,36.0,29.0,2023020109
 4.0,8475181.0,Nick Leddy,D,St. Louis Blues,337,2,87.0,-6.0,2023020287
+48.0,8480246.0,Nick Perbix,D,Tampa Bay Lightning,829,4,-79.0,-1.0,2023020626
 8.0,8477951.0,Nick Schmaltz,C,Arizona Coyotes,92,1,76.0,-1.0,2023020153
 8.0,8477951.0,Nick Schmaltz,C,Arizona Coyotes,170,1,61.0,-14.0,2023020378
 8.0,8477951.0,Nick Schmaltz,C,Arizona Coyotes,202,1,47.0,9.0,2023020378
@@ -2671,6 +2719,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 8.0,8477951.0,Nick Schmaltz,C,Arizona Coyotes,613,3,83.0,-5.0,2023020153
 8.0,8477951.0,Nick Schmaltz,C,Arizona Coyotes,718,3,-75.0,-20.0,2023020017
 8.0,8477951.0,Nick Schmaltz,C,Arizona Coyotes,859,5,-77.0,5.0,2023020017
+8.0,8477951.0,Nick Schmaltz,C,Arizona Coyotes,878,4,-74.0,-16.0,2023020633
 14.0,8480018.0,Nick Suzuki,C,Montréal Canadiens,58,1,61.0,13.0,2023020577
 14.0,8480018.0,Nick Suzuki,C,Montréal Canadiens,289,2,52.0,9.0,2023020103
 14.0,8480018.0,Nick Suzuki,C,Montréal Canadiens,396,2,56.0,-13.0,2023020411
@@ -2802,6 +2851,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 55.0,8478396.0,Noah Hanifin,D,Calgary Flames,170,1,-75.0,-1.0,2023020351
 55.0,8478396.0,Noah Hanifin,D,Calgary Flames,506,2,53.0,12.0,2023020170
 55.0,8478396.0,Noah Hanifin,D,Calgary Flames,531,2,90.0,-8.0,2023020247
+55.0,8478396.0,Noah Hanifin,D,Calgary Flames,550,3,-67.0,-26.0,2023020634
 55.0,8478396.0,Noah Hanifin,D,Calgary Flames,579,2,81.0,-8.0,2023020595
 55.0,8478396.0,Noah Hanifin,D,Calgary Flames,624,3,-60.0,4.0,2023020186
 55.0,8478569.0,Noel Acciari,C,Pittsburgh Penguins,406,2,-82.0,-9.0,2023020269
@@ -2918,6 +2968,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 26.0,8481577.0,Philip Tomasino,C,Nashville Predators,456,2,-78.0,2.0,2023020468
 26.0,8481577.0,Philip Tomasino,C,Nashville Predators,728,3,75.0,6.0,2023020200
 26.0,8481577.0,Philip Tomasino,C,Nashville Predators,739,3,68.0,11.0,2023020502
+26.0,8481577.0,Philip Tomasino,C,Nashville Predators,786,3,70.0,-13.0,2023020629
 23.0,8480798.0,Philipp Kurashev,C,Chicago Blackhawks,361,2,81.0,1.0,2023020422
 23.0,8480798.0,Philipp Kurashev,C,Chicago Blackhawks,389,2,54.0,14.0,2023020399
 23.0,8480798.0,Philipp Kurashev,C,Chicago Blackhawks,389,2,54.0,14.0,2023020399
@@ -2949,11 +3000,13 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 24.0,8480459.0,Pius Suter,C,Vancouver Canucks,487,2,86.0,0.0,2023020491
 24.0,8480459.0,Pius Suter,C,Vancouver Canucks,706,3,-75.0,-16.0,2023020527
 24.0,8480459.0,Pius Suter,C,Vancouver Canucks,795,3,-37.0,-1.0,2023020584
+29.0,8480995.0,Pontus Holmberg,R,Toronto Maple Leafs,315,2,80.0,-5.0,2023020627
 43.0,8480800.0,Quinn Hughes,D,Vancouver Canucks,32,1,73.0,24.0,2023020367
 43.0,8480800.0,Quinn Hughes,D,Vancouver Canucks,109,1,-40.0,1.0,2023020156
 43.0,8480800.0,Quinn Hughes,D,Vancouver Canucks,110,1,-55.0,-21.0,2023020116
 43.0,8480800.0,Quinn Hughes,D,Vancouver Canucks,155,1,42.0,6.0,2023020068
 43.0,8480800.0,Quinn Hughes,D,Vancouver Canucks,177,1,-70.0,-22.0,2023020179
+43.0,8480800.0,Quinn Hughes,D,Vancouver Canucks,266,1,-61.0,1.0,2023020628
 43.0,8480800.0,Quinn Hughes,D,Vancouver Canucks,331,2,68.0,-19.0,2023020116
 43.0,8480800.0,Quinn Hughes,D,Vancouver Canucks,461,2,82.0,20.0,2023020278
 43.0,8480800.0,Quinn Hughes,D,Vancouver Canucks,500,2,45.0,31.0,2023020265
@@ -2972,6 +3025,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 7.0,8475462.0,Radko Gudas,D,Anaheim Ducks,445,2,-39.0,22.0,2023020299
 7.0,8475462.0,Radko Gudas,D,Anaheim Ducks,555,3,34.0,-27.0,2023020226
 7.0,8475462.0,Radko Gudas,D,Anaheim Ducks,568,3,-64.0,3.0,2023020234
+7.0,8475462.0,Radko Gudas,D,Anaheim Ducks,590,3,-88.0,-5.0,2023020629
 4.0,8478397.0,Rasmus Andersson,D,Calgary Flames,46,1,57.0,-40.0,2023020526
 4.0,8478397.0,Rasmus Andersson,D,Calgary Flames,272,1,-72.0,5.0,2023020595
 4.0,8478397.0,Rasmus Andersson,D,Calgary Flames,493,2,54.0,-1.0,2023020007
@@ -3150,6 +3204,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 6.0,8477506.0,Ryan Pulock,D,New York Islanders,662,3,61.0,23.0,2023020383
 75.0,8471817.0,Ryan Reaves,R,Toronto Maple Leafs,350,2,-80.0,4.0,2023020295
 16.0,8476458.0,Ryan Strome,C,Anaheim Ducks,23,1,84.0,13.0,2023020117
+16.0,8476458.0,Ryan Strome,C,Anaheim Ducks,156,1,-79.0,1.0,2023020629
 16.0,8476458.0,Ryan Strome,C,Anaheim Ducks,325,2,-59.0,-22.0,2023020336
 16.0,8476458.0,Ryan Strome,C,Anaheim Ducks,441,2,81.0,-3.0,2023020084
 9.0,8477935.0,Sam Bennett,C,Florida Panthers,187,1,77.0,-15.0,2023020599
@@ -3190,6 +3245,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,250,1,-82.0,-12.0,2023020388
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,252,1,84.0,-8.0,2023020020
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,276,1,82.0,-6.0,2023020483
+13.0,8477933.0,Sam Reinhart,C,Florida Panthers,277,2,70.0,-9.0,2023020630
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,283,2,68.0,2.0,2023020530
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,367,2,94.0,9.0,2023020222
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,382,2,89.0,2.0,2023020323
@@ -3543,6 +3599,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 19.0,8478873.0,Troy Terry,R,Anaheim Ducks,139,1,78.0,-5.0,2023020144
 19.0,8478873.0,Troy Terry,R,Anaheim Ducks,177,1,67.0,-19.0,2023020540
 19.0,8478873.0,Troy Terry,R,Anaheim Ducks,284,2,-80.0,1.0,2023020479
+19.0,8478873.0,Troy Terry,R,Anaheim Ducks,347,2,74.0,11.0,2023020629
 19.0,8478873.0,Troy Terry,R,Anaheim Ducks,399,2,74.0,25.0,2023020444
 19.0,8478873.0,Troy Terry,R,Anaheim Ducks,652,3,-55.0,18.0,2023020476
 19.0,8478873.0,Troy Terry,R,Anaheim Ducks,783,3,-81.0,-13.0,2023020100
@@ -3571,7 +3628,9 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 90.0,8474870.0,Tyler Johnson,C,Chicago Blackhawks,731,3,85.0,8.0,2023020024
 64.0,8477353.0,Tyler Motte,C,Tampa Bay Lightning,120,1,-78.0,-7.0,2023020452
 64.0,8477353.0,Tyler Motte,C,Tampa Bay Lightning,222,1,83.0,2.0,2023020488
+64.0,8477353.0,Tyler Motte,C,Tampa Bay Lightning,703,3,73.0,3.0,2023020626
 57.0,8474574.0,Tyler Myers,D,Vancouver Canucks,290,2,46.0,-8.0,2023020055
+57.0,8474574.0,Tyler Myers,D,Vancouver Canucks,525,2,58.0,-23.0,2023020628
 57.0,8474574.0,Tyler Myers,D,Vancouver Canucks,620,3,-73.0,13.0,2023020124
 71.0,8475752.0,Tyler Pitlick,C,New York Rangers,583,3,-76.0,2.0,2023020308
 91.0,8475794.0,Tyler Seguin,C,Dallas Stars,23,1,-85.0,-6.0,2023020356
@@ -3653,6 +3712,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 71.0,8478109.0,Victor Olofsson,L,Buffalo Sabres,791,5,78.0,2.0,2023020411
 29.0,8478407.0,Vince Dunn,D,Seattle Kraken,137,1,32.0,3.0,2023020277
 29.0,8478407.0,Vince Dunn,D,Seattle Kraken,238,1,-81.0,-8.0,2023020523
+29.0,8478407.0,Vince Dunn,D,Seattle Kraken,279,1,-63.0,-12.0,2023020625
 29.0,8478407.0,Vince Dunn,D,Seattle Kraken,328,2,-51.0,-7.0,2023020060
 29.0,8478407.0,Vince Dunn,D,Seattle Kraken,554,3,45.0,2.0,2023020376
 29.0,8478407.0,Vince Dunn,D,Seattle Kraken,623,3,43.0,9.0,2023020154
@@ -3770,6 +3830,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,115,1,85.0,-7.0,2023020060
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,143,1,82.0,-1.0,2023020598
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,158,1,-63.0,5.0,2023020133
+37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,216,1,-80.0,-2.0,2023020625
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,270,1,88.0,-11.0,2023020292
 37.0,8476826.0,Yanni Gourde,C,Seattle,566,3,-85.0,-4.0,2023020573
 37.0,8476826.0,Yanni Gourde,C,Seattle Kraken,614,3,85.0,1.0,2023020265
@@ -3786,6 +3847,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 59.0,8482475.0,Yegor Chinakhov,R,Columbus Blue Jackets,741,3,-71.0,4.0,2023020528
 17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,284,2,-68.0,8.0,2023020305
 17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,297,1,-83.0,2.0,2023020409
+17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,328,2,71.0,2.0,2023020634
 17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,381,2,54.0,20.0,2023020471
 17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,442,2,-85.0,3.0,2023020450
 17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,482,2,-59.0,21.0,2023020440
@@ -3793,6 +3855,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,530,2,-86.0,-4.0,2023020431
 17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,547,3,-66.0,-8.0,2023020170
 17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,761,3,-80.0,-6.0,2023020260
+17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,767,3,-84.0,10.0,2023020634
 17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,777,3,72.0,-4.0,2023020440
 17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,802,3,-80.0,10.0,2023020595
 17.0,8481068.0,Yegor Sharangovich,C,Calgary Flames,837,3,-82.0,3.0,2023020288
