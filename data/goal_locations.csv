@@ -1301,6 +1301,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 9.0,8476887.0,Filip Forsberg,L,Nashville Predators,494,2,74.0,8.0,2023020297
 9.0,8476887.0,Filip Forsberg,L,Nashville Predators,603,3,82.0,5.0,2023020614
 9.0,8476887.0,Filip Forsberg,L,Nashville Predators,666,3,88.0,-6.0,2023020614
+9.0,8476887.0,Filip Forsberg,L,Nashville Predators,688,3,86.0,11.0,2023020651
 9.0,8476887.0,Filip Forsberg,L,Nashville Predators,735,3,71.0,5.0,2023020218
 9.0,8476887.0,Filip Forsberg,L,Nashville Predators,792,4,-60.0,-3.0,2023020455
 9.0,8476887.0,Filip Forsberg,L,Nashville Predators,804,3,88.0,5.0,2023020275
@@ -1369,6 +1370,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 14.0,8474679.0,Gustav Nyquist,C,Nashville Predators,383,2,-81.0,4.0,2023020319
 14.0,8474679.0,Gustav Nyquist,C,Nashville Predators,673,3,86.0,-32.0,2023020015
 14.0,8474679.0,Gustav Nyquist,C,Nashville Predators,776,3,77.0,-2.0,2023020502
+14.0,8474679.0,Gustav Nyquist,C,Nashville Predators,800,3,-20.0,12.0,2023020651
 14.0,8474679.0,Gustav Nyquist,C,Nashville Predators,838,5,77.0,5.0,2023020384
 27.0,8476854.0,Hampus Lindholm,D,Boston Bruins,410,2,32.0,5.0,2023020229
 7.0,8477938.0,Haydn Fleury,D,Tampa Bay Lightning,410,2,-33.0,-17.0,2023020488
@@ -1626,6 +1628,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 6.0,8482142.0,Jamie Drysdale,D,Anaheim Ducks,122,1,59.0,-15.0,2023020540
 24.0,8476467.0,Jamie Oleksiak,D,Seattle Kraken,371,2,-55.0,8.0,2023020265
 24.0,8476467.0,Jamie Oleksiak,D,Seattle Kraken,441,2,-47.0,-18.0,2023020418
+2.0,8475825.0,Jani Hakanpää,D,Dallas Stars,569,3,-75.0,16.0,2023020651
 2.0,8475825.0,Jani Hakanpää,D,Dallas Stars,794,3,-43.0,25.0,2023020515
 43.0,8478424.0,Jansen Harkins,C,Pittsburgh Penguins,870,5,72.0,6.0,2023020442
 19.0,8477955.0,Jared McCann,L,Seattle Kraken,120,1,87.0,-5.0,2023020118
@@ -1707,6 +1710,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 53.0,8475784.0,Jeff Skinner,L,Buffalo Sabres,636,3,85.0,-7.0,2023020380
 53.0,8475784.0,Jeff Skinner,L,Buffalo Sabres,681,3,68.0,-4.0,2023020498
 3.0,8478468.0,Jeremy Lauzon,D,Nashville Predators,351,2,-32.0,12.0,2023020275
+3.0,8478468.0,Jeremy Lauzon,D,Nashville Predators,416,2,-78.0,-4.0,2023020651
 3.0,8478468.0,Jeremy Lauzon,D,Nashville Predators,464,2,-54.0,-15.0,2023020491
 3.0,8478468.0,Jeremy Lauzon,D,Nashville Predators,667,3,66.0,13.0,2023020455
 70.0,8480003.0,Jesper Boqvist,C,Boston Bruins,404,2,56.0,4.0,2023020633
@@ -1803,11 +1807,13 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 86.0,8480797.0,Joel Farabee,L,Philadelphia Flyers,215,1,-84.0,-3.0,2023020400
 86.0,8480797.0,Joel Farabee,L,Philadelphia Flyers,215,1,-84.0,-3.0,2023020400
 86.0,8480797.0,Joel Farabee,L,Philadelphia Flyers,228,1,-81.0,-3.0,2023020054
+86.0,8480797.0,Joel Farabee,L,Philadelphia Flyers,317,2,-80.0,-1.0,2023020652
 86.0,8480797.0,Joel Farabee,L,Philadelphia Flyers,483,2,-79.0,-2.0,2023020543
 86.0,8480797.0,Joel Farabee,L,Philadelphia Flyers,531,2,81.0,-11.0,2023020189
 86.0,8480797.0,Joel Farabee,L,Philadelphia Flyers,599,3,-83.0,3.0,2023020448
 86.0,8480797.0,Joel Farabee,L,Philadelphia Flyers,711,3,-71.0,-16.0,2023020117
 86.0,8480797.0,Joel Farabee,L,Philadelphia Flyers,718,3,83.0,-4.0,2023020417
+86.0,8480797.0,Joel Farabee,L,Philadelphia Flyers,774,4,-74.0,2.0,2023020652
 86.0,8480797.0,Joel Farabee,L,Philadelphia Flyers,783,3,-81.0,-1.0,2023020286
 94.0,8481641.0,Joel Kiviranta,L,Colorado Avalanche,491,2,81.0,0.0,2023020402
 94.0,8481641.0,Joel Kiviranta,L,Colorado Avalanche,491,2,81.0,0.0,2023020402
@@ -1993,6 +1999,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 75.0,8481704.0,Juuso Parssinen,C,Nashville Predators,594,3,79.0,9.0,2023020347
 75.0,8481704.0,Juuso Parssinen,C,Nashville Predators,775,3,-44.0,30.0,2023020015
 75.0,8481704.0,Juuso Parssinen,C,Nashville Predators,801,3,82.0,-4.0,2023020288
+75.0,8481704.0,Juuso Parssinen,C,Nashville Predators,826,3,-5.0,-40.0,2023020651
 79.0,8480817.0,K'Andre Miller,D,New York Rangers,350,2,69.0,7.0,2023020529
 79.0,8480817.0,K'Andre Miller,D,New York Rangers,351,2,69.0,-2.0,2023020382
 79.0,8480817.0,K'Andre Miller,D,New York Rangers,550,2,54.0,15.0,2023020308
@@ -2271,6 +2278,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 17.0,8475220.0,Marcus Foligno,L,Minnesota Wild,702,3,-52.0,-38.0,2023020094
 90.0,8475149.0,Marcus Johansson,C,Minnesota Wild,104,1,-71.0,2.0,2023020484
 90.0,8475149.0,Marcus Johansson,C,Minnesota Wild,280,2,63.0,3.0,2023020534
+90.0,8475149.0,Marcus Johansson,C,Minnesota Wild,283,2,54.0,2.0,2023020652
 90.0,8475149.0,Marcus Johansson,C,Minnesota Wild,562,3,-67.0,10.0,2023020534
 90.0,8475149.0,Marcus Johansson,C,Minnesota Wild,683,3,-71.0,14.0,2023020609
 90.0,8475149.0,Marcus Johansson,C,Minnesota Wild,721,3,-65.0,-20.0,2023020073
@@ -2402,6 +2410,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 12.0,8481557.0,Matt Boldy,L,Minnesota Wild,366,2,76.0,6.0,2023020609
 12.0,8481557.0,Matt Boldy,L,Minnesota Wild,409,2,81.0,7.0,2023020369
 12.0,8481557.0,Matt Boldy,L,Minnesota Wild,480,2,-75.0,1.0,2023020385
+12.0,8481557.0,Matt Boldy,L,Minnesota Wild,543,3,-64.0,20.0,2023020652
 12.0,8481557.0,Matt Boldy,L,Minnesota Wild,607,3,80.0,-3.0,2023020636
 12.0,8481557.0,Matt Boldy,L,Minnesota Wild,717,3,-64.0,2.0,2023020330
 12.0,8481557.0,Matt Boldy,L,Minnesota Wild,770,5,-61.0,2.0,2023020169
@@ -2416,6 +2425,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 95.0,8475168.0,Matt Duchene,C,Dallas Stars,439,2,72.0,-3.0,2023020194
 95.0,8475168.0,Matt Duchene,C,Dallas Stars,548,3,-67.0,14.0,2023020136
 95.0,8475168.0,Matt Duchene,C,Dallas Stars,649,3,-86.0,-12.0,2023020458
+95.0,8475168.0,Matt Duchene,C,Dallas Stars,744,3,-79.0,22.0,2023020651
 95.0,8475168.0,Matt Duchene,C,Dallas Stars,812,4,81.0,3.0,2023020233
 95.0,8475168.0,Matt Duchene,C,Dallas Stars,854,4,71.0,4.0,2023020505
 95.0,8475168.0,Matt Duchene,C,Dallas Stars,893,5,73.0,6.0,2023020048
@@ -2970,6 +2980,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 74.0,8480015.0,Owen Tippett,R,Philadelphia Flyers,413,2,-85.0,-6.0,2023020417
 74.0,8480015.0,Owen Tippett,R,Philadelphia Flyers,535,2,71.0,1.0,2023020363
 74.0,8480015.0,Owen Tippett,R,Philadelphia Flyers,575,3,-65.0,6.0,2023020104
+74.0,8480015.0,Owen Tippett,R,Philadelphia Flyers,616,3,64.0,19.0,2023020652
 74.0,8480015.0,Owen Tippett,R,Philadelphia Flyers,677,3,-79.0,-2.0,2023020208
 74.0,8480015.0,Owen Tippett,R,Philadelphia Flyers,732,3,88.0,2.0,2023020510
 74.0,8480015.0,Owen Tippett,R,Philadelphia Flyers,747,3,-53.0,26.0,2023020208
@@ -3211,6 +3222,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 38.0,8477451.0,Ryan Hartman,R,Minnesota Wild,319,2,87.0,-4.0,2023020169
 38.0,8477451.0,Ryan Hartman,R,Minnesota Wild,425,2,77.0,-14.0,2023020480
 38.0,8477451.0,Ryan Hartman,R,Minnesota Wild,498,3,-75.0,-1.0,2023020094
+38.0,8477451.0,Ryan Hartman,R,Minnesota Wild,503,3,-70.0,-31.0,2023020652
 38.0,8477451.0,Ryan Hartman,R,Minnesota Wild,520,3,82.0,3.0,2023020114
 38.0,8477451.0,Ryan Hartman,R,Minnesota Wild,538,3,-65.0,10.0,2023020534
 38.0,8477451.0,Ryan Hartman,R,Minnesota Wild,683,3,79.0,12.0,2023020636
@@ -3265,6 +3277,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 90.0,8475158.0,Ryan O'Reilly,C,Nashville Predators,425,2,-77.0,-5.0,2023020384
 90.0,8475158.0,Ryan O'Reilly,C,Nashville Predators,483,2,81.0,1.0,2023020001
 90.0,8475158.0,Ryan O'Reilly,C,Nashville Predators,492,2,-82.0,4.0,2023020122
+90.0,8475158.0,Ryan O'Reilly,C,Nashville Predators,614,3,83.0,5.0,2023020651
 90.0,8475158.0,Ryan O'Reilly,C,Nashville Predators,659,3,-86.0,4.0,2023020159
 90.0,8475158.0,Ryan O'Reilly,C,Nashville Predators,754,3,84.0,-7.0,2023020579
 90.0,8475158.0,Ryan O'Reilly,C,Nashville Predators,840,5,77.0,0.0,2023020384
@@ -3623,6 +3636,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 82.0,8478438.0,Tommy Novak,C,Nashville Predators,93,1,-69.0,-5.0,2023020154
 82.0,8478438.0,Tommy Novak,C,Nashville Predators,295,2,-81.0,-3.0,2023020074
 82.0,8478438.0,Tommy Novak,C,Nashville Predators,304,2,-66.0,2.0,2023020044
+82.0,8478438.0,Tommy Novak,C,Nashville Predators,470,2,-59.0,19.0,2023020651
 82.0,8478438.0,Tommy Novak,C,Nashville Predators,479,2,66.0,6.0,2023020159
 82.0,8478438.0,Tommy Novak,C,Nashville Predators,582,3,80.0,3.0,2023020074
 82.0,8478438.0,Tommy Novak,C,Nashville Predators,653,3,-73.0,-23.0,2023020001
@@ -3754,6 +3768,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 22.0,8475197.0,Tyson Barrie,D,Nashville Predators,398,2,-64.0,-13.0,2023020455
 71.0,8482159.0,Tyson Foerster,R,Philadelphia Flyers,302,2,84.0,-11.0,2023020255
 71.0,8482159.0,Tyson Foerster,R,Philadelphia Flyers,420,2,60.0,14.0,2023020374
+71.0,8482159.0,Tyson Foerster,R,Philadelphia Flyers,600,3,63.0,21.0,2023020652
 71.0,8482159.0,Tyson Foerster,R,Philadelphia Flyers,757,3,-59.0,-16.0,2023020363
 71.0,8482159.0,Tyson Foerster,R,Philadelphia Flyers,758,3,-65.0,-5.0,2023020344
 71.0,8482159.0,Tyson Foerster,R,Philadelphia Flyers,811,3,-65.0,1.0,2023020344
@@ -3904,6 +3919,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 53.0,8482740.0,Wyatt Johnston,C,Dallas Stars,331,2,-69.0,-15.0,2023020211
 53.0,8482740.0,Wyatt Johnston,C,Dallas Stars,338,2,51.0,-16.0,2023020305
 53.0,8482740.0,Wyatt Johnston,C,Dallas Stars,590,3,-73.0,5.0,2023020178
+53.0,8482740.0,Wyatt Johnston,C,Dallas Stars,663,3,-69.0,3.0,2023020651
 53.0,8482740.0,Wyatt Johnston,C,Dallas Stars,694,3,-77.0,2.0,2023020577
 53.0,8482740.0,Wyatt Johnston,C,Dallas Stars,712,3,-34.0,22.0,2023020136
 53.0,8482740.0,Wyatt Johnston,C,Dallas Stars,748,3,-87.0,-4.0,2023020088
