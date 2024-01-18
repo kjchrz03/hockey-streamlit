@@ -28,14 +28,14 @@ jersey_number,player_id,player_name,position,team_name,goals
 45,8478851.0,Alexandre Carrier,D,Nashville Predators,3
 42,8480074.0,Alexandre Texier,C,Columbus Blue Jackets,6
 13,8480281.0,Alexey Toropchenko,R,St. Louis Blues,6
-13,8482109.0,Alexis Lafrenière,L,New York Rangers,11
+13,8482109.0,Alexis Lafrenière,L,New York Rangers,12
 21,8481656.0,Aliaksei Protas,C,Washington Capitals,5
 27,8475314.0,Anders Lee,L,New York Islanders,11
 95,8477444.0,Andre Burakovsky,L,Seattle Kraken,1
 96,8483808.0,Andrei Kuzmenko,L,Vancouver Canucks,8
 37,8480830.0,Andrei Svechnikov,R,Carolina Hurricanes,10
 11,8471699.0,Andrew Cogliano,C,Colorado Avalanche,4
-18,8477429.0,Andrew Copp,C,Detroit Red Wings,7
+18,8477429.0,Andrew Copp,C,Detroit Red Wings,8
 88,8478233.0,Andrew Mangiapane,L,Calgary Flames,8
 59,8481065.0,Angus Crookshank,L,Ottawa Senators,1
 91,8478463.0,Anthony Beauvillier,L,Chicago Blackhawks,4
@@ -44,7 +44,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 39,8477511.0,Anthony Mantha,R,Washington Capitals,12
 15,8482113.0,Anton Lundell,C,Florida Panthers,2
 2,8482245.0,Artem Zub,D,Ottawa Senators,2
-10,8478550.0,Artemi Panarin,L,New York Rangers,23
+10,8478550.0,Artemi Panarin,L,New York Rangers,24
 62,8477476.0,Artturi Lehkonen,L,Colorado Avalanche,3
 51,8475766.0,Austin Watson,L,Tampa Bay Lightning,1
 34,8479318.0,Auston Matthews,C,Toronto Maple Leafs,34
@@ -139,7 +139,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 81,8478057.0,Dakota Joshua,C,Vancouver Canucks,11
 6,8477541.0,Dakota Mermis,D,Minnesota Wild,2
 78,8476923.0,Damon Severson,D,Columbus Blue Jackets,4
-17,8478466.0,Daniel Sprong,R,Detroit Red Wings,10
+17,8478466.0,Daniel Sprong,R,Detroit Red Wings,11
 57,8479371.0,Dante Fabbro,D,Nashville Predators,2
 43,8478046.0,Danton Heinen,C,Boston Bruins,5
 25,8477498.0,Darnell Nurse,D,Edmonton Oilers,6
@@ -165,7 +165,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 2,8476331.0,Dylan DeMelo,D,Winnipeg Jets,1
 11,8482699.0,Dylan Guenther,R,Arizona Coyotes,2
 55,8482077.0,Dylan Holloway,L,Edmonton Oilers,1
-71,8477946.0,Dylan Larkin,C,Detroit Red Wings,17
+71,8477946.0,Dylan Larkin,C,Detroit Red Wings,18
 17,8478440.0,Dylan Strome,C,Washington Capitals,19
 20,8480009.0,Eeli Tolvanen,R,Seattle,1
 20,8480009.0,Eeli Tolvanen,R,Seattle Kraken,10
@@ -334,7 +334,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 92,8483431.0,Logan Cooley,C,Arizona Coyotes,3
 25,8481186.0,Logan O'Connor,R,Colorado Avalanche,7
 37,8478011.0,Louie Belpedio,D,Philadelphia Flyers,2
-23,8482078.0,Lucas Raymond,L,Detroit Red Wings,14
+23,8482078.0,Lucas Raymond,L,Detroit Red Wings,15
 27,8482117.0,Lukas Reichel,L,Chicago Blackhawks,3
 77,8482146.0,Luke Evangelista,R,Nashville Predators,7
 11,8476822.0,Luke Glendening,C,Tampa Bay Lightning,7
@@ -403,7 +403,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 96,8478420.0,Mikko Rantanen,R,Colorado Avalanche,22
 28,8477425.0,Miles Wood,L,Colorado Avalanche,6
 4,8480036.0,Miro Heiskanen,D,Dallas Stars,4
-16,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,21
+16,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,22
 13,8478477.0,Mitchell Stephens,C,Montréal Canadiens,2
 36,8480289.0,Morgan Barron,C,Winnipeg Jets,8
 48,8480028.0,Morgan Frost,C,Philadelphia Flyers,7
@@ -473,7 +473,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 18,8478115.0,Pierre Engvall,L,New York Islanders,7
 41,8477930.0,Pierre-Edouard Bellemare,L,Seattle Kraken,4
 24,8480459.0,Pius Suter,C,Vancouver Canucks,8
-29,8480995.0,Pontus Holmberg,R,Toronto Maple Leafs,1
+29,8480995.0,Pontus Holmberg,R,Toronto Maple Leafs,2
 43,8480800.0,Quinn Hughes,D,Vancouver Canucks,11
 12,8476889.0,Radek Faksa,C,Dallas Stars,4
 63,8482241.0,Radim Zohorna,L,Pittsburgh Penguins,4
@@ -532,7 +532,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 23,8476474.0,Stefan Noesen,R,Carolina Hurricanes,13
 18,8478904.0,Steven Lorentz,C,Florida Panthers,1
 91,8474564.0,Steven Stamkos,C,Tampa Bay Lightning,18
-77,8471698.0,T.J. Oshie,R,Washington Capitals,4
+77,8471698.0,T.J. Oshie,R,Washington Capitals,5
 72,8479420.0,Tage Thompson,C,Buffalo Sabres,15
 84,8479661.0,Tanner Jeannot,L,Tampa Bay Lightning,7
 70,8476871.0,Tanner Pearson,L,Montréal Canadiens,4

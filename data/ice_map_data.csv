@@ -187,6 +187,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020283,9,8482109.0,Alexis Lafrenière,New York Rangers,1,76.0,-5.0
 2023020489,10,8482109.0,Alexis Lafrenière,New York Rangers,2,52.0,26.0
 2023020529,11,8482109.0,Alexis Lafrenière,New York Rangers,3,71.0,-9.0
+2023020669,12,8482109.0,Alexis Lafrenière,New York Rangers,1,82.0,7.0
 2023020216,1,8481656.0,Aliaksei Protas,Washington Capitals,2,73.0,-4.0
 2023020263,2,8481656.0,Aliaksei Protas,Washington Capitals,2,71.0,22.0
 2023020396,3,8481656.0,Aliaksei Protas,Washington Capitals,1,98.0,15.0
@@ -233,6 +234,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020183,5,8477429.0,Andrew Copp,Detroit Red Wings,3,73.0,-14.0
 2023020640,6,8477429.0,Andrew Copp,Detroit Red Wings,3,45.0,-12.0
 2023020659,7,8477429.0,Andrew Copp,Detroit Red Wings,2,84.0,-3.0
+2023020670,8,8477429.0,Andrew Copp,Detroit Red Wings,3,66.0,12.0
 2023020007,1,8478233.0,Andrew Mangiapane,Calgary Flames,1,74.0,-7.0
 2023020007,2,8478233.0,Andrew Mangiapane,Calgary Flames,3,65.0,-7.0
 2023020080,3,8478233.0,Andrew Mangiapane,Calgary Flames,2,83.0,2.0
@@ -302,6 +304,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020591,21,8478550.0,Artemi Panarin,New York Rangers,1,65.0,23.0
 2023020610,22,8478550.0,Artemi Panarin,New York Rangers,2,79.0,-0.0
 2023020621,23,8478550.0,Artemi Panarin,New York Rangers,2,71.0,-19.0
+2023020669,24,8478550.0,Artemi Panarin,New York Rangers,1,51.0,19.0
 2023020046,1,8477476.0,Artturi Lehkonen,Colorado Avalanche,2,70.0,-9.0
 2023020076,2,8477476.0,Artturi Lehkonen,Colorado Avalanche,2,81.0,0.0
 2023020143,3,8477476.0,Artturi Lehkonen,Colorado Avalanche,3,83.0,4.0
@@ -984,6 +987,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020510,8,8478466.0,Daniel Sprong,Detroit Red Wings,1,79.0,-6.0
 2023020534,9,8478466.0,Daniel Sprong,Detroit Red Wings,3,68.0,-27.0
 2023020586,10,8478466.0,Daniel Sprong,Detroit Red Wings,1,57.0,-5.0
+2023020670,11,8478466.0,Daniel Sprong,Detroit Red Wings,3,73.0,0.0
 2023020140,1,8479371.0,Dante Fabbro,Nashville Predators,1,32.0,-8.0
 2023020218,2,8479371.0,Dante Fabbro,Nashville Predators,1,60.0,17.0
 2023020229,1,8478046.0,Danton Heinen,Boston Bruins,1,79.0,-0.0
@@ -1137,6 +1141,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020620,15,8477946.0,Dylan Larkin,Detroit Red Wings,1,69.0,3.0
 2023020659,16,8477946.0,Dylan Larkin,Detroit Red Wings,1,87.0,30.0
 2023020659,17,8477946.0,Dylan Larkin,Detroit Red Wings,2,82.0,0.0
+2023020670,18,8477946.0,Dylan Larkin,Detroit Red Wings,2,78.0,21.0
 2023020069,1,8478440.0,Dylan Strome,Washington Capitals,3,79.0,-7.0
 2023020069,2,8478440.0,Dylan Strome,Washington Capitals,3,77.0,-14.0
 2023020099,3,8478440.0,Dylan Strome,Washington Capitals,1,71.0,7.0
@@ -2274,6 +2279,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020436,12,8482078.0,Lucas Raymond,Detroit Red Wings,3,68.0,-2.0
 2023020510,13,8482078.0,Lucas Raymond,Detroit Red Wings,5,76.0,-1.0
 2023020600,14,8482078.0,Lucas Raymond,Detroit Red Wings,5,78.0,1.0
+2023020670,15,8482078.0,Lucas Raymond,Detroit Red Wings,3,33.0,-17.0
 2023020246,1,8482117.0,Lukas Reichel,Chicago Blackhawks,1,72.0,-3.0
 2023020342,2,8482117.0,Lukas Reichel,Chicago Blackhawks,1,80.0,0.0
 2023020492,3,8482117.0,Lukas Reichel,Chicago Blackhawks,1,65.0,9.0
@@ -2719,6 +2725,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020613,19,8478483.0,Mitchell Marner,Toronto Maple Leafs,1,73.0,20.0
 2023020627,20,8478483.0,Mitchell Marner,Toronto Maple Leafs,2,84.0,11.0
 2023020627,21,8478483.0,Mitchell Marner,Toronto Maple Leafs,3,84.0,3.0
+2023020670,22,8478483.0,Mitchell Marner,Toronto Maple Leafs,2,83.0,-7.0
 2023020513,1,8478477.0,Mitchell Stephens,Montréal Canadiens,2,83.0,-4.0
 2023020542,2,8478477.0,Mitchell Stephens,Montréal Canadiens,1,81.0,14.0
 2023020020,1,8480289.0,Morgan Barron,Winnipeg Jets,2,80.0,2.0
@@ -3154,6 +3161,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020584,7,8480459.0,Pius Suter,Vancouver Canucks,1,87.0,-4.0
 2023020584,8,8480459.0,Pius Suter,Vancouver Canucks,3,37.0,1.0
 2023020627,1,8480995.0,Pontus Holmberg,Toronto Maple Leafs,2,80.0,-5.0
+2023020670,2,8480995.0,Pontus Holmberg,Toronto Maple Leafs,2,71.0,3.0
 2023020068,1,8480800.0,Quinn Hughes,Vancouver Canucks,1,42.0,6.0
 2023020116,2,8480800.0,Quinn Hughes,Vancouver Canucks,1,55.0,21.0
 2023020116,3,8480800.0,Quinn Hughes,Vancouver Canucks,2,68.0,-19.0
@@ -3602,6 +3610,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020448,2,8471698.0,T.J. Oshie,Washington Capitals,5,83.0,-3.0
 2023020468,3,8471698.0,T.J. Oshie,Washington Capitals,2,88.0,2.0
 2023020653,4,8471698.0,T.J. Oshie,Washington Capitals,3,89.0,-1.0
+2023020669,5,8471698.0,T.J. Oshie,Washington Capitals,2,81.0,-2.0
 2023020051,1,8479420.0,Tage Thompson,Buffalo Sabres,1,66.0,21.0
 2023020085,2,8479420.0,Tage Thompson,Buffalo Sabres,2,77.0,5.0
 2023020085,3,8479420.0,Tage Thompson,Buffalo Sabres,3,38.0,2.0
