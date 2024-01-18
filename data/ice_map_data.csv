@@ -208,6 +208,8 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020496,9,8475314.0,Anders Lee,New York Islanders,3,86.0,-5.0
 2023020516,10,8475314.0,Anders Lee,New York Islanders,3,76.0,-15.0
 2023020597,11,8475314.0,Anders Lee,New York Islanders,3,57.0,-0.0
+2023020685,12,8475314.0,Anders Lee,New York Islanders,1,79.0,-1.0
+2023020685,13,8475314.0,Anders Lee,New York Islanders,3,88.0,-7.0
 2023020598,1,8477444.0,Andre Burakovsky,Seattle Kraken,2,76.0,7.0
 2023020029,1,8483808.0,Andrei Kuzmenko,Vancouver Canucks,1,73.0,-3.0
 2023020068,2,8483808.0,Andrei Kuzmenko,Vancouver Canucks,3,81.0,-19.0
@@ -347,6 +349,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020627,32,8479318.0,Auston Matthews,Toronto Maple Leafs,1,82.0,-23.0
 2023020646,33,8479318.0,Auston Matthews,Toronto Maple Leafs,2,85.0,-6.0
 2023020646,34,8479318.0,Auston Matthews,Toronto Maple Leafs,2,80.0,1.0
+2023020688,35,8479318.0,Auston Matthews,Toronto Maple Leafs,1,68.0,22.0
 2023020495,1,8479536.0,Axel Jonsson-Fjallby,Winnipeg Jets,2,68.0,-9.0
 2023020274,1,8476624.0,Barclay Goodrow,New York Rangers,3,88.0,-1.0
 2023020185,1,8480849.0,Barrett Hayton,Arizona Coyotes,2,83.0,-3.0
@@ -378,11 +381,14 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020634,18,8476399.0,Blake Coleman,Calgary Flames,3,72.0,5.0
 2023020649,19,8476399.0,Blake Coleman,Calgary Flames,1,79.0,-7.0
 2023020668,20,8476399.0,Blake Coleman,Calgary Flames,1,82.0,-2.0
+2023020687,21,8476399.0,Blake Coleman,Calgary Flames,3,81.0,-2.0
 2023020196,1,8471218.0,Blake Wheeler,New York Rangers,3,83.0,-3.0
 2023020261,2,8471218.0,Blake Wheeler,New York Rangers,3,35.0,8.0
 2023020432,3,8471218.0,Blake Wheeler,New York Rangers,1,77.0,18.0
 2023020432,4,8471218.0,Blake Wheeler,New York Rangers,2,68.0,-19.0
 2023020511,5,8471218.0,Blake Wheeler,New York Rangers,1,85.0,-11.0
+2023020681,6,8471218.0,Blake Wheeler,New York Rangers,2,74.0,3.0
+2023020681,7,8471218.0,Blake Wheeler,New York Rangers,3,41.0,19.0
 2023020064,1,8477500.0,Bo Horvat,New York Islanders,2,89.0,-22.0
 2023020064,2,8477500.0,Bo Horvat,New York Islanders,3,87.0,8.0
 2023020107,3,8477500.0,Bo Horvat,New York Islanders,1,70.0,2.0
@@ -432,6 +438,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020333,2,8479383.0,Boris Katchouk,Chicago Blackhawks,1,79.0,-4.0
 2023020602,3,8479383.0,Boris Katchouk,Chicago Blackhawks,2,56.0,-16.0
 2023020664,4,8479383.0,Boris Katchouk,Chicago Blackhawks,2,88.0,-3.0
+2023020686,5,8479383.0,Boris Katchouk,Chicago Blackhawks,5,80.0,-4.0
 2023020525,1,8481524.0,Bowen  Byram,Colorado Avalanche,1,59.0,5.0
 2023020090,2,8481524.0,Bowen Byram,Colorado Avalanche,2,49.0,4.0
 2023020143,3,8481524.0,Bowen Byram,Colorado Avalanche,3,71.0,-6.0
@@ -849,6 +856,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020678,14,8481540.0,Cole Caufield,Montréal Canadiens,3,80.0,16.0
 2023020002,1,8480252.0,Cole Guttman,Chicago Blackhawks,3,71.0,-11.0
 2023020474,2,8480252.0,Cole Guttman,Chicago Blackhawks,3,63.0,-19.0
+2023020686,3,8480252.0,Cole Guttman,Chicago Blackhawks,1,82.0,-4.0
 2023020058,1,8482149.0,Cole Perfetti,Winnipeg Jets,2,84.0,0.0
 2023020184,2,8482149.0,Cole Perfetti,Winnipeg Jets,3,5.0,-36.0
 2023020200,3,8482149.0,Cole Perfetti,Winnipeg Jets,2,85.0,8.0
@@ -1079,12 +1087,14 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020257,1,8478585.0,Derek Ryan,Edmonton Oilers,1,77.0,-0.0
 2023020257,2,8478585.0,Derek Ryan,Edmonton Oilers,2,81.0,0.0
 2023020421,3,8478585.0,Derek Ryan,Edmonton Oilers,1,80.0,-9.0
+2023020688,4,8478585.0,Derek Ryan,Edmonton Oilers,3,75.0,1.0
 2023020061,1,8478038.0,Devon Toews,Colorado Avalanche,2,80.0,-13.0
 2023020240,2,8478038.0,Devon Toews,Colorado Avalanche,3,80.0,12.0
 2023020275,3,8478038.0,Devon Toews,Colorado Avalanche,2,49.0,-18.0
 2023020366,4,8478038.0,Devon Toews,Colorado Avalanche,1,66.0,16.0
 2023020582,5,8478038.0,Devon Toews,Colorado Avalanche,1,52.0,1.0
 2023020678,6,8478038.0,Devon Toews,Colorado Avalanche,3,63.0,-13.0
+2023020682,7,8478038.0,Devon Toews,Colorado Avalanche,3,80.0,-36.0
 2023020039,1,8479346.0,Dillon Dube,Calgary Flames,1,81.0,6.0
 2023020186,2,8479346.0,Dillon Dube,Calgary Flames,2,69.0,15.0
 2023020247,3,8479346.0,Dillon Dube,Calgary Flames,2,87.0,1.0
@@ -1125,6 +1135,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020531,12,8480208.0,Drake Batherson,Ottawa Senators,2,78.0,-0.0
 2023020531,13,8480208.0,Drake Batherson,Ottawa Senators,3,90.0,-20.0
 2023020655,14,8480208.0,Drake Batherson,Ottawa Senators,2,78.0,21.0
+2023020682,15,8480208.0,Drake Batherson,Ottawa Senators,1,68.0,16.0
 2023020217,1,8482055.0,Drew O'Connor,Pittsburgh Penguins,2,54.0,-21.0
 2023020345,2,8482055.0,Drew O'Connor,Pittsburgh Penguins,2,82.0,3.0
 2023020520,3,8482055.0,Drew O'Connor,Pittsburgh Penguins,3,78.0,-1.0
@@ -1241,6 +1252,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020022,1,8476979.0,Erik Gustafsson,New York Rangers,1,40.0,33.0
 2023020096,2,8476979.0,Erik Gustafsson,New York Rangers,2,86.0,-0.0
 2023020169,3,8476979.0,Erik Gustafsson,New York Rangers,1,74.0,16.0
+2023020681,4,8476979.0,Erik Gustafsson,New York Rangers,1,59.0,-1.0
 2023020012,1,8475287.0,Erik Haula,New Jersey Devils,3,82.0,5.0
 2023020036,2,8475287.0,Erik Haula,New Jersey Devils,3,78.0,2.0
 2023020113,3,8475287.0,Erik Haula,New Jersey Devils,2,83.0,-9.0
@@ -1264,6 +1276,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020233,1,8476902.0,Esa Lindell,Dallas Stars,1,60.0,9.0
 2023020430,2,8476902.0,Esa Lindell,Dallas Stars,1,44.0,1.0
 2023020458,3,8476902.0,Esa Lindell,Dallas Stars,1,64.0,26.0
+2023020683,1,8478451.0,Ethan Bear,Washington Capitals,1,76.0,6.0
 2023020077,1,8480803.0,Evan Bouchard,Edmonton Oilers,1,47.0,0.0
 2023020094,2,8480803.0,Evan Bouchard,Edmonton Oilers,1,37.0,-25.0
 2023020129,3,8480803.0,Evan Bouchard,Edmonton Oilers,1,34.0,-17.0
@@ -1274,6 +1287,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020421,8,8480803.0,Evan Bouchard,Edmonton Oilers,2,39.0,-19.0
 2023020545,9,8480803.0,Evan Bouchard,Edmonton Oilers,1,36.0,20.0
 2023020660,10,8480803.0,Evan Bouchard,Edmonton Oilers,4,44.0,12.0
+2023020688,11,8480803.0,Evan Bouchard,Edmonton Oilers,3,83.0,10.0
 2023020020,1,8478542.0,Evan Rodrigues,Florida Panthers,2,84.0,-1.0
 2023020020,2,8478542.0,Evan Rodrigues,Florida Panthers,3,82.0,-3.0
 2023020191,3,8478542.0,Evan Rodrigues,Florida Panthers,3,82.0,-6.0
@@ -1319,6 +1333,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020469,8,8474149.0,Evgenii Dadonov,Dallas Stars,3,75.0,-7.0
 2023020515,9,8474149.0,Evgenii Dadonov,Dallas Stars,3,78.0,-15.0
 2023020593,10,8474149.0,Evgenii Dadonov,Dallas Stars,1,83.0,-1.0
+2023020684,11,8474149.0,Evgenii Dadonov,Dallas Stars,1,79.0,12.0
 2023020039,1,8475744.0,Evgeny Kuznetsov,Washington Capitals,5,80.0,1.0
 2023020128,2,8475744.0,Evgeny Kuznetsov,Washington Capitals,3,26.0,-29.0
 2023020206,3,8475744.0,Evgeny Kuznetsov,Washington Capitals,2,78.0,8.0
@@ -1410,6 +1425,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020601,8,8480014.0,Gabriel Vilardi,Winnipeg Jets,3,85.0,4.0
 2023020631,9,8480014.0,Gabriel Vilardi,Winnipeg Jets,3,86.0,5.0
 2023020648,10,8480014.0,Gabriel Vilardi,Winnipeg Jets,3,81.0,-1.0
+2023020685,11,8480014.0,Gabriel Vilardi,Winnipeg Jets,1,81.0,1.0
 2023020131,1,8477903.0,Garnet Hathaway,Philadelphia Flyers,1,84.0,-5.0
 2023020157,2,8477903.0,Garnet Hathaway,Philadelphia Flyers,2,84.0,5.0
 2023020510,3,8477903.0,Garnet Hathaway,Philadelphia Flyers,3,83.0,-2.0
@@ -1657,6 +1673,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020065,3,8482105.0,Jake Sanderson,Ottawa Senators,1,37.0,-3.0
 2023020242,4,8482105.0,Jake Sanderson,Ottawa Senators,1,62.0,2.0
 2023020412,5,8482105.0,Jake Sanderson,Ottawa Senators,3,96.0,-18.0
+2023020682,6,8482105.0,Jake Sanderson,Ottawa Senators,2,82.0,-9.0
 2023020080,1,8478013.0,Jake Walman,Detroit Red Wings,3,40.0,27.0
 2023020134,2,8478013.0,Jake Walman,Detroit Red Wings,3,49.0,19.0
 2023020161,3,8478013.0,Jake Walman,Detroit Red Wings,2,59.0,-31.0
@@ -1715,6 +1732,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020453,14,8477955.0,Jared McCann,Seattle Kraken,3,53.0,22.0
 2023020658,15,8477955.0,Jared McCann,Seattle Kraken,1,69.0,-5.0
 2023020658,16,8477955.0,Jared McCann,Seattle Kraken,3,49.0,-7.0
+2023020681,17,8477955.0,Jared McCann,Seattle Kraken,3,84.0,3.0
 2023020002,1,8477450.0,Jason Dickinson,Chicago Blackhawks,3,67.0,-11.0
 2023020222,2,8477450.0,Jason Dickinson,Chicago Blackhawks,1,82.0,0.0
 2023020280,3,8477450.0,Jason Dickinson,Chicago Blackhawks,3,79.0,-9.0
@@ -1728,6 +1746,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020524,11,8477450.0,Jason Dickinson,Chicago Blackhawks,2,73.0,8.0
 2023020602,12,8477450.0,Jason Dickinson,Chicago Blackhawks,1,56.0,23.0
 2023020632,13,8477450.0,Jason Dickinson,Chicago Blackhawks,1,71.0,6.0
+2023020682,1,8484255.0,Jason Polin,Colorado Avalanche,2,66.0,-20.0
 2023020013,1,8480027.0,Jason Robertson,Dallas Stars,5,80.0,-7.0
 2023020088,2,8480027.0,Jason Robertson,Dallas Stars,2,85.0,-6.0
 2023020142,3,8480027.0,Jason Robertson,Dallas Stars,2,61.0,-14.0
@@ -1842,6 +1861,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020593,14,8470794.0,Joe Pavelski,Dallas Stars,2,75.0,22.0
 2023020636,15,8470794.0,Joe Pavelski,Dallas Stars,1,63.0,-18.0
 2023020664,16,8470794.0,Joe Pavelski,Dallas Stars,3,70.0,13.0
+2023020684,17,8470794.0,Joe Pavelski,Dallas Stars,3,78.0,-7.0
 2023020065,1,8480813.0,Joe Veleno,Detroit Red Wings,2,84.0,-13.0
 2023020065,2,8480813.0,Joe Veleno,Detroit Red Wings,3,84.0,9.0
 2023020080,3,8480813.0,Joe Veleno,Detroit Red Wings,1,65.0,5.0
@@ -1979,6 +1999,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020277,4,8474586.0,Jordan Eberle,Seattle Kraken,2,72.0,1.0
 2023020497,5,8474586.0,Jordan Eberle,Seattle Kraken,3,72.0,-1.0
 2023020658,6,8474586.0,Jordan Eberle,Seattle Kraken,1,69.0,-19.0
+2023020681,7,8474586.0,Jordan Eberle,Seattle Kraken,1,71.0,-3.0
 2023020027,1,8478413.0,Jordan Greenway,Buffalo Sabres,2,83.0,-1.0
 2023020165,2,8478413.0,Jordan Greenway,Buffalo Sabres,3,84.0,-8.0
 2023020498,3,8478413.0,Jordan Greenway,Buffalo Sabres,1,44.0,16.0
@@ -2095,6 +2116,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020529,7,8480817.0,K'Andre Miller,New York Rangers,3,45.0,23.0
 2023020078,1,8481554.0,Kaapo Kakko,New York Rangers,2,82.0,-1.0
 2023020274,2,8481554.0,Kaapo Kakko,New York Rangers,2,88.0,-9.0
+2023020681,3,8481554.0,Kaapo Kakko,New York Rangers,2,61.0,-2.0
 2023020048,1,8481527.0,Kaedan Korczak,Vegas Golden Knights,2,51.0,-21.0
 2023020212,1,8482087.0,Kaiden Guhle,Montréal Canadiens,4,75.0,-2.0
 2023020290,2,8482087.0,Kaiden Guhle,Montréal Canadiens,1,82.0,3.0
@@ -2134,6 +2156,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020295,2,8483466.0,Kevin Korchinski,Chicago Blackhawks,4,84.0,7.0
 2023020383,1,8478099.0,Kevin Labanc,San Jose Sharks,3,67.0,8.0
 2023020655,2,8478099.0,Kevin Labanc,San Jose Sharks,2,73.0,-9.0
+2023020686,3,8478099.0,Kevin Labanc,San Jose Sharks,5,68.0,0.0
 2023020364,1,8474031.0,Kevin Shattenkirk,Boston Bruins,2,81.0,-4.0
 2023020408,2,8474031.0,Kevin Shattenkirk,Boston Bruins,2,77.0,15.0
 2023020574,3,8474031.0,Kevin Shattenkirk,Boston Bruins,2,52.0,-41.0
@@ -2209,6 +2232,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020402,19,8478398.0,Kyle Connor,Winnipeg Jets,3,76.0,5.0
 2023020402,20,8478398.0,Kyle Connor,Winnipeg Jets,3,76.0,5.0
 2023020402,21,8478398.0,Kyle Connor,Winnipeg Jets,3,76.0,5.0
+2023020685,22,8478398.0,Kyle Connor,Winnipeg Jets,3,71.0,3.0
 2023020301,1,8473449.0,Kyle Okposo,Buffalo Sabres,3,86.0,25.0
 2023020310,2,8473449.0,Kyle Okposo,Buffalo Sabres,3,80.0,-0.0
 2023020322,3,8473449.0,Kyle Okposo,Buffalo Sabres,3,68.0,19.0
@@ -2280,12 +2304,14 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020583,16,8477934.0,Leon Draisaitl,Edmonton Oilers,3,55.0,-19.0
 2023020632,17,8477934.0,Leon Draisaitl,Edmonton Oilers,1,77.0,-2.0
 2023020660,18,8477934.0,Leon Draisaitl,Edmonton Oilers,3,88.0,-2.0
+2023020688,19,8477934.0,Leon Draisaitl,Edmonton Oilers,2,85.0,-22.0
 2023020137,1,8477070.0,Liam O'Brien,Arizona Coyotes,2,81.0,-1.0
 2023020160,2,8477070.0,Liam O'Brien,Arizona Coyotes,2,87.0,-2.0
 2023020470,3,8477070.0,Liam O'Brien,Arizona Coyotes,3,70.0,-4.0
 2023020144,1,8483431.0,Logan Cooley,Arizona Coyotes,1,79.0,-1.0
 2023020243,2,8483431.0,Logan Cooley,Arizona Coyotes,3,53.0,24.0
 2023020378,3,8483431.0,Logan Cooley,Arizona Coyotes,1,81.0,5.0
+2023020687,4,8483431.0,Logan Cooley,Arizona Coyotes,3,84.0,0.0
 2023020046,1,8481186.0,Logan O'Connor,Colorado Avalanche,2,77.0,5.0
 2023020061,2,8481186.0,Logan O'Connor,Colorado Avalanche,1,64.0,-3.0
 2023020076,3,8481186.0,Logan O'Connor,Colorado Avalanche,2,76.0,2.0
@@ -2293,6 +2319,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020537,5,8481186.0,Logan O'Connor,Colorado Avalanche,2,89.0,4.0
 2023020624,6,8481186.0,Logan O'Connor,Colorado Avalanche,2,76.0,5.0
 2023020637,7,8481186.0,Logan O'Connor,Colorado Avalanche,3,36.0,17.0
+2023020682,8,8481186.0,Logan O'Connor,Colorado Avalanche,3,66.0,-12.0
 2023020157,1,8478011.0,Louie Belpedio,Philadelphia Flyers,1,70.0,-19.0
 2023020208,2,8478011.0,Louie Belpedio,Philadelphia Flyers,2,82.0,-9.0
 2023020023,1,8482078.0,Lucas Raymond,Detroit Red Wings,2,68.0,-25.0
@@ -2433,6 +2460,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020200,4,8478891.0,Mason Appleton,Winnipeg Jets,1,82.0,-24.0
 2023020252,5,8478891.0,Mason Appleton,Winnipeg Jets,2,81.0,-1.0
 2023020262,6,8478891.0,Mason Appleton,Winnipeg Jets,3,66.0,-34.0
+2023020685,7,8478891.0,Mason Appleton,Winnipeg Jets,2,90.0,-7.0
 2023020532,1,8482511.0,Mason Lohrei,Boston Bruins,1,77.0,9.0
 2023020108,1,8478975.0,Mason Marchment,Dallas Stars,2,73.0,14.0
 2023020142,2,8478975.0,Mason Marchment,Dallas Stars,2,80.0,-3.0
@@ -2730,12 +2758,15 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020593,20,8478420.0,Mikko Rantanen,Colorado Avalanche,3,85.0,4.0
 2023020624,21,8478420.0,Mikko Rantanen,Colorado Avalanche,1,81.0,-1.0
 2023020662,22,8478420.0,Mikko Rantanen,Colorado Avalanche,2,76.0,-2.0
+2023020682,23,8478420.0,Mikko Rantanen,Colorado Avalanche,1,83.0,2.0
+2023020682,24,8478420.0,Mikko Rantanen,Colorado Avalanche,2,71.0,15.0
 2023020008,1,8477425.0,Miles Wood,Colorado Avalanche,3,61.0,1.0
 2023020188,2,8477425.0,Miles Wood,Colorado Avalanche,2,64.0,4.0
 2023020264,3,8477425.0,Miles Wood,Colorado Avalanche,2,86.0,1.0
 2023020350,4,8477425.0,Miles Wood,Colorado Avalanche,2,87.0,3.0
 2023020445,5,8477425.0,Miles Wood,Colorado Avalanche,1,64.0,-12.0
 2023020477,6,8477425.0,Miles Wood,Colorado Avalanche,1,76.0,20.0
+2023020682,7,8477425.0,Miles Wood,Colorado Avalanche,3,79.0,-9.0
 2023020059,1,8480036.0,Miro Heiskanen,Dallas Stars,3,81.0,7.0
 2023020430,2,8480036.0,Miro Heiskanen,Dallas Stars,1,49.0,-0.0
 2023020430,3,8480036.0,Miro Heiskanen,Dallas Stars,3,53.0,23.0
@@ -2793,6 +2824,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020429,4,8476853.0,Morgan Rielly,Toronto Maple Leafs,3,86.0,7.0
 2023020627,5,8476853.0,Morgan Rielly,Toronto Maple Leafs,1,68.0,13.0
 2023020662,6,8476853.0,Morgan Rielly,Toronto Maple Leafs,1,75.0,-6.0
+2023020688,7,8476853.0,Morgan Rielly,Toronto Maple Leafs,2,81.0,10.0
 2023020023,1,8481542.0,Moritz Seider,Detroit Red Wings,3,26.0,25.0
 2023020281,2,8481542.0,Moritz Seider,Detroit Red Wings,2,38.0,19.0
 2023020338,3,8481542.0,Moritz Seider,Detroit Red Wings,2,40.0,1.0
@@ -2840,9 +2872,11 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020617,11,8475172.0,Nazem Kadri,Calgary Flames,1,83.0,-3.0
 2023020617,12,8475172.0,Nazem Kadri,Calgary Flames,3,87.0,-19.0
 2023020668,13,8475172.0,Nazem Kadri,Calgary Flames,1,85.0,0.0
+2023020687,14,8475172.0,Nazem Kadri,Calgary Flames,3,83.0,5.0
 2023020184,1,8480145.0,Neal Pionk,Winnipeg Jets,1,71.0,-22.0
 2023020495,2,8480145.0,Neal Pionk,Winnipeg Jets,1,33.0,-33.0
 2023020580,3,8480145.0,Neal Pionk,Winnipeg Jets,2,69.0,-1.0
+2023020685,4,8480145.0,Neal Pionk,Winnipeg Jets,2,60.0,-19.0
 2023020216,1,8475343.0,Nic Dowd,Washington Capitals,2,88.0,-1.0
 2023020352,2,8475343.0,Nic Dowd,Washington Capitals,1,80.0,-0.0
 2023020422,3,8475343.0,Nic Dowd,Washington Capitals,2,88.0,-4.0
@@ -3257,6 +3291,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020171,6,8475191.0,Reilly Smith,Pittsburgh Penguins,1,84.0,-5.0
 2023020406,7,8475191.0,Reilly Smith,Pittsburgh Penguins,2,81.0,-0.0
 2023020480,8,8475191.0,Reilly Smith,Pittsburgh Penguins,1,84.0,-1.0
+2023020686,1,8479514.0,Rem Pitlick,Chicago Blackhawks,5,84.0,3.0
 2023020520,1,8476483.0,Rickard Rakell,Pittsburgh Penguins,2,79.0,0.0
 2023020533,2,8476483.0,Rickard Rakell,Pittsburgh Penguins,2,82.0,3.0
 2023020576,3,8476483.0,Rickard Rakell,Pittsburgh Penguins,1,48.0,-8.0
@@ -3266,6 +3301,8 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020123,2,8482092.0,Ridly Greig,Ottawa Senators,1,80.0,5.0
 2023020478,3,8482092.0,Ridly Greig,Ottawa Senators,1,60.0,7.0
 2023020507,4,8482092.0,Ridly Greig,Ottawa Senators,1,87.0,7.0
+2023020682,5,8482092.0,Ridly Greig,Ottawa Senators,2,86.0,1.0
+2023020682,6,8482092.0,Ridly Greig,Ottawa Senators,2,65.0,3.0
 2023020012,1,8477952.0,Robby Fabbri,Detroit Red Wings,3,79.0,-5.0
 2023020210,2,8477952.0,Robby Fabbri,Detroit Red Wings,1,76.0,-2.0
 2023020281,3,8477952.0,Robby Fabbri,Detroit Red Wings,1,79.0,-13.0
@@ -3319,6 +3356,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020505,15,8478449.0,Roope Hintz,Dallas Stars,2,78.0,-3.0
 2023020623,16,8478449.0,Roope Hintz,Dallas Stars,1,76.0,0.0
 2023020636,17,8478449.0,Roope Hintz,Dallas Stars,2,75.0,8.0
+2023020684,18,8478449.0,Roope Hintz,Dallas Stars,1,62.0,-9.0
 2023020090,1,8479525.0,Ross Colton,Colorado Avalanche,3,32.0,-39.0
 2023020143,2,8479525.0,Ross Colton,Colorado Avalanche,1,76.0,-10.0
 2023020188,3,8479525.0,Ross Colton,Colorado Avalanche,2,76.0,7.0
@@ -3331,6 +3369,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020678,10,8479525.0,Ross Colton,Colorado Avalanche,1,81.0,2.0
 2023020213,1,8478078.0,Rourke Chartier,Ottawa Senators,3,78.0,-11.0
 2023020370,1,8477846.0,Ryan Carpenter,San Jose Sharks,1,64.0,-6.0
+2023020686,2,8477846.0,Ryan Carpenter,San Jose Sharks,3,81.0,-12.0
 2023020002,1,8477987.0,Ryan Donato,Chicago Blackhawks,2,83.0,0.0
 2023020111,2,8477987.0,Ryan Donato,Chicago Blackhawks,1,74.0,11.0
 2023020174,3,8477987.0,Ryan Donato,Chicago Blackhawks,3,83.0,1.0
@@ -3375,6 +3414,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020501,5,8480802.0,Ryan McLeod,Edmonton Oilers,3,78.0,11.0
 2023020511,6,8480802.0,Ryan McLeod,Edmonton Oilers,3,81.0,1.0
 2023020545,7,8480802.0,Ryan McLeod,Edmonton Oilers,1,69.0,21.0
+2023020688,8,8480802.0,Ryan McLeod,Edmonton Oilers,3,76.0,-16.0
 2023020029,1,8476454.0,Ryan Nugent-Hopkins,Edmonton Oilers,2,62.0,20.0
 2023020044,2,8476454.0,Ryan Nugent-Hopkins,Edmonton Oilers,1,80.0,-14.0
 2023020203,3,8476454.0,Ryan Nugent-Hopkins,Edmonton Oilers,3,84.0,-8.0
@@ -3448,6 +3488,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020654,10,8478043.0,Sam Lafferty,Vancouver Canucks,2,80.0,0.0
 2023020445,1,8484258.0,Sam Malinski,Colorado Avalanche,3,59.0,32.0
 2023020624,2,8484258.0,Sam Malinski,Colorado Avalanche,2,33.0,-4.0
+2023020682,3,8484258.0,Sam Malinski,Colorado Avalanche,3,42.0,-4.0
 2023020020,1,8477933.0,Sam Reinhart,Florida Panthers,1,84.0,-8.0
 2023020036,2,8477933.0,Sam Reinhart,Florida Panthers,1,79.0,-4.0
 2023020036,3,8477933.0,Sam Reinhart,Florida Panthers,3,80.0,-1.0
@@ -3483,6 +3524,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020274,1,8479351.0,Sam Steel,Dallas Stars,3,21.0,1.0
 2023020356,2,8479351.0,Sam Steel,Dallas Stars,3,65.0,-10.0
 2023020636,3,8479351.0,Sam Steel,Dallas Stars,3,80.0,-11.0
+2023020684,4,8479351.0,Sam Steel,Dallas Stars,3,72.0,-8.0
 2023020057,1,8478104.0,Sammy Blais,St. Louis Blues,3,77.0,1.0
 2023020157,1,8476872.0,Scott Laughton,Philadelphia Flyers,1,64.0,22.0
 2023020363,2,8476872.0,Scott Laughton,Philadelphia Flyers,3,83.0,4.0
@@ -3507,6 +3549,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020137,4,8480434.0,Sean Durzi,Arizona Coyotes,2,51.0,-7.0
 2023020218,5,8480434.0,Sean Durzi,Arizona Coyotes,3,39.0,-2.0
 2023020537,6,8480434.0,Sean Durzi,Arizona Coyotes,3,29.0,12.0
+2023020687,7,8480434.0,Sean Durzi,Arizona Coyotes,2,40.0,-9.0
 2023020063,1,8476374.0,Sean Kuraly,Columbus Blue Jackets,2,57.0,-14.0
 2023020136,2,8476374.0,Sean Kuraly,Columbus Blue Jackets,3,85.0,-6.0
 2023020176,3,8476374.0,Sean Kuraly,Columbus Blue Jackets,1,83.0,7.0
@@ -3751,6 +3794,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020414,9,8476880.0,Tom Wilson,Washington Capitals,2,61.0,14.0
 2023020448,10,8476880.0,Tom Wilson,Washington Capitals,2,85.0,4.0
 2023020576,11,8476880.0,Tom Wilson,Washington Capitals,1,55.0,-27.0
+2023020683,12,8476880.0,Tom Wilson,Washington Capitals,3,49.0,-21.0
 2023020074,1,8476881.0,Tomas Hertl,San Jose Sharks,3,85.0,7.0
 2023020203,2,8476881.0,Tomas Hertl,San Jose Sharks,2,72.0,-5.0
 2023020237,3,8476881.0,Tomas Hertl,San Jose Sharks,3,80.0,2.0
@@ -3975,6 +4019,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020621,10,8476389.0,Vincent Trocheck,New York Rangers,1,83.0,-15.0
 2023020621,11,8476389.0,Vincent Trocheck,New York Rangers,3,66.0,27.0
 2023020647,12,8476389.0,Vincent Trocheck,New York Rangers,3,84.0,-22.0
+2023020681,13,8476389.0,Vincent Trocheck,New York Rangers,1,84.0,-5.0
 2023020480,1,8479968.0,Vinni Lettieri,Minnesota Wild,3,82.0,9.0
 2023020171,1,8476994.0,Vinnie Hinostroza,Pittsburgh Penguins,2,87.0,8.0
 2023020033,1,8475765.0,Vladimir Tarasenko,Ottawa Senators,1,81.0,10.0
@@ -4067,6 +4112,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020305,9,8482740.0,Wyatt Johnston,Dallas Stars,2,51.0,-16.0
 2023020577,10,8482740.0,Wyatt Johnston,Dallas Stars,3,77.0,-2.0
 2023020651,11,8482740.0,Wyatt Johnston,Dallas Stars,3,69.0,-3.0
+2023020684,12,8482740.0,Wyatt Johnston,Dallas Stars,3,68.0,19.0
 2023020256,1,8478508.0,Yakov Trenin,Nashville Predators,1,62.0,-13.0
 2023020275,2,8478508.0,Yakov Trenin,Nashville Predators,3,82.0,2.0
 2023020297,3,8478508.0,Yakov Trenin,Nashville Predators,1,87.0,4.0
@@ -4115,6 +4161,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020649,18,8481068.0,Yegor Sharangovich,Calgary Flames,1,74.0,-16.0
 2023020649,19,8481068.0,Yegor Sharangovich,Calgary Flames,3,60.0,-11.0
 2023020649,20,8481068.0,Yegor Sharangovich,Calgary Flames,3,80.0,-20.0
+2023020687,21,8481068.0,Yegor Sharangovich,Calgary Flames,4,67.0,-22.0
 2023020285,1,8484145.0,Zach Benson,Buffalo Sabres,1,82.0,5.0
 2023020348,2,8484145.0,Zach Benson,Buffalo Sabres,2,65.0,-9.0
 2023020445,3,8484145.0,Zach Benson,Buffalo Sabres,1,79.0,0.0
