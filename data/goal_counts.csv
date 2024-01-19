@@ -23,7 +23,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 21,8477505.0,Alex Wennberg,C,Seattle Kraken,7
 27,8480823.0,Alexander Alexeyev,D,Washington Capitals,1
 94,8482222.0,Alexander Barabanov,L,San Jose Sharks,3
-10,8482125.0,Alexander Holtz,R,New Jersey Devils,10
+10,8482125.0,Alexander Holtz,R,New Jersey Devils,11
 28,8481014.0,Alexander Romanov,D,New York Islanders,4
 45,8478851.0,Alexandre Carrier,D,Nashville Predators,3
 42,8480074.0,Alexandre Texier,C,Columbus Blue Jackets,6
@@ -116,7 +116,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 28,8473512.0,Claude Giroux,R,Ottawa Senators,15
 9,8479343.0,Clayton Keller,R,Arizona Coyotes,16
 8,8479996.0,Cody Glass,C,Nashville Predators,1
-22,8481540.0,Cole Caufield,R,Montréal Canadiens,14
+22,8481540.0,Cole Caufield,R,Montréal Canadiens,15
 70,8480252.0,Cole Guttman,C,Chicago Blackhawks,3
 91,8482149.0,Cole Perfetti,C,Winnipeg Jets,14
 4,8482705.0,Cole Sillinger,C,Columbus Blue Jackets,6
@@ -165,7 +165,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 2,8476331.0,Dylan DeMelo,D,Winnipeg Jets,1
 11,8482699.0,Dylan Guenther,R,Arizona Coyotes,2
 55,8482077.0,Dylan Holloway,L,Edmonton Oilers,1
-71,8477946.0,Dylan Larkin,C,Detroit Red Wings,18
+71,8477946.0,Dylan Larkin,C,Detroit Red Wings,19
 17,8478440.0,Dylan Strome,C,Washington Capitals,19
 20,8480009.0,Eeli Tolvanen,R,Seattle,1
 20,8480009.0,Eeli Tolvanen,R,Seattle Kraken,10
@@ -199,7 +199,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 13,8480014.0,Gabriel Vilardi,C,Winnipeg Jets,11
 19,8477903.0,Garnet Hathaway,R,Philadelphia Flyers,4
 54,8479379.0,Givani Smith,R,San Jose Sharks,1
-42,8478055.0,Gustav Forsling,D,Florida Panthers,5
+42,8478055.0,Gustav Forsling,D,Florida Panthers,6
 27,8480184.0,Gustav Lindström,D,Montréal Canadiens,3
 14,8474679.0,Gustav Nyquist,C,Nashville Predators,10
 27,8476854.0,Hampus Lindholm,D,Boston Bruins,1
@@ -298,8 +298,9 @@ jersey_number,player_id,player_name,position,team_name,goals
 42,8476312.0,Josh Manson,D,Colorado Avalanche,4
 44,8477504.0,Josh Morrissey,D,Winnipeg Jets,9
 9,8480064.0,Josh Norris,C,Ottawa Senators,15
+89,8482749.0,Joshua Roy,R,Montréal Canadiens,1
 16,8479328.0,Julien Gauthier,R,New York Islanders,3
-20,8483515.0,Juraj Slafkovsky,L,Montréal Canadiens,6
+20,8483515.0,Juraj Slafkovsky,L,Montréal Canadiens,7
 90,8477473.0,Justin Bailey,R,San Jose Sharks,2
 52,8482111.0,Justin Barron,D,Montréal Canadiens,6
 17,8479941.0,Justin Danforth,R,Columbus Blue Jackets,9
@@ -340,7 +341,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 27,8482117.0,Lukas Reichel,L,Chicago Blackhawks,3
 77,8482146.0,Luke Evangelista,R,Nashville Predators,8
 11,8476822.0,Luke Glendening,C,Tampa Bay Lightning,7
-43,8482684.0,Luke Hughes,D,New Jersey Devils,5
+43,8482684.0,Luke Hughes,D,New Jersey Devils,6
 11,8479316.0,Luke Kunin,C,San Jose Sharks,6
 58,8480025.0,MacKenzie Entwistle,R,Chicago Blackhawks,2
 52,8477346.0,MacKenzie Weegar,D,Calgary Flames,9
@@ -394,7 +395,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 47,8477446.0,Michael McCarron,R,Nashville Predators,6
 20,8479415.0,Michael McLeod,C,New Jersey Devils,10
 55,8479543.0,Michael Pezzetta,L,Montréal Canadiens,1
-27,8479992.0,Michael Rasmussen,C,Detroit Red Wings,13
+27,8479992.0,Michael Rasmussen,C,Detroit Red Wings,14
 93,8476459.0,Mika Zibanejad,C,New York Rangers,13
 11,8474150.0,Mikael Backlund,C,Calgary Flames,9
 64,8475798.0,Mikael Granlund,C,San Jose Sharks,7
@@ -488,7 +489,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 20,8479514.0,Rem Pitlick,C,Chicago Blackhawks,1
 67,8476483.0,Rickard Rakell,R,Pittsburgh Penguins,5
 71,8482092.0,Ridly Greig,C,Ottawa Senators,6
-14,8477952.0,Robby Fabbri,C,Detroit Red Wings,12
+14,8477952.0,Robby Fabbri,C,Detroit Red Wings,13
 18,8480023.0,Robert Thomas,C,St. Louis Blues,15
 59,8474600.0,Roman Josi,D,Nashville Predators,9
 24,8478449.0,Roope Hintz,C,Dallas Stars,18
@@ -514,7 +515,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 89,8474040.0,Sam Gagner,C,Edmonton Oilers,4
 18,8478043.0,Sam Lafferty,C,Vancouver Canucks,10
 70,8484258.0,Sam Malinski,D,Colorado Avalanche,3
-13,8477933.0,Sam Reinhart,C,Florida Panthers,32
+13,8477933.0,Sam Reinhart,C,Florida Panthers,33
 18,8479351.0,Sam Steel,C,Dallas Stars,4
 79,8478104.0,Sammy Blais,L,St. Louis Blues,1
 21,8476872.0,Scott Laughton,C,Philadelphia Flyers,4
@@ -551,8 +552,8 @@ jersey_number,player_id,player_name,position,team_name,goals
 37,8480043.0,Timothy Liljegren,D,Toronto Maple Leafs,1
 43,8476880.0,Tom Wilson,R,Washington Capitals,12
 48,8476881.0,Tomas Hertl,C,San Jose Sharks,16
-90,8475193.0,Tomas Tatar,L,Seattle Kraken,2
 90,8475193.0,Tomas Tatar,L,Colorado Avalanche,1
+90,8475193.0,Tomas Tatar,L,Seattle Kraken,2
 82,8478438.0,Tommy Novak,C,Nashville Predators,7
 77,8477950.0,Tony DeAngelo,D,Carolina Hurricanes,2
 47,8476792.0,Torey Krug,D,St. Louis Blues,1
@@ -602,8 +603,8 @@ jersey_number,player_id,player_name,position,team_name,goals
 88,8477939.0,William Nylander,R,Toronto Maple Leafs,22
 53,8482740.0,Wyatt Johnston,C,Dallas Stars,12
 13,8478508.0,Yakov Trenin,C,Nashville Predators,9
-37,8476826.0,Yanni Gourde,C,Seattle Kraken,7
 37,8476826.0,Yanni Gourde,C,Seattle,1
+37,8476826.0,Yanni Gourde,C,Seattle Kraken,7
 59,8482475.0,Yegor Chinakhov,R,Columbus Blue Jackets,11
 17,8481068.0,Yegor Sharangovich,C,Calgary Flames,21
 9,8484145.0,Zach Benson,L,Buffalo Sabres,4

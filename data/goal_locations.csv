@@ -159,6 +159,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 10.0,8482125.0,Alexander Holtz,R,New Jersey Devils,191,1,75.0,2.0,2023020087
 10.0,8482125.0,Alexander Holtz,R,New Jersey Devils,200,1,69.0,-16.0,2023020296
 10.0,8482125.0,Alexander Holtz,R,New Jersey Devils,435,2,-68.0,-15.0,2023020602
+10.0,8482125.0,Alexander Holtz,R,New Jersey Devils,527,3,48.0,17.0,2023020690
 10.0,8482125.0,Alexander Holtz,R,New Jersey Devils,677,3,-83.0,-9.0,2023020245
 10.0,8482125.0,Alexander Holtz,R,New Jersey Devils,688,3,84.0,2.0,2023020409
 28.0,8481014.0,Alexander Romanov,D,New York Islanders,264,1,46.0,13.0,2023020216
@@ -848,6 +849,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 22.0,8481540.0,Cole Caufield,R,Montréal Canadiens,545,3,-66.0,22.0,2023020300
 22.0,8481540.0,Cole Caufield,R,Montréal Canadiens,579,3,82.0,9.0,2023020577
 22.0,8481540.0,Cole Caufield,R,Montréal Canadiens,621,3,48.0,0.0,2023020005
+22.0,8481540.0,Cole Caufield,R,Montréal Canadiens,718,3,-84.0,-3.0,2023020690
 22.0,8481540.0,Cole Caufield,R,Montréal Canadiens,792,4,67.0,20.0,2023020069
 22.0,8481540.0,Cole Caufield,R,Montréal Canadiens,792,5,-73.0,-1.0,2023020411
 22.0,8481540.0,Cole Caufield,R,Montréal Canadiens,808,4,-64.0,-17.0,2023020195
@@ -1170,6 +1172,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 71.0,8477946.0,Dylan Larkin,C,Detroit Red Wings,701,3,-54.0,-14.0,2023020393
 71.0,8477946.0,Dylan Larkin,C,Detroit Red Wings,737,3,-20.0,-23.0,2023020380
 71.0,8477946.0,Dylan Larkin,C,Detroit Red Wings,738,3,-95.0,-24.0,2023020510
+71.0,8477946.0,Dylan Larkin,C,Detroit Red Wings,845,4,-62.0,8.0,2023020689
 17.0,8478440.0,Dylan Strome,C,Washington Capitals,213,1,-86.0,6.0,2023020114
 17.0,8478440.0,Dylan Strome,C,Washington Capitals,214,1,-71.0,-7.0,2023020099
 17.0,8478440.0,Dylan Strome,C,Washington Capitals,217,1,-82.0,2.0,2023020603
@@ -1434,6 +1437,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 42.0,8478055.0,Gustav Forsling,D,Florida Panthers,20,1,-66.0,-13.0,2023020420
 42.0,8478055.0,Gustav Forsling,D,Florida Panthers,49,1,-37.0,-30.0,2023020176
 42.0,8478055.0,Gustav Forsling,D,Florida Panthers,392,2,40.0,15.0,2023020118
+42.0,8478055.0,Gustav Forsling,D,Florida Panthers,464,2,71.0,3.0,2023020689
 42.0,8478055.0,Gustav Forsling,D,Florida Panthers,474,2,39.0,36.0,2023020514
 42.0,8478055.0,Gustav Forsling,D,Florida Panthers,766,3,84.0,-36.0,2023020581
 27.0,8480184.0,Gustav Lindström,D,Montréal Canadiens,314,2,85.0,-16.0,2023020231
@@ -2066,11 +2070,13 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 9.0,8480064.0,Josh Norris,C,Ottawa Senators,602,3,79.0,1.0,2023020149
 9.0,8480064.0,Josh Norris,C,Ottawa Senators,677,5,-74.0,-11.0,2023020254
 9.0,8480064.0,Josh Norris,C,Ottawa Senators,764,3,85.0,-10.0,2023020085
+89.0,8482749.0,Joshua Roy,R,Montréal Canadiens,440,2,76.0,0.0,2023020690
 16.0,8479328.0,Julien Gauthier,R,New York Islanders,140,1,64.0,10.0,2023020383
 16.0,8479328.0,Julien Gauthier,R,New York Islanders,589,3,57.0,-21.0,2023020359
 16.0,8479328.0,Julien Gauthier,R,New York Islanders,628,3,-56.0,-23.0,2023020597
 20.0,8483515.0,Juraj Slafkovsky,L,Montréal Canadiens,63,1,-84.0,7.0,2023020164
 20.0,8483515.0,Juraj Slafkovsky,L,Montréal Canadiens,89,1,-84.0,0.0,2023020678
+20.0,8483515.0,Juraj Slafkovsky,L,Montréal Canadiens,175,1,-76.0,-4.0,2023020690
 20.0,8483515.0,Juraj Slafkovsky,L,Montréal Canadiens,444,2,76.0,7.0,2023020258
 20.0,8483515.0,Juraj Slafkovsky,L,Montréal Canadiens,496,2,-86.0,1.0,2023020513
 20.0,8483515.0,Juraj Slafkovsky,L,Montréal Canadiens,697,3,79.0,-6.0,2023020506
@@ -2356,6 +2362,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 11.0,8476822.0,Luke Glendening,C,Tampa Bay Lightning,611,3,88.0,4.0,2023020303
 11.0,8476822.0,Luke Glendening,C,Tampa Bay Lightning,635,3,78.0,-7.0,2023020257
 43.0,8482684.0,Luke Hughes,D,New Jersey Devils,335,2,35.0,-8.0,2023020064
+43.0,8482684.0,Luke Hughes,D,New Jersey Devils,517,3,40.0,-7.0,2023020690
 43.0,8482684.0,Luke Hughes,D,New Jersey Devils,535,2,-59.0,-12.0,2023020387
 43.0,8482684.0,Luke Hughes,D,New Jersey Devils,604,3,65.0,-20.0,2023020310
 43.0,8482684.0,Luke Hughes,D,New Jersey Devils,757,3,55.0,-3.0,2023020528
@@ -2684,6 +2691,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 27.0,8479992.0,Michael Rasmussen,C,Detroit Red Wings,434,2,81.0,-1.0,2023020393
 27.0,8479992.0,Michael Rasmussen,C,Detroit Red Wings,434,2,81.0,-1.0,2023020393
 27.0,8479992.0,Michael Rasmussen,C,Detroit Red Wings,434,2,81.0,-1.0,2023020393
+27.0,8479992.0,Michael Rasmussen,C,Detroit Red Wings,458,2,-78.0,-8.0,2023020689
 27.0,8479992.0,Michael Rasmussen,C,Detroit Red Wings,619,3,58.0,23.0,2023020183
 27.0,8479992.0,Michael Rasmussen,C,Detroit Red Wings,738,3,-81.0,0.0,2023020620
 27.0,8479992.0,Michael Rasmussen,C,Detroit Red Wings,744,3,-84.0,6.0,2023020436
@@ -3314,6 +3322,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 14.0,8477952.0,Robby Fabbri,C,Detroit Red Wings,578,3,78.0,2.0,2023020600
 14.0,8477952.0,Robby Fabbri,C,Detroit Red Wings,594,3,-81.0,0.0,2023020436
 14.0,8477952.0,Robby Fabbri,C,Detroit Red Wings,627,3,-85.0,6.0,2023020342
+14.0,8477952.0,Robby Fabbri,C,Detroit Red Wings,652,3,69.0,9.0,2023020689
 14.0,8477952.0,Robby Fabbri,C,Detroit Red Wings,871,3,-79.0,5.0,2023020012
 18.0,8480023.0,Robert Thomas,C,St. Louis Blues,59,1,57.0,-11.0,2023020524
 18.0,8480023.0,Robert Thomas,C,St. Louis Blues,127,1,80.0,-2.0,2023020451
@@ -3504,6 +3513,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,277,2,70.0,-9.0,2023020630
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,283,2,68.0,2.0,2023020530
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,367,2,94.0,9.0,2023020222
+13.0,8477933.0,Sam Reinhart,C,Florida Panthers,368,2,65.0,7.0,2023020689
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,382,2,89.0,2.0,2023020323
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,393,2,85.0,5.0,2023020237
 13.0,8477933.0,Sam Reinhart,C,Florida Panthers,488,2,81.0,-7.0,2023020089
