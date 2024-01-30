@@ -593,6 +593,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020292,2,8479293.0,Brandon Tanev,Seattle Kraken,1,78.0,1.0
 2023020497,3,8479293.0,Brandon Tanev,Seattle Kraken,2,84.0,-1.0
 2023020743,4,8479293.0,Brandon Tanev,Seattle Kraken,2,67.0,-10.0
+2023020774,5,8479293.0,Brandon Tanev,Seattle Kraken,3,27.0,-13.0
 2023020244,1,8475188.0,Brayden McNabb,Vegas Golden Knights,2,70.0,-7.0
 2023020427,2,8475188.0,Brayden McNabb,Vegas Golden Knights,3,73.0,11.0
 2023020016,1,8481167.0,Brayden Pachal,Vegas Golden Knights,3,64.0,-14.0
@@ -635,6 +636,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020713,12,8475170.0,Brayden Schenn,St. Louis Blues,2,64.0,-20.0
 2023020735,13,8475170.0,Brayden Schenn,St. Louis Blues,2,65.0,2.0
 2023020744,14,8475170.0,Brayden Schenn,St. Louis Blues,4,69.0,14.0
+2023020773,15,8475170.0,Brayden Schenn,St. Louis Blues,4,60.0,21.0
 2023020716,1,8482153.0,Brendan Brisson,Vegas Golden Knights,3,60.0,9.0
 2023020069,1,8475848.0,Brendan Gallagher,Montréal Canadiens,2,84.0,1.0
 2023020082,2,8475848.0,Brendan Gallagher,Montréal Canadiens,3,78.0,1.0
@@ -1953,6 +1955,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020681,17,8477955.0,Jared McCann,Seattle Kraken,3,84.0,3.0
 2023020698,18,8477955.0,Jared McCann,Seattle Kraken,1,75.0,5.0
 2023020743,19,8477955.0,Jared McCann,Seattle Kraken,1,64.0,16.0
+2023020774,20,8477955.0,Jared McCann,Seattle Kraken,1,64.0,10.0
 2023020002,1,8477450.0,Jason Dickinson,Chicago Blackhawks,3,67.0,-11.0
 2023020222,2,8477450.0,Jason Dickinson,Chicago Blackhawks,1,82.0,0.0
 2023020280,3,8477450.0,Jason Dickinson,Chicago Blackhawks,3,79.0,-9.0
@@ -2255,6 +2258,8 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020658,6,8474586.0,Jordan Eberle,Seattle Kraken,1,69.0,-19.0
 2023020681,7,8474586.0,Jordan Eberle,Seattle Kraken,1,71.0,-3.0
 2023020723,8,8474586.0,Jordan Eberle,Seattle Kraken,2,82.0,-6.0
+2023020774,9,8474586.0,Jordan Eberle,Seattle Kraken,1,85.0,-5.0
+2023020774,10,8474586.0,Jordan Eberle,Seattle Kraken,1,84.0,10.0
 2023020027,1,8478413.0,Jordan Greenway,Buffalo Sabres,2,83.0,-1.0
 2023020165,2,8478413.0,Jordan Greenway,Buffalo Sabres,3,84.0,-8.0
 2023020498,3,8478413.0,Jordan Greenway,Buffalo Sabres,1,44.0,16.0
@@ -2276,6 +2281,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020647,12,8479385.0,Jordan Kyrou,St. Louis Blues,1,85.0,-3.0
 2023020647,13,8479385.0,Jordan Kyrou,St. Louis Blues,3,67.0,-2.0
 2023020735,14,8479385.0,Jordan Kyrou,St. Louis Blues,3,58.0,8.0
+2023020773,15,8479385.0,Jordan Kyrou,St. Louis Blues,2,62.0,-3.0
 2023020032,1,8476921.0,Jordan Martinook,Carolina Hurricanes,5,82.0,-3.0
 2023020419,2,8476921.0,Jordan Martinook,Carolina Hurricanes,2,71.0,5.0
 2023020575,3,8476921.0,Jordan Martinook,Carolina Hurricanes,2,78.0,-2.0
@@ -3290,6 +3296,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020743,9,8473422.0,Nick Foligno,Chicago Blackhawks,3,86.0,3.0
 2023020109,1,8475181.0,Nick Leddy,St. Louis Blues,1,36.0,29.0
 2023020287,2,8475181.0,Nick Leddy,St. Louis Blues,2,87.0,-6.0
+2023020773,3,8475181.0,Nick Leddy,St. Louis Blues,1,47.0,8.0
 2023020626,1,8480246.0,Nick Perbix,Tampa Bay Lightning,4,79.0,1.0
 2023020017,1,8477951.0,Nick Schmaltz,Arizona Coyotes,3,75.0,20.0
 2023020017,2,8477951.0,Nick Schmaltz,Arizona Coyotes,5,77.0,-5.0
@@ -3572,6 +3579,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020744,14,8477402.0,Pavel Buchnevich,St. Louis Blues,1,85.0,8.0
 2023020758,15,8477402.0,Pavel Buchnevich,St. Louis Blues,3,64.0,16.0
 2023020758,16,8477402.0,Pavel Buchnevich,St. Louis Blues,4,75.0,-5.0
+2023020773,17,8477402.0,Pavel Buchnevich,St. Louis Blues,2,62.0,7.0
 2023020111,1,8481604.0,Pavel Dorofeyev,Vegas Golden Knights,1,76.0,1.0
 2023020410,2,8481604.0,Pavel Dorofeyev,Vegas Golden Knights,3,86.0,-2.0
 2023020514,3,8481604.0,Pavel Dorofeyev,Vegas Golden Knights,2,81.0,-7.0
@@ -4643,6 +4651,8 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020528,10,8482475.0,Yegor Chinakhov,Columbus Blue Jackets,3,71.0,-4.0
 2023020673,11,8482475.0,Yegor Chinakhov,Columbus Blue Jackets,1,75.0,0.0
 2023020753,12,8482475.0,Yegor Chinakhov,Columbus Blue Jackets,1,77.0,2.0
+2023020774,13,8482475.0,Yegor Chinakhov,Columbus Blue Jackets,3,58.0,18.0
+2023020774,14,8482475.0,Yegor Chinakhov,Columbus Blue Jackets,3,58.0,-5.0
 2023020080,1,8481068.0,Yegor Sharangovich,Calgary Flames,2,42.0,1.0
 2023020170,2,8481068.0,Yegor Sharangovich,Calgary Flames,3,66.0,8.0
 2023020207,3,8481068.0,Yegor Sharangovich,Calgary Flames,5,64.0,-5.0
