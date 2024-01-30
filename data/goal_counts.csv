@@ -67,7 +67,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 63,8473419.0,Brad Marchand,L,Boston Bruins,26
 4,8482073.0,Braden Schneider,D,New York Rangers,3
 76,8476869.0,Brady Skjei,D,Carolina Hurricanes,7
-7,8480801.0,Brady Tkachuk,L,Ottawa Senators,20
+7,8480801.0,Brady Tkachuk,L,Ottawa Senators,21
 15,8482061.0,Brandon Biro,L,Buffalo Sabres,2
 25,8478443.0,Brandon Carlo,D,Boston Bruins,3
 21,8479520.0,Brandon Duhaime,R,Minnesota Wild,4
@@ -114,7 +114,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 8,8475690.0,Chris Tanev,D,Calgary Flames,1
 28,8477989.0,Christian Dvorak,C,Montréal Canadiens,3
 36,8478432.0,Christian Fischer,R,Detroit Red Wings,2
-28,8473512.0,Claude Giroux,R,Ottawa Senators,16
+28,8473512.0,Claude Giroux,R,Ottawa Senators,17
 9,8479343.0,Clayton Keller,R,Arizona Coyotes,19
 8,8479996.0,Cody Glass,C,Nashville Predators,1
 22,8481540.0,Cole Caufield,R,Montréal Canadiens,18
@@ -160,7 +160,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 7,8475200.0,Dmitry Orlov,D,Carolina Hurricanes,3
 81,8477330.0,Dominik Kubalik,L,Ottawa Senators,8
 7,8476462.0,Dougie Hamilton,D,New Jersey Devils,5
-19,8480208.0,Drake Batherson,R,Ottawa Senators,15
+19,8480208.0,Drake Batherson,R,Ottawa Senators,16
 10,8482055.0,Drew O'Connor,L,Pittsburgh Penguins,5
 24,8481528.0,Dylan Cozens,C,Buffalo Sabres,10
 2,8476331.0,Dylan DeMelo,D,Winnipeg Jets,1
@@ -403,7 +403,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 53,8479619.0,Michael Carcone,L,Arizona Coyotes,15
 23,8479591.0,Michael Eyssimont,C,Tampa Bay Lightning,8
 5,8480891.0,Michael Kesselring,D,Arizona Coyotes,4
-47,8477446.0,Michael McCarron,R,Nashville Predators,6
+47,8477446.0,Michael McCarron,R,Nashville Predators,7
 20,8479415.0,Michael McLeod,C,New Jersey Devils,10
 55,8479543.0,Michael Pezzetta,L,Montréal Canadiens,2
 27,8479992.0,Michael Rasmussen,C,Detroit Red Wings,14
@@ -481,7 +481,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 34,8483490.0,Pavel Mintyukov,D,Anaheim Ducks,2
 18,8478401.0,Pavel Zacha,C,Boston Bruins,9
 19,8481522.0,Peyton Krebs,C,Buffalo Sabres,3
-26,8481577.0,Philip Tomasino,C,Nashville Predators,5
+26,8481577.0,Philip Tomasino,C,Nashville Predators,6
 23,8480798.0,Philipp Kurashev,C,Chicago Blackhawks,9
 34,8476858.0,Phillip Di Giuseppe,L,Vancouver Canucks,3
 18,8478115.0,Pierre Engvall,L,New York Islanders,7
@@ -563,7 +563,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 86,8476882.0,Teuvo Teravainen,L,Carolina Hurricanes,16
 72,8478469.0,Thomas Chabot,D,Ottawa Senators,2
 55,8481581.0,Thomas Harley,D,Dallas Stars,13
-18,8482116.0,Tim Stützle,C,Ottawa Senators,10
+18,8482116.0,Tim Stützle,C,Ottawa Senators,11
 28,8478414.0,Timo Meier,R,New Jersey Devils,9
 37,8480043.0,Timothy Liljegren,D,Toronto Maple Leafs,1
 43,8476880.0,Tom Wilson,R,Washington Capitals,12
@@ -621,7 +621,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 71,8476448.0,William Karlsson,C,Vegas Golden Knights,16
 88,8477939.0,William Nylander,R,Toronto Maple Leafs,24
 53,8482740.0,Wyatt Johnston,C,Dallas Stars,14
-13,8478508.0,Yakov Trenin,C,Nashville Predators,9
+13,8478508.0,Yakov Trenin,C,Nashville Predators,10
 37,8476826.0,Yanni Gourde,C,Seattle,1
 37,8476826.0,Yanni Gourde,C,Seattle Kraken,7
 59,8482475.0,Yegor Chinakhov,R,Columbus Blue Jackets,14

@@ -549,6 +549,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020655,18,8480801.0,Brady Tkachuk,Ottawa Senators,2,58.0,-20.0
 2023020693,19,8480801.0,Brady Tkachuk,Ottawa Senators,1,58.0,-25.0
 2023020765,20,8480801.0,Brady Tkachuk,Ottawa Senators,1,81.0,-5.0
+2023020775,21,8480801.0,Brady Tkachuk,Ottawa Senators,2,70.0,-3.0
 2023020141,1,8482061.0,Brandon Biro,Buffalo Sabres,1,85.0,3.0
 2023020141,2,8482061.0,Brandon Biro,Buffalo Sabres,3,70.0,-2.0
 2023020229,1,8478443.0,Brandon Carlo,Boston Bruins,1,69.0,-0.0
@@ -924,6 +925,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020638,14,8473512.0,Claude Giroux,Ottawa Senators,3,55.0,-25.0
 2023020655,15,8473512.0,Claude Giroux,Ottawa Senators,1,76.0,-8.0
 2023020718,16,8473512.0,Claude Giroux,Ottawa Senators,3,85.0,2.0
+2023020775,17,8473512.0,Claude Giroux,Ottawa Senators,4,81.0,20.0
 2023020037,1,8479343.0,Clayton Keller,Arizona Coyotes,2,59.0,-25.0
 2023020057,2,8479343.0,Clayton Keller,Arizona Coyotes,2,83.0,-1.0
 2023020066,3,8479343.0,Clayton Keller,Arizona Coyotes,2,59.0,-22.0
@@ -1277,6 +1279,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020531,13,8480208.0,Drake Batherson,Ottawa Senators,3,90.0,-20.0
 2023020655,14,8480208.0,Drake Batherson,Ottawa Senators,2,78.0,21.0
 2023020682,15,8480208.0,Drake Batherson,Ottawa Senators,1,68.0,16.0
+2023020775,16,8480208.0,Drake Batherson,Ottawa Senators,2,79.0,-2.0
 2023020217,1,8482055.0,Drew O'Connor,Pittsburgh Penguins,2,54.0,-21.0
 2023020345,2,8482055.0,Drew O'Connor,Pittsburgh Penguins,2,82.0,3.0
 2023020520,3,8482055.0,Drew O'Connor,Pittsburgh Penguins,3,78.0,-1.0
@@ -3007,6 +3010,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020435,4,8477446.0,Michael McCarron,Nashville Predators,2,73.0,-4.0
 2023020515,5,8477446.0,Michael McCarron,Nashville Predators,2,81.0,2.0
 2023020595,6,8477446.0,Michael McCarron,Nashville Predators,3,19.0,-11.0
+2023020775,7,8477446.0,Michael McCarron,Nashville Predators,1,67.0,-9.0
 2023020036,1,8479415.0,Michael McLeod,New Jersey Devils,3,81.0,6.0
 2023020151,2,8479415.0,Michael McLeod,New Jersey Devils,1,84.0,-4.0
 2023020174,3,8479415.0,Michael McLeod,New Jersey Devils,3,6.0,-1.0
@@ -3606,6 +3610,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020502,3,8481577.0,Philip Tomasino,Nashville Predators,2,83.0,2.0
 2023020502,4,8481577.0,Philip Tomasino,Nashville Predators,3,68.0,11.0
 2023020629,5,8481577.0,Philip Tomasino,Nashville Predators,3,70.0,-13.0
+2023020775,6,8481577.0,Philip Tomasino,Nashville Predators,1,81.0,-11.0
 2023020111,1,8480798.0,Philipp Kurashev,Chicago Blackhawks,4,51.0,-3.0
 2023020168,2,8480798.0,Philipp Kurashev,Chicago Blackhawks,3,62.0,1.0
 2023020256,3,8480798.0,Philipp Kurashev,Chicago Blackhawks,2,85.0,0.0
@@ -4243,6 +4248,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020693,8,8482116.0,Tim Stützle,Ottawa Senators,1,61.0,-14.0
 2023020718,9,8482116.0,Tim Stützle,Ottawa Senators,2,84.0,-1.0
 2023020718,10,8482116.0,Tim Stützle,Ottawa Senators,3,75.0,36.0
+2023020775,11,8482116.0,Tim Stützle,Ottawa Senators,2,59.0,-4.0
 2023020099,1,8478414.0,Timo Meier,New Jersey Devils,2,81.0,1.0
 2023020151,2,8478414.0,Timo Meier,New Jersey Devils,2,82.0,-4.0
 2023020188,3,8478414.0,Timo Meier,New Jersey Devils,2,79.0,-11.0
@@ -4631,6 +4637,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020398,7,8478508.0,Yakov Trenin,Nashville Predators,3,70.0,9.0
 2023020398,8,8478508.0,Yakov Trenin,Nashville Predators,3,70.0,9.0
 2023020468,9,8478508.0,Yakov Trenin,Nashville Predators,3,81.0,3.0
+2023020775,10,8478508.0,Yakov Trenin,Nashville Predators,1,81.0,-7.0
 2023020060,1,8476826.0,Yanni Gourde,Seattle Kraken,1,85.0,-7.0
 2023020133,2,8476826.0,Yanni Gourde,Seattle Kraken,1,63.0,-5.0
 2023020265,3,8476826.0,Yanni Gourde,Seattle Kraken,3,85.0,1.0
