@@ -1248,6 +1248,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020673,8,8481716.0,Dmitri Voronkov,Columbus Blue Jackets,3,87.0,6.0
 2023020736,9,8481716.0,Dmitri Voronkov,Columbus Blue Jackets,1,83.0,15.0
 2023020753,10,8481716.0,Dmitri Voronkov,Columbus Blue Jackets,3,80.0,3.0
+2023020776,11,8481716.0,Dmitri Voronkov,Columbus Blue Jackets,3,76.0,-2.0
 2023020167,1,8475200.0,Dmitry Orlov,Carolina Hurricanes,3,43.0,-2.0
 2023020603,2,8475200.0,Dmitry Orlov,Carolina Hurricanes,3,93.0,-21.0
 2023020763,3,8475200.0,Dmitry Orlov,Carolina Hurricanes,3,80.0,22.0
@@ -1936,6 +1937,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020418,2,8476467.0,Jamie Oleksiak,Seattle Kraken,2,47.0,18.0
 2023020715,1,8480172.0,Jan Rutta,San Jose Sharks,3,72.0,-35.0
 2023020762,2,8480172.0,Jan Rutta,San Jose Sharks,1,28.0,-13.0
+2023020777,3,8480172.0,Jan Rutta,San Jose Sharks,3,97.0,8.0
 2023020515,1,8475825.0,Jani Hakanpää,Dallas Stars,3,43.0,-25.0
 2023020651,2,8475825.0,Jani Hakanpää,Dallas Stars,3,75.0,-16.0
 2023020442,1,8478424.0,Jansen Harkins,Pittsburgh Penguins,5,72.0,6.0
@@ -2695,6 +2697,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020655,1,8471709.0,Marc-Edouard Vlasic,San Jose Sharks,2,80.0,4.0
 2023020715,2,8471709.0,Marc-Edouard Vlasic,San Jose Sharks,2,82.0,2.0
 2023020762,3,8471709.0,Marc-Edouard Vlasic,San Jose Sharks,1,61.0,33.0
+2023020777,4,8471709.0,Marc-Edouard Vlasic,San Jose Sharks,3,38.0,29.0
 2023020026,1,8482079.0,Marco Rossi,Minnesota Wild,2,81.0,-2.0
 2023020094,2,8482079.0,Marco Rossi,Minnesota Wild,1,78.0,-0.0
 2023020114,3,8482079.0,Marco Rossi,Minnesota Wild,1,62.0,10.0

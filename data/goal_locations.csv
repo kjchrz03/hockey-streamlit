@@ -1245,6 +1245,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 10.0,8481716.0,Dmitri Voronkov,L,Columbus Blue Jackets,302,2,-79.0,1.0,2023020166
 10.0,8481716.0,Dmitri Voronkov,L,Columbus Blue Jackets,321,2,-75.0,1.0,2023020673
 10.0,8481716.0,Dmitri Voronkov,L,Columbus Blue Jackets,393,2,-83.0,-15.0,2023020280
+10.0,8481716.0,Dmitri Voronkov,L,Columbus Blue Jackets,591,3,-76.0,2.0,2023020776
 10.0,8481716.0,Dmitri Voronkov,L,Columbus Blue Jackets,682,3,87.0,0.0,2023020420
 10.0,8481716.0,Dmitri Voronkov,L,Columbus Blue Jackets,688,3,87.0,6.0,2023020673
 10.0,8481716.0,Dmitri Voronkov,L,Columbus Blue Jackets,720,3,80.0,3.0,2023020753
@@ -1936,6 +1937,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 24.0,8476467.0,Jamie Oleksiak,D,Seattle Kraken,441,2,-47.0,-18.0,2023020418
 84.0,8480172.0,Jan Rutta,D,San Jose Sharks,150,1,28.0,-13.0,2023020762
 84.0,8480172.0,Jan Rutta,D,San Jose Sharks,651,3,72.0,-35.0,2023020715
+84.0,8480172.0,Jan Rutta,D,San Jose Sharks,771,3,-97.0,-8.0,2023020777
 2.0,8475825.0,Jani Hakanpää,D,Dallas Stars,569,3,-75.0,16.0,2023020651
 2.0,8475825.0,Jani Hakanpää,D,Dallas Stars,794,3,-43.0,25.0,2023020515
 43.0,8478424.0,Jansen Harkins,C,Pittsburgh Penguins,870,5,72.0,6.0,2023020442
@@ -2695,6 +2697,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 44.0,8471709.0,Marc-Edouard Vlasic,D,San Jose Sharks,111,1,61.0,33.0,2023020762
 44.0,8471709.0,Marc-Edouard Vlasic,D,San Jose Sharks,332,2,80.0,4.0,2023020655
 44.0,8471709.0,Marc-Edouard Vlasic,D,San Jose Sharks,420,2,-82.0,-2.0,2023020715
+44.0,8471709.0,Marc-Edouard Vlasic,D,San Jose Sharks,623,3,38.0,29.0,2023020777
 23.0,8482079.0,Marco Rossi,C,Minnesota Wild,31,1,62.0,10.0,2023020114
 23.0,8482079.0,Marco Rossi,C,Minnesota Wild,36,1,-70.0,8.0,2023020369
 23.0,8482079.0,Marco Rossi,C,Minnesota Wild,104,1,-78.0,0.0,2023020094

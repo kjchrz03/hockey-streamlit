@@ -156,7 +156,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 10,8478585.0,Derek Ryan,C,Edmonton Oilers,4
 7,8478038.0,Devon Toews,D,Colorado Avalanche,7
 29,8479346.0,Dillon Dube,C,Calgary Flames,3
-10,8481716.0,Dmitri Voronkov,L,Columbus Blue Jackets,10
+10,8481716.0,Dmitri Voronkov,L,Columbus Blue Jackets,11
 7,8475200.0,Dmitry Orlov,D,Carolina Hurricanes,3
 81,8477330.0,Dominik Kubalik,L,Ottawa Senators,8
 7,8476462.0,Dougie Hamilton,D,New Jersey Devils,5
@@ -252,7 +252,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 9,8482142.0,Jamie Drysdale,D,Philadelphia Flyers,1
 6,8482142.0,Jamie Drysdale,D,Anaheim Ducks,1
 24,8476467.0,Jamie Oleksiak,D,Seattle Kraken,2
-84,8480172.0,Jan Rutta,D,San Jose Sharks,2
+84,8480172.0,Jan Rutta,D,San Jose Sharks,3
 2,8475825.0,Jani Hakanpää,D,Dallas Stars,2
 43,8478424.0,Jansen Harkins,C,Pittsburgh Penguins,1
 19,8477955.0,Jared McCann,L,Seattle Kraken,20
@@ -357,7 +357,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 58,8480025.0,MacKenzie Entwistle,R,Chicago Blackhawks,2
 52,8477346.0,MacKenzie Weegar,D,Calgary Flames,12
 18,8471686.0,Marc Staal,D,Philadelphia Flyers,1
-44,8471709.0,Marc-Edouard Vlasic,D,San Jose Sharks,3
+44,8471709.0,Marc-Edouard Vlasic,D,San Jose Sharks,4
 23,8482079.0,Marco Rossi,C,Minnesota Wild,13
 6,8474618.0,Marco Scandella,D,St. Louis Blues,2
 17,8475220.0,Marcus Foligno,L,Minnesota Wild,7
