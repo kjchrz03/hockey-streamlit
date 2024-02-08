@@ -40,7 +40,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 59,8481065.0,Angus Crookshank,L,Ottawa Senators,1
 91,8478463.0,Anthony Beauvillier,L,Chicago Blackhawks,4
 71,8478519.0,Anthony Cirelli,C,Tampa Bay Lightning,11
-10,8477407.0,Anthony Duclair,L,San Jose Sharks,8
+10,8477407.0,Anthony Duclair,L,San Jose Sharks,9
 39,8477511.0,Anthony Mantha,R,Washington Capitals,15
 15,8482113.0,Anton Lundell,C,Florida Panthers,4
 2,8482245.0,Artem Zub,D,Ottawa Senators,2
@@ -67,7 +67,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 63,8473419.0,Brad Marchand,L,Boston Bruins,26
 4,8482073.0,Braden Schneider,D,New York Rangers,3
 76,8476869.0,Brady Skjei,D,Carolina Hurricanes,7
-7,8480801.0,Brady Tkachuk,L,Ottawa Senators,21
+7,8480801.0,Brady Tkachuk,L,Ottawa Senators,22
 15,8482061.0,Brandon Biro,L,Buffalo Sabres,2
 25,8478443.0,Brandon Carlo,D,Boston Bruins,3
 21,8479520.0,Brandon Duhaime,R,Minnesota Wild,4
@@ -140,7 +140,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 81,8478057.0,Dakota Joshua,C,Vancouver Canucks,12
 6,8477541.0,Dakota Mermis,D,Minnesota Wild,2
 78,8476923.0,Damon Severson,D,Columbus Blue Jackets,5
-17,8478466.0,Daniel Sprong,R,Detroit Red Wings,12
+17,8478466.0,Daniel Sprong,R,Detroit Red Wings,13
 57,8479371.0,Dante Fabbro,D,Nashville Predators,2
 43,8478046.0,Danton Heinen,C,Boston Bruins,9
 25,8477498.0,Darnell Nurse,D,Edmonton Oilers,6
@@ -166,11 +166,11 @@ jersey_number,player_id,player_name,position,team_name,goals
 2,8476331.0,Dylan DeMelo,D,Winnipeg Jets,1
 11,8482699.0,Dylan Guenther,R,Arizona Coyotes,3
 55,8482077.0,Dylan Holloway,L,Edmonton Oilers,2
-71,8477946.0,Dylan Larkin,C,Detroit Red Wings,23
+71,8477946.0,Dylan Larkin,C,Detroit Red Wings,24
 54,8480049.0,Dylan Samberg,D,Winnipeg Jets,1
 17,8478440.0,Dylan Strome,C,Washington Capitals,23
-20,8480009.0,Eeli Tolvanen,R,Seattle Kraken,12
 20,8480009.0,Eeli Tolvanen,R,Seattle,1
+20,8480009.0,Eeli Tolvanen,R,Seattle Kraken,12
 27,8480185.0,Eetu Luostarinen,C,Florida Panthers,6
 5,8481178.0,Egor Zamula,D,Philadelphia Flyers,4
 28,8477496.0,Elias Lindholm,C,Calgary Flames,9
@@ -192,10 +192,10 @@ jersey_number,player_id,player_name,position,team_name,goals
 63,8474149.0,Evgenii Dadonov,R,Dallas Stars,11
 92,8475744.0,Evgeny Kuznetsov,C,Washington Capitals,11
 20,8480188.0,Fabian Zetterlund,L,San Jose Sharks,17
-9,8476887.0,Filip Forsberg,L,Nashville Predators,24
+9,8476887.0,Filip Forsberg,L,Nashville Predators,25
 17,8479425.0,Filip Hronek,D,Vancouver Canucks,3
 18,8480821.0,Filip Zadina,R,San Jose Sharks,5
-77,8478366.0,Frank Vatrano,R,Anaheim Ducks,20
+77,8478366.0,Frank Vatrano,R,Anaheim Ducks,21
 89,8477919.0,Frederick Gaudreau,C,Minnesota Wild,2
 22,8478028.0,Fredrik Olofsson,L,Colorado Avalanche,3
 13,8480014.0,Gabriel Vilardi,C,Winnipeg Jets,11
@@ -212,7 +212,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 20,8477392.0,Hudson Fasching,R,New York Islanders,3
 82,8474013.0,Ian Cole,D,Vancouver Canucks,1
 65,8481624.0,Ilya Mikheyev,R,Vancouver Canucks,10
-21,8480806.0,Isac Lundestrom,C,Anaheim Ducks,1
+21,8480806.0,Isac Lundestrom,C,Anaheim Ducks,2
 49,8477964.0,Ivan Barbashev,C,Vegas Golden Knights,13
 9,8478500.0,Ivan Provorov,D,Columbus Blue Jackets,4
 90,8482655.0,J.J. Moser,D,Arizona Coyotes,3
@@ -249,8 +249,8 @@ jersey_number,player_id,player_name,position,team_name,goals
 57,8480468.0,James Hamblin,L,Edmonton Oilers,2
 21,8474037.0,James van Riemsdyk,L,Boston Bruins,8
 14,8473994.0,Jamie Benn,L,Dallas Stars,8
-9,8482142.0,Jamie Drysdale,D,Philadelphia Flyers,1
 6,8482142.0,Jamie Drysdale,D,Anaheim Ducks,1
+9,8482142.0,Jamie Drysdale,D,Philadelphia Flyers,1
 24,8476467.0,Jamie Oleksiak,D,Seattle Kraken,2
 84,8480172.0,Jan Rutta,D,San Jose Sharks,3
 2,8475825.0,Jani Hakanpää,D,Dallas Stars,2
@@ -357,7 +357,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 58,8480025.0,MacKenzie Entwistle,R,Chicago Blackhawks,2
 52,8477346.0,MacKenzie Weegar,D,Calgary Flames,12
 18,8471686.0,Marc Staal,D,Philadelphia Flyers,1
-44,8471709.0,Marc-Edouard Vlasic,D,San Jose Sharks,4
+44,8471709.0,Marc-Edouard Vlasic,D,San Jose Sharks,5
 23,8482079.0,Marco Rossi,C,Minnesota Wild,13
 6,8474618.0,Marco Scandella,D,St. Louis Blues,2
 17,8475220.0,Marcus Foligno,L,Minnesota Wild,7
@@ -366,6 +366,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 38,8479983.0,Mario Ferraro,D,San Jose Sharks,1
 55,8470966.0,Mark Giordano,D,Toronto Maple Leafs,1
 17,8476873.0,Mark Jankowski,C,Nashville Predators,1
+12,8480355.0,Mark Kastelic,C,Ottawa Senators,1
 55,8476460.0,Mark Scheifele,C,Winnipeg Jets,14
 61,8475913.0,Mark Stone,R,Vegas Golden Knights,15
 42,8480796.0,Martin Fehervary,D,Washington Capitals,2
@@ -481,7 +482,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 34,8483490.0,Pavel Mintyukov,D,Anaheim Ducks,2
 18,8478401.0,Pavel Zacha,C,Boston Bruins,9
 19,8481522.0,Peyton Krebs,C,Buffalo Sabres,3
-26,8481577.0,Philip Tomasino,C,Nashville Predators,6
+26,8481577.0,Philip Tomasino,C,Nashville Predators,7
 23,8480798.0,Philipp Kurashev,C,Chicago Blackhawks,9
 34,8476858.0,Phillip Di Giuseppe,L,Vancouver Canucks,3
 18,8478115.0,Pierre Engvall,L,New York Islanders,7
@@ -540,7 +541,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 20,8478427.0,Sebastian Aho,C,Carolina Hurricanes,18
 24,8482093.0,Seth Jarvis,C,Carolina Hurricanes,14
 4,8477495.0,Seth Jones,D,Chicago Blackhawks,1
-57,8481596.0,Shane Pinto,C,Ottawa Senators,1
+57,8481596.0,Shane Pinto,C,Ottawa Senators,2
 41,8476906.0,Shayne Gostisbehere,D,Detroit Red Wings,7
 27,8477447.0,Shea Theodore,D,Vegas Golden Knights,6
 56,8480776.0,Sheldon Rempal,R,Vegas Golden Knights,1
@@ -583,7 +584,7 @@ jersey_number,player_id,player_name,position,team_name,goals
 35,8477465.0,Tristan Jarry,G,Pittsburgh Penguins,1
 67,8483482.0,Tristan Luneau,D,Anaheim Ducks,1
 51,8479442.0,Troy Stecher,D,Arizona Coyotes,1
-19,8478873.0,Troy Terry,R,Anaheim Ducks,14
+19,8478873.0,Troy Terry,R,Anaheim Ducks,15
 10,8480848.0,Ty Dellandrea,C,Dallas Stars,1
 6,8480834.0,Ty Emberson,D,San Jose Sharks,1
 52,8481789.0,Tye Kartye,L,Seattle Kraken,9
