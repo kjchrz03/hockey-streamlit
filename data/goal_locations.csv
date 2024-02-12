@@ -213,6 +213,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 13.0,8482109.0,Alexis Lafrenière,L,New York Rangers,512,3,-79.0,-5.0,2023020196
 13.0,8482109.0,Alexis Lafrenière,L,New York Rangers,653,3,-71.0,9.0,2023020529
 13.0,8482109.0,Alexis Lafrenière,L,New York Rangers,780,3,-87.0,7.0,2023020225
+13.0,8482109.0,Alexis Lafrenière,L,New York Rangers,801,4,71.0,-11.0,2023020781
 13.0,8482109.0,Alexis Lafrenière,L,New York Rangers,862,5,-80.0,5.0,2023020225
 21.0,8481656.0,Aliaksei Protas,C,Washington Capitals,106,1,-98.0,-15.0,2023020396
 21.0,8481656.0,Aliaksei Protas,C,Washington Capitals,106,1,-98.0,-15.0,2023020396
@@ -342,6 +343,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 10.0,8478550.0,Artemi Panarin,L,New York Rangers,566,3,-83.0,2.0,2023020370
 10.0,8478550.0,Artemi Panarin,L,New York Rangers,593,3,71.0,0.0,2023020078
 10.0,8478550.0,Artemi Panarin,L,New York Rangers,631,3,-72.0,-22.0,2023020308
+10.0,8478550.0,Artemi Panarin,L,New York Rangers,663,3,-43.0,18.0,2023020781
 10.0,8478550.0,Artemi Panarin,L,New York Rangers,681,3,-81.0,-16.0,2023020722
 10.0,8478550.0,Artemi Panarin,L,New York Rangers,705,3,16.0,-21.0,2023020196
 10.0,8478550.0,Artemi Panarin,L,New York Rangers,734,3,-68.0,9.0,2023020261
@@ -2196,6 +2198,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 91.0,8475166.0,John Tavares,C,Toronto Maple Leafs,778,3,-88.0,3.0,2023020588
 91.0,8475166.0,John Tavares,C,Toronto Maple Leafs,826,3,-33.0,-23.0,2023020108
 91.0,8475166.0,John Tavares,C,Toronto Maple Leafs,828,4,82.0,5.0,2023020070
+91.0,8475166.0,John Tavares,C,Toronto Maple Leafs,848,3,-71.0,10.0,2023020782
 26.0,8480192.0,Johnathan Kovacevic,D,Montréal Canadiens,152,1,-74.0,12.0,2023020244
 26.0,8480192.0,Johnathan Kovacevic,D,Montréal Canadiens,466,2,56.0,-9.0,2023020300
 26.0,8480192.0,Johnathan Kovacevic,D,Montréal Canadiens,658,3,-55.0,-15.0,2023020343
@@ -2832,6 +2835,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 23.0,8482745.0,Mason McTavish,C,Anaheim Ducks,812,4,73.0,15.0,2023020100
 13.0,8478445.0,Mathew Barzal,C,New York Islanders,24,1,-55.0,1.0,2023020227
 13.0,8478445.0,Mathew Barzal,C,New York Islanders,163,1,94.0,-13.0,2023020616
+13.0,8478445.0,Mathew Barzal,C,New York Islanders,192,1,72.0,-2.0,2023020782
 13.0,8478445.0,Mathew Barzal,C,New York Islanders,324,2,-53.0,-28.0,2023020043
 13.0,8478445.0,Mathew Barzal,C,New York Islanders,358,2,76.0,-1.0,2023020327
 13.0,8478445.0,Mathew Barzal,C,New York Islanders,377,2,-79.0,-3.0,2023020167
@@ -3149,6 +3153,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,315,2,64.0,-11.0,2023020395
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,315,2,64.0,-11.0,2023020395
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,315,2,64.0,-11.0,2023020395
+16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,357,2,75.0,-12.0,2023020782
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,392,2,61.0,11.0,2023020145
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,417,2,-74.0,-17.0,2023020697
 16.0,8478483.0,Mitchell Marner,R,Toronto Maple Leafs,429,2,-84.0,-5.0,2023020052
@@ -3208,6 +3213,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 29.0,8477492.0,Nathan MacKinnon,C,Colorado Avalanche,42,1,-70.0,-26.0,2023020507
 29.0,8477492.0,Nathan MacKinnon,C,Colorado Avalanche,103,1,75.0,-11.0,2023020008
 29.0,8477492.0,Nathan MacKinnon,C,Colorado Avalanche,174,1,80.0,6.0,2023020593
+29.0,8477492.0,Nathan MacKinnon,C,Colorado Avalanche,249,1,65.0,-17.0,2023020781
 29.0,8477492.0,Nathan MacKinnon,C,Colorado Avalanche,252,1,-60.0,14.0,2023020757
 29.0,8477492.0,Nathan MacKinnon,C,Colorado Avalanche,261,1,-83.0,0.0,2023020417
 29.0,8477492.0,Nathan MacKinnon,C,Colorado Avalanche,269,1,-75.0,4.0,2023020507
@@ -3643,6 +3649,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 18.0,8478115.0,Pierre Engvall,L,New York Islanders,121,1,62.0,18.0,2023020241
 18.0,8478115.0,Pierre Engvall,L,New York Islanders,334,2,-79.0,3.0,2023020359
 18.0,8478115.0,Pierre Engvall,L,New York Islanders,501,2,-64.0,4.0,2023020341
+18.0,8478115.0,Pierre Engvall,L,New York Islanders,899,3,79.0,-3.0,2023020782
 41.0,8477930.0,Pierre-Edouard Bellemare,L,Seattle Kraken,279,1,79.0,-3.0,2023020060
 41.0,8477930.0,Pierre-Edouard Bellemare,L,Seattle Kraken,409,2,76.0,6.0,2023020239
 41.0,8477930.0,Pierre-Edouard Bellemare,L,Seattle Kraken,549,3,88.0,-9.0,2023020453

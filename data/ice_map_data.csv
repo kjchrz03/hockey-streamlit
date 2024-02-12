@@ -214,6 +214,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020529,11,8482109.0,Alexis Lafrenière,New York Rangers,3,71.0,-9.0
 2023020669,12,8482109.0,Alexis Lafrenière,New York Rangers,1,82.0,7.0
 2023020765,13,8482109.0,Alexis Lafrenière,New York Rangers,2,89.0,4.0
+2023020781,14,8482109.0,Alexis Lafrenière,New York Rangers,4,71.0,-11.0
 2023020216,1,8481656.0,Aliaksei Protas,Washington Capitals,2,73.0,-4.0
 2023020263,2,8481656.0,Aliaksei Protas,Washington Capitals,2,71.0,22.0
 2023020396,3,8481656.0,Aliaksei Protas,Washington Capitals,1,98.0,15.0
@@ -348,6 +349,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020722,25,8478550.0,Artemi Panarin,New York Rangers,3,81.0,16.0
 2023020738,26,8478550.0,Artemi Panarin,New York Rangers,2,50.0,-23.0
 2023020765,27,8478550.0,Artemi Panarin,New York Rangers,3,10.0,34.0
+2023020781,28,8478550.0,Artemi Panarin,New York Rangers,3,43.0,-18.0
 2023020046,1,8477476.0,Artturi Lehkonen,Colorado Avalanche,2,70.0,-9.0
 2023020076,2,8477476.0,Artturi Lehkonen,Colorado Avalanche,2,81.0,0.0
 2023020143,3,8477476.0,Artturi Lehkonen,Colorado Avalanche,3,83.0,4.0
@@ -2196,6 +2198,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020517,10,8475166.0,John Tavares,Toronto Maple Leafs,2,72.0,14.0
 2023020588,11,8475166.0,John Tavares,Toronto Maple Leafs,3,88.0,-3.0
 2023020768,12,8475166.0,John Tavares,Toronto Maple Leafs,3,80.0,0.0
+2023020782,13,8475166.0,John Tavares,Toronto Maple Leafs,3,71.0,-10.0
 2023020244,1,8480192.0,Johnathan Kovacevic,Montréal Canadiens,1,74.0,-12.0
 2023020258,2,8480192.0,Johnathan Kovacevic,Montréal Canadiens,3,79.0,-0.0
 2023020300,3,8480192.0,Johnathan Kovacevic,Montréal Canadiens,2,56.0,-9.0
@@ -2847,6 +2850,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020616,15,8478445.0,Mathew Barzal,New York Islanders,1,94.0,-13.0
 2023020646,16,8478445.0,Mathew Barzal,New York Islanders,4,84.0,9.0
 2023020748,17,8478445.0,Mathew Barzal,New York Islanders,3,79.0,15.0
+2023020782,18,8478445.0,Mathew Barzal,New York Islanders,1,72.0,-2.0
 2023020004,1,8478472.0,Mathieu Joseph,Ottawa Senators,1,78.0,0.0
 2023020033,2,8478472.0,Mathieu Joseph,Ottawa Senators,2,65.0,11.0
 2023020085,3,8478472.0,Mathieu Joseph,Ottawa Senators,3,74.0,0.0
@@ -3163,6 +3167,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020670,22,8478483.0,Mitchell Marner,Toronto Maple Leafs,2,83.0,-7.0
 2023020697,23,8478483.0,Mitchell Marner,Toronto Maple Leafs,2,74.0,17.0
 2023020712,24,8478483.0,Mitchell Marner,Toronto Maple Leafs,3,72.0,0.0
+2023020782,25,8478483.0,Mitchell Marner,Toronto Maple Leafs,2,75.0,-12.0
 2023020513,1,8478477.0,Mitchell Stephens,Montréal Canadiens,2,83.0,-4.0
 2023020542,2,8478477.0,Mitchell Stephens,Montréal Canadiens,1,81.0,14.0
 2023020020,1,8480289.0,Morgan Barron,Winnipeg Jets,2,80.0,2.0
@@ -3238,6 +3243,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020742,31,8477492.0,Nathan MacKinnon,Colorado Avalanche,2,82.0,2.0
 2023020742,32,8477492.0,Nathan MacKinnon,Colorado Avalanche,3,57.0,-6.0
 2023020757,33,8477492.0,Nathan MacKinnon,Colorado Avalanche,1,60.0,-14.0
+2023020781,34,8477492.0,Nathan MacKinnon,Colorado Avalanche,1,65.0,-17.0
 2023020608,1,8477573.0,Nathan Walker,St. Louis Blues,1,79.0,-13.0
 2023020696,2,8477573.0,Nathan Walker,St. Louis Blues,1,71.0,9.0
 2023020696,3,8477573.0,Nathan Walker,St. Louis Blues,3,82.0,-1.0
@@ -3643,6 +3649,7 @@ game_id,goal_no,player_id,player_name,team_name,period,x_adjusted,y_adjusted
 2023020397,5,8478115.0,Pierre Engvall,New York Islanders,1,78.0,11.0
 2023020397,6,8478115.0,Pierre Engvall,New York Islanders,1,78.0,11.0
 2023020582,7,8478115.0,Pierre Engvall,New York Islanders,1,75.0,-5.0
+2023020782,8,8478115.0,Pierre Engvall,New York Islanders,3,79.0,-3.0
 2023020060,1,8477930.0,Pierre-Edouard Bellemare,Seattle Kraken,1,79.0,-3.0
 2023020239,2,8477930.0,Pierre-Edouard Bellemare,Seattle Kraken,2,76.0,6.0
 2023020438,3,8477930.0,Pierre-Edouard Bellemare,Seattle Kraken,3,69.0,7.0
