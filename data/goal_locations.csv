@@ -133,6 +133,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 8.0,8471214.0,Alex Ovechkin,L,Washington Capitals,231,1,61.0,28.0,2023020795
 8.0,8471214.0,Alex Ovechkin,L,Washington Capitals,274,1,-36.0,28.0,2023020576
 8.0,8471214.0,Alex Ovechkin,L,Washington Capitals,373,2,65.0,-19.0,2023020789
+8.0,8471214.0,Alex Ovechkin,L,Washington Capitals,387,2,54.0,22.0,2023020818
 8.0,8471214.0,Alex Ovechkin,L,Washington Capitals,462,2,69.0,-3.0,2023020263
 8.0,8471214.0,Alex Ovechkin,L,Washington Capitals,501,2,85.0,-7.0,2023020083
 8.0,8471214.0,Alex Ovechkin,L,Washington Capitals,721,3,-40.0,-18.0,2023020099
@@ -199,6 +200,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 42.0,8480074.0,Alexandre Texier,C,Columbus Blue Jackets,703,3,74.0,-9.0,2023020405
 42.0,8480074.0,Alexandre Texier,C,Columbus Blue Jackets,706,3,87.0,-5.0,2023020176
 42.0,8480074.0,Alexandre Texier,C,Columbus Blue Jackets,744,3,68.0,8.0,2023020463
+13.0,8480281.0,Alexey Toropchenko,R,St. Louis Blues,12,1,63.0,-32.0,2023020817
 13.0,8480281.0,Alexey Toropchenko,R,St. Louis Blues,270,1,81.0,-4.0,2023020379
 13.0,8480281.0,Alexey Toropchenko,R,St. Louis Blues,346,2,57.0,18.0,2023020287
 13.0,8480281.0,Alexey Toropchenko,R,St. Louis Blues,355,2,81.0,5.0,2023020271
@@ -1038,6 +1040,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 24.0,8476525.0,Colin Miller,D,New Jersey Devils,377,2,-37.0,31.0,2023020611
 24.0,8476525.0,Colin Miller,D,New Jersey Devils,692,3,54.0,-13.0,2023020611
 55.0,8476892.0,Colton Parayko,D,St. Louis Blues,50,1,50.0,-13.0,2023020713
+55.0,8476892.0,Colton Parayko,D,St. Louis Blues,79,1,34.0,-19.0,2023020817
 55.0,8476892.0,Colton Parayko,D,St. Louis Blues,149,1,62.0,-27.0,2023020330
 55.0,8476892.0,Colton Parayko,D,St. Louis Blues,151,1,80.0,9.0,2023020235
 55.0,8476892.0,Colton Parayko,D,St. Louis Blues,177,1,-54.0,18.0,2023020287
@@ -1127,6 +1130,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 47.0,8482074.0,Connor Zary,C,Calgary Flames,727,3,-86.0,-11.0,2023020471
 8.0,8478856.0,Conor Garland,R,Vancouver Canucks,35,1,-59.0,10.0,2023020596
 8.0,8478856.0,Conor Garland,R,Vancouver Canucks,113,1,-82.0,-3.0,2023020009
+8.0,8478856.0,Conor Garland,R,Vancouver Canucks,166,1,69.0,-18.0,2023020818
 8.0,8478856.0,Conor Garland,R,Vancouver Canucks,185,1,-74.0,-15.0,2023020712
 8.0,8478856.0,Conor Garland,R,Vancouver Canucks,201,1,-71.0,1.0,2023020673
 8.0,8478856.0,Conor Garland,R,Vancouver Canucks,358,2,-79.0,0.0,2023020224
@@ -1769,6 +1773,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 9.0,8476468.0,J.T. Miller,C,Vancouver Canucks,659,3,-86.0,4.0,2023020712
 9.0,8476468.0,J.T. Miller,C,Vancouver Canucks,664,3,-37.0,-14.0,2023020179
 9.0,8476468.0,J.T. Miller,C,Vancouver Canucks,736,3,-82.0,-3.0,2023020055
+9.0,8476468.0,J.T. Miller,C,Vancouver Canucks,897,4,-67.0,12.0,2023020818
 77.0,8482175.0,JJ Peterka,R,Buffalo Sabres,78,1,87.0,-12.0,2023020745
 77.0,8482175.0,JJ Peterka,R,Buffalo Sabres,96,1,-66.0,13.0,2023020113
 77.0,8482175.0,JJ Peterka,R,Buffalo Sabres,140,1,80.0,10.0,2023020638
@@ -1942,6 +1947,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 63.0,8482089.0,Jake Neighbours,L,St. Louis Blues,415,2,-81.0,4.0,2023020667
 63.0,8482089.0,Jake Neighbours,L,St. Louis Blues,558,3,82.0,6.0,2023020348
 63.0,8482089.0,Jake Neighbours,L,St. Louis Blues,579,3,82.0,2.0,2023020297
+63.0,8482089.0,Jake Neighbours,L,St. Louis Blues,646,3,84.0,2.0,2023020817
 63.0,8482089.0,Jake Neighbours,L,St. Louis Blues,659,3,82.0,2.0,2023020524
 63.0,8482089.0,Jake Neighbours,L,St. Louis Blues,703,3,75.0,-3.0,2023020317
 63.0,8482089.0,Jake Neighbours,L,St. Louis Blues,720,3,-71.0,6.0,2023020804
@@ -2195,6 +2201,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 40.0,8476469.0,Joel Armia,R,Montréal Canadiens,372,2,70.0,8.0,2023020464
 40.0,8476469.0,Joel Armia,R,Montréal Canadiens,431,2,63.0,19.0,2023020590
 40.0,8476469.0,Joel Armia,R,Montréal Canadiens,520,3,-68.0,13.0,2023020121
+40.0,8476469.0,Joel Armia,R,Montréal Canadiens,591,3,-81.0,-1.0,2023020817
 40.0,8476469.0,Joel Armia,R,Montréal Canadiens,680,3,-83.0,-2.0,2023020678
 40.0,8476469.0,Joel Armia,R,Montréal Canadiens,694,3,-81.0,7.0,2023020337
 6.0,8476441.0,Joel Edmundson,D,Washington Capitals,427,2,35.0,8.0,2023020496
@@ -2363,6 +2370,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,28,1,73.0,-7.0,2023020164
 25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,62,1,56.0,-11.0,2023020647
 25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,102,1,85.0,-3.0,2023020647
+25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,213,1,84.0,7.0,2023020817
 25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,232,1,81.0,0.0,2023020390
 25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,232,1,81.0,0.0,2023020390
 25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,283,2,-78.0,-13.0,2023020500
@@ -2374,6 +2382,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,589,3,67.0,-2.0,2023020647
 25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,665,3,74.0,-10.0,2023020524
 25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,673,3,58.0,8.0,2023020735
+25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,729,3,57.0,-4.0,2023020817
 25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,772,3,82.0,-3.0,2023020524
 25.0,8479385.0,Jordan Kyrou,C,St. Louis Blues,791,3,74.0,-9.0,2023020235
 48.0,8476921.0,Jordan Martinook,L,Carolina Hurricanes,40,1,-82.0,0.0,2023020702
@@ -3362,6 +3371,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 29.0,8477492.0,Nathan MacKinnon,C,Colorado Avalanche,845,4,62.0,20.0,2023020582
 26.0,8477573.0,Nathan Walker,L,St. Louis Blues,158,1,79.0,-13.0,2023020608
 26.0,8477573.0,Nathan Walker,L,St. Louis Blues,233,1,71.0,9.0,2023020696
+26.0,8477573.0,Nathan Walker,L,St. Louis Blues,515,2,-59.0,-12.0,2023020817
 26.0,8477573.0,Nathan Walker,L,St. Louis Blues,541,3,82.0,-1.0,2023020696
 91.0,8475172.0,Nazem Kadri,C,Calgary Flames,109,1,-69.0,1.0,2023020595
 91.0,8475172.0,Nazem Kadri,C,Calgary Flames,127,1,-84.0,-2.0,2023020539
@@ -3382,6 +3392,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 4.0,8480145.0,Neal Pionk,D,Winnipeg Jets,216,1,-71.0,22.0,2023020184
 4.0,8480145.0,Neal Pionk,D,Winnipeg Jets,336,2,69.0,-1.0,2023020580
 4.0,8480145.0,Neal Pionk,D,Winnipeg Jets,498,2,60.0,-19.0,2023020685
+26.0,8475343.0,Nic Dowd,C,Washington Capitals,24,1,-83.0,4.0,2023020818
 26.0,8475343.0,Nic Dowd,C,Washington Capitals,97,1,-79.0,11.0,2023020603
 26.0,8475343.0,Nic Dowd,C,Washington Capitals,256,1,-80.0,0.0,2023020352
 26.0,8475343.0,Nic Dowd,C,Washington Capitals,314,2,72.0,8.0,2023020618
@@ -3458,6 +3469,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 14.0,8480018.0,Nick Suzuki,C,Montréal Canadiens,109,1,73.0,9.0,2023020789
 14.0,8480018.0,Nick Suzuki,C,Montréal Canadiens,112,1,-82.0,2.0,2023020748
 14.0,8480018.0,Nick Suzuki,C,Montréal Canadiens,122,1,84.0,-25.0,2023020789
+14.0,8480018.0,Nick Suzuki,C,Montréal Canadiens,142,1,-79.0,-20.0,2023020817
 14.0,8480018.0,Nick Suzuki,C,Montréal Canadiens,289,2,52.0,9.0,2023020103
 14.0,8480018.0,Nick Suzuki,C,Montréal Canadiens,291,2,66.0,-23.0,2023020806
 14.0,8480018.0,Nick Suzuki,C,Montréal Canadiens,396,2,56.0,-13.0,2023020411
@@ -3576,6 +3588,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 21.0,8481535.0,Nils Hoglander,L,Vancouver Canucks,274,1,-78.0,2.0,2023020029
 21.0,8481535.0,Nils Hoglander,L,Vancouver Canucks,321,2,79.0,3.0,2023020095
 21.0,8481535.0,Nils Hoglander,L,Vancouver Canucks,322,2,-75.0,5.0,2023020805
+21.0,8481535.0,Nils Hoglander,L,Vancouver Canucks,404,2,-85.0,8.0,2023020818
 21.0,8481535.0,Nils Hoglander,L,Vancouver Canucks,443,2,71.0,3.0,2023020179
 21.0,8481535.0,Nils Hoglander,L,Vancouver Canucks,474,2,74.0,5.0,2023020491
 21.0,8481535.0,Nils Hoglander,L,Vancouver Canucks,480,2,-81.0,11.0,2023020621
@@ -3904,6 +3917,7 @@ jersey_number,player_id,player_name,position,team_name,sortOrder,period,xCoord,y
 18.0,8480023.0,Robert Thomas,C,St. Louis Blues,434,2,91.0,3.0,2023020287
 18.0,8480023.0,Robert Thomas,C,St. Louis Blues,447,2,69.0,6.0,2023020758
 18.0,8480023.0,Robert Thomas,C,St. Louis Blues,495,2,-61.0,-4.0,2023020143
+18.0,8480023.0,Robert Thomas,C,St. Louis Blues,557,3,49.0,-13.0,2023020817
 18.0,8480023.0,Robert Thomas,C,St. Louis Blues,633,3,63.0,-12.0,2023020596
 18.0,8480023.0,Robert Thomas,C,St. Louis Blues,676,3,-86.0,-4.0,2023020405
 18.0,8480023.0,Robert Thomas,C,St. Louis Blues,717,3,76.0,7.0,2023020093
