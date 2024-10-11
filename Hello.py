@@ -7,10 +7,27 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import urllib.request
 import subprocess
+import asyncio
 
+from datetime import datetime
+from datetime import timedelta
+from datetime import date
+
+import time
+from PIL import Image
+import pytz 
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+import matplotlib.pyplot as plt
+
+import pickle
+import json
+pd.options.mode.chained_assignment = None 
+import re
+import requests
 # Install the library from the GitHub repository using pip within your Streamlit app
-subprocess.run(["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"])
-
+# subprocess.run(["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"])
+subprocess.run(["pip", "install", "pytz"])
 # Import the external library
 import hockey_rink
 from hockey_rink import NHLRink, RinkImage
@@ -26,10 +43,6 @@ backgroundColor="#e1dee9"
 secondaryBackgroundColor="#d5cfe1"
 textColor="#262730"
 font="Garamond"
-
-st.sidebar.markdown(" ## About This App")
-# Create a sidebar with match selection
-selected_match = st.sidebar.selectbox('Select a match:', filtered_df_games['home_team'] + ' vs ' + filtered_df_games['away_team'])
 
 
 # CSS for tables
@@ -108,6 +121,107 @@ st.markdown('''##### <span style="color: #aaaaaa">Explore NHL Advanced Stats, Si
             ''', unsafe_allow_html=True)
                 
 tab_player, tab_games = st.tabs(["Goals", "Matchups"])
+st.sidebar.markdown(" ## Make Selections")
+
+##########################################
+##  Matchup Sidebar                      ##
+##########################################
+# Function to fetch game data for a specific date
+def fetch_game_data(start_date, end_date):
+    base_url = "https://api-web.nhle.com/v1/schedule/"
+    daily_games = pd.DataFrame()
+    
+    current_date = start_date
+    seen_dates = set()
+
+    while current_date <= end_date:
+        formatted_date = current_date.strftime("%Y-%m-%d")
+        api_url = f"{base_url}{formatted_date}"
+        response = requests.get(api_url)
+        
+        if response.status_code == 200:
+            response_text = response.text
+            json_data = json.loads(response_text)
+
+            if 'gameWeek' in json_data:
+                game_week = json_data['gameWeek']
+                game_week_df = pd.DataFrame(game_week)
+                game_week_df = game_week_df[game_week_df['numberOfGames'] != 0]
+
+                if formatted_date not in seen_dates:
+                    seen_dates.add(formatted_date)
+                    daily_games = pd.concat([daily_games, game_week_df], ignore_index=True)
+            else:
+                st.warning(f"No games found for {formatted_date}")
+        else:
+            st.error(f"Request failed with status code {response.status_code}")
+
+        current_date += timedelta(weeks=1)
+
+    return daily_games
+
+# Function to process game data into a DataFrame
+def process_game_data(daily_games):
+    game_week_details = pd.json_normalize(daily_games['games'])
+    dfs = {}
+
+    for i in range(len(game_week_details.columns)):
+        game_info = pd.json_normalize(game_week_details[i]) if game_week_details[i] is not None else pd.DataFrame()
+        df_name = f'game_test{i}'
+        dfs[df_name] = game_info
+
+    combined_df = pd.concat(dfs.values(), ignore_index=True).dropna(how='all')
+    combined_df = combined_df[['id', 'season', 'startTimeUTC', 'gameType', 'awayTeam.id', 'awayTeam.abbrev',
+                                'homeTeam.id', 'homeTeam.abbrev', 'homeTeam.logo', 'awayTeam.logo',
+                                'homeTeam.placeName.default', 'awayTeam.placeName.default',
+                                'awayTeam.score', 'homeTeam.score', 'winningGoalScorer.playerId', 
+                                'winningGoalie.playerId', 'gameState']].convert_dtypes()
+
+    combined_df['link'] = 'https://api-web.nhle.com/v1/gamecenter/' + combined_df['id'].astype(str) + '/play-by-play'
+    combined_df = combined_df.dropna(subset=['id']).query('gameState == "OFF"')
+    combined_df['startTimeUTC'] = pd.to_datetime(combined_df['startTimeUTC'])
+    combined_df = combined_df.rename(columns={'id': 'game_id'})
+    
+    # Convert 'startTimeUTC' to Eastern Time
+    utc_timezone = pytz.utc
+    eastern_timezone = pytz.timezone('America/New_York')
+    combined_df['game_date'] = combined_df['startTimeUTC'].dt.tz_convert(eastern_timezone)
+    combined_df['game_date'] = combined_df['game_date'].dt.strftime('%Y-%m-%d')
+    combined_df.drop('startTimeUTC', axis=1, inplace=True)
+
+    return combined_df
+
+# Streamlit app starts here
+st.title("NHL Scorebug")
+
+# Date range for fetching game data
+start_date = datetime.strptime("2024-10-08", "%Y-%m-%d")
+end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
+
+# Fetch game data
+daily_games = fetch_game_data(start_date, end_date)
+if daily_games.empty:
+    st.warning("No games found in the specified date range.")
+else:
+    combined_df = process_game_data(daily_games)
+
+    # Create a list of matchups for the selectbox in the sidebar
+    locations = combined_df[['game_id', 'awayTeam.abbrev', 'homeTeam.abbrev']]
+    matchups = locations['homeTeam.abbrev'] + ' vs ' + locations['awayTeam.abbrev']
+
+    # Sidebar selectbox for matchups
+    selected_match = st.sidebar.selectbox('Select a match:', matchups)
+
+    # Display selected matchup details
+    selected_game_index = matchups.tolist().index(selected_match)  # Get index of the selected match
+    selected_game = combined_df.iloc[selected_game_index]  # Get the corresponding game data
+
+    # Display score bug information
+    st.subheader(f"Score Bug for {selected_match}")
+    st.write(f"Home Team: {selected_game['homeTeam.abbrev']}, Score: {selected_game['homeTeam.score']}")
+    st.write(f"Away Team: {selected_game['awayTeam.abbrev']}, Score: {selected_game['awayTeam.score']}")
+    st.write(f"Game State: {selected_game['gameState']}")
+    st.write(f"Game Link: [Play by Play]({selected_game['link']})")
 
 ##########################################
 ## Player Tab                           ##
