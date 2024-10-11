@@ -240,13 +240,12 @@ with tab_bug:
 # 
 with tab_player:
 
-    # Function to load the season data
+    # Caching the data loading function
+    @st.cache_data
     def load_season_data():
         try:
-            # Call the function from season_data.py
+            # Call the function from season_data.py (assuming it returns a DataFrame)
             season_totals = get_season_data()
-
-            # Return the loaded data
             return season_totals
         except Exception as e:
             st.error(f"Error loading data: {e}")
@@ -259,7 +258,7 @@ with tab_player:
         season_totals['Goals'] = season_totals['g']  # Assuming 'g' is the goals column
 
         # Select specific columns to return
-        selected_columns = ['Name', 'Goals']
+        selected_columns = ['Name', 'Goals', 'Position', 'Team']
         players_df = season_totals[selected_columns]
         
         return players_df
@@ -273,25 +272,28 @@ with tab_player:
 
         st.header('Explore Player Goals')
 
-        # Player ID hidden and mapped to player name
-        player_id_mapping = {row['Name']: row['player_id'] for index, row in season_totals.iterrows()}
+        # Precompute player ID mapping and dropdown list to avoid iterating multiple times
+        player_id_mapping = pd.Series(season_totals['player_id'].values, index=season_totals['Name']).to_dict()
 
         # Display the player dropdown with hidden player IDs
-        selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
+        selected_player_name = st.selectbox(
+            "Choose a player (or click below and start typing):", 
+            list(player_id_mapping.keys()), 
+            index=0
+        )
 
-        # Get the player ID based on the selected player name
-        selected_player_id = player_id_mapping[selected_player_name]
-        player_position = season_totals[season_totals.Name == selected_player_name].Position.to_list()[0]
-        player_goals = season_totals[season_totals.Name == selected_player_name].Goals.to_list()[0]
+        # Get data for the selected player
+        selected_player_data = season_totals[season_totals['Name'] == selected_player_name].iloc[0]
+
+        player_goals = selected_player_data['Goals']
+        player_position = selected_player_data['Position']
+        player_team = selected_player_data['Team']
 
         st.write(f'''
-            ##### <div style="text-align: center"> This season  <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+            ##### <div style="text-align: center"> This season, <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
         ''', unsafe_allow_html=True)
 
-        # Select only the desired columns from the DataFrame
-        selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
-
-        # Create an HTML table with desired styling
+        # Create a simple HTML table for the player info
         st.write(f'''
         <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
         <tr>
@@ -301,13 +303,14 @@ with tab_player:
             <td style="font-weight: bold;">Goals</td>
         </tr>
         <tr>
-            <td>{season_totals.loc[season_totals.Name == selected_player_name, 'Name'].values[0]}</td>
-            <td>{season_totals.loc[season_totals.Name == selected_player_name, 'Position'].values[0]}</td>
-            <td>{season_totals.loc[season_totals.Name == selected_player_name, 'Team'].values[0]}</td>
-            <td>{season_totals.loc[season_totals.Name == selected_player_name, 'Goals'].values[0]}</td>
+            <td>{selected_player_name}</td>
+            <td>{player_position}</td>
+            <td>{player_team}</td>
+            <td>{player_goals}</td>
         </tr>
         </table>
         ''', unsafe_allow_html=True)
+
         st.markdown("<br>", unsafe_allow_html=True)
 
 
