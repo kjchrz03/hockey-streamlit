@@ -239,143 +239,114 @@ with tab_bug:
 ##########################################
 # 
 with tab_player:
-
-    # Caching the data loading function
-    @st.cache_data
-    def load_season_data():
-        try:
-            # Call the function from season_data.py (assuming it returns a DataFrame)
-            season_totals = get_season_data()
-            return season_totals
-        except Exception as e:
-            st.error(f"Error loading data: {e}")
-            return None
-
-    # Function to manipulate player data
-    def load_players(season_totals):
-        # Create new columns based on the existing ones
-        season_totals['Name'] = season_totals['player_name']
-        season_totals['Goals'] = season_totals['g']  # Assuming 'g' is the goals column
-
-        # Select specific columns to return
-        selected_columns = ['Name', 'Goals', 'Position', 'Team']
-        players_df = season_totals[selected_columns]
-        
+#player goals info
+    def load_players():
+        github_csv_url = 'data/goal_counts.csv'
+        players_df = pd.read_csv(github_csv_url)
+        players_df['Name'] = players_df['player_name']
+        players_df['Player ID'] = players_df['player_id']
+        players_df['Position'] = players_df['position']
+        players_df['Team'] = players_df['team_name']
+        players_df['Goals'] = players_df['goals']
         return players_df
 
-    # Streamlit app
-    season_totals = load_season_data()
+    players_df = load_players()
+    cols = ['Name','Position','Team','Goals']
+#goal scoring data
+    def load_map():
+        github_ice_map_url = 'data/ice_map_data.csv'
+        goal_mapping = pd.read_csv(github_ice_map_url)
+        goal_mapping['Name'] = goal_mapping['player_name']
+        goal_mapping['ID'] = goal_mapping['player_id']
+        goal_mapping['Goal Number'] = goal_mapping['goal_no']
+        goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
+        goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
+        return goal_mapping
+    goal_mapping = load_map()
+    cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
 
-    if season_totals is not None:
-        # Get specific player data
-        players_df = load_players(season_totals)
+    st.header('Explore Player Goals')
 
-        st.header('Explore Player Goals')
+    #player id hidden and mapped to player name
+    player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
 
-        # Precompute player ID mapping and dropdown list to avoid iterating multiple times
-        player_id_mapping = pd.Series(season_totals['player_id'].values, index=season_totals['Name']).to_dict()
+    # Display the player dropdown with hidden player IDs
+    selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
 
-        # Display the player dropdown with hidden player IDs
-        selected_player_name = st.selectbox(
-            "Choose a player (or click below and start typing):", 
-            list(player_id_mapping.keys()), 
-            index=0
-        )
+    # Get the player ID based on the selected player name
+    selected_player_id = player_id_mapping[selected_player_name]
+    player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
+    player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
 
-        # Get data for the selected player
-        selected_player_data = season_totals[season_totals['Name'] == selected_player_name].iloc[0]
+    st.write(f'''
+            ##### <div style="text-align: center"> This season  <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+    ''', unsafe_allow_html=True)
 
-        player_goals = selected_player_data['Goals']
-        player_position = selected_player_data['Position']
-        player_team = selected_player_data['Team']
+    
+    # Select only the desired columns from the DataFrame
+    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
 
-        st.write(f'''
-            ##### <div style="text-align: center"> This season, <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
-        ''', unsafe_allow_html=True)
+    # Create an HTML table with desired styling
+    st.write(f'''
+    <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
+    <tr>
+        <td style="font-weight: bold;">Name</td>
+        <td style="font-weight: bold;">Position</td>
+        <td style="font-weight: bold;">Team</td>
+        <td style="font-weight: bold;">Goals</td>
+    </tr>
+     <tr>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
+    </tr>
+    </table>
+    ''', unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
 
-        # Create a simple HTML table for the player info
-        st.write(f'''
-        <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
-        <tr>
-            <td style="font-weight: bold;">Name</td>
-            <td style="font-weight: bold;">Position</td>
-            <td style="font-weight: bold;">Team</td>
-            <td style="font-weight: bold;">Goals</td>
-        </tr>
-        <tr>
-            <td>{selected_player_name}</td>
-            <td>{player_position}</td>
-            <td>{player_team}</td>
-            <td>{player_goals}</td>
-        </tr>
-        </table>
-        ''', unsafe_allow_html=True)
+    ## goal mapping
+    player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
 
-        st.markdown("<br>", unsafe_allow_html=True)
+    # Create an NHLRink object
+    rink = hockey_rink.NHLRink(rotation=270, net={"visible": False})
 
+    # Define the figure and axes for the rink map
+    fig, ax = plt.subplots(1, 1, figsize=(10, 16)) 
 
-# #player goals info
-#     def load_players():
-         
-#     season_totals = load_players()
-#     cols = ['Name','Position','Team','Goals']
+    # Draw the rink on the single Axes object
+    rink.draw(display_range="half", ax=ax)
 
-#     #goal scoring data
-#     # def load_map():
-#     #     github_ice_map_url = 'data/ice_map_data.csv'
-#     #     goal_mapping = pd.read_csv(github_ice_map_url)
-#     #     goal_mapping['Name'] = goal_mapping['player_name']
-#     #     goal_mapping['ID'] = goal_mapping['player_id']
-#     #     goal_mapping['Goal Number'] = goal_mapping['goal_no']
-#     #     goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
-#     #     goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
-#     #     return goal_mapping
-#     # goal_mapping = load_map()
-#     # cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
+    # Scatter plot for goals
+    rink.scatter(
+        "x_adjusted", "y_adjusted", ax=ax,
+        facecolor="white", edgecolor="black", s=500,
+        data=player_goals
+    )
 
+    # Add text for goal numbers
+    rink.text(
+        "x_adjusted", "y_adjusted", "goal_no", ax=ax,
+        ha="center", va="center", fontsize=8, 
+        data=player_goals
+    )
 
-#     ## goal mapping
-#     player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
+    # Additional Test
+    location_texth = rink.text(
+        0.5, 0.05, selected_player_name, ax=ax,
+        use_rink_coordinates=False,
+        ha="center", va="center", fontsize=20,
+    )
 
-#     # Create an NHLRink object
-#     rink = hockey_rink.NHLRink(rotation=270, net={"visible": False})
+    # Display the rink map
+    st.pyplot(fig)
 
-#     # Define the figure and axes for the rink map
-#     fig, ax = plt.subplots(1, 1, figsize=(10, 16)) 
+    # Rest of your code for player information and goals
+    st.write("Player Goals Detail:")
+    st.write(player_goals)
 
-#     # Draw the rink on the single Axes object
-#     rink.draw(display_range="half", ax=ax)
-
-#     # Scatter plot for goals
-#     rink.scatter(
-#         "x_adjusted", "y_adjusted", ax=ax,
-#         facecolor="white", edgecolor="black", s=500,
-#         data=player_goals
-#     )
-
-#     # Add text for goal numbers
-#     rink.text(
-#         "x_adjusted", "y_adjusted", "goal_no", ax=ax,
-#         ha="center", va="center", fontsize=8, 
-#         data=player_goals
-#     )
-
-#     # Additional Test
-#     location_texth = rink.text(
-#         0.5, 0.05, selected_player_name, ax=ax,
-#         use_rink_coordinates=False,
-#         ha="center", va="center", fontsize=20,
-#     )
-
-#     # Display the rink map
-#     st.pyplot(fig)
-
-#     # Rest of your code for player information and goals
-#     st.write("Player Goals Detail:")
-#     st.write(player_goals)
-
-#     text = "Ice rink heat map package from [The Bucketless](https://github.com/the-bucketless/hockey_rink)"
-#     st.markdown(text, unsafe_allow_html=True)
+    text = "Ice rink heat map package from [The Bucketless](https://github.com/the-bucketless/hockey_rink)"
+    st.markdown(text, unsafe_allow_html=True)
 
 # ##########################################
 # ## Explore Matchups                     ##
