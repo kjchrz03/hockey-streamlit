@@ -29,6 +29,7 @@ def get_season_data():
                 json_data = await response.json()
                 details = pd.DataFrame(json_data['data'])
                 if not details.empty:
+                    details['gameId'].notnull()
                     details['player_name'] = details['firstName'] + " " + details['lastName']
                     mask_505 = details['typeCode'] == 505
                     details.loc[mask_505, 'eventDetails'] = details.loc[mask_505, 'eventDetails'].fillna('unassisted').replace(r'^\s*$', 'unassisted', regex=True)
