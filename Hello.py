@@ -1,3 +1,12 @@
+
+# subprocess.run(["pip", "install", "pytz"])
+# subprocess.run(["pip", "install", "nest_asyncio"])
+# subprocess.run(["pip", "install", "aiohttp"])
+
+# Install the library from the GitHub repository using pip within your Streamlit app
+# subprocess.run(["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"])
+
+# Import the external library
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -8,30 +17,28 @@ from PIL import Image
 import urllib.request
 import subprocess
 import asyncio
-
-from datetime import datetime
-from datetime import timedelta
-from datetime import date
-
+import aiohttp
+from datetime import datetime, timedelta, date
 import time
-from PIL import Image
-import pytz 
+import pytz
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
-import matplotlib.pyplot as plt
-
+import nest_asyncio
 import pickle
 import json
-pd.options.mode.chained_assignment = None 
 import re
 import requests
-# Install the library from the GitHub repository using pip within your Streamlit app
-# subprocess.run(["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"])
-subprocess.run(["pip", "install", "pytz"])
-# Import the external library
 import hockey_rink
 from hockey_rink import NHLRink, RinkImage
-from PIL import Image 
+from PIL import Image
+
+# Ensure Python can find the data module
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Import the function from season_data.py
+from data.season_data import get_season_data
+
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
 image = Image.open('logo.png')
@@ -120,11 +127,11 @@ st.title("Check This Data")
 st.markdown('''##### <span style="color: #aaaaaa">Explore NHL Advanced Stats, Simply</span>
             ''', unsafe_allow_html=True)
                 
-tab_player, tab_games = st.tabs(["Goals", "Matchups"])
+tab_bug, tab_player, tab_games = st.tabs(["Scores", "Goals", "Matchups"])
 st.sidebar.markdown(" ## Make Selections")
 
 ##########################################
-##  Matchup Sidebar                      ##
+##  Matchup Sidebar                     ##
 ##########################################
 # Function to fetch game data for a specific date
 def fetch_game_data(start_date, end_date):
@@ -191,109 +198,138 @@ def process_game_data(daily_games):
 
     return combined_df
 
-# Streamlit app starts here
-st.title("NHL Scorebug")
+##########################################
+## Scorebug Tab                         ##
+##########################################
 
-# Date range for fetching game data
-start_date = datetime.strptime("2024-10-08", "%Y-%m-%d")
-end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
+with tab_bug:
+    st.title("NHL Scorebug")
 
-# Fetch game data
-daily_games = fetch_game_data(start_date, end_date)
-if daily_games.empty:
-    st.warning("No games found in the specified date range.")
-else:
-    combined_df = process_game_data(daily_games)
+    # Date range for fetching game data
+    start_date = datetime.strptime("2024-10-08", "%Y-%m-%d")
+    end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
 
-    # Create a list of matchups for the selectbox in the sidebar
-    locations = combined_df[['game_id', 'awayTeam.abbrev', 'homeTeam.abbrev']]
-    matchups = locations['homeTeam.abbrev'] + ' vs ' + locations['awayTeam.abbrev']
+    # Fetch game data
+    daily_games = fetch_game_data(start_date, end_date)
+    if daily_games.empty:
+        st.warning("No games found in the specified date range.")
+    else:
+        combined_df = process_game_data(daily_games)
 
-    # Sidebar selectbox for matchups
-    selected_match = st.sidebar.selectbox('Select a match:', matchups)
+        # Create a list of matchups for the selectbox in the sidebar
+        locations = combined_df[['game_id', 'awayTeam.abbrev', 'homeTeam.abbrev']]
+        matchups = locations['homeTeam.abbrev'] + ' vs ' + locations['awayTeam.abbrev']
 
-    # Display selected matchup details
-    selected_game_index = matchups.tolist().index(selected_match)  # Get index of the selected match
-    selected_game = combined_df.iloc[selected_game_index]  # Get the corresponding game data
+        # Sidebar selectbox for matchups
+        selected_match = st.sidebar.selectbox('Select a match:', matchups)
 
-    # Display score bug information
-    st.subheader(f"Score Bug for {selected_match}")
-    st.write(f"Home Team: {selected_game['homeTeam.abbrev']}, Score: {selected_game['homeTeam.score']}")
-    st.write(f"Away Team: {selected_game['awayTeam.abbrev']}, Score: {selected_game['awayTeam.score']}")
-    st.write(f"Game State: {selected_game['gameState']}")
-    st.write(f"Game Link: [Play by Play]({selected_game['link']})")
+        # Display selected matchup details
+        selected_game_index = matchups.tolist().index(selected_match)  # Get index of the selected match
+        selected_game = combined_df.iloc[selected_game_index]  # Get the corresponding game data
+
+        # Display score bug information
+        st.subheader(f"Score Bug for {selected_match}")
+        st.write(f"Home Team: {selected_game['homeTeam.abbrev']}, Score: {selected_game['homeTeam.score']}")
+        st.write(f"Away Team: {selected_game['awayTeam.abbrev']}, Score: {selected_game['awayTeam.score']}")
+        st.write(f"Game State: {selected_game['gameState']}")
+        st.write(f"Game Link: [Play by Play]({selected_game['link']})")
 
 ##########################################
 ## Player Tab                           ##
 ##########################################
-# # 
-# with tab_player:
+# 
+with tab_player:
+
+    # Function to load the season data
+    def load_season_data():
+        try:
+            # Call the function from season_data.py
+            season_totals = get_season_data()
+
+            # Return the loaded data
+            return season_totals
+        except Exception as e:
+            st.error(f"Error loading data: {e}")
+            return None
+
+    # Function to manipulate player data
+    def load_players(season_totals):
+        # Create new columns based on the existing ones
+        season_totals['Name'] = season_totals['player_name']
+        season_totals['Goals'] = season_totals['g']  # Assuming 'g' is the goals column
+
+        # Select specific columns to return
+        selected_columns = ['Name', 'Goals']
+        players_df = season_totals[selected_columns]
+        
+        return players_df
+
+    # Streamlit app
+    season_totals = load_season_data()
+
+    if season_totals is not None:
+        # Get specific player data
+        players_df = load_players(season_totals)
+
+        st.header('Explore Player Goals')
+
+        # Player ID hidden and mapped to player name
+        player_id_mapping = {row['Name']: row['player_id'] for index, row in season_totals.iterrows()}
+
+        # Display the player dropdown with hidden player IDs
+        selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
+
+        # Get the player ID based on the selected player name
+        selected_player_id = player_id_mapping[selected_player_name]
+        player_position = season_totals[season_totals.Name == selected_player_name].Position.to_list()[0]
+        player_goals = season_totals[season_totals.Name == selected_player_name].Goals.to_list()[0]
+
+        st.write(f'''
+            ##### <div style="text-align: center"> This season  <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+        ''', unsafe_allow_html=True)
+
+        # Select only the desired columns from the DataFrame
+        selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
+
+        # Create an HTML table with desired styling
+        st.write(f'''
+        <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
+        <tr>
+            <td style="font-weight: bold;">Name</td>
+            <td style="font-weight: bold;">Position</td>
+            <td style="font-weight: bold;">Team</td>
+            <td style="font-weight: bold;">Goals</td>
+        </tr>
+        <tr>
+            <td>{season_totals.loc[season_totals.Name == selected_player_name, 'Name'].values[0]}</td>
+            <td>{season_totals.loc[season_totals.Name == selected_player_name, 'Position'].values[0]}</td>
+            <td>{season_totals.loc[season_totals.Name == selected_player_name, 'Team'].values[0]}</td>
+            <td>{season_totals.loc[season_totals.Name == selected_player_name, 'Goals'].values[0]}</td>
+        </tr>
+        </table>
+        ''', unsafe_allow_html=True)
+        st.markdown("<br>", unsafe_allow_html=True)
+
 
 # #player goals info
 #     def load_players():
-#         github_csv_url = 'data/goal_counts.csv'
-#         players_df = pd.read_csv(github_csv_url)
-#         players_df['Name'] = players_df['player_name']
-#         players_df['Player ID'] = players_df['player_id']
-#         players_df['Position'] = players_df['position']
-#         players_df['Team'] = players_df['team_name']
-#         players_df['Goals'] = players_df['goals']
-#         return players_df
-
-#     players_df = load_players()
+         
+#     season_totals = load_players()
 #     cols = ['Name','Position','Team','Goals']
 
 #     #goal scoring data
-#     def load_map():
-#         github_ice_map_url = 'data/ice_map_data.csv'
-#         goal_mapping = pd.read_csv(github_ice_map_url)
-#         goal_mapping['Name'] = goal_mapping['player_name']
-#         goal_mapping['ID'] = goal_mapping['player_id']
-#         goal_mapping['Goal Number'] = goal_mapping['goal_no']
-#         goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
-#         goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
-#         return goal_mapping
-#     goal_mapping = load_map()
-#     cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
+#     # def load_map():
+#     #     github_ice_map_url = 'data/ice_map_data.csv'
+#     #     goal_mapping = pd.read_csv(github_ice_map_url)
+#     #     goal_mapping['Name'] = goal_mapping['player_name']
+#     #     goal_mapping['ID'] = goal_mapping['player_id']
+#     #     goal_mapping['Goal Number'] = goal_mapping['goal_no']
+#     #     goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
+#     #     goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
+#     #     return goal_mapping
+#     # goal_mapping = load_map()
+#     # cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
 
-#     st.header('Explore Player Goals')
-
-#     #player id hidden and mapped to player name
-#     player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
-
-#     # Display the player dropdown with hidden player IDs
-#     selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
-
-#     # Get the player ID based on the selected player name
-#     selected_player_id = player_id_mapping[selected_player_name]
-#     player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
-#     player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
-
-#     st.write(f'''
-#             ##### <div style="text-align: center"> This season  <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
-#     ''', unsafe_allow_html=True)
-
-#     # Select only the desired columns from the DataFrame
-#     selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
-
-#     # Create an HTML table with desired styling
-#     st.write(f'''
-#     <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
-#     <tr>
-#         <td style="font-weight: bold;">Name</td>
-#         <td style="font-weight: bold;">Position</td>
-#         <td style="font-weight: bold;">Team</td>
-#         <td style="font-weight: bold;">Goals</td>
-#     </tr>
-#     <tr>
-#         <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
-#         <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
-#         <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
-#         <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
-#     </tr>
-#     </table>
-#     ''', unsafe_allow_html=True)
-#     st.markdown("<br>", unsafe_allow_html=True)
 
 #     ## goal mapping
 #     player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
