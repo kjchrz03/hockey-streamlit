@@ -239,61 +239,65 @@ with tab_bug:
 ##########################################
 
 with tab_player:
+   # Function to load season data
     def load_season_data():
         try:
-            # Call the function from season_data.py
-            season_totals = get_season_data()
+            # Assuming get_season_data() is defined in another script and imported
+            season_data = get_season_data()
 
             # Display a success message
             st.success("Data loaded successfully!")
-            return season_totals
+            return season_data
         except Exception as e:
             st.error(f"Error loading data: {e}")
             return None
-    def load_players(season_totals):
-        # Create new columns based on the existing ones
-        season_totals['Name'] = season_totals['player_name']
-        season_totals['player_id'] = season_totals['playerId']
-        season_totals['Goals'] = season_totals['g']
-        season_totals['Points'] = season_totals['p']
-        season_totals['Games Played'] = season_totals['gp']
-        season_totals['Goals per Game'] = season_totals['gpg']  
 
-        # Select specific columns to return
-        selected_columns = ['Name', 'player_id', 'Goals', 'Points', 'Games Played', 'Goals per Game']
-        players_df = season_totals[selected_columns]
-        
-        return players_df
-    
-    # players_df = load_players()
-    # cols = ['Name','Position','Team','Goals']
-    # # Streamlit app
-    season_totals = load_season_data()
+    # Function to transform and extract player data
+    def load_players(season_data):
+        try:
+            # Create new columns based on the existing ones
+            season_data['Name'] = season_data['player_name']
+            season_data['player_id'] = season_data['playerId']
+            season_data['Goals'] = season_data['g']
+            season_data['Points'] = season_data['p']
+            season_data['Games Played'] = season_data['gp']
+            season_data['Goals per Game'] = season_data['gpg']
+            season_data['Team'] = season_data['team_name']
 
-    if season_totals is not None:
-        # Get specific player data
-        players_df = load_players(season_totals)
+            # Select specific columns to return
+            selected_columns = ['Name', 'player_id', 'Goals', 'Points', 'Games Played', 'Goals per Game']
+            players_df = season_data[selected_columns]
+            
+            return players_df
+        except KeyError as e:
+            st.error(f"Column missing in data: {e}")
+            return None
 
-#goal scoring data
-    def load_map():
-        github_ice_map_url = 'data/ice_map_data.csv'
-        goal_mapping = pd.read_csv(github_ice_map_url)
-        goal_mapping['Name'] = goal_mapping['player_name']
-        goal_mapping['ID'] = goal_mapping['player_id']
-        goal_mapping['Goal Number'] = goal_mapping['goal_no']
-        goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
-        goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
-        return goal_mapping
-    goal_mapping = load_map()
-    cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
+    # Streamlit app structure
+    with st.container():  # Using a container to structure the app
+        st.header('Explore Player Goals')
 
-    st.header('Explore Player Goals')
+        # Load season data
+        season_data = load_season_data()
 
-    #player id hidden and mapped to player name
-    player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
+        if season_data is not None:
+            # Extract player data from season totals
+            players_df = load_players(season_data)
 
-    # Display the player dropdown with hidden player IDs
-    selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
+            if players_df is not None:
+                # Create a mapping of player names to IDs
+                player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
+
+                # Player selection dropdown (display names, but keep player IDs hidden)
+                selected_player_name = st.selectbox('Select a player:', list(player_id_mapping.keys()))
+
+                # Retrieve the corresponding player ID
+                selected_player_id = player_id_mapping[selected_player_name]
+                st.write(f"Selected Player ID: {selected_player_id}")
+            else:
+                st.error("Player data could not be loaded.")
+        else:
+            st.error("Season data could not be loaded.")
 
     # Get the player ID based on the selected player name
     selected_player_id = player_id_mapping[selected_player_name]
@@ -327,6 +331,22 @@ with tab_player:
     </table>
     ''', unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
+
+
+
+#goal scoring data
+#     def load_map():
+#         github_ice_map_url = 'data/ice_map_data.csv'
+#         goal_mapping = pd.read_csv(github_ice_map_url)
+#         goal_mapping['Name'] = goal_mapping['player_name']
+#         goal_mapping['ID'] = goal_mapping['player_id']
+#         goal_mapping['Goal Number'] = goal_mapping['goal_no']
+#         goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
+#         goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
+#         return goal_mapping
+#     goal_mapping = load_map()
+#     cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
+
 
     ## goal mapping
     player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
