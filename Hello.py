@@ -242,7 +242,7 @@ with tab_player:
     def load_season_data():
         try:
             # Call the function from season_data.py
-            season_totals = get_season_data()
+            season_totals = get_season_data(team_rosters, season_totals)
 
             # Display a success message
             st.success("Data loaded successfully!")
