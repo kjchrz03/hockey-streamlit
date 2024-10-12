@@ -136,7 +136,7 @@ def get_roster_data():
         response_text = response.text
 
     else:
-        print(f"Request for player data failed with status code {response.status_code}")
+        # print(f"Request for player data failed with status code {response.status_code}")
 
     json_data = json.loads(response_text)
 
@@ -191,10 +191,10 @@ def get_roster_data():
                 team_roster_df['tri_code'] = team_roster_df['headshot'].apply(extract_tricode)
                 return team_roster_df
             else:
-                print(f"Request failed for roster {roster_link} with status code {response.status_code}")
+                # print(f"Request failed for roster {roster_link} with status code {response.status_code}")
                 return None
         except Exception as e:
-            print(f"An error occurred in roster data: {e}")
+            # print(f"An error occurred in roster data: {e}")
             return None
 
     # Loop through the rows of filtered_rosters and extract data
@@ -225,7 +225,7 @@ def load_roster_data():
         team_rosters = get_roster_data()
         return team_rosters  # Returning the processed DataFrame
     except Exception as e:
-        print(f"Error loading roster data: {e}")
+        # print(f"Error loading roster data: {e}")
         return None
 # Call the function and store the results
 team_rosters = get_roster_data()
@@ -245,7 +245,7 @@ if team_rosters is not None and season_totals is not None:
     season_data = get_season_data(team_rosters, season_totals)
 
 else:
-    print("Failed to retrieve roster data.")
+    # print("Failed to retrieve roster data.")
 
 def load_season_data():
     try:
@@ -253,14 +253,14 @@ def load_season_data():
         season_data = get_season_data()
         return season_data  # Returning the processed DataFrame
     except Exception as e:
-        print(f"Error loading season data: {e}")
+        # print(f"Error loading season data: {e}")
         return None
 # Call the function and store the results
 season_data = get_season_data(team_rosters, season_totals)
 
-# Display the first few rows of the DataFrame
-if season_data is not None:
-    print(season_data.columns)
-else:
-    print("No season data returned.")
+# # Display the first few rows of the DataFrame
+# if season_data is not None:
+#     print(season_data.columns)
+# else:
+#     print("No season data returned.")
 
