@@ -99,7 +99,8 @@ def get_season_data():
     # Calculate goals per game and total points
     season_totals['gpg'] = season_totals['g'] / season_totals['gp']
     season_totals['p'] = season_totals['g'] + season_totals['a1'] + season_totals['a2']
-    
+    season_totals=season_totals.sort_values(by='player_name')
+
     return season_totals
 def load_season_data():
     try:
@@ -114,6 +115,6 @@ season_results = load_season_data()
 
 # Display the first few rows of the DataFrame
 if season_results is not None:
-    print(season_results.head())
+    print(season_results)
 else:
     print("No data returned.")
