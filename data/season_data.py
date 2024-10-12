@@ -42,7 +42,7 @@ def get_player_data():
                     return details
                 return pd.DataFrame()  # Return empty DataFrame if no data
         except Exception as e:
-            print(f"An error occurred in shift data: {e}")
+            # print(f"An error occurred in shift data: {e}")
             return pd.DataFrame()
 
     # Fetch all shift data asynchronously in batches
@@ -247,20 +247,20 @@ if team_rosters is not None and season_totals is not None:
 else:
     # print("Failed to retrieve roster data.")
 
-def load_season_data():
-    try:
-        # Call the function from season_data.py (assuming it returns a DataFrame)
-        season_data = get_season_data()
-        return season_data  # Returning the processed DataFrame
-    except Exception as e:
-        # print(f"Error loading season data: {e}")
-        return None
-# Call the function and store the results
-season_data = get_season_data(team_rosters, season_totals)
+    def load_season_data():
+        try:
+            # Call the function from season_data.py (assuming it returns a DataFrame)
+            season_data = get_season_data()
+            return season_data  # Returning the processed DataFrame
+        except Exception as e:
+            # print(f"Error loading season data: {e}")
+            return None
+    # Call the function and store the results
+    season_data = get_season_data(team_rosters, season_totals)
 
-# # Display the first few rows of the DataFrame
-# if season_data is not None:
-#     print(season_data.columns)
-# else:
-#     print("No season data returned.")
+    # # Display the first few rows of the DataFrame
+    # if season_data is not None:
+    #     print(season_data.columns)
+    # else:
+    #     print("No season data returned.")
 
