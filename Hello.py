@@ -335,9 +335,10 @@ with tab_player:
     </tr>
      <tr>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Points'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Games Played'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals per Game'].values[0]}</td>
     </tr>
     </table>
     ''', unsafe_allow_html=True)
