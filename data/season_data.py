@@ -42,7 +42,7 @@ def get_player_data():
                     return details
                 return pd.DataFrame()  # Return empty DataFrame if no data
         except Exception as e:
-            print(f"An error occurred: {e}")
+            print(f"An error occurred in shift data: {e}")
             return pd.DataFrame()
 
     # Fetch all shift data asynchronously in batches
@@ -103,7 +103,7 @@ def get_player_data():
     season_totals['gpg'] = season_totals['g'] / season_totals['gp']
     season_totals['p'] = season_totals['g'] + season_totals['a1'] + season_totals['a2']
     season_totals=season_totals.sort_values(by='player_name')
-
+    season_totals=season_totals.rename(columns = {'playerId':'player_id'})
     return season_totals
 
 def load_player_data():
@@ -112,16 +112,11 @@ def load_player_data():
         season_totals = get_player_data()
         return season_totals  # Returning the processed DataFrame
     except Exception as e:
-        print(f"Error loading data: {e}")
+        print(f"Error loading data player data: {e}")
         return None
 # Call the function and store the results
 season_results = load_player_data()
 
-# Display the first few rows of the DataFrame
-if season_results is not None:
-    print(season_results)
-else:
-    print("No data returned.")
 
 
 def get_roster_data():
@@ -141,7 +136,7 @@ def get_roster_data():
         response_text = response.text
 
     else:
-        print(f"Request failed with status code {response.status_code}")
+        print(f"Request for player data failed with status code {response.status_code}")
 
     json_data = json.loads(response_text)
 
@@ -196,10 +191,10 @@ def get_roster_data():
                 team_roster_df['tri_code'] = team_roster_df['headshot'].apply(extract_tricode)
                 return team_roster_df
             else:
-                print(f"Request failed for {roster_link} with status code {response.status_code}")
+                print(f"Request failed for roster {roster_link} with status code {response.status_code}")
                 return None
         except Exception as e:
-            print(f"An error occurred: {e}")
+            print(f"An error occurred in roster data: {e}")
             return None
 
     # Loop through the rows of filtered_rosters and extract data
@@ -211,7 +206,7 @@ def get_roster_data():
             team_roster['tri_code'] = row['tri_code']
             roster_dict[row['tri_code']] = team_roster
         else:
-            print(f"Skipping row {index} due to failed request or exception.")
+            print(f"Skipping row {index} due to failed request or exception in roster data.")
 
     # Combine all rosters into a single DataFrame
     all_rosters = pd.concat(roster_dict.values(), ignore_index=True)
@@ -220,7 +215,7 @@ def get_roster_data():
     team_rosters = filtered_rosters[['team_id', 'team_name', 'tri_code']]
     team_rosters = team_rosters.merge(all_rosters, on="tri_code", how="left")
     team_rosters = team_rosters.rename(columns={'id': 'player_id'})
-
+    team_rosters = team_rosters[['player_id', 'team_name', 'positionCode', 'sweaterNumber', 'shootsCatches']]
     # View result
     return team_rosters
 
@@ -230,16 +225,10 @@ def load_roster_data():
         team_rosters = get_roster_data()
         return team_rosters  # Returning the processed DataFrame
     except Exception as e:
-        print(f"Error loading data: {e}")
+        print(f"Error loading roster data: {e}")
         return None
 # Call the function and store the results
 team_rosters = get_roster_data()
-
-# Display the first few rows of the DataFrame
-if team_rosters is not None:
-    print(team_rosters)
-else:
-    print("No data returned.")
 
 
 def get_season_data(roster_df, season_totals_df):
@@ -254,9 +243,9 @@ season_totals = load_player_data()  # Assuming you have this function to get sea
 # Merge roster data and season totals
 if team_rosters is not None and season_totals is not None:
     season_data = get_season_data(team_rosters, season_totals)
-    print(season_data)
+
 else:
-    print("Failed to retrieve data.")
+    print("Failed to retrieve roster data.")
 
 def load_season_data():
     try:
@@ -264,14 +253,14 @@ def load_season_data():
         season_data = get_season_data()
         return season_data  # Returning the processed DataFrame
     except Exception as e:
-        print(f"Error loading data: {e}")
+        print(f"Error loading season data: {e}")
         return None
 # Call the function and store the results
-season_data = get_season_data()
+season_data = get_season_data(team_rosters, season_totals)
 
 # Display the first few rows of the DataFrame
 if season_data is not None:
-    print(season_data)
+    print(season_data.columns)
 else:
-    print("No data returned.")
+    print("No season data returned.")
 
