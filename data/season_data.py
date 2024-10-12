@@ -253,8 +253,25 @@ season_totals = load_player_data()  # Assuming you have this function to get sea
 
 # Merge roster data and season totals
 if team_rosters is not None and season_totals is not None:
-    combined_data = get_season_data(team_rosters, season_totals)
-    print(combined_data.head())
+    season_data = get_season_data(team_rosters, season_totals)
+    print(season_data)
 else:
     print("Failed to retrieve data.")
+
+def load_season_data():
+    try:
+        # Call the function from season_data.py (assuming it returns a DataFrame)
+        season_data = get_season_data()
+        return season_data  # Returning the processed DataFrame
+    except Exception as e:
+        print(f"Error loading data: {e}")
+        return None
+# Call the function and store the results
+season_data = get_season_data()
+
+# Display the first few rows of the DataFrame
+if season_data is not None:
+    print(season_data)
+else:
+    print("No data returned.")
 
