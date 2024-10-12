@@ -136,7 +136,7 @@ def get_roster_data():
         response_text = response.text
 
     else:
-        # print(f"Request for player data failed with status code {response.status_code}")
+        print(f"Request for player data failed with status code {response.status_code}")
 
     json_data = json.loads(response_text)
 
