@@ -258,9 +258,3 @@ else:
     # Call the function and store the results
     season_data = get_season_data(team_rosters, season_totals)
 
-    # # Display the first few rows of the DataFrame
-    # if season_data is not None:
-    #     print(season_data.columns)
-    # else:
-    #     print("No season data returned.")
-
