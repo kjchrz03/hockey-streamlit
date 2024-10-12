@@ -265,30 +265,14 @@ with tab_player:
         
         return players_df
     
-    players_df = load_players()
-    cols = ['Name','Position','Team','Goals']
-    # Streamlit app
+    # players_df = load_players()
+    # cols = ['Name','Position','Team','Goals']
+    # # Streamlit app
     season_totals = load_season_data()
 
     if season_totals is not None:
         # Get specific player data
         players_df = load_players(season_totals)
-
-        # Display the DataFrame with selected columns
-        st.write(players_df)
-
-
-# #player goals info
-#     def load_players():
-#         github_csv_url = 'data/goal_counts.csv'
-#         players_df = pd.read_csv(github_csv_url)
-#         players_df['Name'] = players_df['player_name']
-#         players_df['Player ID'] = players_df['player_id']
-#         players_df['Position'] = players_df['position']
-#         players_df['Team'] = players_df['team_name']
-#         players_df['Goals'] = players_df['goals']
-#         return players_df
-
 
 #goal scoring data
     def load_map():
@@ -329,7 +313,7 @@ with tab_player:
     <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
     <tr>
         <td style="font-weight: bold;">Name</td>
-        <td style="font-weight: bold;">Position</td>
+        <td style="font-weight: bold;">Positiontd>
         <td style="font-weight: bold;">Team</td>
         <td style="font-weight: bold;">Goals</td>
     </tr>
