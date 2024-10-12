@@ -237,21 +237,59 @@ with tab_bug:
 ##########################################
 ## Player Tab                           ##
 ##########################################
-# 
-with tab_player:
-#player goals info
-    def load_players():
-        github_csv_url = 'data/goal_counts.csv'
-        players_df = pd.read_csv(github_csv_url)
-        players_df['Name'] = players_df['player_name']
-        players_df['Player ID'] = players_df['player_id']
-        players_df['Position'] = players_df['position']
-        players_df['Team'] = players_df['team_name']
-        players_df['Goals'] = players_df['goals']
-        return players_df
 
+with tab_player:
+    def load_season_data():
+        try:
+            # Call the function from season_data.py
+            season_totals = get_season_data()
+
+            # Display a success message
+            st.success("Data loaded successfully!")
+            return season_totals
+        except Exception as e:
+            st.error(f"Error loading data: {e}")
+            return None
+    def load_players(season_totals):
+        # Create new columns based on the existing ones
+        season_totals['Name'] = season_totals['player_name']
+        season_totals['player_id'] = season_totals['playerId']
+        season_totals['Goals'] = season_totals['g']
+        season_totals['Points'] = season_totals['p']
+        season_totals['Games Played'] = season_totals['gp']
+        season_totals['Goals per Game'] = season_totals['gpg']  
+
+        # Select specific columns to return
+        selected_columns = ['Name', 'player_id', 'Goals', 'Points', 'Games Played', 'Goals per Game']
+        players_df = season_totals[selected_columns]
+        
+        return players_df
+    
     players_df = load_players()
     cols = ['Name','Position','Team','Goals']
+    # Streamlit app
+    season_totals = load_season_data()
+
+    if season_totals is not None:
+        # Get specific player data
+        players_df = load_players(season_totals)
+
+        # Display the DataFrame with selected columns
+        st.write(players_df)
+
+
+# #player goals info
+#     def load_players():
+#         github_csv_url = 'data/goal_counts.csv'
+#         players_df = pd.read_csv(github_csv_url)
+#         players_df['Name'] = players_df['player_name']
+#         players_df['Player ID'] = players_df['player_id']
+#         players_df['Position'] = players_df['position']
+#         players_df['Team'] = players_df['team_name']
+#         players_df['Goals'] = players_df['goals']
+#         return players_df
+
+
 #goal scoring data
     def load_map():
         github_ice_map_url = 'data/ice_map_data.csv'
@@ -275,7 +313,7 @@ with tab_player:
 
     # Get the player ID based on the selected player name
     selected_player_id = player_id_mapping[selected_player_name]
-    player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
+    #player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
     player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
 
     st.write(f'''
@@ -297,9 +335,10 @@ with tab_player:
     </tr>
      <tr>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Points'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Games Played'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals per Game'].values[0]}</td>
     </tr>
     </table>
     ''', unsafe_allow_html=True)
