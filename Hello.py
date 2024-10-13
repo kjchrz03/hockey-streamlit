@@ -261,7 +261,6 @@ with tab_player:
         # Select specific columns to return
         selected_columns = ['Name', 'player_id', 'Sweater Number', 'Team', 'Position', 'Goals', 'Points', 'Games Played', 'Goals per Game']
         players_df = season_totals[selected_columns]
-        players_df = load_players()
         return players_df
     
     # players_df = load_players()
@@ -278,7 +277,6 @@ with tab_player:
             selected_player_name = st.selectbox('Select a player:', list(player_id_mapping.keys()))
             # Retrieve the corresponding player ID
             selected_player_id = player_id_mapping[selected_player_name]
-            st.write(f"Selected Player ID: {selected_player_id}")
         else:
             st.error("Player data could not be loaded.")
     else:
