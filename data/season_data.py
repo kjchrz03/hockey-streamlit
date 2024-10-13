@@ -244,16 +244,16 @@ if team_rosters is not None and season_totals is not None:
     season_data = get_season_data(team_rosters, season_totals)
 
 else:
-    # print("Failed to retrieve roster data.")
+    print("Failed to retrieve roster data.")
 
-    def load_season_data():
-        try:
-            # Call the function from season_data.py (assuming it returns a DataFrame)
-            season_data = get_season_data()
-            return season_data  # Returning the processed DataFrame
-        except Exception as e:
-            # print(f"Error loading season data: {e}")
-            return None
-    # Call the function and store the results
-    season_data = get_season_data(team_rosters, season_totals)
+def load_season_data():
+    try:
+        # Call the function from season_data.py (assuming it returns a DataFrame)
+        season_data = get_season_data()
+        return season_data  # Returning the processed DataFrame
+    except Exception as e:
+        # print(f"Error loading season data: {e}")
+        return None
+# Call the function and store the results
+season_data = get_season_data(team_rosters, season_totals)
 
