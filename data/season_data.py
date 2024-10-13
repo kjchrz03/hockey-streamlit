@@ -136,6 +136,7 @@ def get_roster_data():
     df_roster = df_roster[['id','fullName', 'triCode', 'roster_url']]
     df_roster = df_roster.rename(columns = {'id':'team_id', 'fullName':'team_name', 'triCode':'tri_code'})
     df_roster=df_roster.sort_values(by='team_id')
+    df_roster=df_roster['sweaterNumber'].astype(str)
 
 
     #for 2024-2025 season :
