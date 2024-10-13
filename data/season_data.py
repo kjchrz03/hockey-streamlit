@@ -136,7 +136,7 @@ def get_roster_data():
     df_roster = df_roster[['id','fullName', 'triCode', 'roster_url']]
     df_roster = df_roster.rename(columns = {'id':'team_id', 'fullName':'team_name', 'triCode':'tri_code'})
     df_roster=df_roster.sort_values(by='team_id')
-    df_roster=df_roster['sweaterNumber'].astype(str)
+
 
 
     #for 2024-2025 season :
@@ -155,7 +155,8 @@ def get_roster_data():
             df['firstName'] = df['firstName'].apply(lambda x: x['default'] if isinstance(x, dict) else x)
             df['lastName'] = df['lastName'].apply(lambda x: x['default'] if isinstance(x, dict) else x)
             df['player_name'] = df['firstName'] + " " + df['lastName']
-            df['position'] = position  # Add position info
+            df['position'] = position
+            df['sweaterNumber']=df['sweaterNumber'].astype(str)  
             return df[['id', 'headshot', 'player_name', 'sweaterNumber', 'positionCode', 'shootsCatches']]
         return pd.DataFrame()
 
