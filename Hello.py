@@ -326,62 +326,62 @@ with tab_player:
         st.error("Season data could not be loaded.")
 
 
-#goal scoring data
-#     def load_map():
-#         github_ice_map_url = 'data/ice_map_data.csv'
-#         goal_mapping = pd.read_csv(github_ice_map_url)
-#         goal_mapping['Name'] = goal_mapping['player_name']
-#         goal_mapping['ID'] = goal_mapping['player_id']
-#         goal_mapping['Goal Number'] = goal_mapping['goal_no']
-#         goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
-#         goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
-#         return goal_mapping
-#     goal_mapping = load_map()
-#     cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
+# #goal scoring data
+# #     def load_map():
+# #         github_ice_map_url = 'data/ice_map_data.csv'
+# #         goal_mapping = pd.read_csv(github_ice_map_url)
+# #         goal_mapping['Name'] = goal_mapping['player_name']
+# #         goal_mapping['ID'] = goal_mapping['player_id']
+# #         goal_mapping['Goal Number'] = goal_mapping['goal_no']
+# #         goal_mapping['Adjusted X'] = goal_mapping['x_adjusted']
+# #         goal_mapping['Adjusted Y'] = goal_mapping['y_adjusted']
+# #         return goal_mapping
+# #     goal_mapping = load_map()
+# #     cols = ['Name','Goal Number','Adjusted X', 'Adjusted Y']
 
 
-    ## goal mapping
-    player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
+#     ## goal mapping
+#     player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
 
-    # Create an NHLRink object
-    rink = hockey_rink.NHLRink(rotation=270, net={"visible": False})
+#     # Create an NHLRink object
+#     rink = hockey_rink.NHLRink(rotation=270, net={"visible": False})
 
-    # Define the figure and axes for the rink map
-    fig, ax = plt.subplots(1, 1, figsize=(10, 16)) 
+#     # Define the figure and axes for the rink map
+#     fig, ax = plt.subplots(1, 1, figsize=(10, 16)) 
 
-    # Draw the rink on the single Axes object
-    rink.draw(display_range="half", ax=ax)
+#     # Draw the rink on the single Axes object
+#     rink.draw(display_range="half", ax=ax)
 
-    # Scatter plot for goals
-    rink.scatter(
-        "x_adjusted", "y_adjusted", ax=ax,
-        facecolor="white", edgecolor="black", s=500,
-        data=player_goals
-    )
+#     # Scatter plot for goals
+#     rink.scatter(
+#         "x_adjusted", "y_adjusted", ax=ax,
+#         facecolor="white", edgecolor="black", s=500,
+#         data=player_goals
+#     )
 
-    # Add text for goal numbers
-    rink.text(
-        "x_adjusted", "y_adjusted", "goal_no", ax=ax,
-        ha="center", va="center", fontsize=8, 
-        data=player_goals
-    )
+#     # Add text for goal numbers
+#     rink.text(
+#         "x_adjusted", "y_adjusted", "goal_no", ax=ax,
+#         ha="center", va="center", fontsize=8, 
+#         data=player_goals
+#     )
 
-    # Additional Test
-    location_texth = rink.text(
-        0.5, 0.05, selected_player_name, ax=ax,
-        use_rink_coordinates=False,
-        ha="center", va="center", fontsize=20,
-    )
+#     # Additional Test
+#     location_texth = rink.text(
+#         0.5, 0.05, selected_player_name, ax=ax,
+#         use_rink_coordinates=False,
+#         ha="center", va="center", fontsize=20,
+#     )
 
-    # Display the rink map
-    st.pyplot(fig)
+#     # Display the rink map
+#     st.pyplot(fig)
 
-    # Rest of your code for player information and goals
-    st.write("Player Goals Detail:")
-    st.write(player_goals)
+#     # Rest of your code for player information and goals
+#     st.write("Player Goals Detail:")
+#     st.write(player_goals)
 
-    text = "Ice rink heat map package from [The Bucketless](https://github.com/the-bucketless/hockey_rink)"
-    st.markdown(text, unsafe_allow_html=True)
+#     text = "Ice rink heat map package from [The Bucketless](https://github.com/the-bucketless/hockey_rink)"
+#     st.markdown(text, unsafe_allow_html=True)
 
 # ##########################################
 # ## Explore Matchups                     ##
