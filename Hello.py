@@ -262,57 +262,54 @@ with tab_player:
         
         return players_df
     
-    players_df = load_players()
-    cols = ['Name','Position','Team','Goals']
+    # players_df = load_players()
+    # cols = ['Name','Position','Team','Goals']
     # Streamlit app
     season_totals = load_season_data()
     if season_totals is not None:
-        # Get specific player data
+            # Extract player data from season totals
         players_df = load_players(season_totals)
-        # Display the DataFrame with selected columns
-        st.write(players_df)
-# #player goals info
-#     def load_players():
-#         github_csv_url = 'data/goal_counts.csv'
-#         players_df = pd.read_csv(github_csv_url)
-#         players_df['Name'] = players_df['player_name']
-#         players_df['Player ID'] = players_df['player_id']
-#         players_df['Position'] = players_df['position']
-#         players_df['Team'] = players_df['team_name']
-#         players_df['Goals'] = players_df['goals']
-#         return players_df
-#goal scoring data
-#     def load_map():
-#         github_ice_map_url = 'data/ice_map_data.csv'
-# @@ -275,91 +313,91 @@
+        if players_df is not None:
+            # Create a mapping of player names to IDs
+            player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
+            # Player selection dropdown (display names, but keep player IDs hidden)
+            selected_player_name = st.selectbox('Select a player:', list(player_id_mapping.keys()))
+            # Retrieve the corresponding player ID
+            selected_player_id = player_id_mapping[selected_player_name]
+            st.write(f"Selected Player ID: {selected_player_id}")
+        else:
+            st.error("Player data could not be loaded.")
+    else:
+        st.error("Season data could not be loaded.")
 
     # Get the player ID based on the selected player name
     selected_player_id = player_id_mapping[selected_player_name]
-    #player_position = players_df[players_df.Name == selected_player_name].Position.to_list()[0]
-    player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
 
-    st.write(f'''
-            ##### <div style="text-align: center"> This season  <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
-    ''', unsafe_allow_html=True)
+# @@ -328,6 +332,22 @@ def load_map():
+#     ''', unsafe_allow_html=True)
+#     st.markdown("<br>", unsafe_allow_html=True)
+
 
 
     # Select only the desired columns from the DataFrame
-    selected_columns = ['Name', 'Position', 'Team', 'Goals']  # Replace with your actual column names
+    selected_columns = ['Name', 'player_id', 'Goals', 'Points', 'Games Played', 'Goals per Game']# Replace with your actual column names
 
     # Create an HTML table with desired styling
     st.write(f'''
     <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
     <tr>
         <td style="font-weight: bold;">Name</td>
-        <td style="font-weight: bold;">Position</td>
-        <td style="font-weight: bold;">Team</td>
+        <td style="font-weight: bold;">Games Played</td>
         <td style="font-weight: bold;">Goals</td>
+        <td style="font-weight: bold;">Goals per Game</td>
+        <td style="font-weight: bold;">Points</td>
     </tr>
      <tr>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Games Played'].values[0]}</td>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals per Game'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Points'].values[0]}</td> 
     </tr>
     </table>
     ''', unsafe_allow_html=True)
