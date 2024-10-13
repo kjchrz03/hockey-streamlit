@@ -240,12 +240,11 @@ with tab_bug:
 
 with tab_player:
 
+    # Function to load season data
     def load_season_data():
         try:
-
-            season_data = get_season_data()
+            season_data = get_season_data()  # Assuming get_season_data() is already defined elsewhere
             return season_data
-        
         except Exception as e:
             st.error(f"Error loading data: {e}")
             return None
@@ -264,72 +263,68 @@ with tab_player:
             season_data['Position'] = season_data['position']
 
             # Select specific columns to return
-            selected_columns = ['Name', 'player_id', 'Goals', 'Points', 'Games Played', 'Goals per Game', 'Position']
+            selected_columns = ['Name', 'player_id', 'Goals', 'Points', 'Games Played', 'Goals per Game', 'Team', 'Position']
             players_df = season_data[selected_columns]
             
             return players_df
         except KeyError as e:
             st.error(f"Column missing in data: {e}")
             return None
-        
-    players_df = load_players()
-    cols = ['Name','Position','Team','Goals', 'Points', 'Goals per Game']
 
-    # # Streamlit app structure
-    # with st.container():  # Using a container to structure the app
-    #     st.header('Explore Player Goals')
-
-        # Load season data
+    # Load season data
     season_data = load_season_data()
 
     if season_data is not None:
-            # Extract player data from season totals
+        # Extract player data from season data
         players_df = load_players(season_data)
-        st.write(players_df)
 
-        # if players_df is not None:
-        # Create a mapping of player names to IDs
-        player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
+        if players_df is not None:
+            # Create a mapping of player names to IDs
+            player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
 
-        # Player selection dropdown (display names, but keep player IDs hidden)
-        selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
+            # Player selection dropdown (display names, but keep player IDs hidden)
+            selected_player_name = st.selectbox("Choose a player (or click below and start typing):", list(player_id_mapping.keys()), index=0)
 
-        # Retrieve the corresponding player ID
-        selected_player_id = player_id_mapping[selected_player_name]
-        player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
+            # Retrieve the corresponding player ID
+            selected_player_id = player_id_mapping[selected_player_name]
+            player_goals = players_df[players_df.Name == selected_player_name].Goals.to_list()[0]
 
-        st.write(f"Selected Player ID: {selected_player_id}")
+            st.write(f"Selected Player ID: {selected_player_id}")
+            st.write(f'''
+                ##### <div style="text-align: center"> This season <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
+            ''', unsafe_allow_html=True)
 
-        st.write(f'''
-            ##### <div style="text-align: center"> This season  <span style="color:blue">{selected_player_name}</span> has scored <span style="color:green">{player_goals}</span> goals.</div>
-    ''', unsafe_allow_html=True)
+            # Select only the desired columns from the DataFrame
+            selected_columns = ['Name', 'Position', 'Team', 'Goals', 'Points', 'Goals per Game']
 
-    
-       # Select only the desired columns from the DataFrame
-        selected_columns = ['Name', 'Position', 'Team', 'Goals', 'Points', 'Goals per Game']  # Replace with your actual column names
+            # Create an HTML table with desired styling
+            st.write(f'''
+            <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
+            <tr>
+                <td style="font-weight: bold;">Name</td>
+                <td style="font-weight: bold;">Position</td>
+                <td style="font-weight: bold;">Team</td>
+                <td style="font-weight: bold;">Goals</td>
+                <td style="font-weight: bold;">Points</td>
+                <td style="font-weight: bold;">Goals per Game</td>
+            </tr>
+            <tr>
+                <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
+                <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
+                <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
+                <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
+                <td>{players_df.loc[players_df.Name == selected_player_name, 'Points'].values[0]}</td>
+                <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals per Game'].values[0]}</td>
+            </tr>
+            </table>
+            ''', unsafe_allow_html=True)
 
-        # Create an HTML table with desired styling
-        st.write(f'''
-        <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
-        <tr>
-            <td style="font-weight: bold;">Name</td>
-            <td style="font-weight: bold;">Positiontd>
-            <td style="font-weight: bold;">Team</td>
-            <td style="font-weight: bold;">Goals</td>
-            <td style="font-weight: bold;">Points</td>
-            <td style="font-weight: bold;">Goals per Game</td>
-        </tr>
-        <tr>
-            <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == selected_player_name, 'Points'].values[0]}</td>
-            <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals per Game'].values[0]}</td>
-        </tr>
-        </table>
-        ''', unsafe_allow_html=True)
-        st.markdown("<br>", unsafe_allow_html=True)
+            st.markdown("<br>", unsafe_allow_html=True)
+        else:
+            st.error("Player data could not be loaded.")
+    else:
+        st.error("Season data could not be loaded.")
+
 
 #goal scoring data
 #     def load_map():
