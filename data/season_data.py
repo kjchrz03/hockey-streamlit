@@ -118,7 +118,6 @@ def load_player_data():
 season_results = load_player_data()
 
 
-
 def get_roster_data():
     
     #Roster Data
