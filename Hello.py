@@ -250,16 +250,17 @@ with tab_player:
     def load_players(season_totals):
         # Create new columns based on the existing ones
         season_totals['Name'] = season_totals['player_name']
-        season_totals['player_id'] = season_totals['playerId']
+        season_totals['player_id'] = season_totals['player_id']
         season_totals['Goals'] = season_totals['g']
         season_totals['Points'] = season_totals['p']
         season_totals['Games Played'] = season_totals['gp']
-        season_totals['Goals per Game'] = season_totals['gpg'] 
+        season_totals['Goals per Game'] = season_totals['gpg']
+        season_totals['Sweater Number'] = season_totals['sweaterNumber']
         season_totals['Team'] =  season_totals['team_name'] 
         season_totals['Position'] =  season_totals['positionCode'] 
         # Select specific columns to return
-        #selected_columns = ['Name', 'player_id', 'Team', 'Position', 'Goals', 'Points', 'Games Played', 'Goals per Game']
-        # players_df = season_totals[selected_columns]
+        selected_columns = ['Name', 'player_id', 'Sweater Number', 'Team', 'Position', 'Goals', 'Points', 'Games Played', 'Goals per Game']
+        players_df = season_totals[selected_columns]
         players_df = load_players()
         return players_df
     
