@@ -230,9 +230,9 @@ def load_roster_data():
 team_rosters = get_roster_data()
 
 
-def get_season_data(roster_df, season_totals_df):
+def get_season_data(team_rosters, season_totals):
     # Merge season totals with roster data
-    combined_df = pd.merge(roster_df, season_totals_df, on='player_id', how='left')
+    combined_df = pd.merge(team_rosters, season_totals, on='player_id', how='left')
     return combined_df
 
 # Call functions to get data
@@ -257,3 +257,4 @@ def load_season_data():
 # Call the function and store the results
 season_data = get_season_data(team_rosters, season_totals)
 
+season_data
