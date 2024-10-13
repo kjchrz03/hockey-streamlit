@@ -37,7 +37,7 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import the function from season_data.py
-from data.season_data import get_season_data
+from data.season_data import load_season_data
 
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
@@ -238,12 +238,11 @@ with tab_bug:
 ## Player Tab                           ##
 ##########################################
 with tab_player:
-    def load_season_data():
+    def season_data():
         try:
             # Call the function from season_data.py
-            season_totals = get_season_data()
-            # Display a success message
-            st.success("Data loaded successfully!")
+            season_totals = load_season_data()
+
             return season_totals
         except Exception as e:
             st.error(f"Error loading data: {e}")
@@ -255,11 +254,13 @@ with tab_player:
         season_totals['Goals'] = season_totals['g']
         season_totals['Points'] = season_totals['p']
         season_totals['Games Played'] = season_totals['gp']
-        season_totals['Goals per Game'] = season_totals['gpg']  
+        season_totals['Goals per Game'] = season_totals['gpg'] 
+        season_totals['Team'] =  season_totals['team_name'] 
+        season_totals['Position'] =  season_totals['positionCode'] 
         # Select specific columns to return
-        selected_columns = ['Name', 'player_id', 'Goals', 'Points', 'Games Played', 'Goals per Game']
-        players_df = season_totals[selected_columns]
-        
+        #selected_columns = ['Name', 'player_id', 'Team', 'Position', 'Goals', 'Points', 'Games Played', 'Goals per Game']
+        # players_df = season_totals[selected_columns]
+        players_df = load_players()
         return players_df
     
     # players_df = load_players()
@@ -292,13 +293,15 @@ with tab_player:
 
 
     # Select only the desired columns from the DataFrame
-    selected_columns = ['Name', 'player_id', 'Goals', 'Points', 'Games Played', 'Goals per Game']# Replace with your actual column names
+    selected_columns = ['Name', 'player_id', 'Games Played', 'Team', 'Position','Goals', 'Points', 'Games Played', 'Goals per Game']# Replace with your actual column names
 
     # Create an HTML table with desired styling
     st.write(f'''
     <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
     <tr>
         <td style="font-weight: bold;">Name</td>
+        <td style="font-weight: bold;">Position</td>
+        <td style="font-weight: bold;">Team</td>
         <td style="font-weight: bold;">Games Played</td>
         <td style="font-weight: bold;">Goals</td>
         <td style="font-weight: bold;">Goals per Game</td>
@@ -306,6 +309,8 @@ with tab_player:
     </tr>
      <tr>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
+        <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Games Played'].values[0]}</td>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals per Game'].values[0]}</td>
