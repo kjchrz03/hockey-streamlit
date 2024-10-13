@@ -268,9 +268,9 @@ with tab_player:
             players_df = season_data[selected_columns]
             
             return players_df
-        # except KeyError as e:
-        #     st.error(f"Column missing in data: {e}")
-        #     return None
+        except KeyError as e:
+            st.error(f"Column missing in data: {e}")
+            return None
         
     players_df = load_players()
     cols = ['Name','Position','Team','Goals', 'Points', 'Goals per Game']
