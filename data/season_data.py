@@ -6,6 +6,26 @@ import nest_asyncio
 import requests
 import json
 import re
+from datetime import datetime, timedelta, date
+import time
+import pytz
+
+
+# Use a persistent storage mechanism (like a text file) to track the last game ID
+LAST_SHIFT_ID_FILE = "last_shift_id.txt"
+
+def get_last_shift_id():
+    """Retrieve the last shift ID from a file."""
+    try:
+        with open(LAST_SHIFT_ID_FILE, "r") as file:
+            return int(file.read().strip())
+    except FileNotFoundError:
+        return None  # Return None if the file doesn't exist (first run)
+
+def update_last_shift_id(last_shift_id):
+    """Update the last shift ID in the file."""
+    with open(LAST_SHIFT_ID_FILE, "w") as file:
+        file.write(str(last_shift_id))
 
 def get_season_data():
    # Apply nest_asyncio to allow nested event loops in Jupyter notebooks
@@ -17,7 +37,13 @@ def get_season_data():
     BASE_URL = "https://api.nhle.com/stats/rest/en/shiftcharts?cayenneExp=gameId="
     PXP_URL = "https://api-web.nhle.com/v1/gamecenter/"
     PXP_SUFFIX = "/play-by-play"
-    
+    START_SHIFT_ID = 14387777
+
+        # Get the last game ID from the stored file
+    last_shift_id = get_last_shift_id()
+    if last_shift_id is None:  # If there's no last game ID, fetch all
+        last_shift_id = START_SHIFT_ID - 1  
+
     # Create game URLs DataFrame
     game_data = [{"game_id": game_id, "shift_url": f"{BASE_URL}{game_id}", "pxp_url": f"{PXP_URL}{game_id}{PXP_SUFFIX}"} 
                 for game_id in range(START_GAME_ID, END_GAME_ID + 1)]
@@ -70,40 +96,51 @@ def get_season_data():
     all_shifts['shot_type'] = all_shifts['detailCode'].map(shot_code_dictionary)
     all_shifts['gameId'] = all_shifts['gameId'].astype(str)
 
-    # Filter and prepare DataFrames for assists and goals
-    assist_1 = all_shifts[all_shifts['assist_1'].notna()]
-    assist_2 = all_shifts[all_shifts['assist_2'].notna()]
 
-    shifts_df = all_shifts[['gameId', 'period', 'shiftNumber', 'startTime', 'eventNumber', 'playerId', 'player_name', 
+
+    shifts_df = all_shifts[['id', 'gameId', 'period', 'shiftNumber', 'startTime', 'eventNumber', 'playerId', 'player_name', 
                             'teamId', 'teamName', 'typeCode', 'assist_1', 'assist_2', 'shot_type', 'eventDescription']]
     goal_shifts = shifts_df[shifts_df['typeCode'].isin([505])]
 
+    return goal_shifts
+
+def get_agg_totals():
+    try:
+        goal_shifts = get_season_data()
+            # Filter and prepare DataFrames for assists and goals
+        assist_1 = goal_shifts[goal_shifts['assist_1'].notna()]
+        assist_2 = goal_shifts[goal_shifts['assist_2'].notna()]
+        
     # Prepare totals for goals and assists
-    season_goal_totals = goal_shifts.groupby(['playerId', 'player_name', 'gameId'])['eventNumber'].count().reset_index(name='g')
-    season_assist1_total = assist_1.groupby(['gameId', 'assist_1', 'eventNumber', 'period']).size().reset_index(name='a1')
-    season_assist2_total = assist_2.groupby(['gameId', 'assist_2', 'eventNumber', 'period']).size().reset_index(name='a2')
+        season_goal_totals = goal_shifts.groupby(['playerId', 'player_name', 'gameId'])['eventNumber'].count().reset_index(name='g')
+        season_assist1_total = assist_1.groupby(['gameId', 'assist_1', 'eventNumber', 'period']).size().reset_index(name='a1')
+        season_assist2_total = assist_2.groupby(['gameId', 'assist_2', 'eventNumber', 'period']).size().reset_index(name='a2')
 
-    # Merge assist totals and goal totals
-    season_assist1_total = season_assist1_total.rename(columns={'assist_1': 'player_name'})
-    season_assist2_total = season_assist2_total.rename(columns={'assist_2': 'player_name'})
+        # Merge assist totals and goal totals
+        season_assist1_total = season_assist1_total.rename(columns={'assist_1': 'player_name'})
+        season_assist2_total = season_assist2_total.rename(columns={'assist_2': 'player_name'})
 
-    season_assists = season_assist1_total.merge(season_assist2_total, on=['player_name', 'gameId'], how='outer', suffixes=('_assist1', '_assist2'))
-    season_totals = season_goal_totals.merge(season_assists, on=['player_name', 'gameId'], how="outer")
+        season_assists = season_assist1_total.merge(season_assist2_total, on=['player_name', 'gameId'], how='outer', suffixes=('_assist1', '_assist2'))
+        season_totals = season_goal_totals.merge(season_assists, on=['player_name', 'gameId'], how="outer")
 
-    # Fill NaN values with 0 and calculate aggregates
-    season_totals.fillna(0, inplace=True)
-    season_totals = season_totals.groupby(['playerId', 'player_name']).agg(
-        g=('g', 'sum'),
-        gp=('gameId', 'nunique'),
-        a1=('a1', 'sum'),
-        a2=('a2', 'sum')
-    ).reset_index()
+        # Fill NaN values with 0 and calculate aggregates
+        season_totals.fillna(0, inplace=True)
+        season_totals = season_totals.groupby(['playerId', 'player_name']).agg(
+            g=('g', 'sum'),
+            gp=('gameId', 'nunique'),
+            a1=('a1', 'sum'),
+            a2=('a2', 'sum')
+        ).reset_index()
 
-    # Calculate goals per game and total points
-    season_totals['gpg'] = season_totals['g'] / season_totals['gp']
-    season_totals['p'] = season_totals['g'] + season_totals['a1'] + season_totals['a2']
-    season_totals=season_totals.rename(columns={'playerId': 'player_id'})
-    return season_totals
+        # Calculate goals per game and total points
+        season_totals['gpg'] = season_totals['g'] / season_totals['gp']
+        season_totals['p'] = season_totals['g'] + season_totals['a1'] + season_totals['a2']
+        season_totals=season_totals.rename(columns={'playerId': 'player_id'})
+        return season_totals
+    except Exception as e:
+        print(f"Error loading final data: {e}")
+        return None
+
 
 
 def get_roster_data():
@@ -218,7 +255,7 @@ def load_roster_data():
  
 def load_season_data():
     try:
-        season_totals = get_season_data()
+        season_totals = get_agg_totals()
         team_rosters = get_roster_data()
         combined_df = pd.merge(season_totals, team_rosters, on='player_id', how = 'left') 
         combined_df=combined_df.sort_values(by='player_name')
@@ -227,11 +264,298 @@ def load_season_data():
         print(f"Error loading final data: {e}")
         return None
     
-# Call the function and store the results
+# Call the function and store the results for goal counts and roster info
 season_results = load_season_data()
 
-# Display the first few rows of the DataFrame
-if season_results is not None:
-    print(season_results.head())
-else:
-    print("No data returned.")
+# # Display the first few rows of the DataFrame
+# if season_results is not None:
+#     print(season_results.head())
+# else:
+#     print("No data returned.")
+
+
+def get_goal_locations():
+    start_game_id = 2024020001
+    end_game_id = 2024021307
+
+    # Base URL for the API
+    pxp_url = "https://api-web.nhle.com/v1/gamecenter/"
+    pxp_suffix = "/play-by-play"
+
+    # Initialize an empty DataFrame to store the results
+    game_plays = pd.DataFrame()
+
+    # Function to process a batch of game IDs
+    def process_game_batch(game_batch):
+        batch_events = []
+        
+        for item in game_batch:
+            url = item['link']
+            game_id = item['game_id']
+
+            response = requests.get(url)
+            
+            # Stop if a 404 (Not Found) error occurs for the first game in the batch
+            if response.status_code == 404:
+                print(f"Game ID {game_id} not found (404). Stopping further requests.")
+                return None  # Stop further processing
+
+            if response.status_code == 200:
+                json_data = response.json()
+                
+                if 'plays' in json_data:
+                    game_plays_detail = pd.json_normalize(json_data['plays'])
+                    game_plays_detail['game_id'] = game_id
+                    game_plays_detail = game_plays_detail[['game_id'] + [col for col in game_plays_detail.columns if col != 'game_id']]
+                    print(f"Game ID {game_id} processed.")
+                    batch_events.append(game_plays_detail)
+                else:
+                    print(f"'plays' key not found in response for game_id {game_id}")
+            else:
+                print(f"Request failed with status code {response.status_code} for game_id {game_id}")
+
+        # Combine all the events from this batch into a single DataFrame
+        if batch_events:
+            batch_plays = pd.concat(batch_events, ignore_index=True)
+            batch_plays.dropna(how='all', inplace=True)
+            return batch_plays
+        return pd.DataFrame()
+
+    # Process in batches of 100
+    batch_size = 100
+    game_ids = [{'game_id': game_id, 'link': f"{pxp_url}{game_id}{pxp_suffix}"} for game_id in range(start_game_id, end_game_id + 1)]
+
+    for i in range(0, len(game_ids), batch_size):
+        game_batch = game_ids[i:i + batch_size]
+        batch_plays = process_game_batch(game_batch)
+        
+        # Stop processing if the first game in the batch returned a 404
+        if batch_plays is None:
+            break
+        
+        if not batch_plays.empty:
+            game_plays = pd.concat([game_plays, batch_plays], ignore_index=True)
+
+    game_plays = game_plays.rename(columns={
+        'periodDescriptor.number': 'period_number',
+        'periodDescriptor.periodType': 'period_type', 
+        'periodDescriptor.maxRegulationPeriods': 'max_regulation_periods',
+        'details.eventOwnerTeamId': 'event_team_id',
+        ' details.losingPlayerId ': 'losing_player_id',
+        'details.winningPlayerId': 'winning_player_id',
+        'details.xCoord': 'xCoord',
+        'details.yCoord': 'yCoord',
+        'details.zoneCode': 'zone_code',
+        'details.reason': 'reason',
+        'details.hittingPlayerId': 'hitter',
+        'details.hitteePlayerId': 'hittee',
+        'details.playerId': 'player_id',
+        'details.shotType': 'shot_type',
+        'details.shootingPlayerId': 'shooting_player',
+        'details.goalieInNetId': 'goalie',
+        'details.awaySOG': 'away_sog',
+        'details.homeSOG': 'home_sog',
+        'details.blockingPlayerId': 'blocker',
+        'details.scoringPlayerId': 'scoring_player',
+        'details.scoringPlayerTotal': 'scoring_player_total',
+        'details.assist1PlayerId': 'assist_1',
+        'details.assist1PlayerTotal': 'assist1_total',
+        'details.assist2PlayerId': 'assist_2',
+        'details.assist2PlayerTotal': 'assist2_total',
+        'details.awayScore': 'away_score',
+        'details.homeScore': 'home_score',
+        'details.secondaryReason': 'secondary_reason',
+        'details.typeCode': 'type_code',
+        'details.descKey': 'desc_key',
+        'details.duration': 'duration',
+        'details.committedByPlayerId': 'committed_by',
+        'details.drawnByPlayerId': 'drawn_by',
+        'details.servedByPlayerId': 'served_by',
+        'event_team_id': 'team_id'
+    })
+    
+    situation_dictionary = {
+        '1551': '5 on 5',
+        '1451': '5 on 4',
+        '1541': '5 on 4',
+        '0651': '6 on 5',
+        '1560': '6 on 5',
+        '1441': '4 on 4',
+        '1331': '3 on 3',
+        '1460': '6 on 4',
+        '1351': '5 on 3',     
+        '0641': '6 on 4',
+        '1341': '4 on 3',      
+        '0101': '1 on 1',
+        '1531': '5 on 3',
+        '1010': '1 on 1',
+        '1431': '4 on 3',
+        '0440': '4 on 4',
+        '0541': '5 on 4',
+        '1550': '5 on 5',
+        '1450': '5 on 4',
+        '0551': '5 on 5',
+        '0431': '4 on 3',
+        '1340': '4 on 3',
+        '0451': '5 on 4',
+        '0531': '5 on 4',
+        '0631': '6 on 3',
+        '1360': '6 on 3',
+        '1350': '5 on 4',
+        '1440': '4 on 4'
+    }
+
+    game_plays['situation'] = game_plays['situationCode'].map(situation_dictionary)
+
+    game_plays['goalie_situation'] = np.where((game_plays['situationCode'].str.startswith('0')) | (game_plays['situationCode'].str[3] == '0'),
+        'pulled', 'in net')
+
+    game_plays['game_id'] = game_plays['game_id'].astype(str)
+
+    return game_plays
+
+
+
+def get_daily_games():
+
+    # Initialize the DataFrame
+    daily_games = pd.DataFrame()
+
+    base_url = "https://api-web.nhle.com/v1/schedule/"
+    
+    start_date = datetime.strptime("2024-10-04", "%Y-%m-%d")
+    end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
+
+
+    current_date = start_date
+
+    # Set to keep track of unique dates
+    seen_dates = set()
+
+    while current_date <= end_date:
+        # Format the date as 'YYYY-MM-DD'
+        formatted_date = current_date.strftime("%Y-%m-%d")
+        api_url = f"{base_url}{formatted_date}"
+        
+        # Make the API request
+        response = requests.get(api_url)
+        
+        if response.status_code == 200:
+        # The response content can be accessed using response.text
+            response_text = response.text
+        #pprint(response_text)
+        else:
+            print(f"Request failed with status code {response.status_code}")
+
+        json_data = json.loads(response_text)
+
+        game_week = json_data['gameWeek']
+        game_week_df = pd.DataFrame(game_week)
+
+
+        game_week_df = game_week_df[game_week_df['numberOfGames'] != 0]
+        
+            # Filter out rows with duplicate dates
+        if formatted_date not in seen_dates:
+                seen_dates.add(formatted_date)
+                daily_games = pd.concat([daily_games, game_week_df], ignore_index=True)
+        else:
+            print(f"Failed to retrieve data for {formatted_date}")
+        
+        # Move to the next week
+        current_date += timedelta(weeks=1)
+        # Filter out rows where 'date' is after the end date
+        daily_games['date'] = pd.to_datetime(daily_games['date'])
+        daily_games = daily_games[daily_games['date'] <= end_date]
+
+        # Reset index after filtering
+        daily_games.reset_index(drop=True, inplace=True)
+
+        game_week_details = pd.json_normalize(daily_games['games'])
+    game_week_details.tail()
+
+
+    dfs = {}
+
+    # Loop through the iterations (30 times)
+    for i in range(0, len(game_week_details.columns)): 
+        api_response = game_week
+        
+        if api_response is not None:
+            # Extract relevant data from the API response and normalize it
+            game_info = pd.json_normalize(game_week_details[i])
+            
+            # Create a DataFrame for this iteration
+            df_name = f'game_test{i}'  # Generate a unique variable name
+            dfs[df_name] = pd.DataFrame(game_info)
+        else:
+            # Handle the case where the API request failed
+            print(f"API request failed for index {i}")
+
+    #Then I combine all of the dfs in the list by concatenation to create a single df. now all of the game data is spread out across each row. 
+    combined_df = pd.concat(dfs.values(), ignore_index=True)
+    combined_df.dropna(how='all', inplace=True)
+    combined_df = combined_df[['id', 'season', 'startTimeUTC', 'gameType', 'awayTeam.id', 'awayTeam.abbrev', 'awayTeam.logo', 
+                            'homeTeam.id', 'homeTeam.abbrev','homeTeam.logo', 'homeTeam.placeName.default', 'awayTeam.placeName.default',
+                            'awayTeam.score', 'homeTeam.score', 'winningGoalScorer.playerId', 
+                            'winningGoalie.playerId', 'gameState']]
+
+
+    combined_df=combined_df.convert_dtypes()
+    combined_df['id'] = combined_df['id'].astype(str)
+
+    combined_df['link']= 'https://api-web.nhle.com/v1/gamecenter/'+ combined_df['id'] + '/play-by-play'
+
+    # Assuming '<NA>' is a string, replace it with np.nan
+    combined_df['id'] = combined_df['id'].replace('<NA>', np.nan)
+
+    # Drop rows with NaN values in the 'link' column
+    combined_df = combined_df.dropna(subset=['id'])
+    combined_df = combined_df.query('gameState == "OFF"')
+    combined_df['startTimeUTC'] = pd.to_datetime(combined_df['startTimeUTC'])
+    combined_df = combined_df.rename(columns = {'id':'game_id'})
+    combined_df = combined_df.sort_values('game_id').reset_index()
+
+
+    # Specify the UTC time zone
+    utc_timezone = pytz.utc
+
+    # Specify the target time zone (Eastern Time)
+    eastern_timezone = pytz.timezone('America/New_York')
+
+    # Convert 'startTimeUTC' to Eastern Time
+    combined_df['game_date'] = combined_df['startTimeUTC'].dt.tz_convert(eastern_timezone)
+    combined_df['game_date'] = pd.to_datetime(combined_df['game_date'])
+    combined_df['game_date'] = combined_df['game_date'].dt.strftime('%Y-%m-%d')
+    combined_df.drop('startTimeUTC', axis=1, inplace=True)
+    # combined_df = combined_df[combined_df['game_date'] == formatted_date]
+    combined_df.sort_values(by='game_id')
+    # print("combined_df done")
+    combined_df.head()
+
+    locations = combined_df[['game_id', 'awayTeam.id','awayTeam.abbrev', 'homeTeam.id', 'homeTeam.abbrev']]
+    locations.head()
+
+def get_game_locations_data():
+    try:
+        combined_df = get_daily_games()
+        game_location = combined_df[['game_id', 'awayTeam.id','awayTeam.abbrev', 'homeTeam.id', 'homeTeam.abbrev']]
+        game_location['game_id'] = game_location['game_id'].astype(str)
+
+        home_df = pd.DataFrame({
+            'game_id': combined_df['game_id'],
+            'team_id': combined_df['homeTeam.id'],
+            'tri_code': combined_df['homeTeam.abbrev'],
+            'value': "home"
+        })
+
+        away_df =  pd.DataFrame({
+            'game_id': combined_df['game_id'],
+            'team_id': combined_df['awayTeam.id'],
+            'tri_code': combined_df['awayTeam.abbrev'],
+            'value':"away"
+        })    
+        return game_location
+    except Exception as e:
+        print(f"Error loading final data: {e}")
+        return None
