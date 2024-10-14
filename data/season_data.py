@@ -27,6 +27,8 @@ def update_last_shift_id(last_shift_id):
     with open(LAST_SHIFT_ID_FILE, "w") as file:
         file.write(str(last_shift_id))
 
+###### GATHERING DATA FOR GOAL/POINTS/ASSISTS/GP SEASON DATA
+
 def get_season_data():
    # Apply nest_asyncio to allow nested event loops in Jupyter notebooks
     nest_asyncio.apply()
@@ -140,8 +142,6 @@ def get_agg_totals():
     except Exception as e:
         print(f"Error loading final data: {e}")
         return None
-
-
 
 def get_roster_data():
     
@@ -273,7 +273,7 @@ season_results = load_season_data()
 # else:
 #     print("No data returned.")
 
-
+######## GOAL COORDINATE LOCATIONS FOR GOAL MAPPING
 def get_goal_locations():
     start_game_id = 2024020001
     end_game_id = 2024021307
@@ -415,126 +415,83 @@ def get_goal_locations():
     return game_plays
 
 
-
 def get_daily_games():
+    try:
+        # Initialize the DataFrame
+        daily_games = pd.DataFrame()
+        base_url = "https://api-web.nhle.com/v1/schedule/"
+        start_date = datetime.strptime("2024-10-04", "%Y-%m-%d")
+        end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
+        current_date = start_date
+        seen_dates = set()
 
-    # Initialize the DataFrame
-    daily_games = pd.DataFrame()
+        while current_date <= end_date:
+            formatted_date = current_date.strftime("%Y-%m-%d")
+            api_url = f"{base_url}{formatted_date}"
 
-    base_url = "https://api-web.nhle.com/v1/schedule/"
-    
-    start_date = datetime.strptime("2024-10-04", "%Y-%m-%d")
-    end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
+            # Make the API request
+            response = requests.get(api_url)
+            if response.status_code != 200:
+                print(f"Failed to retrieve data for {formatted_date}")
+                current_date += timedelta(weeks=1)
+                continue
 
+            json_data = response.json()
+            game_week = json_data.get('gameWeek', [])
+            game_week_df = pd.DataFrame(game_week)
 
-    current_date = start_date
-
-    # Set to keep track of unique dates
-    seen_dates = set()
-
-    while current_date <= end_date:
-        # Format the date as 'YYYY-MM-DD'
-        formatted_date = current_date.strftime("%Y-%m-%d")
-        api_url = f"{base_url}{formatted_date}"
-        
-        # Make the API request
-        response = requests.get(api_url)
-        
-        if response.status_code == 200:
-        # The response content can be accessed using response.text
-            response_text = response.text
-        #pprint(response_text)
-        else:
-            print(f"Request failed with status code {response.status_code}")
-
-        json_data = json.loads(response_text)
-
-        game_week = json_data['gameWeek']
-        game_week_df = pd.DataFrame(game_week)
-
-
-        game_week_df = game_week_df[game_week_df['numberOfGames'] != 0]
-        
-            # Filter out rows with duplicate dates
-        if formatted_date not in seen_dates:
+            # Filter out empty rows and duplicate dates
+            if not game_week_df.empty and formatted_date not in seen_dates:
                 seen_dates.add(formatted_date)
                 daily_games = pd.concat([daily_games, game_week_df], ignore_index=True)
-        else:
-            print(f"Failed to retrieve data for {formatted_date}")
-        
-        # Move to the next week
-        current_date += timedelta(weeks=1)
-        # Filter out rows where 'date' is after the end date
+
+            current_date += timedelta(weeks=1)
+
+        if daily_games.empty:
+            return None
+
+        # Filter out rows where the 'date' is after the end date
         daily_games['date'] = pd.to_datetime(daily_games['date'])
-        daily_games = daily_games[daily_games['date'] <= end_date]
+        daily_games = daily_games[daily_games['date'] <= end_date].reset_index(drop=True)
 
-        # Reset index after filtering
-        daily_games.reset_index(drop=True, inplace=True)
-
+        # Normalize the games column
         game_week_details = pd.json_normalize(daily_games['games'])
-    game_week_details.tail()
 
+        # Create a dictionary of dataframes for each iteration
+        dfs = {
+            f'game_test{i}': pd.json_normalize(game_week_details[i])
+            for i in range(len(game_week_details.columns))
+        }
 
-    dfs = {}
+        # Concatenate all dataframes into one
+        combined_df = pd.concat(dfs.values(), ignore_index=True).dropna(how='all')
 
-    # Loop through the iterations (30 times)
-    for i in range(0, len(game_week_details.columns)): 
-        api_response = game_week
-        
-        if api_response is not None:
-            # Extract relevant data from the API response and normalize it
-            game_info = pd.json_normalize(game_week_details[i])
-            
-            # Create a DataFrame for this iteration
-            df_name = f'game_test{i}'  # Generate a unique variable name
-            dfs[df_name] = pd.DataFrame(game_info)
-        else:
-            # Handle the case where the API request failed
-            print(f"API request failed for index {i}")
+        # Select relevant columns
+        all_daily_games = combined_df[['id', 'season', 'startTimeUTC', 'gameType', 'awayTeam.id', 'awayTeam.abbrev',
+                                       'awayTeam.logo', 'homeTeam.id', 'homeTeam.abbrev', 'homeTeam.logo',
+                                       'homeTeam.placeName.default', 'awayTeam.placeName.default',
+                                       'awayTeam.score', 'homeTeam.score', 'winningGoalScorer.playerId',
+                                       'winningGoalie.playerId', 'gameState']]
 
-    #Then I combine all of the dfs in the list by concatenation to create a single df. now all of the game data is spread out across each row. 
-    combined_df = pd.concat(dfs.values(), ignore_index=True)
-    combined_df.dropna(how='all', inplace=True)
-    combined_df = combined_df[['id', 'season', 'startTimeUTC', 'gameType', 'awayTeam.id', 'awayTeam.abbrev', 'awayTeam.logo', 
-                            'homeTeam.id', 'homeTeam.abbrev','homeTeam.logo', 'homeTeam.placeName.default', 'awayTeam.placeName.default',
-                            'awayTeam.score', 'homeTeam.score', 'winningGoalScorer.playerId', 
-                            'winningGoalie.playerId', 'gameState']]
+        # Clean and format the data
+        all_daily_games['id'] = all_daily_games['id'].astype(str)
+        all_daily_games['link'] = 'https://api-web.nhle.com/v1/gamecenter/' + all_daily_games['id'] + '/play-by-play'
+        all_daily_games.dropna(subset=['id'], inplace=True)
+        all_daily_games = all_daily_games.query('gameState == "OFF"')
+        all_daily_games['startTimeUTC'] = pd.to_datetime(all_daily_games['startTimeUTC'])
+        all_daily_games = all_daily_games.rename(columns={'id': 'game_id'}).sort_values('game_id').reset_index(drop=True)
 
+        # Convert startTimeUTC to Eastern Time and format the date
+        eastern_timezone = pytz.timezone('America/New_York')
+        all_daily_games['game_date'] = all_daily_games['startTimeUTC'].dt.tz_convert(eastern_timezone).dt.strftime('%Y-%m-%d')
+        all_daily_games.drop('startTimeUTC', axis=1, inplace=True)
 
-    combined_df=combined_df.convert_dtypes()
-    combined_df['id'] = combined_df['id'].astype(str)
+        return all_daily_games
 
-    combined_df['link']= 'https://api-web.nhle.com/v1/gamecenter/'+ combined_df['id'] + '/play-by-play'
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
 
-    # Assuming '<NA>' is a string, replace it with np.nan
-    combined_df['id'] = combined_df['id'].replace('<NA>', np.nan)
-
-    # Drop rows with NaN values in the 'link' column
-    combined_df = combined_df.dropna(subset=['id'])
-    combined_df = combined_df.query('gameState == "OFF"')
-    combined_df['startTimeUTC'] = pd.to_datetime(combined_df['startTimeUTC'])
-    combined_df = combined_df.rename(columns = {'id':'game_id'})
-    combined_df = combined_df.sort_values('game_id').reset_index()
-
-
-    # Specify the UTC time zone
-    utc_timezone = pytz.utc
-
-    # Specify the target time zone (Eastern Time)
-    eastern_timezone = pytz.timezone('America/New_York')
-
-    # Convert 'startTimeUTC' to Eastern Time
-    combined_df['game_date'] = combined_df['startTimeUTC'].dt.tz_convert(eastern_timezone)
-    combined_df['game_date'] = pd.to_datetime(combined_df['game_date'])
-    combined_df['game_date'] = combined_df['game_date'].dt.strftime('%Y-%m-%d')
-    combined_df.drop('startTimeUTC', axis=1, inplace=True)
-    # combined_df = combined_df[combined_df['game_date'] == formatted_date]
-    combined_df.sort_values(by='game_id')
-    # print("combined_df done")
-    combined_df.head()
-
-    locations = combined_df[['game_id', 'awayTeam.id','awayTeam.abbrev', 'homeTeam.id', 'homeTeam.abbrev']]
-    locations.head()
 
 def get_game_locations_data():
     try:
@@ -542,20 +499,14 @@ def get_game_locations_data():
         game_location = combined_df[['game_id', 'awayTeam.id','awayTeam.abbrev', 'homeTeam.id', 'homeTeam.abbrev']]
         game_location['game_id'] = game_location['game_id'].astype(str)
 
-        home_df = pd.DataFrame({
-            'game_id': combined_df['game_id'],
-            'team_id': combined_df['homeTeam.id'],
-            'tri_code': combined_df['homeTeam.abbrev'],
-            'value': "home"
-        })
-
-        away_df =  pd.DataFrame({
-            'game_id': combined_df['game_id'],
-            'team_id': combined_df['awayTeam.id'],
-            'tri_code': combined_df['awayTeam.abbrev'],
-            'value':"away"
-        })    
         return game_location
     except Exception as e:
         print(f"Error loading final data: {e}")
         return None
+    
+
+    # # Display the first few rows of the DataFrame
+# if season_results is not None:
+#     print(season_results.head())
+# else:
+#     print("No data returned.")
