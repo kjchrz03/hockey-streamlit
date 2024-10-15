@@ -9,6 +9,7 @@ import re
 from datetime import datetime, timedelta, date
 import time
 import pytz
+import math
 
 
 # Use a persistent storage mechanism (like a text file) to track the last game ID
@@ -97,8 +98,6 @@ def get_season_data():
     }
     all_shifts['shot_type'] = all_shifts['detailCode'].map(shot_code_dictionary)
     all_shifts['gameId'] = all_shifts['gameId'].astype(str)
-
-
 
     shifts_df = all_shifts[['id', 'gameId', 'period', 'shiftNumber', 'startTime', 'eventNumber', 'playerId', 'player_name', 
                             'teamId', 'teamName', 'typeCode', 'assist_1', 'assist_2', 'shot_type', 'eventDescription']]
@@ -264,17 +263,10 @@ def load_season_data():
         print(f"Error loading final data: {e}")
         return None
     
-# Call the function and store the results for goal counts and roster info
-season_results = load_season_data()
 
-# # Display the first few rows of the DataFrame
-# if season_results is not None:
-#     print(season_results.head())
-# else:
-#     print("No data returned.")
 
-######## GOAL COORDINATE LOCATIONS FOR GOAL MAPPING
-def get_goal_locations():
+######## full shifts data, plays, and loactions
+def get_play_data():
     start_game_id = 2024020001
     end_game_id = 2024021307
 
@@ -305,10 +297,11 @@ def get_goal_locations():
                 
                 if 'plays' in json_data:
                     game_plays_detail = pd.json_normalize(json_data['plays'])
-                    game_plays_detail['game_id'] = game_id
-                    game_plays_detail = game_plays_detail[['game_id'] + [col for col in game_plays_detail.columns if col != 'game_id']]
-                    print(f"Game ID {game_id} processed.")
-                    batch_events.append(game_plays_detail)
+                    if game_plays_detail['gameState'] != "FUT":
+                        game_plays_detail['game_id'] = game_id
+                        game_plays_detail = game_plays_detail[['game_id'] + [col for col in game_plays_detail.columns if col != 'game_id']]
+                        print(f"Game ID {game_id} processed.")
+                        batch_events.append(game_plays_detail)
                 else:
                     print(f"'plays' key not found in response for game_id {game_id}")
             else:
@@ -414,7 +407,7 @@ def get_goal_locations():
 
     return game_plays
 
-
+#### for use with score bug? (aka combined_df)
 def get_daily_games():
     try:
         # Initialize the DataFrame
@@ -492,21 +485,96 @@ def get_daily_games():
         print(f"Error: {e}")
         return None
 
-
+### GAME LOCATIONS
 def get_game_locations_data():
     try:
-        combined_df = get_daily_games()
-        game_location = combined_df[['game_id', 'awayTeam.id','awayTeam.abbrev', 'homeTeam.id', 'homeTeam.abbrev']]
+        all_daily_games = get_daily_games()
+        game_location = all_daily_games[['game_id', 'awayTeam.id','awayTeam.abbrev', 'homeTeam.id', 'homeTeam.abbrev']]
         game_location['game_id'] = game_location['game_id'].astype(str)
 
         return game_location
+    
     except Exception as e:
         print(f"Error loading final data: {e}")
         return None
     
+def load_play_data():
+    try:
+        game_location = get_game_locations_data()
+        game_plays = get_play_data()
+        team_rosters = get_roster_data()
+        game_plays_data = game_plays.merge( game_location, how='left',  on='game_id' )
+        game_plays_data['event_by_team'] = game_plays_data.apply(
+            lambda row: (
+                'home' if not pd.isna(row['team_id']) and row['team_id'] == row['homeTeam.id'] else
+                ('away' if not pd.isna(row['team_id']) and row['team_id'] == row['awayTeam.id'] else None)
+            ),
+            axis=1
+        )
+        game_plays_data = game_plays.merge( game_location, how='left',  on='player_id' )
 
-    # # Display the first few rows of the DataFrame
-# if season_results is not None:
-#     print(season_results.head())
-# else:
-#     print("No data returned.")
+    except Exception as e:
+        print(f"Error loading final data: {e}")
+        return None
+    
+def load_shot_data():
+    try:
+        game_plays_data=load_play_data()
+        shots_df = game_plays_data[game_plays_data['typeCode'].isin([505, 506, 507, 508])]
+        shots_df=shots_df[['game_id', 'eventId','timeInPeriod','situationCode', 'typeCode', 'typeDescKey', 'sortOrder', 'period_number',
+'xCoord','yCoord', 'reason', 'shot_type', 'shooting_player', 'scoring_player', 'assist_1', 'assist_2', 'type_code', 'situation', 'event_by_team']]
+        shots_df = shots_df.sort_values(['player_name', 'player_id', 'game_id', 'sortOrder', 'period_number'], 
+                                          ascending=[True, True, True, True, True])
+        shots_df['goal_no'] = shots_df.groupby('player_id').cumcount()+1
+        #center net
+        net_x = 89
+        net_y = 0
+
+        def calculate_distance(x, y, net_x=net_x, net_y=net_y):
+            return math.sqrt((x - net_x)**2 + (y - net_y)**2)
+
+
+        shots_df['distance'] = shots_df.apply(lambda row: calculate_distance(row['xCoord'], row['yCoord']), axis=1)
+        
+        def calculate_shot_angle(row, net_x=89, net_y=0):
+            # Calculate the displacement vector
+            delta_x = net_x - row['xCoord']
+            delta_y = net_y - row['yCoord']
+            
+            # Calculate the angle in radians and then convert it to degrees
+            angle_rad = np.arctan2(delta_y, delta_x)
+            angle_deg = np.degrees(angle_rad)
+            
+            # Ensure the angle is positive and within the range 0-360
+            if angle_deg < 0:
+                angle_deg += 360
+            
+            return angle_deg
+
+        # Assuming you have a DataFrame 'season_goals' with columns 'xCoord' and 'yCoord'
+        game_plays_data['shot_angle'] = game_plays_data.apply(calculate_shot_angle, axis=1)
+    
+        return shots_df
+    
+    except Exception as e:
+        print(f"Error loading final data: {e}")
+        return None
+
+#Agg of basic player stats
+season_results = load_season_data()
+
+#All player shifts with goals, assists with shift number
+all_season_results = get_season_data()
+
+#All play data/events on the ice
+all_play_data = get_play_data()
+
+
+
+
+# Display the first few rows of the DataFrame
+if season_results is not None:
+    print(all_play_data.head())
+else:
+
+    print("No data returned.")
