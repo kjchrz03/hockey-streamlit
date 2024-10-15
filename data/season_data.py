@@ -422,116 +422,116 @@ def get_play_data():
     return game_plays
 
 #### for use with score bug? (aka combined_df)
-def get_daily_games():
-    try:
-        # Initialize the DataFrame
-        daily_games = pd.DataFrame()
-        base_url = "https://api-web.nhle.com/v1/schedule/"
-        start_date = datetime.strptime("2024-10-04", "%Y-%m-%d")
-        end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
-        current_date = start_date
-        seen_dates = set()
+# def get_daily_games():
+#     try:
+#         # Initialize the DataFrame
+#         daily_games = pd.DataFrame()
+#         base_url = "https://api-web.nhle.com/v1/schedule/"
+#         start_date = datetime.strptime("2024-10-04", "%Y-%m-%d")
+#         end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
+#         current_date = start_date
+#         seen_dates = set()
 
-        while current_date <= end_date:
-            formatted_date = current_date.strftime("%Y-%m-%d")
-            api_url = f"{base_url}{formatted_date}"
+#         while current_date <= end_date:
+#             formatted_date = current_date.strftime("%Y-%m-%d")
+#             api_url = f"{base_url}{formatted_date}"
 
-            # Make the API request
-            response = requests.get(api_url)
-            if response.status_code != 200:
-                print(f"Failed to retrieve data for {formatted_date}")
-                current_date += timedelta(weeks=1)
-                continue
+#             # Make the API request
+#             response = requests.get(api_url)
+#             if response.status_code != 200:
+#                 print(f"Failed to retrieve data for {formatted_date}")
+#                 current_date += timedelta(weeks=1)
+#                 continue
 
-            json_data = response.json()
-            game_week = json_data.get('gameWeek', [])
-            game_week_df = pd.DataFrame(game_week)
+#             json_data = response.json()
+#             game_week = json_data.get('gameWeek', [])
+#             game_week_df = pd.DataFrame(game_week)
 
-            # Filter out empty rows and duplicate dates
-            if not game_week_df.empty and formatted_date not in seen_dates:
-                seen_dates.add(formatted_date)
-                daily_games = pd.concat([daily_games, game_week_df], ignore_index=True)
+#             # Filter out empty rows and duplicate dates
+#             if not game_week_df.empty and formatted_date not in seen_dates:
+#                 seen_dates.add(formatted_date)
+#                 daily_games = pd.concat([daily_games, game_week_df], ignore_index=True)
 
-            current_date += timedelta(weeks=1)
+#             current_date += timedelta(weeks=1)
 
-        if daily_games.empty:
-            return None
+#         if daily_games.empty:
+#             return None
 
-        # Filter out rows where the 'date' is after the end date
-        daily_games['date'] = pd.to_datetime(daily_games['date'])
-        daily_games = daily_games[daily_games['date'] <= end_date].reset_index(drop=True)
+#         # Filter out rows where the 'date' is after the end date
+#         daily_games['date'] = pd.to_datetime(daily_games['date'])
+#         daily_games = daily_games[daily_games['date'] <= end_date].reset_index(drop=True)
 
-        # Normalize the games column
-        game_week_details = pd.json_normalize(daily_games['games'])
+#         # Normalize the games column
+#         game_week_details = pd.json_normalize(daily_games['games'])
 
-        # Create a dictionary of dataframes for each iteration
-        dfs = {
-            f'game_test{i}': pd.json_normalize(game_week_details[i])
-            for i in range(len(game_week_details.columns))
-        }
+#         # Create a dictionary of dataframes for each iteration
+#         dfs = {
+#             f'game_test{i}': pd.json_normalize(game_week_details[i])
+#             for i in range(len(game_week_details.columns))
+#         }
 
-        # Concatenate all dataframes into one
-        combined_df = pd.concat(dfs.values(), ignore_index=True).dropna(how='all')
+#         # Concatenate all dataframes into one
+#         combined_df = pd.concat(dfs.values(), ignore_index=True).dropna(how='all')
 
-        # Select relevant columns
-        all_daily_games = combined_df[['id', 'season', 'startTimeUTC', 'gameType', 'awayTeam.id', 'awayTeam.abbrev',
-                                       'awayTeam.logo', 'homeTeam.id', 'homeTeam.abbrev', 'homeTeam.logo',
-                                       'homeTeam.placeName.default', 'awayTeam.placeName.default',
-                                       'awayTeam.score', 'homeTeam.score', 'winningGoalScorer.playerId',
-                                       'winningGoalie.playerId', 'gameState']]
+#         # Select relevant columns
+#         all_daily_games = combined_df[['id', 'season', 'startTimeUTC', 'gameType', 'awayTeam.id', 'awayTeam.abbrev',
+#                                        'awayTeam.logo', 'homeTeam.id', 'homeTeam.abbrev', 'homeTeam.logo',
+#                                        'homeTeam.placeName.default', 'awayTeam.placeName.default',
+#                                        'awayTeam.score', 'homeTeam.score', 'winningGoalScorer.playerId',
+#                                        'winningGoalie.playerId', 'gameState']]
 
-        # Clean and format the data
-        all_daily_games['id'] = all_daily_games['id'].astype(str)
-        all_daily_games['link'] = 'https://api-web.nhle.com/v1/gamecenter/' + all_daily_games['id'] + '/play-by-play'
-        all_daily_games.dropna(subset=['id'], inplace=True)
-        all_daily_games = all_daily_games.query('gameState == "OFF"')
-        all_daily_games['startTimeUTC'] = pd.to_datetime(all_daily_games['startTimeUTC'])
-        all_daily_games = all_daily_games.rename(columns={'id': 'game_id'}).sort_values('game_id').reset_index(drop=True)
+#         # Clean and format the data
+#         all_daily_games['id'] = all_daily_games['id'].astype(str)
+#         all_daily_games['link'] = 'https://api-web.nhle.com/v1/gamecenter/' + all_daily_games['id'] + '/play-by-play'
+#         all_daily_games.dropna(subset=['id'], inplace=True)
+#         all_daily_games = all_daily_games.query('gameState == "OFF"')
+#         all_daily_games['startTimeUTC'] = pd.to_datetime(all_daily_games['startTimeUTC'])
+#         all_daily_games = all_daily_games.rename(columns={'id': 'game_id'}).sort_values('game_id').reset_index(drop=True)
 
-        # Convert startTimeUTC to Eastern Time and format the date
-        eastern_timezone = pytz.timezone('America/New_York')
-        all_daily_games['game_date'] = all_daily_games['startTimeUTC'].dt.tz_convert(eastern_timezone).dt.strftime('%Y-%m-%d')
-        all_daily_games.drop('startTimeUTC', axis=1, inplace=True)
+#         # Convert startTimeUTC to Eastern Time and format the date
+#         eastern_timezone = pytz.timezone('America/New_York')
+#         all_daily_games['game_date'] = all_daily_games['startTimeUTC'].dt.tz_convert(eastern_timezone).dt.strftime('%Y-%m-%d')
+#         all_daily_games.drop('startTimeUTC', axis=1, inplace=True)
 
-        return all_daily_games
+#         return all_daily_games
 
-    except Exception as e:
-        print(f"Error: {e}")
-        return None
+#     except Exception as e:
+#         print(f"Error: {e}")
+#         return None
 
-### GAME LOCATIONS
-def get_game_locations_data():
-    try:
-        all_daily_games = get_daily_games()
-        game_location = all_daily_games[['game_id', 'awayTeam.id','awayTeam.abbrev', 'homeTeam.id', 'homeTeam.abbrev']]
-        game_location['game_id'] = game_location['game_id'].astype(str)
+# ### GAME LOCATIONS
+# def get_game_locations_data():
+#     try:
+#         all_daily_games = get_daily_games()
+#         game_location = all_daily_games[['game_id', 'awayTeam.id','awayTeam.abbrev', 'homeTeam.id', 'homeTeam.abbrev']]
+#         game_location['game_id'] = game_location['game_id'].astype(str)
 
-        return game_location
+#         return game_location
     
-    except Exception as e:
-        print(f"Error loading final data: {e}")
-        return None
+#     except Exception as e:
+#         print(f"Error loading final data: {e}")
+#         return None
     
-def load_play_data():
-    try:
-        game_location = get_game_locations_data()
-        game_plays = get_play_data()
-        team_rosters = get_roster_data()
-        game_plays_data = game_plays.merge( game_location, how='left',  on='game_id' )
-        game_plays_data['event_by_team'] = game_plays_data.apply(
-            lambda row: (
-                'home' if not pd.isna(row['team_id']) and row['team_id'] == row['homeTeam.id'] else
-                ('away' if not pd.isna(row['team_id']) and row['team_id'] == row['awayTeam.id'] else None)
-            ),
-            axis=1
-        )
-        game_plays_data = game_plays.merge( game_location, how='left',  on='player_id' )
+# def load_play_data():
+#     try:
+#         game_location = get_game_locations_data()
+#         game_plays = get_play_data()
+#         team_rosters = get_roster_data()
+#         game_plays_data = game_plays.merge( game_location, how='left',  on='game_id' )
+#         game_plays_data['event_by_team'] = game_plays_data.apply(
+#             lambda row: (
+#                 'home' if not pd.isna(row['team_id']) and row['team_id'] == row['homeTeam.id'] else
+#                 ('away' if not pd.isna(row['team_id']) and row['team_id'] == row['awayTeam.id'] else None)
+#             ),
+#             axis=1
+#         )
+#         game_plays_data = game_plays.merge( game_location, how='left',  on='player_id' )
 
-    except Exception as e:
-        print(f"Error loading final data: {e}")
-        return None
+#     except Exception as e:
+#         print(f"Error loading final data: {e}")
+#         return None
     
-def load_shot_data():
+# def load_shot_data():
     try:
         game_plays_data=load_play_data()
         shots_df = game_plays_data[game_plays_data['typeCode'].isin([505, 506, 507, 508])]
@@ -577,18 +577,18 @@ def load_shot_data():
 #Agg of basic player stats
 season_results = load_season_data()
 
-#All player shifts with goals, assists with shift number
-all_season_results = get_season_data()
+# #All player shifts with goals, assists with shift number
+# all_season_results = get_season_data()
 
-#All play data/events on the ice
-all_play_data = get_play_data()
-
-
+# #All play data/events on the ice
+# all_play_data = get_play_data()
 
 
-# Display the first few rows of the DataFrame
-if season_results is not None:
-    print(all_play_data.head())
-else:
 
-    print("No data returned.")
+
+# # Display the first few rows of the DataFrame
+# if season_results is not None:
+#     print(all_play_data.head())
+# else:
+
+#     print("No data returned.")
