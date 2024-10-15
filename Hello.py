@@ -36,13 +36,26 @@ st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sideb
 
 image = Image.open('logo.png')
 st.image(image)
+# Update pip to the latest version
+subprocess.run(["pip", "install", "--upgrade", "pip"])
 
-subprocess.run(["pip", "install", "pytz"])
-subprocess.run(["pip", "install", "nest_asyncio"])
-subprocess.run(["pip", "install", "aiohttp"])
+# List of pip commands to run
+pip_commands = [
+    ["pip", "install", "pytz"],
+    ["pip", "install", "nest_asyncio"],
+    ["pip", "install", "aiohttp"],
+    ["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"]
+]
 
-#Install the library from the GitHub repository using pip within your Streamlit app
-subprocess.run(["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"])
+# Run each pip install command
+for command in pip_commands:
+    result = subprocess.run(command, capture_output=True, text=True)
+# subprocess.run(["pip", "install", "pytz"])
+# subprocess.run(["pip", "install", "nest_asyncio"])
+# subprocess.run(["pip", "install", "aiohttp"])
+
+# #Install the library from the GitHub repository using pip within your Streamlit app
+# subprocess.run(["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"])
 
 
 primaryColor="#fafaff"
