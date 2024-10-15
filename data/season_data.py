@@ -294,18 +294,28 @@ def get_play_data():
 
             if response.status_code == 200:
                 json_data = response.json()
-                
-                if 'plays' in json_data:
-                    game_plays_detail = pd.json_normalize(json_data['plays'])
-                    if game_plays_detail['gameState'] != "FUT":
-                        game_plays_detail['game_id'] = game_id
-                        game_plays_detail = game_plays_detail[['game_id'] + [col for col in game_plays_detail.columns if col != 'game_id']]
-                        print(f"Game ID {game_id} processed.")
-                        batch_events.append(game_plays_detail)
-                else:
-                    print(f"'plays' key not found in response for game_id {game_id}")
+            
+            # Directly check the game state
+            if 'gameState' in json_data:
+                game_state = json_data['gameState']  # No need for indexing, just get the string value
+
+                # Stop if the game state is 'FUT'
+                if game_state == "FUT":
+                    print(f"Future game found at Game ID {game_id}. Stopping further requests.")
+                    return None  # Stop further processing
+
+
+                # Continue processing if game state is not "FUT"
+                game_plays_detail = pd.json_normalize(json_data['plays'])
+                game_plays_detail['game_id'] = game_id
+                game_plays_detail = game_plays_detail[['game_id'] + [col for col in game_plays_detail.columns if col != 'game_id']]
+                print(f"Game ID {game_id} processed.")
+                batch_events.append(game_plays_detail)
             else:
-                print(f"Request failed with status code {response.status_code} for game_id {game_id}")
+                print(f"'gameState' key not found in response for game_id {game_id}")
+        else:
+            print(f"Request failed with status code {response.status_code} for game_id {game_id}")
+
 
         # Combine all the events from this batch into a single DataFrame
         if batch_events:
@@ -334,7 +344,7 @@ def get_play_data():
         'periodDescriptor.periodType': 'period_type', 
         'periodDescriptor.maxRegulationPeriods': 'max_regulation_periods',
         'details.eventOwnerTeamId': 'event_team_id',
-        ' details.losingPlayerId ': 'losing_player_id',
+        'details.losingPlayerId ': 'losing_player_id',
         'details.winningPlayerId': 'winning_player_id',
         'details.xCoord': 'xCoord',
         'details.yCoord': 'yCoord',
@@ -397,11 +407,15 @@ def get_play_data():
         '1350': '5 on 4',
         '1440': '4 on 4'
     }
-
-    game_plays['situation'] = game_plays['situationCode'].map(situation_dictionary)
-
-    game_plays['goalie_situation'] = np.where((game_plays['situationCode'].str.startswith('0')) | (game_plays['situationCode'].str[3] == '0'),
+# Check if 'situationCode' column exists before applying the map
+    if 'situationCode' in game_plays.columns:
+        game_plays['situation'] = game_plays['situationCode'].map(situation_dictionary)
+        print("Mapped situationCode to situation.")
+    
+        game_plays['goalie_situation'] = np.where((game_plays['situationCode'].str.startswith('0')) | (game_plays['situationCode'].str[3] == '0'),
         'pulled', 'in net')
+    else:
+        print("'situationCode' column not found in the game_plays DataFrame.")
 
     game_plays['game_id'] = game_plays['game_id'].astype(str)
 
