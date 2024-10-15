@@ -21,11 +21,6 @@ pip_commands = [
     ["pip", "install", "pytz"],
     ["pip", "install", "nest_asyncio"],
     ["pip", "install", "aiohttp"],
-    ["pip", "install", "time"],
-    ["pip", "install", "pickle"],
-    ["pip", "install", "re"],
-    ["pip", "install", "asyncio"],
-    ["pip", "install", "urllib.request"],
     ["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"]
 ]
 
