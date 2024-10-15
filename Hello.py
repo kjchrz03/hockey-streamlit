@@ -3,7 +3,7 @@ subprocess.run(["pip", "install", "pytz"])
 subprocess.run(["pip", "install", "nest_asyncio"])
 subprocess.run(["pip", "install", "aiohttp"])
 
-Install the library from the GitHub repository using pip within your Streamlit app
+#Install the library from the GitHub repository using pip within your Streamlit app
 subprocess.run(["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"])
 
 # Import the external library
