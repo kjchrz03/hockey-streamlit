@@ -10,6 +10,7 @@ from datetime import datetime, timedelta, date
 import time
 import pytz
 import math
+import traceback
 
 
 # Use a persistent storage mechanism (like a text file) to track the last game ID
@@ -52,10 +53,12 @@ def get_season_data():
                 for game_id in range(START_GAME_ID, END_GAME_ID + 1)]
     game_df = pd.DataFrame(game_data)
 
-    # Asynchronous function to fetch shift data with a timeout and error handling
+    
+
+# Asynchronous function to fetch shift data with a timeout and error handling
     async def fetch_shift_data(session, shift_url):
         try:
-            async with session.get(shift_url, timeout=10) as response:  # Timeout after 10 seconds
+            async with session.get(shift_url, timeout=20) as response:  # Timeout after 10 seconds
                 if response.status == 404:  # Stop if a 404 (Not Found) error occurs
                     print("Game not found (404). Stopping further requests.")
                     return None  # Indicate stopping
@@ -72,7 +75,31 @@ def get_season_data():
                 return pd.DataFrame()  # Return empty DataFrame if no data
         except Exception as e:
             print(f"An error occurred: {e}")
+            traceback.print_exc()  # Print the full traceback for more details
             return pd.DataFrame()
+
+
+    # # Asynchronous function to fetch shift data with a timeout and error handling
+    # async def fetch_shift_data(session, shift_url):
+    #     try:
+    #         async with session.get(shift_url, timeout=10) as response:  # Timeout after 10 seconds
+    #             if response.status == 404:  # Stop if a 404 (Not Found) error occurs
+    #                 print("Game not found (404). Stopping further requests.")
+    #                 return None  # Indicate stopping
+    #             response.raise_for_status()  # Raise an error for other bad responses
+    #             json_data = await response.json()
+    #             details = pd.DataFrame(json_data['data'])
+    #             if not details.empty:
+    #                 details['player_name'] = details['firstName'] + " " + details['lastName']
+    #                 mask_505 = details['typeCode'] == 505
+    #                 details.loc[mask_505, 'eventDetails'] = details.loc[mask_505, 'eventDetails'].fillna('unassisted').replace(r'^\s*$', 'unassisted', regex=True)
+    #                 assists = details.loc[mask_505, 'eventDetails'].str.split(', ', expand=True)
+    #                 details.loc[mask_505, ['assist_1', 'assist_2']] = assists
+    #                 return details
+    #             return pd.DataFrame()  # Return empty DataFrame if no data
+    #     except Exception as e:
+    #         print(f"An error occurred: {e}")
+    #         return pd.DataFrame()
 
     # Fetch all shift data asynchronously in batches
     async def fetch_all_shift_data(game_df, batch_size=50):
@@ -168,7 +195,7 @@ def get_roster_data():
 
     df_roster= pd.DataFrame(roster)
     df_roster = df_roster.convert_dtypes()
-    df_roster['roster_url'] = 'https://api-web.nhle.com/v1/roster/' + df_roster['triCode'] + '/20232024'
+    df_roster['roster_url'] = 'https://api-web.nhle.com/v1/roster/' + df_roster['triCode'] + '/20242025'
     df_roster = df_roster[['id','fullName', 'triCode', 'roster_url']]
     df_roster = df_roster.rename(columns = {'id':'team_id', 'fullName':'team_name', 'triCode':'tri_code'})
     df_roster=df_roster.sort_values(by='team_id')
