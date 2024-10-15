@@ -104,18 +104,18 @@ dfstyle = [{"selector": "th", "props": heading_properties},
 
 # Expander Styling
 
-#st.markdown(
-    #     """
-    # <style>
-    # .streamlit-expanderHeader {
-    # #   font-weight: bold;
-    #     background: #e1dee9;
-    #     font-size: 180px;
-    # }
-    # </style>
-    # """,
-    #     unsafe_allow_html=True,
-    # )
+st.markdown(
+        """
+    <style>
+    .streamlit-expanderHeader {
+    #   font-weight: bold;
+        background: #e1dee9;
+        font-size: 180px;
+    }
+    </style>
+    """,
+        unsafe_allow_html=True,
+    )
     
 custom_css = """
 <style>
