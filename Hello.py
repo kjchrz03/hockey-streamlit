@@ -15,7 +15,7 @@ from hockey_rink import NHLRink, RinkImage
 from PIL import Image
 import subprocess
 subprocess.run(["pip", "install", "--upgrade", "pip"])
-
+subprocess.run(["pip", "install", "--upgrade", "streamlit"])
 # List of pip commands to run
 pip_commands = [
     ["pip", "install", "pytz"],
@@ -45,7 +45,7 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import the function from season_data.py
-from data.season_data import load_season_data
+from data.season_data import load_season_data, get_daily_games
 
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
@@ -134,117 +134,221 @@ st.title("Check This Data")
 st.markdown('''##### <span style="color: #aaaaaa">Explore NHL Advanced Stats, Simply</span>
             ''', unsafe_allow_html=True)
                 
-tab_bug, tab_player, tab_games = st.tabs(["Scores", "Goals", "Matchups"])
+tab_bug, tab_goals, tab_player, tab_games = st.tabs(["Scores", "Goals", "Matchups"])
 st.sidebar.markdown(" ## Make Selections")
 
 ##########################################
 ##  Matchup Sidebar                     ##
 ##########################################
 # Function to fetch game data for a specific date
-def fetch_game_data(start_date, end_date):
-    base_url = "https://api-web.nhle.com/v1/schedule/"
-    daily_games = pd.DataFrame()
+# def fetch_game_data(start_date, end_date):
+#     base_url = "https://api-web.nhle.com/v1/schedule/"
+#     daily_games = pd.DataFrame()
     
-    current_date = start_date
-    seen_dates = set()
+#     current_date = start_date
+#     seen_dates = set()
 
-    while current_date <= end_date:
-        formatted_date = current_date.strftime("%Y-%m-%d")
-        api_url = f"{base_url}{formatted_date}"
-        response = requests.get(api_url)
+#     while current_date <= end_date:
+#         formatted_date = current_date.strftime("%Y-%m-%d")
+#         api_url = f"{base_url}{formatted_date}"
+#         response = requests.get(api_url)
         
-        if response.status_code == 200:
-            response_text = response.text
-            json_data = json.loads(response_text)
+#         if response.status_code == 200:
+#             response_text = response.text
+#             json_data = json.loads(response_text)
 
-            if 'gameWeek' in json_data:
-                game_week = json_data['gameWeek']
-                game_week_df = pd.DataFrame(game_week)
-                game_week_df = game_week_df[game_week_df['numberOfGames'] != 0]
+#             if 'gameWeek' in json_data:
+#                 game_week = json_data['gameWeek']
+#                 game_week_df = pd.DataFrame(game_week)
+#                 game_week_df = game_week_df[game_week_df['numberOfGames'] != 0]
 
-                if formatted_date not in seen_dates:
-                    seen_dates.add(formatted_date)
-                    daily_games = pd.concat([daily_games, game_week_df], ignore_index=True)
-            else:
-                st.warning(f"No games found for {formatted_date}")
-        else:
-            st.error(f"Request failed with status code {response.status_code}")
+#                 if formatted_date not in seen_dates:
+#                     seen_dates.add(formatted_date)
+#                     daily_games = pd.concat([daily_games, game_week_df], ignore_index=True)
+#             else:
+#                 st.warning(f"No games found for {formatted_date}")
+#         else:
+#             st.error(f"Request failed with status code {response.status_code}")
 
-        current_date += timedelta(weeks=1)
+#         current_date += timedelta(weeks=1)
 
-    return daily_games
+#     return daily_games
 
-# Function to process game data into a DataFrame
-def process_game_data(daily_games):
-    game_week_details = pd.json_normalize(daily_games['games'])
-    dfs = {}
+# # Function to process game data into a DataFrame
+# def process_game_data(daily_games):
+#     game_week_details = pd.json_normalize(daily_games['games'])
+#     dfs = {}
 
-    for i in range(len(game_week_details.columns)):
-        game_info = pd.json_normalize(game_week_details[i]) if game_week_details[i] is not None else pd.DataFrame()
-        df_name = f'game_test{i}'
-        dfs[df_name] = game_info
+#     for i in range(len(game_week_details.columns)):
+#         game_info = pd.json_normalize(game_week_details[i]) if game_week_details[i] is not None else pd.DataFrame()
+#         df_name = f'game_test{i}'
+#         dfs[df_name] = game_info
 
-    combined_df = pd.concat(dfs.values(), ignore_index=True).dropna(how='all')
-    combined_df = combined_df[['id', 'season', 'startTimeUTC', 'gameType', 'awayTeam.id', 'awayTeam.abbrev',
-                                'homeTeam.id', 'homeTeam.abbrev', 'homeTeam.logo', 'awayTeam.logo',
-                                'homeTeam.placeName.default', 'awayTeam.placeName.default',
-                                'awayTeam.score', 'homeTeam.score', 'winningGoalScorer.playerId', 
-                                'winningGoalie.playerId', 'gameState']].convert_dtypes()
+#     combined_df = pd.concat(dfs.values(), ignore_index=True).dropna(how='all')
+#     combined_df = combined_df[['id', 'season', 'startTimeUTC', 'gameType', 'awayTeam.id', 'awayTeam.abbrev',
+#                                 'homeTeam.id', 'homeTeam.abbrev', 'homeTeam.logo', 'awayTeam.logo',
+#                                 'homeTeam.placeName.default', 'awayTeam.placeName.default',
+#                                 'awayTeam.score', 'homeTeam.score', 'winningGoalScorer.playerId', 
+#                                 'winningGoalie.playerId', 'gameState']].convert_dtypes()
 
-    combined_df['link'] = 'https://api-web.nhle.com/v1/gamecenter/' + combined_df['id'].astype(str) + '/play-by-play'
-    combined_df = combined_df.dropna(subset=['id']).query('gameState == "OFF"')
-    combined_df['startTimeUTC'] = pd.to_datetime(combined_df['startTimeUTC'])
-    combined_df = combined_df.rename(columns={'id': 'game_id'})
+#     combined_df['link'] = 'https://api-web.nhle.com/v1/gamecenter/' + combined_df['id'].astype(str) + '/play-by-play'
+#     combined_df = combined_df.dropna(subset=['id']).query('gameState == "OFF"')
+#     combined_df['startTimeUTC'] = pd.to_datetime(combined_df['startTimeUTC'])
+#     combined_df = combined_df.rename(columns={'id': 'game_id'})
     
-    # Convert 'startTimeUTC' to Eastern Time
-    utc_timezone = pytz.utc
-    eastern_timezone = pytz.timezone('America/New_York')
-    combined_df['game_date'] = combined_df['startTimeUTC'].dt.tz_convert(eastern_timezone)
-    combined_df['game_date'] = combined_df['game_date'].dt.strftime('%Y-%m-%d')
-    combined_df.drop('startTimeUTC', axis=1, inplace=True)
+#     # Convert 'startTimeUTC' to Eastern Time
+#     utc_timezone = pytz.utc
+#     eastern_timezone = pytz.timezone('America/New_York')
+#     combined_df['game_date'] = combined_df['startTimeUTC'].dt.tz_convert(eastern_timezone)
+#     combined_df['game_date'] = combined_df['game_date'].dt.strftime('%Y-%m-%d')
+#     combined_df.drop('startTimeUTC', axis=1, inplace=True)
 
-    return combined_df
+#     return combined_df
 
 ##########################################
 ## Scorebug Tab                         ##
 ##########################################
 
 with tab_bug:
-    st.title("NHL Scorebug")
+    @st.cache_data(show_spinner=True) 
+    def score_bug():
+        try:
+            daily_games = get_daily_games()  # This is where external data is fetched
+            return daily_games
+        except Exception as e:
+            st.error(f"Error loading data: {e}")
+            return None
 
-    # Date range for fetching game data
-    start_date = datetime.strptime("2024-10-08", "%Y-%m-%d")
-    end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
+    def load_games(daily_games):
+        # Create new columns based on the existing ones
+        daily_games['Away Team'] = daily_games['awayTeam.abbrev']
+        daily_games['away_logo'] = daily_games['awayTeam.logo']
+        daily_games['Home Team'] = daily_games['homeTeam.abbrev']
+        daily_games['home_logo'] = daily_games['homeTeam.logo']
+        daily_games['Away Score'] = daily_games['awayTeam.score']
+        daily_games['Home Score'] = daily_games['homeTeam.score']
+        daily_games['Winning Goal Scorer'] = daily_games['winningGoalScorer.playerId']
+        daily_games['Game Date'] = daily_games['game_date']
+        daily_games['game_type'] = daily_games['game_type']
 
-    # Fetch game data
-    daily_games = fetch_game_data(start_date, end_date)
-    if daily_games.empty:
-        st.warning("No games found in the specified date range.")
-    else:
-        combined_df = process_game_data(daily_games)
+        # Select specific columns to return
+        selected_columns = ['Away Team', 'away_logo', 'Away Score', 'Home Team', 'home_logo', 'Home Score', 'Winning Goal Scorer', 'game_type', 'Game Date']
+        score_bug_df = daily_games[selected_columns]
+        return score_bug_df
 
-        # Create a list of matchups for the selectbox in the sidebar
-        locations = combined_df[['game_id', 'awayTeam.abbrev', 'homeTeam.abbrev']]
-        matchups = locations['homeTeam.abbrev'] + ' vs ' + locations['awayTeam.abbrev']
+    def todays_games():
+        try:
+            daily_games = score_bug()  # Fetch the data
+            score_bug_df = load_games(daily_games)
+            
+            # Get today's date in the required format
+            today = datetime.now().strftime("%Y-%m-%d")
 
-        # Sidebar selectbox for matchups
-        selected_match = st.sidebar.selectbox('Select a match:', matchups)
+            # Convert game date to a comparable format and filter for today's games
+            score_bug_df['Game Date'] = pd.to_datetime(score_bug_df['Game Date']).dt.strftime("%Y-%m-%d")
+            todays_games_df = score_bug_df[score_bug_df['Game Date'] == today]
 
-        # Display selected matchup details
-        selected_game_index = matchups.tolist().index(selected_match)  # Get index of the selected match
-        selected_game = combined_df.iloc[selected_game_index]  # Get the corresponding game data
+            # Loop through each game and display it in a table format
+            for index, row in todays_games_df.iterrows():
+                # Display the game information
+                game_row = f"""
+                <table>
+                    <tr>
+                        <td><img src="{row['home_logo']}" alt="Home Logo" width="50" height="50"></td>
+                        <td>{row['Home Team']}</td>
+                        <td>{row['Home Score']}</td>
+                        <td>vs</td>
+                        <td>{row['Away Score']}</td>
+                        <td>{row['Away Team']}</td>
+                        <td><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
+                    </tr>
+                </table>
+                """
+                # Display the game row in Streamlit
+                st.markdown(game_row, unsafe_allow_html=True)
 
-        # Display score bug information
-        st.subheader(f"Score Bug for {selected_match}")
-        st.write(f"Home Team: {selected_game['homeTeam.abbrev']}, Score: {selected_game['homeTeam.score']}")
-        st.write(f"Away Team: {selected_game['awayTeam.abbrev']}, Score: {selected_game['awayTeam.score']}")
-        st.write(f"Game State: {selected_game['gameState']}")
-        st.write(f"Game Link: [Play by Play]({selected_game['link']})")
+                # If the game is complete ('OFF'), show the winning goal scorer
+                if row['game_type'] == 'OFF':
+                    scorer_row = f"""
+                    <table>
+                        <tr>
+                            <td colspan="7">Winning Goal Scorer ID: {row['Winning Goal Scorer']}</td>
+                        </tr>
+                    </table>
+                    """
+                    st.markdown(scorer_row, unsafe_allow_html=True)
+
+            # Return filtered DataFrame for any further processing if needed
+            return todays_games_df
+
+        except Exception as e:
+            st.error(f"Error loading final data: {e}")
+            return None
+
+# Run the function to display today's games
+todays_games()
+
+            # if score_bug_df.empty:
+            
+    # # Date range for fetching game data
+    # start_date = datetime.strptime("2024-10-08", "%Y-%m-%d")
+    # end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
+
+    # # Fetch game data
+    # daily_games = fetch_game_data(start_date, end_date)
+    # if daily_games.empty:
+    #     st.warning("No games found in the specified date range.")
+    # else:
+    #     combined_df = process_game_data(daily_games)
+
+    #     # Create a list of matchups for the selectbox in the sidebar
+    #     locations = combined_df[['game_id', 'awayTeam.abbrev', 'homeTeam.abbrev']]
+    #     matchups = locations['homeTeam.abbrev'] + ' vs ' + locations['awayTeam.abbrev']
+
+    #     # Sidebar selectbox for matchups
+    #     selected_match = st.sidebar.selectbox('Select a match:', matchups)
+
+    #     # Display selected matchup details
+    #     selected_game_index = matchups.tolist().index(selected_match)  # Get index of the selected match
+    #     selected_game = combined_df.iloc[selected_game_index]  # Get the corresponding game data
+
+    #     # Display score bug information
+    #     st.subheader(f"Score Bug for {selected_match}")
+    #     st.write(f"Home Team: {selected_game['homeTeam.abbrev']}, Score: {selected_game['homeTeam.score']}")
+    #     st.write(f"Away Team: {selected_game['awayTeam.abbrev']}, Score: {selected_game['awayTeam.score']}")
+      
+    #     st.write(f"Game Link: [Play by Play]({selected_game['link']})")
+
+        # Create an HTML table with desired styling
+    st.write(f'''
+        <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
+        <tr>
+            <td style="font-weight: bold;">Name</td>
+            <td style="font-weight: bold;">Position</td>
+            <td style="font-weight: bold;">Team</td>
+            <td style="font-weight: bold;">Games Played</td>
+            <td style="font-weight: bold;">Goals</td>
+            <td style="font-weight: bold;">Goals per Game</td>
+            <td style="font-weight: bold;">Points</td>
+        </tr>
+        <tr>
+            <td>{score_bug_df.loc[score_bug_df.Name == selected_player_name, 'Name'].values[0]}</td>
+            <td>{score_bug_df.loc[score_bug_df.Name == selected_player_name, 'Position'].values[0]}</td>
+            <td>{score_bug_df.loc[score_bug_df.Name == selected_player_name, 'Team'].values[0]}</td>
+            <td>{score_bug_df.loc[score_bug_df.Name == selected_player_name, 'Games Played'].values[0]}</td>
+            <td>{score_bug_df.loc[score_bug_df.Name == selected_player_name, 'Goals'].values[0]}</td>
+            <td>{score_bug_df.loc[score_bug_df.Name == selected_player_name, 'Goals per Game'].values[0]}</td>
+            <td>{score_bug_df.loc[score_bug_df.Name == selected_player_name, 'Points'].values[0]}</td> 
+        </tr>
+        </table>
+        ''', unsafe_allow_html=True)
+        st.markdown("<br>", unsafe_allow_html=True)
+
 
 ##########################################
-## Player Tab                           ##
+## Goals Tab                           ##
 ##########################################
-with tab_player:
+with tab_goals:
     @st.cache_data(show_spinner=True) 
     def season_data():
         try:
@@ -370,6 +474,10 @@ with tab_player:
     # text = "Ice rink heat map package from [The Bucketless](https://github.com/the-bucketless/hockey_rink)"
     # st.markdown(text, unsafe_allow_html=True)
 
+
 ##########################################
-## Explore Tab  League-Wide Stats       ##
+## Player Tab                         ##
 ##########################################
+
+with tab_player:
+    st.title("Players")
