@@ -429,9 +429,7 @@ with tab_goals:
         players_df = season_totals[selected_columns]
         return players_df
     
-    # players_df = load_players()
-    # cols = ['Name','Position','Team','Goals']
-    # Streamlit app
+
     season_totals = load_season_data()
     if season_totals is not None:
             # Extract player data from season totals
