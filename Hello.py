@@ -352,7 +352,7 @@ with tab_bug:
             
             # Get today's date in the required format
             today = datetime.now().strftime("%Y-%m-%d")
-
+            print(today)
             # Convert game date to a comparable format and filter for today's games
             score_bug_df['Game Date'] = pd.to_datetime(score_bug_df['Game Date']).dt.strftime("%Y-%m-%d")
             todays_games_df = score_bug_df[score_bug_df['Game Date'] == today]
