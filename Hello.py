@@ -363,13 +363,13 @@ with tab_bug:
                 game_row = f"""
                 <table>
                     <tr>
-                        <td><img src="{row['home_logo']}" alt="Home Logo" width="50" height="50"></td>
+                        # <td><img src="{row['home_logo']}" alt="Home Logo" width="50" height="50"></td>
                         <td>{row['Home Team']}</td>
                         <td>{row['Home Score']}</td>
                         <td>vs</td>
                         <td>{row['Away Score']}</td>
                         <td>{row['Away Team']}</td>
-                        <td><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
+                        # <td><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
                     </tr>
                 </table>
                 """
