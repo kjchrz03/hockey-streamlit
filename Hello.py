@@ -14,7 +14,7 @@ import requests
 from hockey_rink import NHLRink, RinkImage
 from PIL import Image
 import subprocess
-subprocess.run(["pip", "install", "--upgrade", "pip"])
+#subprocess.run(["pip", "install", "--upgrade", "pip"])
 #subprocess.run(["pip", "install", "--upgrade", "streamlit"])
 # List of pip commands to run
 pip_commands = [
@@ -135,7 +135,7 @@ st.markdown('''##### <span style="color: #aaaaaa">Explore NHL Advanced Stats, Si
             ''', unsafe_allow_html=True)
                 
 tab_bug, tab_goals, tab_games = st.tabs(["Scores", "Goals", "Matchups"])
-st.sidebar.markdown(" ## Make Selections")
+# st.sidebar.markdown(" ## Make Selections")
 
 ##########################################
 ##  Matchup Sidebar                     ##
@@ -209,115 +209,6 @@ st.sidebar.markdown(" ## Make Selections")
 ## Scorebug Tab                         ##
 ##########################################
 
-# with tab_bug:
-#     @st.cache_data(show_spinner=True) 
-#     def score_bug():
-#         try:
-#             daily_games = get_daily_games()  # This is where external data is fetched
-#             return daily_games
-#         except Exception as e:
-#             st.error(f"Error loading data: {e}")
-#             return None
-
-#     def load_games(daily_games):
-#         # Create new columns based on the existing ones
-#         daily_games['Away Team'] = daily_games['awayTeam.abbrev']
-#         daily_games['away_logo'] = daily_games['awayTeam.logo']
-#         daily_games['Home Team'] = daily_games['homeTeam.abbrev']
-#         daily_games['home_logo'] = daily_games['homeTeam.logo']
-#         daily_games['Away Score'] = daily_games['awayTeam.score']
-#         daily_games['Home Score'] = daily_games['homeTeam.score']
-#         daily_games['Winning Goal Scorer'] = daily_games['winningGoalScorer.playerId']
-#         daily_games['Game Date'] = daily_games['game_date']
-#         daily_games['game_type'] = daily_games['game_type']
-
-#         # Select specific columns to return
-#         selected_columns = ['Away Team', 'away_logo', 'Away Score', 'Home Team', 'home_logo', 'Home Score', 'Winning Goal Scorer', 'game_type', 'Game Date']
-#         score_bug_df = daily_games[selected_columns]
-#         return score_bug_df
-
-#     def todays_games():
-#         try:
-#             daily_games = score_bug()  # Fetch the data
-#             score_bug_df = load_games(daily_games)
-            
-#             # Get today's date in the required format
-#             today = datetime.now().strftime("%Y-%m-%d")
-
-#             # Convert game date to a comparable format and filter for today's games
-#             score_bug_df['Game Date'] = pd.to_datetime(score_bug_df['Game Date']).dt.strftime("%Y-%m-%d")
-#             todays_games_df = score_bug_df[score_bug_df['Game Date'] == today]
-
-#             # Loop through each game and display it in a table format
-#             for index, row in todays_games_df.iterrows():
-#                 # Display the game information
-#                 game_row = f"""
-#                 <table>
-#                     <tr>
-#                         <td><img src="{row['home_logo']}" alt="Home Logo" width="50" height="50"></td>
-#                         <td>{row['Home Team']}</td>
-#                         <td>{row['Home Score']}</td>
-#                         <td>vs</td>
-#                         <td>{row['Away Score']}</td>
-#                         <td>{row['Away Team']}</td>
-#                         <td><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
-#                     </tr>
-#                 </table>
-#                 """
-#                 # Display the game row in Streamlit
-#                 st.markdown(game_row, unsafe_allow_html=True)
-
-#                 # If the game is complete ('OFF'), show the winning goal scorer
-#                 if row['game_type'] == 'OFF':
-#                     scorer_row = f"""
-#                     <table>
-#                         <tr>
-#                             <td colspan="7">Winning Goal Scorer ID: {row['Winning Goal Scorer']}</td>
-#                         </tr>
-#                     </table>
-#                     """
-#                     st.markdown(scorer_row, unsafe_allow_html=True)
-
-#             # Return filtered DataFrame for any further processing if needed
-#             return todays_games_df
-
-#         except Exception as e:
-#             st.error(f"Error loading final data: {e}")
-#             return None
-
-# # Run the function to display today's games
-# todays_games()
-
-            # if score_bug_df.empty:
-            
-    # # Date range for fetching game data
-    # start_date = datetime.strptime("2024-10-08", "%Y-%m-%d")
-    # end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
-
-    # # Fetch game data
-    # daily_games = fetch_game_data(start_date, end_date)
-    # if daily_games.empty:
-    #     st.warning("No games found in the specified date range.")
-    # else:
-    #     combined_df = process_game_data(daily_games)
-
-    #     # Create a list of matchups for the selectbox in the sidebar
-    #     locations = combined_df[['game_id', 'awayTeam.abbrev', 'homeTeam.abbrev']]
-    #     matchups = locations['homeTeam.abbrev'] + ' vs ' + locations['awayTeam.abbrev']
-
-    #     # Sidebar selectbox for matchups
-    #     selected_match = st.sidebar.selectbox('Select a match:', matchups)
-
-    #     # Display selected matchup details
-    #     selected_game_index = matchups.tolist().index(selected_match)  # Get index of the selected match
-    #     selected_game = combined_df.iloc[selected_game_index]  # Get the corresponding game data
-
-    #     # Display score bug information
-    #     st.subheader(f"Score Bug for {selected_match}")
-    #     st.write(f"Home Team: {selected_game['homeTeam.abbrev']}, Score: {selected_game['homeTeam.score']}")
-    #     st.write(f"Away Team: {selected_game['awayTeam.abbrev']}, Score: {selected_game['awayTeam.score']}")
-      
-    #     st.write(f"Game Link: [Play by Play]({selected_game['link']})")
 with tab_bug:
     @st.cache_data(show_spinner=True) 
     def score_bug():
@@ -354,27 +245,42 @@ with tab_bug:
             today = datetime.now().strftime("%Y-%m-%d")
             print(today)
             # Convert game date to a comparable format and filter for today's games
-            score_bug_df['Game Date'] = pd.to_datetime(score_bug_df['Game Date']).dt.strftime("%Y-%m-%d")
+            score_bug_df.loc[:, 'Game Date'] = pd.to_datetime(score_bug_df['Game Date']).dt.strftime("%Y-%m-%d")
+
             todays_games_df = score_bug_df[score_bug_df['Game Date'] == today]
 
             # Loop through each game and display it in a table format
             for index, row in todays_games_df.iterrows():
-                # Display the game information
+                # Create table with headers
                 game_row = f"""
-                <table>
-                    <tr>
-                        # <td><img src="{row['home_logo']}" alt="Home Logo" width="50" height="50"></td>
-                        <td>{row['Home Team']}</td>
-                        <td>{row['Home Score']}</td>
-                        <td>vs</td>
-                        <td>{row['Away Score']}</td>
-                        <td>{row['Away Team']}</td>
-                        # <td><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
-                    </tr>
+                <table style="border-collapse: separate; border: none; border-spacing: 0 10px;">  <!-- 10px gap -->
+                     <thead>
+                        <tr>
+                            <th style="border: none;"></th>
+                            <th style="text-align: center; border: none;" colspan="2.5">Home Team</th>
+                            <th style="border: none;"></th> <!-- Empty for vs -->
+                            <th style="border: none;"></th> <!-- Empty for vs -->
+                            <th style="border: none;"></th> <!-- Empty for vs -->
+                            <th style="text-align: center; border: none;" colspan="2.5">Away Team</th>
+                            <th style="border: none;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="{row['home_logo']}" alt="Home Logo" width="50" height="50"></td>
+                            <td style="border-left: none;">{row['Home Team']}</td>
+                            <td>{row['Home Score']}</td>
+                            <td>vs</td>
+                            <td>{row['Away Score']}</td>
+                            <td>{row['Away Team']}</td>
+                            <td><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
+                        </tr>
+                    </tbody>
                 </table>
                 """
                 # Display the game row in Streamlit
                 st.markdown(game_row, unsafe_allow_html=True)
+
 
                 # If the game is complete ('OFF'), show the winning goal scorer
                 if row['game_type'] == 'OFF':
