@@ -45,7 +45,7 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import the function from season_data.py
-from data.season_data import load_season_data, get_daily_games
+from data.season_data import load_season_data, get_daily_games, get_standings_data
 
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
@@ -138,72 +138,60 @@ tab_bug, tab_goals, tab_games = st.tabs(["Scores", "Goals", "Matchups"])
 # st.sidebar.markdown(" ## Make Selections")
 
 ##########################################
-##  Matchup Sidebar                     ##
+##  Standingsidebar                     ##
 ##########################################
-# Function to fetch game data for a specific date
-# def fetch_game_data(start_date, end_date):
-#     base_url = "https://api-web.nhle.com/v1/schedule/"
-#     daily_games = pd.DataFrame()
-    
-#     current_date = start_date
-#     seen_dates = set()
+current_date = datetime.now().strftime("%B %d, %Y")
+st.title("League-Wide Standings")
+st.markdown(f'''##### <span style="color: #aaaaaa">{current_date}</span>''', unsafe_allow_html=True)
+@st.cache_data(show_spinner=True) 
+# Function to create a visual representation of the standings
 
-#     while current_date <= end_date:
-#         formatted_date = current_date.strftime("%Y-%m-%d")
-#         api_url = f"{base_url}{formatted_date}"
-#         response = requests.get(api_url)
+def display_standings():
+    try:
+        standings = get_standings_data()  # This is where external data is fetched
+        return standings
+    except Exception as e:
+        st.error(f"Error loading data: {e}")
+        return None
+#     # Define color mapping for divisions
+#     division_colors = {
+#         'Central': 'red',
+#         'Atlantic': 'blue',
+#         'Metro': 'green',
+#         'Pacific': 'yellow'
+#     }
+    
+#     # Normalize points to a scale of 0 to 1 for vertical placement
+#     max_points = standings_df['Points'].max()
+#     min_points = standings_df['Points'].min()
+    
+#     st.sidebar.header("League Standings")
+    
+#     # Calculate positions based on points
+#     for index, row in standings_df.iterrows():
+#         team = row['Team']
+#         points = row['Points']
+#         division = row['Division']
         
-#         if response.status_code == 200:
-#             response_text = response.text
-#             json_data = json.loads(response_text)
+#         # Calculate the vertical position (0 at the bottom, 1 at the top)
+#         position = (points - min_points) / (max_points - min_points)
+        
+#         # Create the visual representation
+#         # Use markdown to position logos and text
+#         st.sidebar.markdown(f"""
+#             <div style="position: relative; margin: 20px 0;">
+#                 <div style="position: absolute; left: 0; top: {position * 100}%; transform: translateY(-50%);">
+#                     <div style="border: 3px solid {division_colors[division]}; border-radius: 50%; display: inline-block;">
+#                         <img src="path_to_logos/{team}.png" alt="{team} Logo" width="50" height="50" style="border-radius: 50%;">
+#                     </div>
+#                     <div style="display: inline-block; margin-left: 10px;">{team} - {points} pts</div>
+#                 </div>
+#                 <div style="position: absolute; left: 20%; width: 2px; height: 100%; background-color: grey;"></div>
+#             </div>
+#         """, unsafe_allow_html=True)
 
-#             if 'gameWeek' in json_data:
-#                 game_week = json_data['gameWeek']
-#                 game_week_df = pd.DataFrame(game_week)
-#                 game_week_df = game_week_df[game_week_df['numberOfGames'] != 0]
-
-#                 if formatted_date not in seen_dates:
-#                     seen_dates.add(formatted_date)
-#                     daily_games = pd.concat([daily_games, game_week_df], ignore_index=True)
-#             else:
-#                 st.warning(f"No games found for {formatted_date}")
-#         else:
-#             st.error(f"Request failed with status code {response.status_code}")
-
-#         current_date += timedelta(weeks=1)
-
-#     return daily_games
-
-# # Function to process game data into a DataFrame
-# def process_game_data(daily_games):
-#     game_week_details = pd.json_normalize(daily_games['games'])
-#     dfs = {}
-
-#     for i in range(len(game_week_details.columns)):
-#         game_info = pd.json_normalize(game_week_details[i]) if game_week_details[i] is not None else pd.DataFrame()
-#         df_name = f'game_test{i}'
-#         dfs[df_name] = game_info
-
-#     combined_df = pd.concat(dfs.values(), ignore_index=True).dropna(how='all')
-#     combined_df = combined_df[['id', 'season', 'startTimeUTC', 'gameType', 'awayTeam.id', 'awayTeam.abbrev',
-#                                 'homeTeam.id', 'homeTeam.abbrev', 'homeTeam.logo', 'awayTeam.logo',
-#                                 'homeTeam.placeName.default', 'awayTeam.placeName.default',
-#                                 'awayTeam.score', 'homeTeam.score', 'winningGoalScorer.playerId', 
-#                                 'winningGoalie.playerId', 'gameState']].convert_dtypes()
-
-#     combined_df['link'] = 'https://api-web.nhle.com/v1/gamecenter/' + combined_df['id'].astype(str) + '/play-by-play'
-#     combined_df = combined_df.dropna(subset=['id']).query('gameState == "OFF"')
-#     combined_df['startTimeUTC'] = pd.to_datetime(combined_df['startTimeUTC'])
-#     combined_df = combined_df.rename(columns={'id': 'game_id'})
-    
-#     # Convert 'startTimeUTC' to Eastern Time
-#     utc_timezone = pytz.utc
-#     eastern_timezone = pytz.timezone('America/New_York')
-#     combined_df['game_date'] = combined_df['startTimeUTC'].dt.tz_convert(eastern_timezone)
-#     combined_df['game_date'] = combined_df['game_date'].dt.strftime('%Y-%m-%d')
-#     combined_df.drop('startTimeUTC', axis=1, inplace=True)
-
-#     return combined_df
+# # Call the function
+# display_standings(standings_df)
 
 ##########################################
 ## Scorebug Tab                         ##
