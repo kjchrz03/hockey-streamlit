@@ -135,63 +135,94 @@ st.markdown('''##### <span style="color: #aaaaaa">Explore NHL Advanced Stats, Si
             ''', unsafe_allow_html=True)
                 
 tab_bug, tab_goals, tab_games = st.tabs(["Scores", "Goals", "Matchups"])
-# st.sidebar.markdown(" ## Make Selections")
+st.sidebar.markdown("League-Wide Standings")
 
 ##########################################
 ##  Standingsidebar                     ##
 ##########################################
-current_date = datetime.now().strftime("%B %d, %Y")
-st.title("League-Wide Standings")
-st.markdown(f'''##### <span style="color: #aaaaaa">{current_date}</span>''', unsafe_allow_html=True)
-@st.cache_data(show_spinner=True) 
-# Function to create a visual representation of the standings
-
+@st.cache_data(show_spinner=True)
 def display_standings():
     try:
-        standings = get_standings_data()  # This is where external data is fetched
+        standings = get_standings_data()  # Fetch external data
         return standings
     except Exception as e:
         st.error(f"Error loading data: {e}")
         return None
-#     # Define color mapping for divisions
-#     division_colors = {
-#         'Central': 'red',
-#         'Atlantic': 'blue',
-#         'Metro': 'green',
-#         'Pacific': 'yellow'
-#     }
-    
-#     # Normalize points to a scale of 0 to 1 for vertical placement
-#     max_points = standings_df['Points'].max()
-#     min_points = standings_df['Points'].min()
-    
-#     st.sidebar.header("League Standings")
-    
-#     # Calculate positions based on points
-#     for index, row in standings_df.iterrows():
-#         team = row['Team']
-#         points = row['Points']
-#         division = row['Division']
-        
-#         # Calculate the vertical position (0 at the bottom, 1 at the top)
-#         position = (points - min_points) / (max_points - min_points)
-        
-#         # Create the visual representation
-#         # Use markdown to position logos and text
-#         st.sidebar.markdown(f"""
-#             <div style="position: relative; margin: 20px 0;">
-#                 <div style="position: absolute; left: 0; top: {position * 100}%; transform: translateY(-50%);">
-#                     <div style="border: 3px solid {division_colors[division]}; border-radius: 50%; display: inline-block;">
-#                         <img src="path_to_logos/{team}.png" alt="{team} Logo" width="50" height="50" style="border-radius: 50%;">
-#                     </div>
-#                     <div style="display: inline-block; margin-left: 10px;">{team} - {points} pts</div>
-#                 </div>
-#                 <div style="position: absolute; left: 20%; width: 2px; height: 100%; background-color: grey;"></div>
-#             </div>
-#         """, unsafe_allow_html=True)
 
-# # Call the function
-# display_standings(standings_df)
+def load_standings(standings):
+    standings['Conference'] = standings['conferenceName']
+    standings['Division'] = standings['divisionName']
+    standings['Team'] = standings['team']
+    standings['Ranking'] = standings['leagueSequence']
+    standings['Games Played'] = standings['gamesPlayed']
+    standings['logo'] = standings['teamLogo']  # Assuming this contains the SVG URL
+    standings['Win Pctg'] = standings['winPctg']
+    standings['Date'] = standings['game_date']
+    standings['Points'] = standings['points']
+
+    # Select specific columns to return
+    selected_columns = ['Conference', 'Division', 'Team', 'Ranking', 'Games Played', 'logo', 'Win Pctg', 
+                        'Date', 'Points']
+    league_standings_df = standings[selected_columns]
+    
+    # Debugging: print the DataFrame to see its structure
+    print(league_standings_df)
+    
+    return league_standings_df
+
+def todays_standings():
+    try:
+        standings = display_standings()  # Fetch the data
+        if standings is None:
+            return  # Exit if no standings were fetched
+            
+        league_standings_df = load_standings(standings)
+        
+        # Get today's date in the required format
+        today = datetime.now().strftime("%Y-%m-%d")
+        st.sidebar.markdown(f"##### Today's Date: {today}")
+
+        # Define color mapping for divisions
+        division_colors = {
+            'Central': 'red',
+            'Atlantic': 'blue',
+            'Metro': 'green',
+            'Pacific': 'yellow'
+        }
+            
+        # Normalize points to a scale of 0 to 1 for vertical placement
+        max_points = league_standings_df['Points'].max()
+        min_points = league_standings_df['Points'].min()
+
+        # Calculate positions based on points
+        for index, row in league_standings_df.iterrows():
+            team = row['Team']
+            points = row['Points']
+            division = row['Division']
+            logo_url = row['logo']  # SVG logo link
+            
+            # Calculate the vertical position (0 at the bottom, 1 at the top)
+            position = (points - min_points) / (max_points - min_points)
+            
+            # Create the visual representation
+            st.sidebar.markdown(f"""
+                <div style="position: relative; margin: 20px 0;">
+                    <div style="position: absolute; left: 0; top: {position * 100}%; transform: translateY(-50%);">
+                        <div style="border: 3px solid {division_colors.get(division, 'grey')}; border-radius: 50%; display: inline-block;">
+                            <img src="{logo_url}" alt="{team} Logo" width="50" height="50" style="border-radius: 50%;">
+                        </div>
+                        <div style="display: inline-block; margin-left: 10px;">{team} - {points} pts</div>
+                    </div>
+                    <div style="position: absolute; left: 20%; width: 2px; height: 100%; background-color: grey;"></div>
+                </div>
+            """, unsafe_allow_html=True)
+
+    except Exception as e:
+        st.error(f"Error loading final data: {e}")
+        return None
+
+# Call the function
+todays_standings()
 
 ##########################################
 ## Scorebug Tab                         ##
