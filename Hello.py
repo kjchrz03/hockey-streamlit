@@ -210,6 +210,9 @@ tab_bug, tab_goals, tab_games = st.tabs(["Scores", "Goals", "Matchups"])
 ##########################################
 
 with tab_bug:
+    current_date = datetime.now().strftime("%B %d, %Y")
+    st.title("Today's Games")
+    st.markdown(f'''##### <span style="color: #aaaaaa">{current_date}</span>''', unsafe_allow_html=True)
     @st.cache_data(show_spinner=True) 
     def score_bug():
         try:
@@ -267,13 +270,13 @@ with tab_bug:
                     </thead>
                     <tbody>
                         <tr>
-                            <td><img src="{row['home_logo']}" alt="Home Logo" width="50" height="50"></td>
-                            <td style="border-left: none;">{row['Home Team']}</td>
-                            <td>{row['Home Score']}</td>
-                            <td>vs</td>
-                            <td>{row['Away Score']}</td>
-                            <td>{row['Away Team']}</td>
-                            <td><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
+                            <td style="border: none; text-align: center; width: 15%;"><img src="{row['home_logo']}" alt="Home Logo" width="50" height="50"></td>
+                            <td style="border: none; text-align: center; width: 15%;">{row['Home Team']}</td>
+                            <td style="border: none; text-align: right; width: 10%;">{row['Home Score']}</td>
+                            <td style="border-left: none; border-right: none; text-align: center; width: 10%; vertical-align: middle;">vs</td>
+                            <td style="border: none; text-align: center; width: 10%;">{row['Away Score']}</td>
+                            <td style="border: none; text-align: center; width: 15%;">{row['Away Team']}</td>
+                            <td style="border: none;text-align: center; width: 15%;"><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
                         </tr>
                     </tbody>
                 </table>
