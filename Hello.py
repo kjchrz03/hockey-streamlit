@@ -140,6 +140,7 @@ st.sidebar.markdown("League-Wide Standings")
 ##########################################
 ##  Standingsidebar                     ##
 ##########################################
+
 @st.cache_data(show_spinner=True)
 def display_standings():
     try:
@@ -157,7 +158,7 @@ def load_standings(standings):
     standings['Games Played'] = standings['gamesPlayed']
     standings['logo'] = standings['teamLogo']  # Assuming this contains the SVG URL
     standings['Win Pctg'] = standings['winPctg']
-    standings['Date'] = standings['game_date']
+    standings['Date'] = standings['date']
     standings['Points'] = standings['points']
 
     # Select specific columns to return
@@ -177,20 +178,20 @@ def todays_standings():
             return  # Exit if no standings were fetched
             
         league_standings_df = load_standings(standings)
-        
-        # Get today's date in the required format
-        today = datetime.now().strftime("%Y-%m-%d")
+         # Get today's date in the required format
+        today = datetime.now().strftime("%B %d, %Y")
         st.sidebar.markdown(f"##### Today's Date: {today}")
 
-        # Define color mapping for divisions
         division_colors = {
             'Central': 'red',
             'Atlantic': 'blue',
             'Metro': 'green',
             'Pacific': 'yellow'
         }
-            
-        # Normalize points to a scale of 0 to 1 for vertical placement
+        if 'divisionName' in league_standings_df.columns:
+            league_standings_df['color'] = league_standings_df['Division'].map(division_colors)
+        print(league_standings_df)
+        
         max_points = league_standings_df['Points'].max()
         min_points = league_standings_df['Points'].min()
 
@@ -203,26 +204,28 @@ def todays_standings():
             
             # Calculate the vertical position (0 at the bottom, 1 at the top)
             position = (points - min_points) / (max_points - min_points)
-            
-            # Create the visual representation
-            st.sidebar.markdown(f"""
-                <div style="position: relative; margin: 20px 0;">
-                    <div style="position: absolute; left: 0; top: {position * 100}%; transform: translateY(-50%);">
-                        <div style="border: 3px solid {division_colors.get(division, 'grey')}; border-radius: 50%; display: inline-block;">
-                            <img src="{logo_url}" alt="{team} Logo" width="50" height="50" style="border-radius: 50%;">
-                        </div>
-                        <div style="display: inline-block; margin-left: 10px;">{team} - {points} pts</div>
-                    </div>
-                    <div style="position: absolute; left: 20%; width: 2px; height: 100%; background-color: grey;"></div>
-                </div>
-            """, unsafe_allow_html=True)
+
+
+    
+
+        st.sidebar.markdown(f"""
+        <div style="position: relative; height: 500px; margin: 20px 0;">
+            <div style="position: absolute; left: 50%; width: 4px; height: 100%; background-color: red;"></div>
+        </div>
+                            
+    """, unsafe_allow_html=True)
+        
+
 
     except Exception as e:
         st.error(f"Error loading final data: {e}")
         return None
 
-# Call the function
-todays_standings()
+# Function to create a vertical line in the sidebar
+
+
+todays_standings()  # Display today's standings
+
 
 ##########################################
 ## Scorebug Tab                         ##
@@ -324,8 +327,6 @@ with tab_bug:
 
 # Run the function to display today's games
 todays_games()
-
-
 
 ##########################################
 ## Goals Tab                           ##
