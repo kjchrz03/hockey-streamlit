@@ -338,7 +338,7 @@ with tab_bug:
         daily_games['Home Score'] = daily_games['homeTeam.score']
         daily_games['Winning Goal Scorer'] = daily_games['winningGoalScorer.playerId']
         daily_games['Game Date'] = daily_games['game_date']
-        daily_games['game_type'] = daily_games['game_type']
+        daily_games['game_type'] = daily_games['gameType']
 
         # Select specific columns to return
         selected_columns = ['Away Team', 'away_logo', 'Away Score', 'Home Team', 'home_logo', 'Home Score', 'Winning Goal Scorer', 'game_type', 'Game Date']
