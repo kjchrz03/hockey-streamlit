@@ -516,7 +516,6 @@ def get_daily_games():
             all_daily_games['awayTeam.score'] = all_daily_games['awayTeam.score'].fillna(0)
             all_daily_games['homeTeam.score'] = all_daily_games['homeTeam.score'].fillna(0)
 
-
             all_daily_games['startTimeUTC'] = pd.to_datetime(all_daily_games['startTimeUTC'])
             all_daily_games = all_daily_games.rename(columns={'id': 'game_id'}).sort_values('game_id').reset_index(drop=True)
 
@@ -545,6 +544,41 @@ def get_game_locations_data():
         print(f"Error loading final data: {e}")
         return None
     
+def get_standings_data():
+    try: 
+        api_url = "https://api-web.nhle.com/v1/standings/now"
+        response = requests.get(api_url )
+        content = json.loads(response.content)
+
+
+        # Check if the request was successful (status code 200)
+        if response.status_code == 200:
+            # The response content can be accessed using response.text
+            response_text = response.text
+            #pprint(response_text)
+        else:
+            print(f"Request failed with status code {response.status_code}")
+
+        json_data = json.loads(response_text)
+        standings = json_data['standings']
+        standings_df =pd.DataFrame(standings)
+
+        # Extract team names
+        standings_df['team'] = standings_df['teamCommonName'].apply(lambda x: x['default'])
+        standings_df = standings_df[["conferenceName", "leagueSequence", "divisionName", "gamesPlayed", "teamLogo", "team", 
+                                    "winPctg", "conferenceSequence", "date", "divisionSequence", "points", "regulationWins", 
+                                    "regulationPlusOtWins", "pointPctg", "goalDifferential", "goalFor"]]
+        
+        points_per_game = standings_df['points'] / standings_df['gamesPlayed']
+        games_remaining = 82 - standings_df['gamesPlayed']
+        projected_final_points = standings_df['points']  + (games_remaining * points_per_game)
+        standings_df['projected_points'] = round(projected_final_points)
+
+        return standings_df 
+    except Exception as e:
+        print(f"Error loading standings data: {e}")
+        return None
+
 def load_play_data():
     try:
         game_location = get_game_locations_data()
