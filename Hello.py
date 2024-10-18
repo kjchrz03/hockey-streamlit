@@ -14,6 +14,10 @@ import requests
 from hockey_rink import NHLRink, RinkImage
 from PIL import Image
 import subprocess
+import logging
+import warnings# Suppress the specific warning
+warnings.filterwarnings("ignore", message="Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.")
+logging.getLogger("streamlit").setLevel(logging.ERROR)
 #subprocess.run(["pip", "install", "--upgrade", "pip"])
 #subprocess.run(["pip", "install", "--upgrade", "streamlit"])
 # List of pip commands to run
@@ -152,9 +156,11 @@ def display_standings():
 
 def load_standings(standings):
     standings['Conference'] = standings['conferenceName']
+    standings['Conference Rank'] = standings['conferenceSequence']
     standings['Division'] = standings['divisionName']
+    standings['Division Rank'] = standings['divisionSequence']
     standings['Team'] = standings['team']
-    standings['Ranking'] = standings['leagueSequence']
+    standings['League Rank'] = standings['leagueSequence']
     standings['Games Played'] = standings['gamesPlayed']
     standings['logo'] = standings['teamLogo']  # Assuming this contains the SVG URL
     standings['Win Pctg'] = standings['winPctg']
@@ -162,7 +168,7 @@ def load_standings(standings):
     standings['Points'] = standings['points']
 
     # Select specific columns to return
-    selected_columns = ['Conference', 'Division', 'Team', 'Ranking', 'Games Played', 'logo', 'Win Pctg', 
+    selected_columns = ['Conference', 'Conference Rank', 'Division', 'Division Rank', 'Team', 'League Rank', 'Games Played', 'logo', 'Win Pctg', 
                         'Date', 'Points']
     league_standings_df = standings[selected_columns]
     
@@ -178,48 +184,88 @@ def todays_standings():
             return  # Exit if no standings were fetched
             
         league_standings_df = load_standings(standings)
-         # Get today's date in the required format
+                # Define colors for each division
+        division_colors = {
+            'Atlantic': '#FF5733',  # Example color for Atlantic
+            'Metropolitan': '#33FF57',  # Example color for Metropolitan
+            'Central': '#3357FF',  # Example color for Central
+            'Pacific': '#FF33A1',  # Example color for Pacific
+            # Add more divisions and their respective colors as needed
+        }
+
+        # Get today's date in the required format
         today = datetime.now().strftime("%B %d, %Y")
         st.sidebar.markdown(f"##### Today's Date: {today}")
 
-        division_colors = {
-            'Central': 'red',
-            'Atlantic': 'blue',
-            'Metro': 'green',
-            'Pacific': 'yellow'
-        }
-        if 'divisionName' in league_standings_df.columns:
-            league_standings_df['color'] = league_standings_df['Division'].map(division_colors)
-        print(league_standings_df)
-        
-        max_points = league_standings_df['Points'].max()
-        min_points = league_standings_df['Points'].min()
+        # Dropdown for division selection
+        divisions = league_standings_df['Division'].unique().tolist()
+        divisions.append("League-Wide")  # Add League-Wide option
+        selected_division = st.sidebar.selectbox("Select Division:", divisions)
 
-        # Calculate positions based on points
-        for index, row in league_standings_df.iterrows():
+        # Filter standings based on selection
+        if selected_division == "League-Wide":
+            # Get top 8 teams from each conference
+            conference_teams = league_standings_df.groupby('Conference').apply(lambda x: x.nlargest(8, 'Points')).reset_index(drop=True)
+            filtered_standings = conference_teams
+        else:
+            filtered_standings = league_standings_df[league_standings_df['Division'] == selected_division]
+
+        # Calculate min and max points for positioning
+        min_points = filtered_standings['Points'].min()
+        max_points = filtered_standings['Points'].max()
+
+        # Draw the vertical line once
+        st.sidebar.markdown(f"""
+            <div style="position: relative; height: 500px; margin: 20px 0;">
+                <div style="position: absolute; left: 50%; width: 4px; height: 100%; background-color: red;"></div>
+        """, unsafe_allow_html=True)
+
+
+        # Create visual representation for each team
+        for index, row in filtered_standings.iterrows():
             team = row['Team']
             points = row['Points']
             division = row['Division']
             logo_url = row['logo']  # SVG logo link
             
+            # Use the appropriate rank based on selection
+            if selected_division == "League-Wide":
+                ranking = row['League Rank']  # Use League Rank for league-wide
+            else:
+                ranking = row['Division Rank']  # Use Division Rank for divisional results
+
             # Calculate the vertical position (0 at the bottom, 1 at the top)
-            position = (points - min_points) / (max_points - min_points)
+            position = (points - min_points) / (max_points - min_points) if max_points > min_points else 0
+            
+            # Calculate the actual top position
+            top_position = position * 100 # 100% at the top and 0% at the bottom
+            
+            # Determine the position side (left or right) based on ranking
+            if ranking % 2 == 0:  # Even ranking
+                left_position = "15%"  # Adjust for left side
+                transform_value = "translateX(-50%)"  # Move left for even rankings
+            else:  # Odd ranking
+                left_position = "70%"  # Adjust for right side
+                transform_value = "translateX(50%)"  # Move right for odd rankings
+            
+            # Create the visual representation for the team
+            st.sidebar.markdown(f"""
+                <div style="position: absolute; left: {left_position}; top: {top_position}%; transform: {transform_value};">
+                    <div style="border: 3px solid {division_colors.get(division, 'grey')}; border-radius: 50%; display: inline-block;">
+                        <img src="{logo_url}" alt="{team} Logo" width="50" height="50" style="border-radius: 50%;">
+                    </div>
+                </div>
+            """, unsafe_allow_html=True)
 
-
-    
-
-        st.sidebar.markdown(f"""
-        <div style="position: relative; height: 500px; margin: 20px 0;">
-            <div style="position: absolute; left: 50%; width: 4px; height: 100%; background-color: red;"></div>
-        </div>
-                            
-    """, unsafe_allow_html=True)
-        
-
+        # Close the outer div for the vertical line
+        st.sidebar.markdown("</div>", unsafe_allow_html=True)
 
     except Exception as e:
         st.error(f"Error loading final data: {e}")
         return None
+
+
+
 
 # Function to create a vertical line in the sidebar
 
