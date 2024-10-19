@@ -234,12 +234,13 @@ def todays_standings():
             else:
                 ranking = row['Division Rank']  # Use Division Rank for divisional results
 
-            # Calculate the vertical position (0 at the bottom, 1 at the top)
-            position = (points - min_points) / (max_points - min_points) if max_points > min_points else 0
+            # # Calculate the vertical position (0 at the bottom, 1 at the top)
+            # position = (points - min_points) / (max_points - min_points) if max_points > min_points else 0
             
-            # Calculate the actual top position
-            top_position = position * 100 # 100% at the top and 0% at the bottom
-            
+            # # Calculate the actual top position
+            # top_position = position * 100 # 100% at the top and 0% at the bottom
+            scale_height = 500  # Total height of the scale
+            max_points = 130  # Maximum points
             # Determine the position side (left or right) based on ranking
             if ranking % 2 == 0:  # Even ranking
                 left_position = "15%"  # Adjust for left side
