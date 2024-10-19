@@ -305,10 +305,10 @@ def get_play_data():
             if 'gameState' in json_data:
                 game_state = json_data['gameState']  # No need for indexing, just get the string value
 
-                # Stop if the game state is 'FUT'
-                if game_state == "FUT":
-                    print(f"Future game found at Game ID {game_id}. Stopping further requests.")
-                    return None  # Stop further processing
+                # # Stop if the game state is 'FUT'
+                # if game_state == "FUT":
+                #     print(f"Future game found at Game ID {game_id}. Stopping further requests.")
+                #     return None  # Stop further processing
 
 
                 # Continue processing if game state is not "FUT"
@@ -644,6 +644,7 @@ def load_shot_data():
 #Agg of basic player stats
 season_results = load_season_data()
 daily_games = get_daily_games()
+league_standings = get_standings_data()
 # #All player shifts with goals, assists with shift number
 # all_season_results = get_season_data()
 
