@@ -237,19 +237,21 @@ def todays_standings():
         html_content = """
             <div style="position: relative; height: {}px; margin: 20px 0;">
                 <div style="position: absolute; left: 10%; width: 4px; height: 100%; background-color: red;"></div>
-                <div style="position: absolute; left: 10%; right: 80%; width: 10%; top: 0%; border-top: 1px solid black;"></div>
             """.format(scale_height)
 
         # Calculate dot positions and add them to the HTML
         for point in points:
             # Calculate the top position based on the point value
-            position = (point / max_points) * scale_height
-            html_content += """
-            <div style="position: absolute; left: 15%; top: {}px; width: 10px; height: 10px; background-color: blue; border-radius: 50%;"></div>
-            """.format(position)
+            position = scale_height - (point / max_points) * scale_height
+             # Adding label and dot for each point value (center-aligned)
+            label_vertical_offset = 1 # Half the font height (15px) for label centering
+            dot_vertical_offset = 0       # Half the dot height (10px) for centering
 
-        # Closing div
-        html_content += "</div>"
+            html_content += """
+            <div style="position: absolute; left: 0%; top: {}px; color: white; font-size: 15px; line-height: 10px;">{}</div>
+            <div style="position: absolute; left: 15%; top: {}px; width: 10px; height: 10px; background-color: {}; border-radius: 50%;"></div>
+            """.format(position - label_vertical_offset, point, position - dot_vertical_offset, '#FF5733')  # Change '#FF5733' to your desired dot color
+
 
         # Display the generated HTML
         st.sidebar.markdown(html_content, unsafe_allow_html=True)
