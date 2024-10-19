@@ -199,39 +199,45 @@ def todays_standings():
 
         # Select division from the sidebar
         selected_division = st.sidebar.selectbox("Select Division:", divisions)
+        
 
-#         # # Filter standings based on selection
-#         # if selected_division == "League-Wide":
-#         #     # Get top 8 teams from each conference
-#         #     conference_teams = league_standings_df.groupby('Conference').apply(lambda x: x.nlargest(8, 'Points')).reset_index(drop=True)
-#         #     filtered_standings = conference_teams
-#         #     ranking = conference_teams['League Rank']  # Use League Rank for league-wide
-#         # else:
-#         #     filtered_standings = league_standings_df[league_standings_df['Division'] == selected_division]
-#         #     ranking = filtered_standings['Division Rank']
+        # Filter standings based on selection
+        if selected_division == "League-Wide":
+            # Get top 8 teams from each conference
+            conference_teams = league_standings_df.groupby('Conference').apply(lambda x: x.nlargest(8, 'Points')).reset_index(drop=True)
+            filtered_standings = conference_teams
+            ranking = conference_teams['League Rank']  # Use League Rank for league-wide
+        else:
+            filtered_standings = league_standings_df[league_standings_df['Division'] == selected_division]
+            ranking = filtered_standings['Division Rank']
 
 
+        def create_dataframe(n):
+            div_standings = []
+            for index, row in filtered_standings.iterrows():
+                team = row['Team']
+                points = row['Points']
+                division = row['Division']
+                logo_url = row['logo']  # SVG logo link
+                div_standings.append(row)
+            
+            # Create DataFrame from the collected data
+            return pd.DataFrame(div_standings)
 
+        # Call the function to create the DataFrame
+        div_standings = create_dataframe(8)
 # #Create visual representation for each team
-#         for index, row in filtered_standings.iterrows():
-#             team = row['Team']
-#             points = row['Points']
-#             division = row['Division']
-#             logo_url = row['logo']  # SVG logo link
+        
     
-        # team = standings['Team']
-        # points = standings['Points']
-        # division = standings['Division']
-        # logo_url = standings['logo']
-        # Use the appropriate rank based on selection
-
-
-        # import streamlit as st
+        team = div_standings['Team']
+        points = div_standings['Points']
+        division = div_standings['Division']
+        logo_url = div_standings['logo']
 
 # Sample point values; replace these with your actual data
-        points = [10, 25, 55, 75, 90, 130]  # Example point values
+       
         max_points = 130
-        scale_height = 500
+        scale_height = 1000
 
         # Generate the HTML for the scale and dots
         html_content = """
