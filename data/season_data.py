@@ -513,8 +513,8 @@ def get_daily_games():
             all_daily_games.dropna(subset=['id'], inplace=True)
 
             # Set scores to 0 if the game hasn't started yet (you can modify the logic to check gameState if needed)
-            all_daily_games['awayTeam.score'] = all_daily_games['awayTeam.score'].fillna(0)
-            all_daily_games['homeTeam.score'] = all_daily_games['homeTeam.score'].fillna(0)
+            all_daily_games['awayTeam.score'] = all_daily_games['awayTeam.score'].fillna(0).astype('Int64').astype(int)
+            all_daily_games['homeTeam.score'] = all_daily_games['homeTeam.score'].fillna(0).astype('Int64').astype(int)
 
             all_daily_games['startTimeUTC'] = pd.to_datetime(all_daily_games['startTimeUTC'])
             all_daily_games = all_daily_games.rename(columns={'id': 'game_id'}).sort_values('game_id').reset_index(drop=True)
