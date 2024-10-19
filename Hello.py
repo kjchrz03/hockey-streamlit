@@ -179,26 +179,26 @@ def todays_standings():
             return  # Exit if no standings were fetched
             
         league_standings_df = load_standings(standings)
-                # Define colors for each division
-#         # division_colors = {
-#         #     'Atlantic': '#FF5733',  # Example color for Atlantic
-#         #     'Metropolitan': '#33FF57',  # Example color for Metropolitan
-#         #     'Central': '#3357FF',  # Example color for Central
-#         #     'Pacific': '#FF33A1',  # Example color for Pacific
-#         #     # Add more divisions and their respective colors as needed
-#         # }
+        #         Define colors for each division
+        division_colors = {
+            'Atlantic': '#FF5733',  # Example color for Atlantic
+            'Metropolitan': '#33FF57',  # Example color for Metropolitan
+            'Central': '#3357FF',  # Example color for Central
+            'Pacific': '#FF33A1',  # Example color for Pacific
+            # Add more divisions and their respective colors as needed
+        }
     
-#         # # Get today's date in the required format
-#         # today = datetime.now().strftime("%B %d, %Y")
-#         # st.sidebar.markdown(f"##### Today's Date: {today}")
+        # Get today's date in the required format
+        today = datetime.now().strftime("%B %d, %Y")
+        st.sidebar.markdown(f"##### Today's Date: {today}")
 
-#         # # Dropdown for division selection
-#         # divisions = league_standings_df['Division'].unique().tolist()
-#         # divisions.sort()
-#         # divisions.append("League-Wide")  # Add League-Wide option
+        # Dropdown for division selection
+        divisions = league_standings_df['Division'].unique().tolist()
+        divisions.sort()
+        divisions.append("League-Wide")  # Add League-Wide option
 
-#         # # Select division from the sidebar
-#         # selected_division = st.sidebar.selectbox("Select Division:", divisions)
+        # Select division from the sidebar
+        selected_division = st.sidebar.selectbox("Select Division:", divisions)
 
 #         # # Filter standings based on selection
 #         # if selected_division == "League-Wide":
