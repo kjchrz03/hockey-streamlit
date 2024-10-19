@@ -1,4 +1,3 @@
-
 # Import the external library
 import streamlit as st
 import pandas as pd
@@ -144,7 +143,122 @@ st.sidebar.markdown("League-Wide Standings")
 ##########################################
 ##  Standingsidebar                     ##
 ##########################################
+@st.cache_data(show_spinner=True)
 
+def display_standings():
+    try:
+        standings =  get_standings_data()
+        return standings
+    except Exception as e:
+        st.error(f"Error loading data: {e}")
+        return None
+
+def load_standings(standings):
+    standings['Conference'] = standings['conferenceName']
+    standings['Conference Rank'] = standings['conferenceSequence']
+    standings['Division'] = standings['divisionName']
+    standings['Division Rank'] = standings['divisionSequence']
+    standings['Team'] = standings['team']
+    standings['League Rank'] = standings['leagueSequence']
+    standings['Games Played'] = standings['gamesPlayed']
+    standings['logo'] = standings['teamLogo']  # Assuming this contains the SVG URL
+    standings['Win Pctg'] = standings['winPctg']
+    standings['Date'] = standings['date']
+    standings['Points'] = standings['points']
+
+    # Select specific columns to return
+    selected_columns = ['Conference', 'Conference Rank', 'Division', 'Division Rank', 'Team', 'League Rank', 'Games Played', 'logo', 'Win Pctg', 
+                        'Date', 'Points']
+    league_standings_df = standings[selected_columns]
+    return league_standings_df
+
+def todays_standings():
+    try:
+        standings = display_standings()  # Fetch the data
+        if standings is None:
+            return  # Exit if no standings were fetched
+            
+        league_standings_df = load_standings(standings)
+                # Define colors for each division
+#         # division_colors = {
+#         #     'Atlantic': '#FF5733',  # Example color for Atlantic
+#         #     'Metropolitan': '#33FF57',  # Example color for Metropolitan
+#         #     'Central': '#3357FF',  # Example color for Central
+#         #     'Pacific': '#FF33A1',  # Example color for Pacific
+#         #     # Add more divisions and their respective colors as needed
+#         # }
+    
+#         # # Get today's date in the required format
+#         # today = datetime.now().strftime("%B %d, %Y")
+#         # st.sidebar.markdown(f"##### Today's Date: {today}")
+
+#         # # Dropdown for division selection
+#         # divisions = league_standings_df['Division'].unique().tolist()
+#         # divisions.sort()
+#         # divisions.append("League-Wide")  # Add League-Wide option
+
+#         # # Select division from the sidebar
+#         # selected_division = st.sidebar.selectbox("Select Division:", divisions)
+
+#         # # Filter standings based on selection
+#         # if selected_division == "League-Wide":
+#         #     # Get top 8 teams from each conference
+#         #     conference_teams = league_standings_df.groupby('Conference').apply(lambda x: x.nlargest(8, 'Points')).reset_index(drop=True)
+#         #     filtered_standings = conference_teams
+#         #     ranking = conference_teams['League Rank']  # Use League Rank for league-wide
+#         # else:
+#         #     filtered_standings = league_standings_df[league_standings_df['Division'] == selected_division]
+#         #     ranking = filtered_standings['Division Rank']
+
+
+
+# #Create visual representation for each team
+#         for index, row in filtered_standings.iterrows():
+#             team = row['Team']
+#             points = row['Points']
+#             division = row['Division']
+#             logo_url = row['logo']  # SVG logo link
+    
+        # team = standings['Team']
+        # points = standings['Points']
+        # division = standings['Division']
+        # logo_url = standings['logo']
+        # Use the appropriate rank based on selection
+
+
+        # import streamlit as st
+
+# Sample point values; replace these with your actual data
+        points = [10, 25, 55, 75, 90, 130]  # Example point values
+        max_points = 130
+        scale_height = 500
+
+        # Generate the HTML for the scale and dots
+        html_content = """
+            <div style="position: relative; height: {}px; margin: 20px 0;">
+                <div style="position: absolute; left: 10%; width: 4px; height: 100%; background-color: red;"></div>
+                <div style="position: absolute; left: 10%; right: 80%; width: 10%; top: 0%; border-top: 1px solid black;"></div>
+            """.format(scale_height)
+
+        # Calculate dot positions and add them to the HTML
+        for point in points:
+            # Calculate the top position based on the point value
+            position = (point / max_points) * scale_height
+            html_content += """
+            <div style="position: absolute; left: 15%; top: {}px; width: 10px; height: 10px; background-color: blue; border-radius: 50%;"></div>
+            """.format(position)
+
+        # Closing div
+        html_content += "</div>"
+
+        # Display the generated HTML
+        st.sidebar.markdown(html_content, unsafe_allow_html=True)
+
+    except Exception as e:
+        st.error(f"Error loading final data: {e}")
+        return None
+
+todays_standings()
 
 ##########################################
 ## Scorebug Tab                         ##
@@ -154,10 +268,11 @@ with tab_bug:
     current_date = datetime.now().strftime("%B %d, %Y")
     st.title("Today's Games")
     st.markdown(f'''##### <span style="color: #aaaaaa">{current_date}</span>''', unsafe_allow_html=True)
-    @st.cache_data(show_spinner=True) 
+    # @st.cache_data(show_spinner=True) 
+   
     def score_bug():
         try:
-            daily_games = get_daily_games()  # This is where external data is fetched
+            daily_games = get_daily_games()  # Fetch external data
             return daily_games
         except Exception as e:
             st.error(f"Error loading data: {e}")
@@ -174,17 +289,18 @@ with tab_bug:
         daily_games['Winning Goal Scorer'] = daily_games['winningGoalScorer.playerId']
         daily_games['Game Date'] = daily_games['game_date']
         daily_games['game_type'] = daily_games['gameType']
+        daily_games['game_state'] = daily_games['gameState']
 
         # Select specific columns to return
-        selected_columns = ['Away Team', 'away_logo', 'Away Score', 'Home Team', 'home_logo', 'Home Score', 'Winning Goal Scorer', 'game_type', 'Game Date']
+        selected_columns = ['Away Team', 'away_logo', 'Away Score', 'Home Team', 'home_logo', 'Home Score', 'Winning Goal Scorer', 'game_type', 'Game Date', 'game_state']
         score_bug_df = daily_games[selected_columns]
+        print(score_bug_df)
         return score_bug_df
 
     def todays_games():
         try:
             daily_games = score_bug()  # Fetch the data
             score_bug_df = load_games(daily_games)
-            
             # Get today's date in the required format
             today = datetime.now().strftime("%Y-%m-%d")
             print(today)
@@ -193,12 +309,13 @@ with tab_bug:
 
             todays_games_df = score_bug_df[score_bug_df['Game Date'] == today]
 
+
             # Loop through each game and display it in a table format
             for index, row in todays_games_df.iterrows():
                 # Create table with headers
                 game_row = f"""
                 <table style="border-collapse: separate; border: none; border-spacing: 0 10px;">  <!-- 10px gap -->
-                     <thead>
+                    <thead>
                         <tr>
                             <th style="border: none;"></th>
                             <th style="text-align: center; border: none;" colspan="2.5">Home Team</th>
@@ -225,7 +342,6 @@ with tab_bug:
                 # Display the game row in Streamlit
                 st.markdown(game_row, unsafe_allow_html=True)
 
-
                 # If the game is complete ('OFF'), show the winning goal scorer
                 if row['game_type'] == 'OFF':
                     scorer_row = f"""
@@ -237,21 +353,22 @@ with tab_bug:
                     """
                     st.markdown(scorer_row, unsafe_allow_html=True)
 
-            # Return filtered DataFrame for any further processing if needed
             return todays_games_df
 
         except Exception as e:
             st.error(f"Error loading final data: {e}")
             return None
 
-# Run the function to display today's games
+    # Run the function to display today's games
 todays_games()
+
 
 ##########################################
 ## Goals Tab                           ##
 ##########################################
+
 with tab_goals:
-    @st.cache_data(show_spinner=True) 
+    # @st.cache_data(show_spinner=True) 
     def season_data():
         try:
             # Call the function from season_data.py
@@ -318,7 +435,7 @@ with tab_goals:
         <td style="font-weight: bold;">Goals per Game</td>
         <td style="font-weight: bold;">Points</td>
     </tr>
-     <tr>
+    <tr>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
         <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
@@ -381,3 +498,4 @@ with tab_goals:
 
 # with tab_player:
 #     st.title("Players")
+
