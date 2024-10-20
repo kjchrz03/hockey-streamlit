@@ -26,13 +26,15 @@ pip_commands = [
     ["pip", "install", "aiohttp"],
     ["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"]
 ]
-nest_asyncio.apply()
+import nest_asyncio
+print("nest_asyncio imported successfully!")
+
 # Run each pip install command
 for command in pip_commands:
     result = subprocess.run(command, capture_output=True, text=True)
 
 import pytz
-import nest_asyncio
+
 import aiohttp
 import time
 import pickle
@@ -41,6 +43,7 @@ import asyncio
 import urllib.request
 import hockey_rink
 
+nest_asyncio.apply()
 
 # Ensure Python can find the data module
 import sys
