@@ -236,13 +236,15 @@ def todays_standings():
 
 # Sample point values; replace these with your actual data
        
-        max_points = 130
-        scale_height = 1000
+        max_points = 30
+        scale_height = 500
 
         # Generate the HTML for the scale and dots
         html_content = """
             <div style="position: relative; height: {}px; margin: 20px 0;">
                 <div style="position: absolute; left: 10%; width: 4px; height: 100%; background-color: red;"></div>
+                <div style="position: absolute; left: 5%; right: 80%; width: 20%; top: 0%; border-top: 5px solid black;"></div>
+                <div style="position: absolute; left: 5%; top: -20px; color: black; font-size: 15px;">Max Points: {}</div>
             """.format(scale_height)
 
         # Calculate dot positions and add them to the HTML
