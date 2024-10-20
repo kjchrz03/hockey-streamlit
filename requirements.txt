@@ -50,3 +50,5 @@ tzdata==2024.2
 urllib3==2.2.3
 watchdog==5.0.3
 zipp==3.20.2
+nest_asyncio
+aiohttp
