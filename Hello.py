@@ -26,6 +26,7 @@ pip_commands = [
     ["pip", "install", "aiohttp"],
     ["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"]
 ]
+
 import nest_asyncio
 print("nest_asyncio imported successfully!")
 
