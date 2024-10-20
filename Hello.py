@@ -11,11 +11,11 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 import requests
 from hockey_rink import NHLRink, RinkImage
-from PIL import Image
+
 import subprocess
 import logging
 import warnings# Suppress the specific warning
-warnings.filterwarnings("ignore", message="Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.")
+
 logging.getLogger("streamlit").setLevel(logging.ERROR)
 subprocess.run(["pip", "install", "--upgrade", "pip"])
 subprocess.run(["pip", "install", "--upgrade", "streamlit"])
