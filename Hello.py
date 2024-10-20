@@ -26,7 +26,7 @@ pip_commands = [
     ["pip", "install", "aiohttp"],
     ["pip", "install", "git+https://github.com/the-bucketless/hockey_rink.git"]
 ]
-
+nest_asyncio.apply()
 # Run each pip install command
 for command in pip_commands:
     result = subprocess.run(command, capture_output=True, text=True)
