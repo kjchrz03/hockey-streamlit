@@ -218,6 +218,7 @@ def todays_standings():
                 team = row['Team']
                 points = row['Points']
                 division = row['Division']
+                games_played = row['Games Played']
                 logo_url = row['logo']  # SVG logo link
                 div_standings.append(row)
             
@@ -226,56 +227,72 @@ def todays_standings():
 
         # Call the function to create the DataFrame
         div_standings = create_dataframe(8)
-# #Create visual representation for each team
-        
-    
+
+        # #Create visual representation for each team
         team = div_standings['Team']
         points = div_standings['Points']
         division = div_standings['Division']
         logo_url = div_standings['logo']
+        games_played = div_standings['Games Played']
 
-# Sample point values; replace these with your actual data
-       
-        max_points = 30
+        max_games_played = games_played.max()
+        max_points = 2 * max_games_played
         scale_height = 500
 
         # Generate the HTML for the scale and dots
         html_content = """
             <div style="position: relative; height: {}px; margin: 20px 0;">
-                <div style="position: absolute; left: 10%; width: 4px; height: 100%; background-color: red;"></div>
+                <div style="position: absolute; left: 10%; width: 4px; height: 100%; background-color: red;"></div> 
                 <div style="position: absolute; left: 5%; right: 80%; width: 20%; top: 0%; border-top: 5px solid black;"></div>
-                <div style="position: absolute; left: 5%; top: -20px; color: black; font-size: 15px;">Max Points: {}</div>
-            """.format(scale_height)
+                <div style="position: absolute; left: 5%; top: -20px; color: orange; font-size: 15px;">Max Possible Points to Date: {}</div>
+            """.format(scale_height, max_points)
 
-        # Calculate dot positions and add them to the HTML
-        for point in points:
+       # Loop through each team's points and logos
+        for i, point in enumerate(points):
             # Calculate the top position based on the point value
             position = scale_height - (point / max_points) * scale_height
-             # Adding label and dot for each point value (center-aligned)
-            label_vertical_offset = 1 # Half the font height (15px) for label centering
-            dot_vertical_offset = 0       # Half the dot height (10px) for centering
+            
+            point = div_standings['Points'].iloc[i]
+            logo_url = div_standings['logo'].iloc[i]
+            team = div_standings['Team'].iloc[i]
+            division = div_standings['Division'].iloc[i]
+            
+            # Add label and dot for each point value (center-aligned)
+            label_vertical_offset = 1  # Half the font height (15px) for label centering
+            dot_vertical_offset = 0    # Half the dot height (10px) for centering
 
+            # Add the point label and dot
             html_content += """
             <div style="position: absolute; left: 0%; top: {}px; color: white; font-size: 15px; line-height: 10px;">{}</div>
             <div style="position: absolute; left: 15%; top: {}px; width: 10px; height: 10px; background-color: {}; border-radius: 50%;"></div>
-            """.format(position - label_vertical_offset, point, position - dot_vertical_offset, '#FF5733')  # Change '#FF5733' to your desired dot color
+            """.format(position - label_vertical_offset, point, position - dot_vertical_offset, '#FF5733')
 
+            # Add the team logo with division-colored border
+            html_content += """
+            <div style="position: absolute; left: 40%; top: {}px;">
+                <div style="border: 3px solid {}; border-radius: 50%; display: inline-block;">
+                    <img src="{}" alt="{} Logo" width="50" height="50" style="border-radius: 50%;">
+                </div>
+            </div>
+            """.format(position - dot_vertical_offset, division_colors.get(division, 'grey'), logo_url, team)
 
+        # Close the outer div
+        html_content += "</div>"
         # Display the generated HTML
         st.sidebar.markdown(html_content, unsafe_allow_html=True)
 
     except Exception as e:
-        st.error(f"Error loading final data: {e}")
+        st.error(f"Error loading standings data: {e}")
         return None
 
 todays_standings()
-
 ##########################################
 ## Scorebug Tab                         ##
 ##########################################
 
 with tab_bug:
     current_date = datetime.now().strftime("%B %d, %Y")
+    #current_date = "October 19, 2024"
     st.title("Today's Games")
     st.markdown(f'''##### <span style="color: #aaaaaa">{current_date}</span>''', unsafe_allow_html=True)
     # @st.cache_data(show_spinner=True) 
@@ -313,12 +330,12 @@ with tab_bug:
             score_bug_df = load_games(daily_games)
             # Get today's date in the required format
             today = datetime.now().strftime("%Y-%m-%d")
+
             print(today)
             # Convert game date to a comparable format and filter for today's games
             score_bug_df.loc[:, 'Game Date'] = pd.to_datetime(score_bug_df['Game Date']).dt.strftime("%Y-%m-%d")
 
             todays_games_df = score_bug_df[score_bug_df['Game Date'] == today]
-
 
             # Loop through each game and display it in a table format
             for index, row in todays_games_df.iterrows():
