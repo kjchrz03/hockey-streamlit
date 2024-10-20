@@ -17,8 +17,8 @@ import logging
 import warnings# Suppress the specific warning
 warnings.filterwarnings("ignore", message="Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.")
 logging.getLogger("streamlit").setLevel(logging.ERROR)
-#subprocess.run(["pip", "install", "--upgrade", "pip"])
-#subprocess.run(["pip", "install", "--upgrade", "streamlit"])
+subprocess.run(["pip", "install", "--upgrade", "pip"])
+subprocess.run(["pip", "install", "--upgrade", "streamlit"])
 # List of pip commands to run
 pip_commands = [
     ["pip", "install", "pytz"],
