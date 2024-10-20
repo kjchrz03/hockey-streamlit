@@ -50,6 +50,8 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+print(sys.path)
+
 # Import the function from season_data.py
 from data.season_data import load_season_data, get_daily_games, get_standings_data
 
