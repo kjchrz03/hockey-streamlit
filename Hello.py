@@ -214,6 +214,7 @@ def todays_standings():
 
         def create_dataframe(n):
             div_standings = []
+
             for index, row in filtered_standings.iterrows():
                 team = row['Team']
                 points = row['Points']
@@ -227,6 +228,7 @@ def todays_standings():
 
         # Call the function to create the DataFrame
         div_standings = create_dataframe(8)
+        # points_dict = {}
 
         # #Create visual representation for each team
         team = div_standings['Team']
@@ -234,6 +236,10 @@ def todays_standings():
         division = div_standings['Division']
         logo_url = div_standings['logo']
         games_played = div_standings['Games Played']
+
+        # if points not in points_dict:
+        #     points_dict[points] = []
+        # points_dict[points].append((division, logo_url, team))
 
         max_games_played = games_played.max()
         max_points = 2 * max_games_played
@@ -260,6 +266,7 @@ def todays_standings():
             # Add label and dot for each point value (center-aligned)
             label_vertical_offset = 1  # Half the font height (15px) for label centering
             dot_vertical_offset = 0    # Half the dot height (10px) for centering
+            logo_vertical_offset = 1
 
             # Add the point label and dot
             html_content += """
@@ -269,7 +276,7 @@ def todays_standings():
 
             # Add the team logo with division-colored border
             html_content += """
-            <div style="position: absolute; left: 40%; top: {}px;">
+            <div style="position: absolute; left: 25%; top: {}px;">
                 <div style="border: 3px solid {}; border-radius: 50%; display: inline-block;">
                     <img src="{}" alt="{} Logo" width="50" height="50" style="border-radius: 50%;">
                 </div>
