@@ -521,6 +521,11 @@ def get_daily_games():
 
             # Convert startTimeUTC to Eastern Time and format the date
             eastern_timezone = pytz.timezone('America/New_York')
+ 
+            # Convert 'startTimeUTC' to Eastern Time
+            all_daily_games['game_date_time'] = all_daily_games['startTimeUTC'].dt.tz_convert(eastern_timezone)
+    
+            all_daily_games['start_time'] = all_daily_games['startTimeUTC'].dt.tz_convert(eastern_timezone).dt.strftime('%I:%M %p').str.lstrip('0').str.lower()
             all_daily_games['game_date'] = all_daily_games['startTimeUTC'].dt.tz_convert(eastern_timezone).dt.strftime('%Y-%m-%d')
             all_daily_games.drop('startTimeUTC', axis=1, inplace=True)
 
