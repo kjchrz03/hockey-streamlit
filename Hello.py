@@ -250,7 +250,7 @@ def todays_standings():
 
         html_content = """
         <div style="display: flex; flex-direction: column; align-items: flex-start;position: relative; height: {}px; margin: 20px 0;">
-            <div style="position: absolute; left: 10%; width: 4px; height: 100%; background-color: red;"></div> 
+            <div style="position: absolute; left: 10%; width: 4px; height: 100%; background: linear-gradient(to bottom, #FF5733, #FFC300);"></div> 
             <div style="position: absolute; left: 5%; right: 80%; width: 20%; top: 0%; border-top: 5px solid black;"></div>
             <div style="position: absolute; left: 5%; top: -20px; color: orange; font-size: 15px;">Max Possible Points to Date: {}</div>
         """.format(scale_height, max_points)
