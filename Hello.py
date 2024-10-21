@@ -282,7 +282,7 @@ def todays_standings():
         sorted_standing_points = {k: standing_points[k] for k in sorted(standing_points.keys(), reverse=True)}
 
 
-        label_vertical_offset = 1  
+        label_vertical_offset = 0
         dot_vertical_offset = 0   
 
 
@@ -305,7 +305,7 @@ def todays_standings():
 
                 # Logo with division-colored border
                 html_content += """
-                <div style="border: 1px solid {}; border-radius: 50%; display: inline-block;">
+                <div style="background-color: white; border: 1px solid {}; border-radius: 50%; display: inline-block; margin-left: 10px;">
                     <img src="{}" alt="{} Logo" width="50" height="50" style="border-radius: 50%;">
                 </div>
                 """.format(division_colors.get(division, 'grey'), logo_url, team_info['team'])
@@ -315,7 +315,7 @@ def todays_standings():
 
             # Optional: Add a small dot or indicator below the logos (if needed)
             html_content += """
-            <div style="position: absolute; left: 15%; top: {}px; width: 10px; height: 10px; background-color: {}; border-radius: 50%;"></div>
+            <div style="position: absolute; left: 9%; top: {}px; width: 10px; height: 10px; background-color: {}; border-radius: 50%;"></div>
             """.format(position - dot_vertical_offset, '#FF5733')
 
 
@@ -517,7 +517,7 @@ with tab_goals:
     </table>
     ''', unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
-
+load_season_data()
     # ## goal mapping
     # player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
 
