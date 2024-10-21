@@ -1,5 +1,6 @@
 # Import the external library
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -11,7 +12,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 import requests
 from hockey_rink import NHLRink, RinkImage
-
+from pprint import pprint 
 import subprocess
 import logging
 import warnings# Suppress the specific warning
@@ -28,7 +29,7 @@ pip_commands = [
 ]
 
 import nest_asyncio
-print("nest_asyncio imported successfully!")
+
 
 # Run each pip install command
 for command in pip_commands:
@@ -51,7 +52,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-print(sys.path)
+# print(sys.path)
 
 # Import the function from season_data.py
 from data.season_data import load_season_data, get_daily_games, get_standings_data
@@ -206,7 +207,6 @@ def todays_standings():
         # Select division from the sidebar
         selected_division = st.sidebar.selectbox("Select Division:", divisions)
         
-
         # Filter standings based on selection
         if selected_division == "League-Wide":
             # Get top 8 teams from each conference
@@ -217,7 +217,7 @@ def todays_standings():
             filtered_standings = league_standings_df[league_standings_df['Division'] == selected_division]
             ranking = filtered_standings['Division Rank']
 
-
+        
         def create_dataframe(n):
             div_standings = []
 
@@ -228,7 +228,7 @@ def todays_standings():
                 games_played = row['Games Played']
                 logo_url = row['logo']  # SVG logo link
                 div_standings.append(row)
-            
+
             # Create DataFrame from the collected data
             return pd.DataFrame(div_standings)
 
@@ -243,56 +243,86 @@ def todays_standings():
         logo_url = div_standings['logo']
         games_played = div_standings['Games Played']
 
-        # if points not in points_dict:
-        #     points_dict[points] = []
-        # points_dict[points].append((division, logo_url, team))
 
         max_games_played = games_played.max()
         max_points = 2 * max_games_played
         scale_height = 500
 
-        # Generate the HTML for the scale and dots
         html_content = """
-            <div style="position: relative; height: {}px; margin: 20px 0;">
-                <div style="position: absolute; left: 10%; width: 4px; height: 100%; background-color: red;"></div> 
-                <div style="position: absolute; left: 5%; right: 80%; width: 20%; top: 0%; border-top: 5px solid black;"></div>
-                <div style="position: absolute; left: 5%; top: -20px; color: orange; font-size: 15px;">Max Possible Points to Date: {}</div>
-            """.format(scale_height, max_points)
+        <div style="display: flex; flex-direction: column; align-items: flex-start;position: relative; height: {}px; margin: 20px 0;">
+            <div style="position: absolute; left: 10%; width: 4px; height: 100%; background-color: red;"></div> 
+            <div style="position: absolute; left: 5%; right: 80%; width: 20%; top: 0%; border-top: 5px solid black;"></div>
+            <div style="position: absolute; left: 5%; top: -20px; color: orange; font-size: 15px;">Max Possible Points to Date: {}</div>
+        """.format(scale_height, max_points)
 
-       # Loop through each team's points and logos
+
+        standing_points = {}
+
         for i, point in enumerate(points):
-            # Calculate the top position based on the point value
             position = scale_height - (point / max_points) * scale_height
-            
-            point = div_standings['Points'].iloc[i]
             logo_url = div_standings['logo'].iloc[i]
             team = div_standings['Team'].iloc[i]
             division = div_standings['Division'].iloc[i]
-            
-            # Add label and dot for each point value (center-aligned)
-            label_vertical_offset = 1  # Half the font height (15px) for label centering
-            dot_vertical_offset = 0    # Half the dot height (10px) for centering
-            logo_vertical_offset = 1
 
-            # Add the point label and dot
+            if point in standing_points:
+                standing_points[point].append({
+                    'team': team,
+                    'logo': logo_url,
+                    'division': division,
+                })
+                print(f"Appending to {point}: {team}")
+            else:
+                standing_points[point] = [{
+                    'team': team,
+                    'logo': logo_url,
+                    'division': division,
+                }]
+                print(f"Creating new entry for {point}: {team}")
+            
+        sorted_standing_points = {k: standing_points[k] for k in sorted(standing_points.keys(), reverse=True)}
+
+
+        label_vertical_offset = 1  
+        dot_vertical_offset = 0   
+
+
+
+        # Iterate through the sorted standing points
+        for point, teams in sorted_standing_points.items():
+            # Calculate the vertical position for this point value
+            position = scale_height - (point / max_points) * scale_height
+
+            # Create the HTML content for the point value with logos
             html_content += """
             <div style="position: absolute; left: 0%; top: {}px; color: white; font-size: 15px; line-height: 10px;">{}</div>
-            <div style="position: absolute; left: 15%; top: {}px; width: 10px; height: 10px; background-color: {}; border-radius: 50%;"></div>
-            """.format(position - label_vertical_offset, point, position - dot_vertical_offset, '#FF5733')
+            <div style="position: absolute; left: 15%; top: {}px; display: flex; gap: 5px;">
+            """.format(position - label_vertical_offset, point, position - dot_vertical_offset)
 
-            # Add the team logo with division-colored border
-            html_content += """
-            <div style="position: absolute; left: 25%; top: {}px;">
-                <div style="border: 3px solid {}; border-radius: 50%; display: inline-block;">
+            # Add the team logos for each team with the same point value
+            for team_info in teams:
+                logo_url = team_info['logo']
+                division = team_info['division']
+
+                # Logo with division-colored border
+                html_content += """
+                <div style="border: 1px solid {}; border-radius: 50%; display: inline-block;">
                     <img src="{}" alt="{} Logo" width="50" height="50" style="border-radius: 50%;">
                 </div>
-            </div>
-            """.format(position - dot_vertical_offset, division_colors.get(division, 'grey'), logo_url, team)
+                """.format(division_colors.get(division, 'grey'), logo_url, team_info['team'])
+
+            # Close the flex container for logos
+            html_content += "</div>"  # Close the logo flex container
+
+            # Optional: Add a small dot or indicator below the logos (if needed)
+            html_content += """
+            <div style="position: absolute; left: 15%; top: {}px; width: 10px; height: 10px; background-color: {}; border-radius: 50%;"></div>
+            """.format(position - dot_vertical_offset, '#FF5733')
+
 
         # Close the outer div
         html_content += "</div>"
-        # Display the generated HTML
-        st.sidebar.markdown(html_content, unsafe_allow_html=True)
+        with st.sidebar:
+            components.html(html_content, height=600, scrolling=True)
 
     except Exception as e:
         st.error(f"Error loading standings data: {e}")
@@ -535,7 +565,3 @@ with tab_goals:
 ##########################################
 ## Player Tab                         ##
 ##########################################
-
-# with tab_player:
-#     st.title("Players")
-
