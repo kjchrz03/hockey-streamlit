@@ -270,14 +270,14 @@ def todays_standings():
                     'logo': logo_url,
                     'division': division,
                 })
-                print(f"Appending to {point}: {team}")
+                # print(f"Appending to {point}: {team}")
             else:
                 standing_points[point] = [{
                     'team': team,
                     'logo': logo_url,
                     'division': division,
                 }]
-                print(f"Creating new entry for {point}: {team}")
+                # print(f"Creating new entry for {point}: {team}")
             
         sorted_standing_points = {k: standing_points[k] for k in sorted(standing_points.keys(), reverse=True)}
 
@@ -335,7 +335,7 @@ todays_standings()
 
 with tab_bug:
     current_date = datetime.now().strftime("%B %d, %Y")
-    #current_date = "October 19, 2024"
+    
     st.title("Today's Games")
     st.markdown(f'''##### <span style="color: #aaaaaa">{current_date}</span>''', unsafe_allow_html=True)
     # @st.cache_data(show_spinner=True) 
@@ -360,9 +360,11 @@ with tab_bug:
         daily_games['Game Date'] = daily_games['game_date']
         daily_games['game_type'] = daily_games['gameType']
         daily_games['game_state'] = daily_games['gameState']
+        daily_games['Start Time'] = daily_games['start_time']
 
         # Select specific columns to return
-        selected_columns = ['Away Team', 'away_logo', 'Away Score', 'Home Team', 'home_logo', 'Home Score', 'Winning Goal Scorer', 'game_type', 'Game Date', 'game_state']
+        selected_columns = ['Away Team', 'away_logo', 'Away Score', 'Home Team', 'home_logo', 
+        'Home Score', 'Winning Goal Scorer', 'game_type', 'Game Date', 'Start Time', 'game_state']
         score_bug_df = daily_games[selected_columns]
         print(score_bug_df)
         return score_bug_df
@@ -374,7 +376,6 @@ with tab_bug:
             # Get today's date in the required format
             today = datetime.now().strftime("%Y-%m-%d")
 
-            print(today)
             # Convert game date to a comparable format and filter for today's games
             score_bug_df.loc[:, 'Game Date'] = pd.to_datetime(score_bug_df['Game Date']).dt.strftime("%Y-%m-%d")
 
@@ -405,6 +406,11 @@ with tab_bug:
                             <td style="border: none; text-align: center; width: 10%;">{row['Away Score']}</td>
                             <td style="border: none; text-align: center; width: 15%;">{row['Away Team']}</td>
                             <td style="border: none;text-align: center; width: 15%;"><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: none; border-right: none; text-align: center; width: 10%; vertical-align: middle;">Start Time:</td>
+                            <td style="border: none; text-align: center; width: 15%;">{row['Start Time']}</td>
+                            
                         </tr>
                     </tbody>
                 </table>
