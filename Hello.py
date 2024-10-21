@@ -305,7 +305,7 @@ def todays_standings():
 
                 # Logo with division-colored border
                 html_content += """
-                <div style="background-color: white; border: 1px solid {}; border-radius: 50%; display: inline-block; margin-left: 10px;">
+                <div style="background-color: white; border: 1px solid {}; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
                     <img src="{}" alt="{} Logo" width="50" height="50" style="border-radius: 50%;">
                 </div>
                 """.format(division_colors.get(division, 'grey'), logo_url, team_info['team'])
