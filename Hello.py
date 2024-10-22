@@ -410,7 +410,6 @@ with tab_bug:
                         <tr>
                             <td style="border: none; text-align: center; width: 20%; vertical-align: middle;">Start Time:</td>
                             <td style="border: none; text-align: center; width: 20%;">{row['Start Time']}</td>
-                            
                         </tr>
                     </tbody>
                 </table>
