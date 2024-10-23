@@ -408,9 +408,8 @@ with tab_bug:
                             <td style="border: none;text-align: center; width: 15%;"><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
                         </tr>
                         <tr>
-                            <td style="border-left: none; border-right: none; text-align: center; width: 10%; vertical-align: middle;">Start Time:</td>
-                            <td style="border: none; text-align: center; width: 15%;">{row['Start Time']}</td>
-                            
+                            <td style="border: none; text-align: center; width: 20%; vertical-align: middle;">Start Time:</td>
+                            <td style="border: none; text-align: center; width: 20%;">{row['Start Time']}</td>
                         </tr>
                     </tbody>
                 </table>
