@@ -18,22 +18,42 @@ import traceback
 def get_skater_summary():
     try:
 
-        url = "https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22points%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22goals%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22assists%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22playerId%22,%22direction%22:%22ASC%22%7D%5D&start=0&limit=50&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20242025%20and%20seasonId%3E=20242025"
+        base_url = "https://api.nhle.com/stats/rest/en/skater/summary"
+    
+        # Parameters for the API request
+        params = {
+            "isAggregate": "false",
+            "isGame": "false",
+            "sort": '[{"property":"points","direction":"DESC"},{"property":"goals","direction":"DESC"},{"property":"assists","direction":"DESC"},{"property":"playerId","direction":"ASC"}]',
+            "start": 0,  # Starting point for pagination
+            "limit": 100,  # Limit per request
+            "factCayenneExp": "gamesPlayed>=1",
+            "cayenneExp": "gameTypeId=2 and seasonId<=20242025 and seasonId>=20242025"
+        }
+
+        all_results = []  # List to store all results
+
+        for i in range(10):  # Loop through 10 times or until no more data
+            params['start'] = i * params['limit']  # Update the starting point
             
-        # Make the API request
-        response = requests.get(url)
+            response = requests.get(base_url, params=params)
+            
+            if response.status_code != 200:
+                print(f"Failed to retrieve data: {response.status_code}")
+                break  # Exit the loop on failure
+            
+            data = response.json()
+            skater_data = data.get('data', [])
+            
+            if not skater_data:
+                print("No more data available.")
+                break  # Exit if no more data
 
-        if response.status_code == 200:
-        # The response content can be accessed using response.text
-            response_text = response.text
-        #pprint(response_text)
-        else:
-            print(f"Request failed with status code {response.status_code}")
+            all_results.extend(skater_data)  # Add results to the list
 
-        json_data = json.loads(response_text)
+        # Convert results to a DataFrame
+        skater_summary = pd.DataFrame(all_results)
 
-        skater_data = json_data['data']
-        skater_summary = pd.DataFrame(skater_data)
 
         skater_summary = skater_summary.rename(columns={'evGoals': 'ev_goals', 'evPoints':'ev_points', 'faceoffWinPct':'fow_pct', 'gameWinningGoals':'gwg',
                                                         'gamesPlayed':'games_played', 'otGoals':'ot_goals', 'penaltyMinutes':'pims', 
