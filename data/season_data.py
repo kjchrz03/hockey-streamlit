@@ -42,7 +42,7 @@ def skater_summary():
                                                         'shootingPct':'shooting_pct', 'skaterFullName':'player_name', 'teamAbbrevs':'team', 'timeOnIcePerGame':'toi'})
 
         skater_summary['atoi'] = round(skater_summary['toi']/60,2)
-
+        skater_summary['gpg'] = round(skater_summary['goals']/skater_summary['games_played'],2)
         return skater_summary
     except Exception as e:
         print(f"Error loading final data: {e}")
