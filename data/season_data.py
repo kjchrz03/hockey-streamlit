@@ -63,7 +63,7 @@ def get_skater_summary():
 
         skater_summary['atoi'] = round(skater_summary['toi']/60,2)
         skater_summary['gpg'] = round(skater_summary['goals']/skater_summary['games_played'],2)
-        skater_summary=skater_summary.sort_values(by='lastName')
+        skater_summary=skater_summary.sort_values(by='lastName').reset_index()
         return skater_summary
     except Exception as e:
         print(f"Error loading final data: {e}")
