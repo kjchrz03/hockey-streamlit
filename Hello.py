@@ -376,7 +376,7 @@ with tab_bug:
         print(score_bug_df)
         return score_bug_df
         
-    def load_plays(game_plays):
+    # def load_plays(game_plays):
 
 
     def todays_games():
