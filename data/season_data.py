@@ -15,7 +15,7 @@ import traceback
 
 ###### GATHERING DATA FOR GOAL/POINTS/ASSISTS/GP SEASON DATA
 
-def skater_summary():
+def get_skater_summary():
     try:
 
         url = "https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22points%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22goals%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22assists%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22playerId%22,%22direction%22:%22ASC%22%7D%5D&start=0&limit=50&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20242025%20and%20seasonId%3E=20242025"
@@ -701,7 +701,7 @@ daily_games = get_daily_games()
 league_standings = get_standings_data()
 #game_plays = get_play_data()
 #todays_games = load_play_data()
-skater_summary = skater_summary()
+skater_summary = get_skater_summary()
 
 # #All player shifts with goals, assists with shift number
 all_season_results = get_season_data()
