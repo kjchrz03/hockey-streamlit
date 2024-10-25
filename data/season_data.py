@@ -13,23 +13,34 @@ import math
 import traceback
 
 
-# Use a persistent storage mechanism (like a text file) to track the last game ID
-LAST_SHIFT_ID_FILE = "last_shift_id.txt"
-
-def get_last_shift_id():
-    """Retrieve the last shift ID from a file."""
-    try:
-        with open(LAST_SHIFT_ID_FILE, "r") as file:
-            return int(file.read().strip())
-    except FileNotFoundError:
-        return None  # Return None if the file doesn't exist (first run)
-
-def update_last_shift_id(last_shift_id):
-    """Update the last shift ID in the file."""
-    with open(LAST_SHIFT_ID_FILE, "w") as file:
-        file.write(str(last_shift_id))
-
 ###### GATHERING DATA FOR GOAL/POINTS/ASSISTS/GP SEASON DATA
+
+def skater_summary():
+    try:
+        
+        url = "https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22points%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22goals%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22assists%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22playerId%22,%22direction%22:%22ASC%22%7D%5D&start=0&limit=50&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20242025%20and%20seasonId%3E=20242025"
+            
+        # Make the API request
+        response = requests.get(url)
+        
+        if response.status_code == 200:
+        # The response content can be accessed using response.text
+            response_text = response.text
+        #pprint(response_text)
+        else:
+            print(f"Request failed with status code {response.status_code}")
+
+        json_data = json.loads(response_text)
+
+        skater_data = json_data['data']
+        skater_summary = pd.DataFrame(skater_data)
+        print(skater_summary.columns)
+
+        return skater_summary
+    except Exception as e:
+        print(f"Error loading final data: {e}")
+        return None
+
 
 def get_season_data():
    # Apply nest_asyncio to allow nested event loops in Jupyter notebooks
@@ -41,19 +52,18 @@ def get_season_data():
     BASE_URL = "https://api.nhle.com/stats/rest/en/shiftcharts?cayenneExp=gameId="
     PXP_URL = "https://api-web.nhle.com/v1/gamecenter/"
     PXP_SUFFIX = "/play-by-play"
-    START_SHIFT_ID = 14387777
+    # START_SHIFT_ID = 14387777
 
-        # Get the last game ID from the stored file
-    last_shift_id = get_last_shift_id()
-    if last_shift_id is None:  # If there's no last game ID, fetch all
-        last_shift_id = START_SHIFT_ID - 1  
+    #     # Get the last game ID from the stored file
+    # last_shift_id = get_last_shift_id()
+    # if last_shift_id is None:  # If there's no last game ID, fetch all
+    #     last_shift_id = START_SHIFT_ID - 1  
 
     # Create game URLs DataFrame
     game_data = [{"game_id": game_id, "shift_url": f"{BASE_URL}{game_id}", "pxp_url": f"{PXP_URL}{game_id}{PXP_SUFFIX}"} 
                 for game_id in range(START_GAME_ID, END_GAME_ID + 1)]
     game_df = pd.DataFrame(game_data)
 
-    
 
 # Asynchronous function to fetch shift data with a timeout and error handling
     async def fetch_shift_data(session, shift_url):
@@ -77,7 +87,6 @@ def get_season_data():
             print(f"An error occurred: {e}")
             traceback.print_exc()  # Print the full traceback for more details
             return pd.DataFrame()
-
 
 
     # Fetch all shift data asynchronously in batches
@@ -108,7 +117,7 @@ def get_season_data():
     shifts_df = all_shifts[['id', 'gameId', 'period', 'shiftNumber', 'startTime', 'eventNumber', 'playerId', 'player_name', 
                             'teamId', 'teamName', 'typeCode', 'assist_1', 'assist_2', 'shot_type', 'eventDescription']]
     goal_shifts = shifts_df[shifts_df['typeCode'].isin([505])]
-
+    print(goal_shifts.head())
     return goal_shifts
 
 def get_agg_totals():
@@ -381,153 +390,181 @@ def get_daily_games():
 
 ######## full shifts data, plays, and loactions
 def get_play_data():
-    # Fetch unique game IDs
-    all_daily_games = get_daily_games()
-    game_ids = all_daily_games['game_id'].unique().tolist()  # Ensure the game IDs are unique
-
-    # Base URL for the API
-    pxp_url = "https://api-web.nhle.com/v1/gamecenter/"
-    pxp_suffix = "/play-by-play"
-
-    # Initialize an empty DataFrame to store the results
-    game_plays = pd.DataFrame()
-
-    # Function to process a batch of game IDs
-    def process_game_batch(game_batch):
-        batch_events = []
+    try:
+        # Fetch all daily games
+        all_daily_games = get_daily_games()
         
-        for item in game_batch:
-            url = item['link']
-            game_id = item['game_id']
+        # Filter the games that are live
+        live_games = all_daily_games[all_daily_games['gameState'] == "LIVE"]
+        
+        # If there are no live games, exit early
+        if live_games.empty:
+            print("No live games at the moment.")
+            return None
 
-            response = requests.get(url)
+        # Extract unique live game IDs
+        game_ids = live_games['game_id'].unique().tolist()
+        
+        # Base URL for the API
+        pxp_url = "https://api-web.nhle.com/v1/gamecenter/"
+        pxp_suffix = "/play-by-play"
+        
+        # Initialize an empty DataFrame to store the results
+        game_plays = pd.DataFrame()
+
+        # Function to process a batch of game IDs
+        def process_game_batch(game_batch):
+            batch_events = []
             
-            # Stop if a 404 (Not Found) error occurs for the first game in the batch
-            if response.status_code == 404:
-                print(f"Game ID {game_id} not found (404). Stopping further requests.")
-                return None  # Stop further processing
+            for item in game_batch:
+                url = item['link']
+                game_id = item['game_id']
 
-            if response.status_code == 200:
-                json_data = response.json()
+                try:
+                    response = requests.get(url)
+                    response.raise_for_status()  # Raises an exception for 4xx/5xx errors
+                except requests.exceptions.HTTPError as err:
+                    print(f"HTTP error occurred for game ID {game_id}: {err}")
+                    continue
+
+                if response.status_code == 200:
+                    try:
+                        json_data = response.json()
+                    except ValueError:
+                        print(f"Error decoding JSON for game_id {game_id}")
+                        continue
+                    
+                    if 'plays' in json_data:
+                        game_plays_detail = pd.json_normalize(json_data['plays'])
+
+                        if not game_plays_detail.empty:
+                            game_plays_detail['game_id'] = game_id
+                            game_plays_detail = game_plays_detail[['game_id'] + [col for col in game_plays_detail.columns if col != 'game_id']]
+                            print(f"Game ID {game_id} processed.")
+                            batch_events.append(game_plays_detail)
+                        else:
+                            print(f"No plays data found for game_id {game_id}")
+                    else:
+                        print(f"'plays' not found in response for game_id {game_id}")
+                else:
+                    print(f"Request failed with status code {response.status_code} for game_id {game_id}")
+
+            # Combine all the events from this batch into a single DataFrame
+            if batch_events:
+                batch_plays = pd.concat(batch_events, ignore_index=True)
+                batch_plays.dropna(how='all', inplace=True)
+                return batch_plays
+            return pd.DataFrame()
+
+        # Process in batches of 100
+        batch_size = 100
+        game_ids = [{'game_id': game_id, 'link': f"{pxp_url}{game_id}{pxp_suffix}"} for game_id in game_ids]  # Use the unique game IDs list
+
+        for i in range(0, len(game_ids), batch_size):
+            game_batch = game_ids[i:i + batch_size]
+            batch_plays = process_game_batch(game_batch)
             
-            # Directly check the game state
-            if 'gameState' in json_data:
-                game_state = json_data['gameState']  # No need for indexing, just get the string value
+            # Stop processing if the first game in the batch returned a 404 or batch is empty
+            if batch_plays is None or batch_plays.empty:
+                print(f"Stopping batch processing at batch starting with game ID {game_batch[0]['game_id']}")
+                break
+            
+            if not batch_plays.empty:
+                game_plays = pd.concat([game_plays, batch_plays], ignore_index=True)
 
-                # Continue processing if game state is not "FUT"
-                game_plays_detail = pd.json_normalize(json_data['plays'])
-                game_plays_detail['game_id'] = game_id
-                game_plays_detail = game_plays_detail[['game_id'] + [col for col in game_plays_detail.columns if col != 'game_id']]
-                print(f"Game ID {game_id} processed.")
-                batch_events.append(game_plays_detail)
+        # Check if the 'game_id' column exists before further processing
+        if 'game_id' in game_plays.columns:
+            # Rename and process as needed
+            game_plays = game_plays.rename(columns={
+                'periodDescriptor.number': 'period_number',
+                'periodDescriptor.periodType': 'period_type',
+                'periodDescriptor.maxRegulationPeriods': 'max_regulation_periods',
+                'details.eventOwnerTeamId': 'event_team_id',
+                'details.losingPlayerId ': 'losing_player_id',
+                'details.winningPlayerId': 'winning_player_id',
+                'details.xCoord': 'xCoord',
+                'details.yCoord': 'yCoord',
+                'details.zoneCode': 'zone_code',
+                'details.reason': 'reason',
+                'details.hittingPlayerId': 'hitter',
+                'details.hitteePlayerId': 'hittee',
+                'details.playerId': 'player_id',
+                'details.shotType': 'shot_type',
+                'details.shootingPlayerId': 'shooting_player',
+                'details.goalieInNetId': 'goalie',
+                'details.awaySOG': 'away_sog',
+                'details.homeSOG': 'home_sog',
+                'details.blockingPlayerId': 'blocker',
+                'details.scoringPlayerId': 'scoring_player',
+                'details.scoringPlayerTotal': 'scoring_player_total',
+                'details.assist1PlayerId': 'assist_1',
+                'details.assist1PlayerTotal': 'assist1_total',
+                'details.assist2PlayerId': 'assist_2',
+                'details.assist2PlayerTotal': 'assist2_total',
+                'details.awayScore': 'away_score',
+                'details.homeScore': 'home_score',
+                'details.secondaryReason': 'secondary_reason',
+                'details.typeCode': 'type_code',
+                'details.descKey': 'desc_key',
+                'details.duration': 'duration',
+                'details.committedByPlayerId': 'committed_by',
+                'details.drawnByPlayerId': 'drawn_by',
+                'details.servedByPlayerId': 'served_by',
+                'event_team_id': 'team_id'
+            })
+            
+            situation_dictionary = {
+                '1551': '5 on 5',
+                '1451': '5 on 4',
+                '1541': '5 on 4',
+                '0651': '6 on 5',
+                '1560': '6 on 5',
+                '1441': '4 on 4',
+                '1331': '3 on 3',
+                '1460': '6 on 4',
+                '1351': '5 on 3',
+                '0641': '6 on 4',
+                '1341': '4 on 3',
+                '0101': '1 on 1',
+                '1531': '5 on 3',
+                '1010': '1 on 1',
+                '1431': '4 on 3',
+                '0440': '4 on 4',
+                '0541': '5 on 4',
+                '1550': '5 on 5',
+                '1450': '5 on 4',
+                '0551': '5 on 5',
+                '0431': '4 on 3',
+                '1340': '4 on 3',
+                '0451': '5 on 4',
+                '0531': '5 on 4',
+                '0631': '6 on 3',
+                '1360': '6 on 3',
+                '1350': '5 on 4',
+                '1440': '4 on 4'
+            }
+            
+            # Map 'situationCode' if column exists
+            if 'situationCode' in game_plays.columns:
+                game_plays['situation'] = game_plays['situationCode'].map(situation_dictionary)
+                print("Mapped situationCode to situation.")
+            
+                game_plays['goalie_situation'] = np.where(
+                    (game_plays['situationCode'].str.startswith('0')) | (game_plays['situationCode'].str[3] == '0'),
+                    'pulled', 'in net'
+                )
             else:
-                print(f"'gameState' key not found in response for game_id {game_id}")
+                print("'situationCode' column not found in the game_plays DataFrame.")
+            
+            game_plays['game_id'] = game_plays['game_id'].astype(str)
         else:
-            print(f"Request failed with status code {response.status_code} for game_id {game_id}")
+            print("'game_id' column not found in the game_plays DataFrame.")
 
-        # Combine all the events from this batch into a single DataFrame
-        if batch_events:
-            batch_plays = pd.concat(batch_events, ignore_index=True)
-            batch_plays.dropna(how='all', inplace=True)
-            return batch_plays
-        return pd.DataFrame()
-
-    # Process in batches of 100
-    batch_size = 100
-    game_ids = [{'game_id': game_id, 'link': f"{pxp_url}{game_id}{pxp_suffix}"} for game_id in game_ids]  # Use the unique game IDs list
-
-    for i in range(0, len(game_ids), batch_size):
-        game_batch = game_ids[i:i + batch_size]
-        batch_plays = process_game_batch(game_batch)
-        
-        # Stop processing if the first game in the batch returned a 404
-        if batch_plays is None:
-            break
-        
-        if not batch_plays.empty:
-            game_plays = pd.concat([game_plays, batch_plays], ignore_index=True)
-
-    game_plays = game_plays.rename(columns={
-        'periodDescriptor.number': 'period_number',
-        'periodDescriptor.periodType': 'period_type', 
-        'periodDescriptor.maxRegulationPeriods': 'max_regulation_periods',
-        'details.eventOwnerTeamId': 'event_team_id',
-        'details.losingPlayerId ': 'losing_player_id',
-        'details.winningPlayerId': 'winning_player_id',
-        'details.xCoord': 'xCoord',
-        'details.yCoord': 'yCoord',
-        'details.zoneCode': 'zone_code',
-        'details.reason': 'reason',
-        'details.hittingPlayerId': 'hitter',
-        'details.hitteePlayerId': 'hittee',
-        'details.playerId': 'player_id',
-        'details.shotType': 'shot_type',
-        'details.shootingPlayerId': 'shooting_player',
-        'details.goalieInNetId': 'goalie',
-        'details.awaySOG': 'away_sog',
-        'details.homeSOG': 'home_sog',
-        'details.blockingPlayerId': 'blocker',
-        'details.scoringPlayerId': 'scoring_player',
-        'details.scoringPlayerTotal': 'scoring_player_total',
-        'details.assist1PlayerId': 'assist_1',
-        'details.assist1PlayerTotal': 'assist1_total',
-        'details.assist2PlayerId': 'assist_2',
-        'details.assist2PlayerTotal': 'assist2_total',
-        'details.awayScore': 'away_score',
-        'details.homeScore': 'home_score',
-        'details.secondaryReason': 'secondary_reason',
-        'details.typeCode': 'type_code',
-        'details.descKey': 'desc_key',
-        'details.duration': 'duration',
-        'details.committedByPlayerId': 'committed_by',
-        'details.drawnByPlayerId': 'drawn_by',
-        'details.servedByPlayerId': 'served_by',
-        'event_team_id': 'team_id'
-    })
+        return game_plays
     
-    situation_dictionary = {
-        '1551': '5 on 5',
-        '1451': '5 on 4',
-        '1541': '5 on 4',
-        '0651': '6 on 5',
-        '1560': '6 on 5',
-        '1441': '4 on 4',
-        '1331': '3 on 3',
-        '1460': '6 on 4',
-        '1351': '5 on 3',     
-        '0641': '6 on 4',
-        '1341': '4 on 3',      
-        '0101': '1 on 1',
-        '1531': '5 on 3',
-        '1010': '1 on 1',
-        '1431': '4 on 3',
-        '0440': '4 on 4',
-        '0541': '5 on 4',
-        '1550': '5 on 5',
-        '1450': '5 on 4',
-        '0551': '5 on 5',
-        '0431': '4 on 3',
-        '1340': '4 on 3',
-        '0451': '5 on 4',
-        '0531': '5 on 4',
-        '0631': '6 on 3',
-        '1360': '6 on 3',
-        '1350': '5 on 4',
-        '1440': '4 on 4'
-    }
-# Check if 'situationCode' column exists before applying the map
-    if 'situationCode' in game_plays.columns:
-        game_plays['situation'] = game_plays['situationCode'].map(situation_dictionary)
-        print("Mapped situationCode to situation.")
-    
-        game_plays['goalie_situation'] = np.where((game_plays['situationCode'].str.startswith('0')) | (game_plays['situationCode'].str[3] == '0'),
-        'pulled', 'in net')
-    else:
-        print("'situationCode' column not found in the game_plays DataFrame.")
-
-    game_plays['game_id'] = game_plays['game_id'].astype(str)
-
-    return game_plays
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
 
 # def load_play_data():
 #     try:
@@ -651,25 +688,24 @@ def load_shot_data():
         return None
 
 #Agg of basic player stats
+
 season_results = load_season_data()
 daily_games = get_daily_games()
 league_standings = get_standings_data()
-game_plays = get_play_data()
-todays_games = load_play_data()
-
+#game_plays = get_play_data()
+#todays_games = load_play_data()
+skater_summary = skater_summary()
 
 # #All player shifts with goals, assists with shift number
-# all_season_results = get_season_data()
+all_season_results = get_season_data()
 
 # #All play data/events on the ice
-# all_play_data = get_play_data()
-
-
+all_play_data = get_play_data()
 
 
 # Display the first few rows of the DataFrame
-if season_results is not None:
-    print(game_plays)
+if skater_summary is not None:
+    print(skater_summary)
 
 else:
 
