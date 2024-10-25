@@ -17,12 +17,12 @@ import traceback
 
 def skater_summary():
     try:
-        
+
         url = "https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22points%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22goals%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22assists%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22playerId%22,%22direction%22:%22ASC%22%7D%5D&start=0&limit=50&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20242025%20and%20seasonId%3E=20242025"
             
         # Make the API request
         response = requests.get(url)
-        
+
         if response.status_code == 200:
         # The response content can be accessed using response.text
             response_text = response.text
@@ -34,7 +34,14 @@ def skater_summary():
 
         skater_data = json_data['data']
         skater_summary = pd.DataFrame(skater_data)
-        print(skater_summary.columns)
+
+        skater_summary = skater_summary.rename(columns={'evGoals': 'ev_goals', 'evPoints':'ev_points', 'faceoffWinPct':'fow_pct', 'gameWinningGoals':'gwg',
+                                                        'gamesPlayed':'games_played', 'otGoals':'ot_goals', 'penaltyMinutes':'pims', 
+                                                        'playerId':'player_id', 'plusMinus':'plus_minus', 'pointsPerGame':'ppg', 'positionCode': 'position',
+                                                        'ppGoals':'pp_goals', 'ppPoints':'pp_points', 'shGoals':'sh_goals', 'shPoints':'sh_points',
+                                                        'shootingPct':'shooting_pct', 'skaterFullName':'player_name', 'teamAbbrevs':'team', 'timeOnIcePerGame':'toi'})
+
+        skater_summary['atoi'] = round(skater_summary['toi']/skater_summary['games_played'],2)
 
         return skater_summary
     except Exception as e:
