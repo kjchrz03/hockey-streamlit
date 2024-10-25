@@ -41,7 +41,7 @@ def skater_summary():
                                                         'ppGoals':'pp_goals', 'ppPoints':'pp_points', 'shGoals':'sh_goals', 'shPoints':'sh_points',
                                                         'shootingPct':'shooting_pct', 'skaterFullName':'player_name', 'teamAbbrevs':'team', 'timeOnIcePerGame':'toi'})
 
-        skater_summary['atoi'] = round(skater_summary['toi']/skater_summary['games_played'],2)
+        skater_summary['atoi'] = round(skater_summary['toi']/60,2)
 
         return skater_summary
     except Exception as e:
