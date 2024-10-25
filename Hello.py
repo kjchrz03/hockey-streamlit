@@ -55,7 +55,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 # print(sys.path)
 
 # Import the function from season_data.py
-from data.season_data import load_season_data, skater_summary, get_daily_games, get_standings_data, get_play_data
+from data.season_data import get_skater_summary, get_daily_games, get_standings_data, get_play_data
 
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
@@ -144,7 +144,7 @@ st.title("Check This Data")
 st.markdown('''##### <span style="color: #aaaaaa">Explore NHL Advanced Stats, Simply</span>
             ''', unsafe_allow_html=True)
                 
-tab_bug, tab_goals, tab_games = st.tabs(["Scores", "Goals", "Matchups"])
+tab_bug, tab_skaters, tab_games = st.tabs(["Scores", "Skaters", "Matchups"])
 st.sidebar.markdown("League-Wide Standings")
 
 ##########################################
@@ -375,9 +375,6 @@ with tab_bug:
         score_bug_df = daily_games[selected_columns]
         print(score_bug_df)
         return score_bug_df
-        
-    # def load_plays(game_plays):
-
 
     def todays_games():
         try:
@@ -474,87 +471,77 @@ todays_games()
 ## Goals Tab                           ##
 ##########################################
 
-with tab_goals:
+with tab_skaters:
     # @st.cache_data(show_spinner=True) 
     def skater_summary():
         try:
-            # Call the function from season_data.py
-            season_totals = skater_summary()
-
-            return season_totals
+            # Call the actual function to get skater data
+            skaters = get_skater_summary()
+            return skaters
         except Exception as e:
             st.error(f"Error loading data: {e}")
             return None
-    def load_players(season_totals):
+
+    def load_players(skaters):
         # Create new columns based on the existing ones
-        season_totals['Name'] = season_totals['player_name']
-        season_totals['player_id'] = season_totals['player_id']
-        season_totals['Goals'] = season_totals['goals']
-        season_totals['Points'] = season_totals['points']
-        season_totals['Games Played'] = season_totals['games_played']
-        season_totals['Goals per Game'] = season_totals['gpg']
-        # season_totals['Sweater Number'] = season_totals['sweaterNumber']
-        season_totals['Team'] =  season_totals['team'] 
-        season_totals['Position'] =  season_totals['position'] 
+        skaters['Name'] = skaters['player_name']
+        skaters['Goals'] = skaters['goals']
+        skaters['Points'] = skaters['points']
+        skaters['Games Played'] = skaters['games_played']
+        skaters['Goals per Game'] = skaters['gpg']
+        skaters['Team'] = skaters['team']
+        skaters['Position'] = skaters['position']
+
         # Select specific columns to return
         selected_columns = ['Name', 'player_id', 'Team', 'Position', 'Goals', 'Points', 'Games Played', 'Goals per Game']
-        players_df = season_totals[selected_columns]
-        return players_df
-    
+        skaters_df = skaters[selected_columns]
+        return skaters_df
 
-    season_totals = skater_summary()
-    if season_totals is not None:
-            # Extract player data from season totals
-        players_df = load_players(season_totals)
-        if players_df is not None:
+    skaters = get_skater_summary()
+    if skaters is not None:
+
+        skaters_df = load_players(skaters)
+        if skaters_df is not None:
             # Create a mapping of player names to IDs
-            player_id_mapping = {row['Name']: row['player_id'] for index, row in players_df.iterrows()}
+            player_id_mapping = {row['Name']: row['player_id'] for _, row in skaters_df.iterrows()}
             # Player selection dropdown (display names, but keep player IDs hidden)
             selected_player_name = st.selectbox('Select a player:', list(player_id_mapping.keys()))
             # Retrieve the corresponding player ID
             selected_player_id = player_id_mapping[selected_player_name]
+
+            # Display player information in a formatted HTML table
+            st.write(f'''
+            <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
+            <tr>
+                <td style="font-weight: bold;">Name</td>
+                <td style="font-weight: bold;">Position</td>
+                <td style="font-weight: bold;">Team</td>
+                <td style="font-weight: bold;">Games Played</td>
+                <td style="font-weight: bold;">Goals</td>
+                <td style="font-weight: bold;">Goals per Game</td>
+                <td style="font-weight: bold;">Points</td>
+            </tr>
+            <tr>
+                <td>{skaters_df.loc[skaters_df.Name == selected_player_name, 'Name'].values[0]}</td>
+                <td>{skaters_df.loc[skaters_df.Name == selected_player_name, 'Position'].values[0]}</td>
+                <td>{skaters_df.loc[skaters_df.Name == selected_player_name, 'Team'].values[0]}</td>
+                <td>{skaters_df.loc[skaters_df.Name == selected_player_name, 'Games Played'].values[0]}</td>
+                <td>{skaters_df.loc[skaters_df.Name == selected_player_name, 'Goals'].values[0]}</td>
+                <td>{skaters_df.loc[skaters_df.Name == selected_player_name, 'Goals per Game'].values[0]}</td>
+                <td>{skaters_df.loc[skaters_df.Name == selected_player_name, 'Points'].values[0]}</td> 
+            </tr>
+            </table>
+            ''', unsafe_allow_html=True)
         else:
             st.error("Player data could not be loaded.")
     else:
         st.error("Season data could not be loaded.")
 
-    # Get the player ID based on the selected player name
-    selected_player_id = player_id_mapping[selected_player_name]
-
-# @@ -328,6 +332,22 @@ def load_map():
-#     ''', unsafe_allow_html=True)
-#     st.markdown("<br>", unsafe_allow_html=True)
+    # Additional function or data load if required
+skater_summary()
 
 
 
-    # Select only the desired columns from the DataFrame
-    selected_columns = ['Name', 'player_id', 'Games Played', 'Team', 'Position','Goals', 'Points', 'Games Played', 'Goals per Game']# Replace with your actual column names
-
-    # Create an HTML table with desired styling
-    st.write(f'''
-    <table style="background: #d5cfe1; border: 1.2px solid; width: 100%">
-    <tr>
-        <td style="font-weight: bold;">Name</td>
-        <td style="font-weight: bold;">Position</td>
-        <td style="font-weight: bold;">Team</td>
-        <td style="font-weight: bold;">Games Played</td>
-        <td style="font-weight: bold;">Goals</td>
-        <td style="font-weight: bold;">Goals per Game</td>
-        <td style="font-weight: bold;">Points</td>
-    </tr>
-    <tr>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Name'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Position'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Team'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Games Played'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Goals per Game'].values[0]}</td>
-        <td>{players_df.loc[players_df.Name == selected_player_name, 'Points'].values[0]}</td> 
-    </tr>
-    </table>
-    ''', unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
-load_season_data()
     # ## goal mapping
     # player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
 
