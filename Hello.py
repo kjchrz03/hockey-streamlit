@@ -462,7 +462,7 @@ with tab_bug:
             return None
 
     # Run the function to display today's games
-todays_games()
+    todays_games()
 
 
 ##########################################
@@ -536,7 +536,7 @@ with tab_skaters:
         st.error("Season data could not be loaded.")
 
     # Additional function or data load if required
-get_skater_summary()
+    get_skater_summary()
 
 
 
