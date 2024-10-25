@@ -43,126 +43,12 @@ def get_skater_summary():
 
         skater_summary['atoi'] = round(skater_summary['toi']/60,2)
         skater_summary['gpg'] = round(skater_summary['goals']/skater_summary['games_played'],2)
+        skater_summary=skater_summary.sort_values(by='lastName')
         return skater_summary
     except Exception as e:
         print(f"Error loading final data: {e}")
         return None
 
-
-def get_season_data():
-   # Apply nest_asyncio to allow nested event loops in Jupyter notebooks
-    nest_asyncio.apply()
-
-    # Constants
-    START_GAME_ID = 2024020001
-    END_GAME_ID = 2024021307
-    BASE_URL = "https://api.nhle.com/stats/rest/en/shiftcharts?cayenneExp=gameId="
-    PXP_URL = "https://api-web.nhle.com/v1/gamecenter/"
-    PXP_SUFFIX = "/play-by-play"
-    # START_SHIFT_ID = 14387777
-
-    #     # Get the last game ID from the stored file
-    # last_shift_id = get_last_shift_id()
-    # if last_shift_id is None:  # If there's no last game ID, fetch all
-    #     last_shift_id = START_SHIFT_ID - 1  
-
-    # Create game URLs DataFrame
-    game_data = [{"game_id": game_id, "shift_url": f"{BASE_URL}{game_id}", "pxp_url": f"{PXP_URL}{game_id}{PXP_SUFFIX}"} 
-                for game_id in range(START_GAME_ID, END_GAME_ID + 1)]
-    game_df = pd.DataFrame(game_data)
-
-
-# Asynchronous function to fetch shift data with a timeout and error handling
-    async def fetch_shift_data(session, shift_url):
-        try:
-            async with session.get(shift_url, timeout=20) as response:  # Timeout after 10 seconds
-                if response.status == 404:  # Stop if a 404 (Not Found) error occurs
-                    print("Game not found (404). Stopping further requests.")
-                    return None  # Indicate stopping
-                response.raise_for_status()  # Raise an error for other bad responses
-                json_data = await response.json()
-                details = pd.DataFrame(json_data['data'])
-                if not details.empty:
-                    details['player_name'] = details['firstName'] + " " + details['lastName']
-                    mask_505 = details['typeCode'] == 505
-                    details.loc[mask_505, 'eventDetails'] = details.loc[mask_505, 'eventDetails'].fillna('unassisted').replace(r'^\s*$', 'unassisted', regex=True)
-                    assists = details.loc[mask_505, 'eventDetails'].str.split(', ', expand=True)
-                    details.loc[mask_505, ['assist_1', 'assist_2']] = assists
-                    return details
-                return pd.DataFrame()  # Return empty DataFrame if no data
-        except Exception as e:
-            print(f"An error occurred: {e}")
-            traceback.print_exc()  # Print the full traceback for more details
-            return pd.DataFrame()
-
-
-    # Fetch all shift data asynchronously in batches
-    async def fetch_all_shift_data(game_df, batch_size=50):
-        async with aiohttp.ClientSession() as session:
-            all_results = []
-            for i in range(0, len(game_df), batch_size):
-                batch = game_df.iloc[i:i + batch_size]
-                tasks = [fetch_shift_data(session, row['shift_url']) for _, row in batch.iterrows()]
-                batch_results = await asyncio.gather(*tasks)
-                all_results.extend(batch_results)
-            return all_results
-
-    # Run the async tasks and collect the results
-    all_shifts_data = asyncio.run(fetch_all_shift_data(game_df))
-    all_shifts = pd.concat(all_shifts_data, ignore_index=True)
-
-    # Create a dictionary to make shot data more readable 
-    shot_code_dictionary = {
-        801: 'slap shot', 802: 'snap shot', 803: 'wrist shot',
-        804: 'wrap-around', 805: 'tip-in', 806: 'backhanded shot',
-        807: 'deflected in', 808: 'bat shot', 809: 'cradle/Michigan',
-        810: 'poke', 811: 'between the legs'
-    }
-    all_shifts['shot_type'] = all_shifts['detailCode'].map(shot_code_dictionary)
-    all_shifts['gameId'] = all_shifts['gameId'].astype(str)
-
-    shifts_df = all_shifts[['id', 'gameId', 'period', 'shiftNumber', 'startTime', 'eventNumber', 'playerId', 'player_name', 
-                            'teamId', 'teamName', 'typeCode', 'assist_1', 'assist_2', 'shot_type', 'eventDescription']]
-    goal_shifts = shifts_df[shifts_df['typeCode'].isin([505])]
-    print(goal_shifts.head())
-    return goal_shifts
-
-def get_agg_totals():
-    try:
-        goal_shifts = get_season_data()
-            # Filter and prepare DataFrames for assists and goals
-        assist_1 = goal_shifts[goal_shifts['assist_1'].notna()]
-        assist_2 = goal_shifts[goal_shifts['assist_2'].notna()]
-        
-    # Prepare totals for goals and assists
-        season_goal_totals = goal_shifts.groupby(['playerId', 'player_name', 'gameId'])['eventNumber'].count().reset_index(name='g')
-        season_assist1_total = assist_1.groupby(['gameId', 'assist_1', 'eventNumber', 'period']).size().reset_index(name='a1')
-        season_assist2_total = assist_2.groupby(['gameId', 'assist_2', 'eventNumber', 'period']).size().reset_index(name='a2')
-
-        # Merge assist totals and goal totals
-        season_assist1_total = season_assist1_total.rename(columns={'assist_1': 'player_name'})
-        season_assist2_total = season_assist2_total.rename(columns={'assist_2': 'player_name'})
-
-        season_assists = season_assist1_total.merge(season_assist2_total, on=['player_name', 'gameId'], how='outer', suffixes=('_assist1', '_assist2'))
-        season_totals = season_goal_totals.merge(season_assists, on=['player_name', 'gameId'], how="outer")
-
-        # Fill NaN values with 0 and calculate aggregates
-        season_totals.fillna(0, inplace=True)
-        season_totals = season_totals.groupby(['playerId', 'player_name']).agg(
-            g=('g', 'sum'),
-            gp=('gameId', 'nunique'),
-            a1=('a1', 'sum'),
-            a2=('a2', 'sum')
-        ).reset_index()
-
-        # Calculate goals per game and total points
-        season_totals['gpg'] = season_totals['g'] / season_totals['gp']
-        season_totals['p'] = season_totals['g'] + season_totals['a1'] + season_totals['a2']
-        season_totals=season_totals.rename(columns={'playerId': 'player_id'})
-        return season_totals
-    except Exception as e:
-        print(f"Error loading final data: {e}")
-        return None
 
 def get_roster_data():
     
@@ -274,17 +160,6 @@ def load_roster_data():
         print(f"Error loading roster data: {e}")
         return None
  
-def load_season_data():
-    try:
-        season_totals = get_agg_totals()
-        team_rosters = get_roster_data()
-        combined_df = pd.merge(season_totals, team_rosters, on='player_id', how = 'left') 
-        combined_df=combined_df.sort_values(by='player_name')
-        return combined_df  # Returning the processed DataFrame
-    except Exception as e:
-        print(f"Error loading final data: {e}")
-        return None
-    
 
 #### for use with score bug (aka combined_df)
 def get_daily_games():
@@ -300,23 +175,28 @@ def get_daily_games():
         max_end_date = datetime.strptime("2025-04-17", "%Y-%m-%d")
         current_date = datetime.now()
         end_date = min(current_date, max_end_date)
-        print(end_date)
+
         # Track seen dates
         seen_dates = set()
 
         while current_date <= end_date:
+            # Format the date as 'YYYY-MM-DD'
             formatted_date = current_date.strftime("%Y-%m-%d")
             api_url = f"{base_url}{formatted_date}"
-
+            
             # Make the API request
             response = requests.get(api_url)
-            if response.status_code != 200:
-                print(f"Failed to retrieve data for {formatted_date}")
-                current_date += timedelta(weeks=1)
-                continue
+            
+            if response.status_code == 200:
+            # The response content can be accessed using response.text
+                response_text = response.text
+            #pprint(response_text)
+            else:
+                print(f"Request failed with status code {response.status_code}")
 
-            json_data = response.json()
-            game_week = json_data.get('gameWeek', [])
+            json_data = json.loads(response_text)
+
+            game_week = json_data['gameWeek']
             game_week_df = pd.DataFrame(game_week)
 
             # Filter out empty rows and duplicate dates
@@ -324,16 +204,15 @@ def get_daily_games():
                 seen_dates.add(formatted_date)
                 daily_games = pd.concat([daily_games, game_week_df], ignore_index=True)
 
+            # Move to the next week
             current_date += timedelta(weeks=1)
-
-            if daily_games.empty:
-                return None
-
-            # Filter out rows where the 'date' is after the end date
+            # Filter out rows where 'date' is after the end date
             daily_games['date'] = pd.to_datetime(daily_games['date'])
-            daily_games = daily_games[daily_games['date'] <= end_date].reset_index(drop=True)
+            daily_games = daily_games[daily_games['date'] <= end_date]
 
-            # Normalize the games column
+            # Reset index after filtering
+            daily_games.reset_index(drop=True, inplace=True)
+
             game_week_details = pd.json_normalize(daily_games['games'])
 
             # Create a dictionary of dataframes for each iteration
@@ -411,7 +290,7 @@ def get_play_data():
 
         # Extract unique live game IDs
         game_ids = live_games['game_id'].unique().tolist()
-        
+
         # Base URL for the API
         pxp_url = "https://api-web.nhle.com/v1/gamecenter/"
         pxp_suffix = "/play-by-play"
@@ -573,15 +452,6 @@ def get_play_data():
         print(f"Error: {e}")
         return None
 
-# def load_play_data():
-#     try:
-#         game_plays =  get_play_data()
-
-
-#         return todays_games
-#     except Exception as e:
-#         print(f"Error: {e}")
-#         return None
 
 
 # ### GAME LOCATIONS
@@ -694,17 +564,12 @@ def load_shot_data():
         print(f"Error loading final data: {e}")
         return None
 
-#Agg of basic player stats
 
-season_results = load_season_data()
+
 daily_games = get_daily_games()
 league_standings = get_standings_data()
-#game_plays = get_play_data()
-#todays_games = load_play_data()
-skater_summary = get_skater_summary()
 
-# #All player shifts with goals, assists with shift number
-all_season_results = get_season_data()
+skater_summary = get_skater_summary()
 
 # #All play data/events on the ice
 all_play_data = get_play_data()
