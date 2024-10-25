@@ -395,7 +395,7 @@ with tab_bug:
                 <table style="border-collapse: separate; border: none; border-spacing: 0 10px;">  <!-- 10px gap -->
                     <thead>
                         <tr>
-                           <!-- Header -->
+
                             <th style="border: none;"></th>
                             <th style="text-align: center; border: none;" colspan="2.5">Home Team</th>
                             <th style="border: none;"></th> <!-- Empty for vs -->
