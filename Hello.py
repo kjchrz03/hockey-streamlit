@@ -395,7 +395,6 @@ with tab_bug:
                 <table style="border-collapse: separate; border: none; border-spacing: 0 10px;">  <!-- 10px gap -->
                     <thead>
                         <tr>
-
                             <th style="border: none;"></th>
                             <th style="text-align: center; border: none;" colspan="2.5">Home Team</th>
                             <th style="border: none;"></th> <!-- Empty for vs -->
@@ -416,7 +415,6 @@ with tab_bug:
                             <td style="border: none; text-align: center; width: 15%;">{row['Away Team']}</td>
                             <td style="border: none;text-align: center; width: 15%;"><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
                         </tr>
-                        
                     </tbody>
                 </table>
                 """
@@ -538,7 +536,7 @@ with tab_skaters:
         st.error("Season data could not be loaded.")
 
     # Additional function or data load if required
-skater_summary()
+get_skater_summary()
 
 
 
