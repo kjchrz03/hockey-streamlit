@@ -55,7 +55,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 # print(sys.path)
 
 # Import the function from season_data.py
-from data.season_data import load_season_data, get_daily_games, get_standings_data
+from data.season_data import load_season_data, skater_summary, get_daily_games, get_standings_data, get_play_data
 
 st.set_page_config(page_title="Check This Data", page_icon="🏒", initial_sidebar_state="expanded")
 
@@ -347,6 +347,13 @@ with tab_bug:
         except Exception as e:
             st.error(f"Error loading data: {e}")
             return None
+    def play_data():
+        try:
+            game_plays = get_play_data()
+            return game_plays
+        except Exception as e:
+            st.error(f"Error loading data: {e}")
+            return None
 
     def load_games(daily_games):
         # Create new columns based on the existing ones
@@ -368,6 +375,9 @@ with tab_bug:
         score_bug_df = daily_games[selected_columns]
         print(score_bug_df)
         return score_bug_df
+        
+    def load_plays(game_plays):
+
 
     def todays_games():
         try:
@@ -388,6 +398,7 @@ with tab_bug:
                 <table style="border-collapse: separate; border: none; border-spacing: 0 10px;">  <!-- 10px gap -->
                     <thead>
                         <tr>
+                           <!-- Header -->
                             <th style="border: none;"></th>
                             <th style="text-align: center; border: none;" colspan="2.5">Home Team</th>
                             <th style="border: none;"></th> <!-- Empty for vs -->
@@ -399,6 +410,7 @@ with tab_bug:
                     </thead>
                     <tbody>
                         <tr>
+                            <!-- table data -->
                             <td style="border: none; text-align: center; width: 15%;"><img src="{row['home_logo']}" alt="Home Logo" width="50" height="50"></td>
                             <td style="border: none; text-align: center; width: 15%;">{row['Home Team']}</td>
                             <td style="border: none; text-align: right; width: 10%;">{row['Home Score']}</td>
@@ -407,15 +419,35 @@ with tab_bug:
                             <td style="border: none; text-align: center; width: 15%;">{row['Away Team']}</td>
                             <td style="border: none;text-align: center; width: 15%;"><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
                         </tr>
-                        <tr>
-                            <td style="border: none; text-align: center; width: 20%; vertical-align: middle;">Start Time:</td>
-                            <td style="border: none; text-align: center; width: 20%;">{row['Start Time']}</td>
-                        </tr>
+                        
                     </tbody>
                 </table>
                 """
                 # Display the game row in Streamlit
                 st.markdown(game_row, unsafe_allow_html=True)
+
+                # If the game has started/not started
+                if row['game_type'] == 'FUT':
+                    time_row = f"""
+                    <table>
+                        <tr>
+                            <!--Start time/game time-->
+                            <td style="border: none; text-align: center; width: 20%; vertical-align: middle;">Start Time:</td>
+                            <td style="border: none; text-align: center; width: 20%;">{row['Start Time']}</td>
+                        </tr>
+                    </table>
+                    """
+                elif row['game_type'] == "LIVE":
+                    time_row = f"""
+                    <table>
+                        <tr>
+                            <!--Start time/game time-->
+                            <td style="border: none; text-align: center; width: 20%; vertical-align: middle;">Time Remaining:</td>
+                            <td style="border: none; text-align: center; width: 20%;">{row['Start Time']}</td>
+                        </tr>
+                    </table>
+                    """
+                    st.markdown(time_row, unsafe_allow_html=True)
 
                 # If the game is complete ('OFF'), show the winning goal scorer
                 if row['game_type'] == 'OFF':
@@ -444,10 +476,10 @@ todays_games()
 
 with tab_goals:
     # @st.cache_data(show_spinner=True) 
-    def season_data():
+    def skater_summary():
         try:
             # Call the function from season_data.py
-            season_totals = load_season_data()
+            season_totals = skater_summary()
 
             return season_totals
         except Exception as e:
@@ -457,20 +489,20 @@ with tab_goals:
         # Create new columns based on the existing ones
         season_totals['Name'] = season_totals['player_name']
         season_totals['player_id'] = season_totals['player_id']
-        season_totals['Goals'] = season_totals['g']
-        season_totals['Points'] = season_totals['p']
-        season_totals['Games Played'] = season_totals['gp']
+        season_totals['Goals'] = season_totals['goals']
+        season_totals['Points'] = season_totals['points']
+        season_totals['Games Played'] = season_totals['games_played']
         season_totals['Goals per Game'] = season_totals['gpg']
-        season_totals['Sweater Number'] = season_totals['sweaterNumber']
-        season_totals['Team'] =  season_totals['team_name'] 
-        season_totals['Position'] =  season_totals['positionCode'] 
+        # season_totals['Sweater Number'] = season_totals['sweaterNumber']
+        season_totals['Team'] =  season_totals['team'] 
+        season_totals['Position'] =  season_totals['position'] 
         # Select specific columns to return
-        selected_columns = ['Name', 'player_id', 'Sweater Number', 'Team', 'Position', 'Goals', 'Points', 'Games Played', 'Goals per Game']
+        selected_columns = ['Name', 'player_id', 'Team', 'Position', 'Goals', 'Points', 'Games Played', 'Goals per Game']
         players_df = season_totals[selected_columns]
         return players_df
     
 
-    season_totals = load_season_data()
+    season_totals = skater_summary()
     if season_totals is not None:
             # Extract player data from season totals
         players_df = load_players(season_totals)
