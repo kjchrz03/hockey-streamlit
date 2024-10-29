@@ -19,8 +19,8 @@ import warnings# Suppress the specific warning
 
 logging.getLogger("streamlit").setLevel(logging.ERROR)
 subprocess.run(["pip", "install", "--upgrade", "pip"])
+
 subprocess.run(["pip", "install", "--upgrade", "streamlit"])
-# List of pip commands to run
 pip_commands = [
     ["pip", "install", "pytz"],
     ["pip", "install", "nest_asyncio"],

@@ -181,11 +181,133 @@ def load_roster_data():
         return None
  
 
-#### for use with score bug (aka combined_df)
+def get_game_data(): #all games information - these should have unique game ids per row
+    try:
+        all_games = pd.DataFrame()
+        all_combined_games = pd.DataFrame()  # For accumulating all games across weeks
+
+        base_url = "https://api-web.nhle.com/v1/schedule/"
+        start_date = datetime.strptime("2024-10-04", "%Y-%m-%d")
+        
+        # Set end_date to today's date if it's earlier than the original end date
+        end_date = min(datetime.strptime("2025-04-17", "%Y-%m-%d"), datetime.today())
+        
+        current_date = start_date
+        seen_dates = set()
+
+        while current_date <= end_date:
+            formatted_date = current_date.strftime("%Y-%m-%d")
+            api_url = f"{base_url}{formatted_date}"
+
+            response = requests.get(api_url)
+            if response.status_code == 200:
+                json_data = response.json()
+                game_week = json_data.get('gameWeek', [])
+
+            game_week_df = pd.DataFrame(game_week)
+            if not game_week_df.empty and formatted_date not in seen_dates:
+                seen_dates.add(formatted_date)
+                all_games = pd.concat([all_games, game_week_df], ignore_index=True)
+
+            all_games['date'] = pd.to_datetime(all_games['date'])
+            all_games = all_games[all_games['date'] <= end_date]
+        
+            all_games.reset_index(drop=True, inplace=True)
+
+            all_game_week_details = pd.json_normalize(all_games['games'])
+            
+        # dfs = {
+        #     f'game_test{i}': pd.json_normalize(all_game_week_details[i])
+        #     for i in range(len(all_game_week_details.columns))
+        # }
+
+                
+        dfs = {}
+
+        # Loop through the iterations (30 times)
+        for i in range(0, len(all_game_week_details.columns)): 
+            api_response = game_week
+            
+            if api_response is not None:
+                # Extract relevant data from the API response and normalize it
+                game_info = pd.json_normalize(all_game_week_details[i])
+                
+                # Create a DataFrame for this iteration
+                df_name = f'game_test{i}'  # Generate a unique variable name
+                dfs[df_name] = pd.DataFrame(game_info)
+            else:
+                # Handle the case where the API request failed
+                print(f"API request failed for index {i}")
+
+        #Then I combine all of the dfs in the list by concatenation to create a single df. now all of the game data is spread out across each row. 
+        combined_df = pd.concat(dfs.values(), ignore_index=True)
+        combined_df.dropna(how='all', inplace=True)
+
+        combined_df = pd.concat(dfs.values(), ignore_index=True).dropna(how='all')
+        all_combined_games = pd.concat([all_combined_games, combined_df], ignore_index=True)
+
+        current_date += timedelta(weeks=1)
+
+        all_game_details = pd.DataFrame({
+            'id': all_combined_games.get('id', ''),
+            'season': all_combined_games.get('season', ''),
+            'startTimeUTC': all_combined_games.get('startTimeUTC', ''),
+            'gameType': all_combined_games.get('gameType', ''),
+            'awayTeam.id': all_combined_games.get('awayTeam.id', ''),
+            'awayTeam.abbrev': all_combined_games.get('awayTeam.abbrev', ''),
+            'awayTeam.logo': all_combined_games.get('awayTeam.logo', ''),
+            'homeTeam.id': all_combined_games.get('homeTeam.id', ''),
+            'homeTeam.abbrev': all_combined_games.get('homeTeam.abbrev', ''),
+            'homeTeam.logo': all_combined_games.get('homeTeam.logo', ''),
+            'homeTeam.placeName.default': all_combined_games.get('homeTeam.placeName.default', ''),
+            'awayTeam.placeName.default': all_combined_games.get('awayTeam.placeName.default', ''),
+            'awayTeam.score': all_combined_games.get('awayTeam.score', 0),
+            'homeTeam.score': all_combined_games.get('homeTeam.score', 0),
+            'winningGoalScorer.playerId': all_combined_games.get('winningGoalScorer.playerId', ''),
+            'winningGoalie.playerId': all_combined_games.get('winningGoalie.playerId', ''),
+            'gameState': all_combined_games.get('gameState', '')
+        })
+
+        # Clean and format the data
+        all_game_details['id'] = all_game_details['id'].astype(int)
+        all_game_details['season'] = all_game_details['season'].astype(str).str[:-2]
+        all_game_details['awayTeam.id'] = all_game_details['awayTeam.id'].astype(str).str[:-2]
+        all_game_details['homeTeam.id'] = all_game_details['homeTeam.id'].astype(str).str[:-2]
+        
+        all_game_details['link'] = 'https://api-web.nhle.com/v1/gamecenter/' + all_game_details['id'] + '/play-by-play'
+        all_game_details.dropna(subset=['id'], inplace=True)
+        all_game_details = all_game_details[all_game_details['gameType']== 2.0]
+
+        # Set scores to 0 if the game hasn't started yet (you can modify the logic to check gameState if needed)
+        all_game_details['awayTeam.score'] = all_game_details['awayTeam.score'].fillna(0).astype('Int64').astype(int)
+        all_game_details['homeTeam.score'] = all_game_details['homeTeam.score'].fillna(0).astype('Int64').astype(int)
+
+        all_game_details['startTimeUTC'] = pd.to_datetime(all_game_details['startTimeUTC'])
+        all_game_details = all_game_details.rename(columns={'id': 'game_id'}).sort_values('game_id').reset_index(drop=True)
+
+        # Convert startTimeUTC to Eastern Time and format the date
+        eastern_timezone = pytz.timezone('America/New_York')
+
+        # Convert 'startTimeUTC' to Eastern Time
+        all_game_details['game_date_time'] = all_game_details['startTimeUTC'].dt.tz_convert(eastern_timezone)
+
+        all_game_details['start_time'] = all_game_details['startTimeUTC'].dt.tz_convert(eastern_timezone).dt.strftime('%I:%M %p').str.lstrip('0').str.lower()
+        all_game_details['game_date'] = all_game_details['startTimeUTC'].dt.tz_convert(eastern_timezone).dt.strftime('%Y-%m-%d')
+        all_game_details.drop('startTimeUTC', axis=1, inplace=True)
+
+        return all_game_details
+
+    except Exception as e:
+        print(f"Error in get_game_data: {e}")
+        return None
+    
+#### for use with score bug (aka combined_df) today's games only
 def get_daily_games():
     try:
         # Initialize the DataFrame
         daily_games = pd.DataFrame()
+        all_game_details = get_game_data()
+        
         base_url = "https://api-web.nhle.com/v1/schedule/"
         
         # Set the start date
@@ -290,31 +412,34 @@ def get_daily_games():
             return all_daily_games
 
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error in get daily games: {e}")
         return None
 
 
-######## full shifts data, plays, and loactions
+######## full shifts data, plays, and locations for all games
 def get_play_data():
     try:
-        # Fetch all daily games
-        all_daily_games = get_daily_games()
-        
-        # Filter the games that are live
-        live_games = all_daily_games[all_daily_games['gameState'] == "LIVE"]
-        
-        # If there are no live games, exit early
-        if live_games.empty:
-            print("No live games at the moment.")
-            return None
+        # Fetch all games
+        all_game_details = get_game_data()
+        game_id = all_game_details['game_id']
+        # daily_games = get_daily_games()
+        start_game_id = 2024020001
+        end_game_id = all_game_details['game_id'].max()
 
-        # Extract unique live game IDs
-        game_ids = live_games['game_id'].unique().tolist()
+        # # Filter the games that are live
+        # live_games = daily_games[daily_games['gameState'] == "LIVE"]
+        
+        # # If there are no live games, exit early
+        # if live_games.empty:
+        #     print("No live games at the moment.")
+        #     return None
 
+        # # Extract unique live game IDs
+        # game_ids = live_games['game_id'].unique().tolist()
         # Base URL for the API
         pxp_url = "https://api-web.nhle.com/v1/gamecenter/"
         pxp_suffix = "/play-by-play"
-        
+
         # Initialize an empty DataFrame to store the results
         game_plays = pd.DataFrame()
 
@@ -326,32 +451,19 @@ def get_play_data():
                 url = item['link']
                 game_id = item['game_id']
 
-                try:
-                    response = requests.get(url)
-                    response.raise_for_status()  # Raises an exception for 4xx/5xx errors
-                except requests.exceptions.HTTPError as err:
-                    print(f"HTTP error occurred for game ID {game_id}: {err}")
-                    continue
-
+                response = requests.get(url)
+                
                 if response.status_code == 200:
-                    try:
-                        json_data = response.json()
-                    except ValueError:
-                        print(f"Error decoding JSON for game_id {game_id}")
-                        continue
+                    json_data = response.json()
                     
                     if 'plays' in json_data:
                         game_plays_detail = pd.json_normalize(json_data['plays'])
-
-                        if not game_plays_detail.empty:
-                            game_plays_detail['game_id'] = game_id
-                            game_plays_detail = game_plays_detail[['game_id'] + [col for col in game_plays_detail.columns if col != 'game_id']]
-                            print(f"Game ID {game_id} processed.")
-                            batch_events.append(game_plays_detail)
-                        else:
-                            print(f"No plays data found for game_id {game_id}")
+                        game_plays_detail['game_id'] = game_id
+                        game_plays_detail = game_plays_detail[['game_id'] + [col for col in game_plays_detail.columns if col != 'game_id']]
+                        print(game_plays_detail.info())
+                        batch_events.append(game_plays_detail)
                     else:
-                        print(f"'plays' not found in response for game_id {game_id}")
+                        print(f"'plays' key not found in response for game_id {game_id}")
                 else:
                     print(f"Request failed with status code {response.status_code} for game_id {game_id}")
 
@@ -364,114 +476,109 @@ def get_play_data():
 
         # Process in batches of 100
         batch_size = 100
-        game_ids = [{'game_id': game_id, 'link': f"{pxp_url}{game_id}{pxp_suffix}"} for game_id in game_ids]  # Use the unique game IDs list
+        game_ids = [{'game_id': game_id, 'link': f"{pxp_url}{game_id}{pxp_suffix}"} for game_id in range(start_game_id, end_game_id + 1)]
 
         for i in range(0, len(game_ids), batch_size):
             game_batch = game_ids[i:i + batch_size]
             batch_plays = process_game_batch(game_batch)
             
-            # Stop processing if the first game in the batch returned a 404 or batch is empty
-            if batch_plays is None or batch_plays.empty:
-                print(f"Stopping batch processing at batch starting with game ID {game_batch[0]['game_id']}")
-                break
-            
             if not batch_plays.empty:
                 game_plays = pd.concat([game_plays, batch_plays], ignore_index=True)
 
-        # Check if the 'game_id' column exists before further processing
-        if 'game_id' in game_plays.columns:
-            # Rename and process as needed
-            game_plays = game_plays.rename(columns={
-                'periodDescriptor.number': 'period_number',
-                'periodDescriptor.periodType': 'period_type',
-                'periodDescriptor.maxRegulationPeriods': 'max_regulation_periods',
-                'details.eventOwnerTeamId': 'event_team_id',
-                'details.losingPlayerId ': 'losing_player_id',
-                'details.winningPlayerId': 'winning_player_id',
-                'details.xCoord': 'xCoord',
-                'details.yCoord': 'yCoord',
-                'details.zoneCode': 'zone_code',
-                'details.reason': 'reason',
-                'details.hittingPlayerId': 'hitter',
-                'details.hitteePlayerId': 'hittee',
-                'details.playerId': 'player_id',
-                'details.shotType': 'shot_type',
-                'details.shootingPlayerId': 'shooting_player',
-                'details.goalieInNetId': 'goalie',
-                'details.awaySOG': 'away_sog',
-                'details.homeSOG': 'home_sog',
-                'details.blockingPlayerId': 'blocker',
-                'details.scoringPlayerId': 'scoring_player',
-                'details.scoringPlayerTotal': 'scoring_player_total',
-                'details.assist1PlayerId': 'assist_1',
-                'details.assist1PlayerTotal': 'assist1_total',
-                'details.assist2PlayerId': 'assist_2',
-                'details.assist2PlayerTotal': 'assist2_total',
-                'details.awayScore': 'away_score',
-                'details.homeScore': 'home_score',
-                'details.secondaryReason': 'secondary_reason',
-                'details.typeCode': 'type_code',
-                'details.descKey': 'desc_key',
-                'details.duration': 'duration',
-                'details.committedByPlayerId': 'committed_by',
-                'details.drawnByPlayerId': 'drawn_by',
-                'details.servedByPlayerId': 'served_by',
-                'event_team_id': 'team_id'
-            })
-            
-            situation_dictionary = {
-                '1551': '5 on 5',
-                '1451': '5 on 4',
-                '1541': '5 on 4',
-                '0651': '6 on 5',
-                '1560': '6 on 5',
-                '1441': '4 on 4',
-                '1331': '3 on 3',
-                '1460': '6 on 4',
-                '1351': '5 on 3',
-                '0641': '6 on 4',
-                '1341': '4 on 3',
-                '0101': '1 on 1',
-                '1531': '5 on 3',
-                '1010': '1 on 1',
-                '1431': '4 on 3',
-                '0440': '4 on 4',
-                '0541': '5 on 4',
-                '1550': '5 on 5',
-                '1450': '5 on 4',
-                '0551': '5 on 5',
-                '0431': '4 on 3',
-                '1340': '4 on 3',
-                '0451': '5 on 4',
-                '0531': '5 on 4',
-                '0631': '6 on 3',
-                '1360': '6 on 3',
-                '1350': '5 on 4',
-                '1440': '4 on 4'
-            }
-            
-            # Map 'situationCode' if column exists
-            if 'situationCode' in game_plays.columns:
-                game_plays['situation'] = game_plays['situationCode'].map(situation_dictionary)
-                print("Mapped situationCode to situation.")
-            
-                game_plays['goalie_situation'] = np.where(
-                    (game_plays['situationCode'].str.startswith('0')) | (game_plays['situationCode'].str[3] == '0'),
-                    'pulled', 'in net'
-                )
+            # Check if the 'game_id' column exists before further processing
+            if 'game_id' in game_plays.columns:
+                # Rename and process as needed
+                game_plays = game_plays.rename(columns={
+                    'periodDescriptor.number': 'period_number',
+                    'periodDescriptor.periodType': 'period_type',
+                    'periodDescriptor.maxRegulationPeriods': 'max_regulation_periods',
+                    'details.eventOwnerTeamId': 'event_team_id',
+                    'details.losingPlayerId ': 'losing_player_id',
+                    'details.winningPlayerId': 'winning_player_id',
+                    'details.xCoord': 'xCoord',
+                    'details.yCoord': 'yCoord',
+                    'details.zoneCode': 'zone_code',
+                    'details.reason': 'reason',
+                    'details.hittingPlayerId': 'hitter',
+                    'details.hitteePlayerId': 'hittee',
+                    'details.playerId': 'player_id',
+                    'details.shotType': 'shot_type',
+                    'details.shootingPlayerId': 'shooting_player',
+                    'details.goalieInNetId': 'goalie',
+                    'details.awaySOG': 'away_sog',
+                    'details.homeSOG': 'home_sog',
+                    'details.blockingPlayerId': 'blocker',
+                    'details.scoringPlayerId': 'scoring_player',
+                    'details.scoringPlayerTotal': 'scoring_player_total',
+                    'details.assist1PlayerId': 'assist_1',
+                    'details.assist1PlayerTotal': 'assist1_total',
+                    'details.assist2PlayerId': 'assist_2',
+                    'details.assist2PlayerTotal': 'assist2_total',
+                    'details.awayScore': 'away_score',
+                    'details.homeScore': 'home_score',
+                    'details.secondaryReason': 'secondary_reason',
+                    'details.typeCode': 'type_code',
+                    'details.descKey': 'desc_key',
+                    'details.duration': 'duration',
+                    'details.committedByPlayerId': 'committed_by',
+                    'details.drawnByPlayerId': 'drawn_by',
+                    'details.servedByPlayerId': 'served_by',
+                    'event_team_id': 'team_id'
+                })
+                
+                situation_dictionary = {
+                    '1551': '5 on 5',
+                    '1451': '5 on 4',
+                    '1541': '5 on 4',
+                    '0651': '6 on 5',
+                    '1560': '6 on 5',
+                    '1441': '4 on 4',
+                    '1331': '3 on 3',
+                    '1460': '6 on 4',
+                    '1351': '5 on 3',
+                    '0641': '6 on 4',
+                    '1341': '4 on 3',
+                    '0101': '1 on 1',
+                    '1531': '5 on 3',
+                    '1010': '1 on 1',
+                    '1431': '4 on 3',
+                    '0440': '4 on 4',
+                    '0541': '5 on 4',
+                    '1550': '5 on 5',
+                    '1450': '5 on 4',
+                    '0551': '5 on 5',
+                    '0431': '4 on 3',
+                    '1340': '4 on 3',
+                    '0451': '5 on 4',
+                    '0531': '5 on 4',
+                    '0631': '6 on 3',
+                    '1360': '6 on 3',
+                    '1350': '5 on 4',
+                    '1440': '4 on 4'
+                }
+                
+                # Map 'situationCode' if column exists
+                if 'situationCode' in game_plays.columns:
+                    game_plays['situation'] = game_plays['situationCode'].map(situation_dictionary)
+                    print("Mapped situationCode to situation.")
+                
+                    game_plays['goalie_situation'] = np.where(
+                        (game_plays['situationCode'].str.startswith('0')) | (game_plays['situationCode'].str[3] == '0'),
+                        'pulled', 'in net'
+                    )
+                else:
+                    print("'situationCode' column not found in the game_plays DataFrame.")
+                
+                game_plays['game_id'] = game_plays['game_id'].astype(str)
             else:
-                print("'situationCode' column not found in the game_plays DataFrame.")
-            
-            game_plays['game_id'] = game_plays['game_id'].astype(str)
-        else:
-            print("'game_id' column not found in the game_plays DataFrame.")
+                print("'game_id' column not found in the game_plays DataFrame.")
 
         return game_plays
     
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error in get play data: {e}")
+        traceback.print_exc()
         return None
-
 
 
 # ### GAME LOCATIONS
@@ -479,12 +586,12 @@ def get_game_locations_data():
     try:
         all_daily_games = get_daily_games()
         game_location = all_daily_games[['game_id', 'awayTeam.id','awayTeam.abbrev', 'homeTeam.id', 'homeTeam.abbrev']]
-        game_location['game_id'] = game_location['game_id'].astype(str)
+        # game_location['game_id'] = game_location['game_id'].astype(str)
 
         return game_location
     
     except Exception as e:
-        print(f"Error loading final data: {e}")
+        print(f"Error get game locations data: {e}")
         return None
     
 def get_standings_data():
@@ -538,66 +645,124 @@ def load_play_data():
         game_plays_data = game_plays.merge( game_location, how='left',  on='player_id' )
 
     except Exception as e:
-        print(f"Error loading final data: {e}")
+        print(f"Error load play data: {e}")
         return None
     
 def load_shot_data():
     try:
         game_plays_data=load_play_data()
-        shots_df = game_plays_data[game_plays_data['typeCode'].isin([505, 506, 507, 508])]
-        shots_df=shots_df[['game_id', 'eventId','timeInPeriod','situationCode', 'typeCode', 'typeDescKey', 'sortOrder', 'period_number',
-'xCoord','yCoord', 'reason', 'shot_type', 'shooting_player', 'scoring_player', 'assist_1', 'assist_2', 'type_code', 'situation', 'event_by_team']]
-        shots_df = shots_df.sort_values(['player_name', 'player_id', 'game_id', 'sortOrder', 'period_number'], 
-                                          ascending=[True, True, True, True, True])
-        shots_df['goal_no'] = shots_df.groupby('player_id').cumcount()+1
-        #center net
-        net_x = 89
-        net_y = 0
+        max_game_id = game_plays_data['game_id'].max()
 
-        def calculate_distance(x, y, net_x=net_x, net_y=net_y):
-            return math.sqrt((x - net_x)**2 + (y - net_y)**2)
+        start_game_id = 2024020001
+        end_game_id = max_game_id
+        print(game_plays_data.head())
+        # # Base URL for the API
+        # pxp_url = "https://api-web.nhle.com/v1/gamecenter/"
+        # pxp_suffix = "/play-by-play"
 
+        # Initialize an empty DataFrame to store the results
+        plays = pd.DataFrame()
 
-        shots_df['distance'] = shots_df.apply(lambda row: calculate_distance(row['xCoord'], row['yCoord']), axis=1)
+        # # Function to process a batch of game IDs
+        # def process_game_batch(game_batch):
+        #     batch_events = []
+            
+        #     for item in game_batch:
+        #         url = item['link']
+        #         game_id = item['game_id']
+
+        #         response = requests.get(url)
+                
+        #         if response.status_code == 200:
+        #             json_data = response.json()
+                    
+        #             if 'plays' in json_data:
+        #                 game_plays_detail = pd.json_normalize(json_data['plays'])
+        #                 game_plays_detail['game_id'] = game_id
+        #                 game_plays_detail = game_plays_detail[['game_id'] + [col for col in game_plays_detail.columns if col != 'game_id']]
+        #                 print(game_plays_detail['game_id'])
+        #                 batch_events.append(game_plays_detail)
+        #             else:
+        #                 print(f"'plays' key not found in response for game_id {game_id}")
+        #         else:
+        #             print(f"Request failed with status code {response.status_code} for game_id {game_id}")
+
+        #     # Combine all the events from this batch into a single DataFrame
+        #     if batch_events:
+        #         batch_plays = pd.concat(batch_events, ignore_index=True)
+        #         batch_plays.dropna(how='all', inplace=True)
+        #         return batch_plays
+        #     return pd.DataFrame()
+
+        # # Process in batches of 100
+        # batch_size = 100
+        # game_ids = [{'game_id': game_id, 'link': f"{pxp_url}{game_id}{pxp_suffix}"} for game_id in range(start_game_id, end_game_id + 1)]
+
+        # for i in range(0, len(game_ids), batch_size):
+        #     game_batch = game_ids[i:i + batch_size]
+        #     batch_plays = process_game_batch(game_batch)
+            
+        #     if not batch_plays.empty:
+        #         plays = pd.concat([plays, batch_plays], ignore_index=True)
+
         
-        def calculate_shot_angle(row, net_x=89, net_y=0):
-            # Calculate the displacement vector
-            delta_x = net_x - row['xCoord']
-            delta_y = net_y - row['yCoord']
-            
-            # Calculate the angle in radians and then convert it to degrees
-            angle_rad = np.arctan2(delta_y, delta_x)
-            angle_deg = np.degrees(angle_rad)
-            
-            # Ensure the angle is positive and within the range 0-360
-            if angle_deg < 0:
-                angle_deg += 360
-            
-            return angle_deg
+        # shots_df = plays[plays['typeCode'].isin([505, 506, 507, 508])]
+        # shots_df=shots_df[['game_id', 'eventId','timeInPeriod','situationCode', 'typeCode', 'typeDescKey', 'sortOrder', 'period_number',
+        #                    'xCoord','yCoord', 'reason', 'shot_type', 'shooting_player', 'scoring_player', 'assist_1', 'assist_2', 'type_code', 'situation', 'event_by_team']]
+        # shots_df = shots_df.sort_values(['player_name', 'player_id', 'game_id', 'sortOrder', 'period_number'], 
+        #                                   ascending=[True, True, True, True, True])
+        # shots_df['goal_no'] = shots_df.groupby('player_id').cumcount()+1
+        # #center net
+        # net_x = 89
+        # net_y = 0
 
-        # Assuming you have a DataFrame 'season_goals' with columns 'xCoord' and 'yCoord'
-        game_plays_data['shot_angle'] = game_plays_data.apply(calculate_shot_angle, axis=1)
+        # def calculate_distance(x, y, net_x=net_x, net_y=net_y):
+        #     return math.sqrt((x - net_x)**2 + (y - net_y)**2)
+
+
+        # shots_df['distance'] = shots_df.apply(lambda row: calculate_distance(row['xCoord'], row['yCoord']), axis=1)
+        
+        # def calculate_shot_angle(row, net_x=89, net_y=0):
+        #     # Calculate the displacement vector
+        #     delta_x = net_x - row['xCoord']
+        #     delta_y = net_y - row['yCoord']
+            
+        #     # Calculate the angle in radians and then convert it to degrees
+        #     angle_rad = np.arctan2(delta_y, delta_x)
+        #     angle_deg = np.degrees(angle_rad)
+            
+        #     # Ensure the angle is positive and within the range 0-360
+        #     if angle_deg < 0:
+        #         angle_deg += 360
+            
+        #     return angle_deg
+
+        # # Assuming you have a DataFrame 'season_goals' with columns 'xCoord' and 'yCoord'
+        # plays['shot_angle'] = plays.apply(calculate_shot_angle, axis=1)
     
-        return shots_df
+        return plays
     
     except Exception as e:
-        print(f"Error loading final data: {e}")
+        print(f"Error load shot data: {e}")
         return None
 
 
 
-daily_games = get_daily_games()
-league_standings = get_standings_data()
+# daily_games = get_daily_games()
+# league_standings = get_standings_data()
 
-skater_summary = get_skater_summary()
-
+# skater_summary = get_skater_summary()
+shot_plays = load_shot_data()
 # #All play data/events on the ice
 all_play_data = get_play_data()
-
-
+all_games = get_game_data()
+# pd.set_option('display.max_rows', None)
+# pd.set_option('display.max_columns', None)
+# pd.set_option('display.width', None)
+# pd.set_option('display.max_colwidth', None)
 # Display the first few rows of the DataFrame
-if skater_summary is not None:
-    print(skater_summary)
+if all_games is not None:
+    print(all_games)
 
 else:
 
