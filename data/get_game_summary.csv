@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 game_id,season,gameType,awayTeam.id,awayTeam.abbrev,awayTeam.logo,homeTeam.id,homeTeam.abbrev,homeTeam.logo,homeTeam.placeName.default,awayTeam.placeName.default,awayTeam.score,homeTeam.score,winningGoalScorer.playerId,winningGoalie.playerId,gameState,link,game_date_time,start_time,game_date
 2024020001,20242025,2,1,NJD,https://assets.nhle.com/logos/nhl/svg/NJD_light.svg,7,BUF,https://assets.nhle.com/logos/nhl/svg/BUF_light.svg,Buffalo,New Jersey,4,1,8480192,8474593,OFF,https://api-web.nhle.com/v1/gamecenter/2024020001/play-by-play,2024-10-04 17:00:00+00:00,5:00 pm,2024-10-04
 2024020002,20242025,2,7,BUF,https://assets.nhle.com/logos/nhl/svg/BUF_light.svg,1,NJD,https://assets.nhle.com/logos/nhl/svg/NJD_light.svg,New Jersey,Buffalo,1,3,8481032,8474596,OFF,https://api-web.nhle.com/v1/gamecenter/2024020002/play-by-play,2024-10-05 14:00:00+00:00,2:00 pm,2024-10-05
@@ -206,3 +207,6 @@ game_id,season,gameType,awayTeam.id,awayTeam.abbrev,awayTeam.logo,homeTeam.id,ho
 2024020205,20242025,2,18,NSH,https://assets.nhle.com/logos/nhl/svg/NSH_light.svg,15,WSH,https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg,Washington,Nashville,2,3,8471214,8480313,OFF,https://api-web.nhle.com/v1/gamecenter/2024020205/play-by-play,2024-11-07 00:00:00+00:00,12:00 am,2024-11-07
 2024020206,20242025,2,17,DET,https://assets.nhle.com/logos/nhl/svg/DET_light.svg,16,CHI,https://assets.nhle.com/logos/nhl/svg/CHI_light.svg,Chicago,Detroit,4,1,8477946,8475660,OFF,https://api-web.nhle.com/v1/gamecenter/2024020206/play-by-play,2024-11-07 01:00:00+00:00,1:00 am,2024-11-07
 2024020207,20242025,2,54,VGK,https://assets.nhle.com/logos/nhl/svg/VGK_light.svg,22,EDM,https://assets.nhle.com/logos/nhl/svg/EDM_light.svg,Edmonton,Vegas,4,2,8478396,8478499,OFF,https://api-web.nhle.com/v1/gamecenter/2024020207/play-by-play,2024-11-07 01:30:00+00:00,1:30 am,2024-11-07
+=======
+game_id,season,gameType,awayTeam.id,awayTeam.abbrev,awayTeam.logo,homeTeam.id,homeTeam.abbrev,homeTeam.logo,homeTeam.placeName.default,awayTeam.placeName.default,awayTeam.score,homeTeam.score,winningGoalScorer.playerId,winningGoalie.playerId,gameState,link,game_date_time,start_time,game_date
+>>>>>>> Stashed changes
