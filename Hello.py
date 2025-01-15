@@ -144,7 +144,7 @@ st.title("Check This Data")
 st.markdown('''##### <span style="color: #aaaaaa">Explore NHL Advanced Stats, Simply</span>
             ''', unsafe_allow_html=True)
                 
-tab_bug, tab_skaters, tab_games = st.tabs(["Scores", "Skaters", "Matchups"])
+tab_bug, tab_skaters, tab_games, tab_teams = st.tabs(["Scores", "Skaters", "Matchups", "Teams"])
 st.sidebar.markdown("League-Wide Standings")
 
 ##########################################
@@ -415,37 +415,18 @@ with tab_bug:
                             <td style="border: none; text-align: center; width: 15%;">{row['Away Team']}</td>
                             <td style="border: none;text-align: center; width: 15%;"><img src="{row['away_logo']}" alt="Away Logo" width="50" height="50"></td>
                         </tr>
+                    <tr>
+                            <td style="border: none; text-align: center; width: 20%; vertical-align: middle;">Start Time:</td>
+                            <td style="border: none; text-align: center; width: 20%;">{row['Start Time']}</td>
+                        </tr>
                     </tbody>
                 </table>
                 """
                 # Display the game row in Streamlit
                 st.markdown(game_row, unsafe_allow_html=True)
 
-                # If the game has started/not started
-                if row['game_type'] == 'FUT':
-                    time_row = f"""
-                    <table>
-                        <tr>
-                            <!--Start time/game time-->
-                            <td style="border: none; text-align: center; width: 20%; vertical-align: middle;">Start Time:</td>
-                            <td style="border: none; text-align: center; width: 20%;">{row['Start Time']}</td>
-                        </tr>
-                    </table>
-                    """
-                elif row['game_type'] == "LIVE":
-                    time_row = f"""
-                    <table>
-                        <tr>
-                            <!--Start time/game time-->
-                            <td style="border: none; text-align: center; width: 20%; vertical-align: middle;">Time Remaining:</td>
-                            <td style="border: none; text-align: center; width: 20%;">{row['Start Time']}</td>
-                        </tr>
-                    </table>
-                    """
-                    st.markdown(time_row, unsafe_allow_html=True)
-
                 # If the game is complete ('OFF'), show the winning goal scorer
-                if row['game_type'] == 'OFF':
+                if row['game_state'] == 'OFF':
                     scorer_row = f"""
                     <table>
                         <tr>
@@ -540,50 +521,50 @@ with tab_skaters:
 
 
 
-    # ## goal mapping
-    # player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
+    ## goal mapping
+    player_goals = goal_mapping[goal_mapping['Name'] == selected_player_name]
 
-    # # Create an NHLRink object
-    # rink = hockey_rink.NHLRink(rotation=270, net={"visible": False})
+    # Create an NHLRink object
+    rink = hockey_rink.NHLRink(rotation=270, net={"visible": False})
 
-    # # Define the figure and axes for the rink map
-    # fig, ax = plt.subplots(1, 1, figsize=(10, 16)) 
+    # Define the figure and axes for the rink map
+    fig, ax = plt.subplots(1, 1, figsize=(10, 16)) 
 
-    # # Draw the rink on the single Axes object
-    # rink.draw(display_range="half", ax=ax)
+    # Draw the rink on the single Axes object
+    rink.draw(display_range="half", ax=ax)
 
-    # # Scatter plot for goals
-    # rink.scatter(
-    #     "x_adjusted", "y_adjusted", ax=ax,
-    #     facecolor="white", edgecolor="black", s=500,
-    #     data=player_goals
-    # )
+    # Scatter plot for goals
+    rink.scatter(
+        "x_adjusted", "y_adjusted", ax=ax,
+        facecolor="white", edgecolor="black", s=500,
+        data=player_goals
+    )
 
-    # # Add text for goal numbers
-    # rink.text(
-    #     "x_adjusted", "y_adjusted", "goal_no", ax=ax,
-    #     ha="center", va="center", fontsize=8, 
-    #     data=player_goals
-    # )
+    # Add text for goal numbers
+    rink.text(
+        "x_adjusted", "y_adjusted", "goal_no", ax=ax,
+        ha="center", va="center", fontsize=8, 
+        data=player_goals
+    )
 
-    # # Additional Test
-    # location_texth = rink.text(
-    #     0.5, 0.05, selected_player_name, ax=ax,
-    #     use_rink_coordinates=False,
-    #     ha="center", va="center", fontsize=20,
-    # )
+    # Additional Test
+    location_texth = rink.text(
+        0.5, 0.05, selected_player_name, ax=ax,
+        use_rink_coordinates=False,
+        ha="center", va="center", fontsize=20,
+    )
 
-    # # Display the rink map
-    # st.pyplot(fig)
+    # Display the rink map
+    st.pyplot(fig)
 
-    # # Rest of your code for player information and goals
-    # st.write("Player Goals Detail:")
-    # st.write(player_goals)
+    # Rest of your code for player information and goals
+    st.write("Player Goals Detail:")
+    st.write(player_goals)
 
-    # text = "Ice rink heat map package from [The Bucketless](https://github.com/the-bucketless/hockey_rink)"
-    # st.markdown(text, unsafe_allow_html=True)
+    text = "Ice rink heat map package from [The Bucketless](https://github.com/the-bucketless/hockey_rink)"
+    st.markdown(text, unsafe_allow_html=True)
 
 
 ##########################################
-## Player Tab                         ##
+## Teams Tab                         ##
 ##########################################
